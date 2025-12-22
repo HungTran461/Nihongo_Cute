@@ -83,5 +83,362 @@
                 { "j": "これは わたしのほんです。", "v": "Đây là sách của tôi." }
             ]
         }
+    ],
+    "3": [
+        {
+            "title": "ここ / そこ / あそこ / どこ",
+            "mean": "Chỗ này / Chỗ đó / Chỗ kia / Ở đâu",
+            "note": "Đại từ chỉ địa điểm. <br>ここ (Gần người nói), そこ (Gần người nghe), あそこ (Xa cả hai).",
+            "ex": [
+                { "j": "ここは きょうしつです。", "v": "Chỗ này là lớp học." },
+                { "j": "トイレは どこですか。", "v": "Nhà vệ sinh ở đâu vậy?" }
+            ]
+        },
+        {
+            "title": "N1 は N2 (địa điểm) です。",
+            "mean": "N1 ở N2",
+            "note": "Diễn tả vị trí của người hoặc vật.",
+            "ex": [
+                { "j": "ミラーさんは じむしょです。", "v": "Anh Miller ở văn phòng." },
+                { "j": "うけつけは あそこです。", "v": "Quầy tân ở đằng kia." }
+            ]
+        },
+        {
+            "title": "N1 の N2",
+            "mean": "N2 của N1 / N2 xuất xứ từ N1",
+            "note": "Dùng để nói về xuất xứ của sản phẩm (Nước sản xuất, Công ty sản xuất).",
+            "ex": [
+                { "j": "これは 日本の じどうしゃです。", "v": "Đây là ô tô của Nhật." },
+                { "j": "それは どこの ネクタイですか。", "v": "Đó là cà vạt của (nước/hãng) nào vậy?" }
+            ]
+        },
+        {
+            "title": "お国は どちらですか。",
+            "mean": "Đất nước của bạn ở đâu?",
+            "note": "Cách hỏi lịch sự về đất nước, công ty, nhà ở. Dùng 'どちら' thay cho 'どこ'.",
+            "ex": [
+                { "j": "かいしゃは どちらですか。", "v": "Công ty của anh ở đâu ạ?" }
+            ]
+        }
+    ],
+    "4": [
+        {
+            "title": "今 ～時 ～分 です。",
+            "mean": "Bây giờ là ~ giờ ~ phút.",
+            "note": "Cách nói giờ giấc.",
+            "ex": [
+                { "j": "今 ４時５分です。", "v": "Bây giờ là 4 giờ 5 phút." },
+                { "j": "今 何時ですか。", "v": "Bây giờ là mấy giờ?" }
+            ]
+        },
+        {
+            "title": "Vます / Vません / Vました / Vませんでした",
+            "mean": "Làm / Không làm / Đã làm / Đã không làm",
+            "note": "Các thì cơ bản của động từ dạng Masu.<br>ます (Hiện tại/Tương lai), ました (Quá khứ).",
+            "ex": [
+                { "j": "わたしは べんきょうします。", "v": "Tôi học bài." },
+                { "j": "きのう べんきょうしました。", "v": "Hôm qua tôi đã học bài." }
+            ]
+        },
+        {
+            "title": "N (thời gian) に V",
+            "mean": "Làm gì vào lúc N",
+            "note": "Trợ từ 'に' dùng để chỉ thời điểm xác định (có con số cụ thể).",
+            "ex": [
+                { "j": "６時に おきます。", "v": "Tôi dậy lúc 6 giờ." },
+                { "j": "日曜日に デパートへ 行きます。", "v": "Tôi đi bách hóa vào chủ nhật." }
+            ]
+        },
+        {
+            "title": "N1 から N2 まで",
+            "mean": "Từ N1 đến N2",
+            "note": "Chỉ khoảng thời gian hoặc khoảng cách địa lý.",
+            "ex": [
+                { "j": "９時から ５時まで はたらきます。", "v": "Tôi làm việc từ 9 giờ đến 5 giờ." },
+                { "j": "大阪から 東京まで ３時間かかります。", "v": "Từ Osaka đến Tokyo mất 3 tiếng." }
+            ]
+        }
+    ],
+    "5": [
+        {
+            "title": "N (địa điểm) へ 行きます / 来ます / 帰ります",
+            "mean": "Đi / Đến / Về N",
+            "note": "Trợ từ 'へ' (đọc là 'e') chỉ phương hướng di chuyển.",
+            "ex": [
+                { "j": "わたしは 京都へ 行きます。", "v": "Tôi đi Kyoto." },
+                { "j": "ミラーさんは 日本へ 来ました。", "v": "Anh Miller đã đến Nhật Bản." }
+            ]
+        },
+        {
+            "title": "どこ [へ] も 行きません / 行きませんでした",
+            "mean": "Không đi đâu cả",
+            "note": "Phủ định hoàn toàn khi dùng với từ để hỏi + も.",
+            "ex": [
+                { "j": "きのう どこへ 行きましたか。", "v": "Hôm qua anh đi đâu?" },
+                { "j": "いいえ、どこも 行きませんでした。", "v": "Không, tôi chẳng đi đâu cả." }
+            ]
+        },
+        {
+            "title": "N (phương tiện) で 行きます",
+            "mean": "Đi bằng phương tiện N",
+            "note": "Trợ từ 'で' chỉ phương tiện, cách thức.",
+            "ex": [
+                { "j": "電車で 行きます。", "v": "Tôi đi bằng tàu điện." },
+                { "j": "歩いて 帰ります。", "v": "Tôi đi bộ về (Không dùng で với aruite)." }
+            ]
+        },
+        {
+            "title": "N (người/động vật) と V",
+            "mean": "Làm gì cùng với N",
+            "note": "Trợ từ 'と' nghĩa là 'cùng với'.",
+            "ex": [
+                { "j": "家族と 日本へ 来ました。", "v": "Tôi đến Nhật cùng gia đình." },
+                { "j": "一人で 東京へ 行きます。", "v": "Tôi đi Tokyo một mình (Trường hợp đặc biệt)." }
+            ]
+        }
+    ],
+    "6": [
+        {
+            "title": "N を V",
+            "mean": "Làm cái gì (Tác động lên N)",
+            "note": "Trợ từ 'を' (đọc là 'o') chỉ đối tượng của hành động.",
+            "ex": [
+                { "j": "ご飯を 食べます。", "v": "Tôi ăn cơm." },
+                { "j": "本を 読みます。", "v": "Tôi đọc sách." }
+            ]
+        },
+        {
+            "title": "何を しますか。",
+            "mean": "Làm cái gì vậy?",
+            "note": "Câu hỏi dùng để hỏi về hành động.",
+            "ex": [
+                { "j": "月曜日 何を しますか。", "v": "Thứ hai anh làm gì?" }
+            ]
+        },
+        {
+            "title": "なん / なに",
+            "mean": "Cái gì",
+            "note": "'なん' dùng trước d, t, n và các hậu tố đếm. 'なに' dùng trong các trường hợp còn lại.",
+            "ex": [
+                { "j": "それは 何(なん)ですか。", "v": "Đó là cái gì?" },
+                { "j": "何(なに)を 買いますか。", "v": "Anh mua cái gì?" }
+            ]
+        },
+        {
+            "title": "N (địa điểm) で V",
+            "mean": "Làm gì tại N",
+            "note": "Trợ từ 'で' chỉ địa điểm diễn ra hành động.",
+            "ex": [
+                { "j": "駅で 新聞を 買います。", "v": "Tôi mua báo tại nhà ga." }
+            ]
+        },
+        {
+            "title": "Vませんか。",
+            "mean": "Cùng ... nhé? (Mời mọc)",
+            "note": "Dùng để mời người khác làm gì đó một cách lịch sự.",
+            "ex": [
+                { "j": "いっしょに 京都へ 行きませんか。", "v": "Cùng đi Kyoto với tôi không?" }
+            ]
+        },
+        {
+            "title": "Vましょう。",
+            "mean": "Cùng ... thôi! (Đề nghị)",
+            "note": "Dùng để đề nghị bắt đầu làm gì đó hoặc đồng ý lời mời.",
+            "ex": [
+                { "j": "ちょっと 休みましょう。", "v": "Nghỉ một lát đi nào." }
+            ]
+        }
+    ],
+    "7": [
+        {
+            "title": "N (công cụ) で V",
+            "mean": "Làm bằng N",
+            "note": "Trợ từ 'で' chỉ công cụ, phương tiện.",
+            "ex": [
+                { "j": "はしで 食べます。", "v": "Tôi ăn bằng đũa." },
+                { "j": "日本語で レポートを 書きます。", "v": "Tôi viết báo cáo bằng tiếng Nhật." }
+            ]
+        },
+        {
+            "title": "\"Từ/Câu\" は ～語で 何ですか。",
+            "mean": "\"It\" tiếng ~ là gì?",
+            "note": "Hỏi cách nói một từ trong ngôn ngữ khác.",
+            "ex": [
+                { "j": "「Thank you」は 日本語で 何ですか。", "v": "\"Thank you\" tiếng Nhật là gì?" },
+                { "j": "「ありがとう」です。", "v": "Là \"Arigatou\"." }
+            ]
+        },
+        {
+            "title": "N (người) に あげます / かします / おしえます",
+            "mean": "Tặng / Cho mượn / Dạy cho ai",
+            "note": "Trợ từ 'に' chỉ đối tượng tiếp nhận hành động.",
+            "ex": [
+                { "j": "山田さんに 花を あげました。", "v": "Tôi đã tặng hoa cho chị Yamada." },
+                { "j": "イーさんに 日本語を おしえます。", "v": "Tôi dạy tiếng Nhật cho anh Lee." }
+            ]
+        },
+        {
+            "title": "N (người) に もらいます / かります / ならいます",
+            "mean": "Nhận / Mượn / Học từ ai",
+            "note": "Trợ từ 'に' (hoặc 'から') chỉ đối tượng xuất phát hành động.",
+            "ex": [
+                { "j": "母に プレゼントを もらいました。", "v": "Tôi đã nhận quà từ mẹ." },
+                { "j": "カリナさんに CDを 借りました。", "v": "Tôi đã mượn đĩa CD từ chị Karina." }
+            ]
+        },
+        {
+            "title": "もう Vました",
+            "mean": "Đã ... rồi",
+            "note": "Diễn tả hành động đã hoàn tất.",
+            "ex": [
+                { "j": "もう 荷物を 送りましたか。", "v": "Anh đã gửi đồ chưa?" },
+                { "j": "はい、もう 送りました。", "v": "Vâng, tôi gửi rồi." }
+            ]
+        }
+    ],
+    "8": [
+        {
+            "title": "Tính từ đuôi い / Tính từ đuôi な",
+            "mean": "Tính từ trong tiếng Nhật",
+            "note": "A-i: Kết thúc bằng 'i' (atsui, samui). A-na: Kết thúc bằng 'na' (khi nối danh từ) hoặc không có 'i' (shinsetsu, kirei).",
+            "ex": [
+                { "j": "大きい (A-i)", "v": "To lớn" },
+                { "j": "きれい (A-na)", "v": "Đẹp, sạch (Đặc biệt)" }
+            ]
+        },
+        {
+            "title": "N は Aです / Aじゃありません / Aくないです",
+            "mean": "Câu vị ngữ tính từ",
+            "note": "Phủ định A-na: A じゃありません。<br>Phủ định A-i: Bỏ 'i' thêm 'くないです'。",
+            "ex": [
+                { "j": "この山は 高いです。", "v": "Ngọn núi này cao." },
+                { "j": "今日は 寒くないです。", "v": "Hôm nay không lạnh." },
+                { "j": "ここは 静かじゃありません。", "v": "Chỗ này không yên tĩnh." }
+            ]
+        },
+        {
+            "title": "Aな N / Aい N",
+            "mean": "Bổ nghĩa cho danh từ",
+            "note": "Đặt tính từ trước danh từ để bổ nghĩa.",
+            "ex": [
+                { "j": "親切な 人", "v": "Người tốt bụng" },
+                { "j": "高い 山", "v": "Ngọn núi cao" }
+            ]
+        },
+        {
+            "title": "とても / あまり",
+            "mean": "Rất / Không ... lắm",
+            "note": "'とても' dùng câu khẳng định. 'あまり' dùng câu phủ định.",
+            "ex": [
+                { "j": "日本の生活は とても 楽しいです。", "v": "Cuộc sống ở Nhật rất vui." },
+                { "j": "この食べ物は あまり おいしくないです。", "v": "Món này không ngon lắm." }
+            ]
+        },
+        {
+            "title": "N は どうですか。",
+            "mean": "N thì thế nào?",
+            "note": "Hỏi cảm tưởng, ý kiến về N.",
+            "ex": [
+                { "j": "日本の生活は どうですか。", "v": "Cuộc sống ở Nhật thế nào?" }
+            ]
+        },
+        {
+            "title": "S1 が、S2",
+            "mean": "S1 nhưng mà S2",
+            "note": "Nối 2 vế câu có ý nghĩa trái ngược.",
+            "ex": [
+                { "j": "日本の食べ物は おいしいですが、高いです。", "v": "Đồ ăn Nhật ngon nhưng mà đắt." }
+            ]
+        }
+    ],
+    "9": [
+        {
+            "title": "N が あります / わかります",
+            "mean": "Có N / Hiểu N",
+            "note": "Với các động từ chỉ sở hữu, năng lực, cảm giác, dùng trợ từ 'が' thay vì 'を'.",
+            "ex": [
+                { "j": "わたしは 車が あります。", "v": "Tôi có ô tô." },
+                { "j": "日本語が わかります。", "v": "Tôi hiểu tiếng Nhật." }
+            ]
+        },
+        {
+            "title": "N が 好きです / 嫌いです / 上手です / 下手です",
+            "mean": "Thích / Ghét / Giỏi / Kém N",
+            "note": "Với tính từ chỉ sở thích, năng lực cũng dùng 'が'.",
+            "ex": [
+                { "j": "わたしは イタリア料理が 好きです。", "v": "Tôi thích món ăn Ý." },
+                { "j": "マリアさんは ダンスが 上手です。", "v": "Chị Maria nhảy giỏi." }
+            ]
+        },
+        {
+            "title": "よく / だいたい / たくさん / 少し / 全然",
+            "mean": "Phó từ chỉ mức độ",
+            "note": "Sắp xếp từ mức độ cao xuống thấp. '全然' (hoàn toàn không) đi với phủ định.",
+            "ex": [
+                { "j": "英語が よく わかります。", "v": "Tôi hiểu rõ tiếng Anh." },
+                { "j": "お金が 全然 ありません。", "v": "Tôi hoàn toàn không có tiền." }
+            ]
+        },
+        {
+            "title": "S1 から、S2",
+            "mean": "Vì S1 nên S2",
+            "note": "Biểu thị lý do.",
+            "ex": [
+                { "j": "時間(じかん)が ありませんから、タクシーで 行きます。", "v": "Vì không có thời gian nên tôi đi bằng taxi." }
+            ]
+        },
+        {
+            "title": "どうして",
+            "mean": "Tại sao",
+            "note": "Dùng để hỏi lý do.",
+            "ex": [
+                { "j": "どうして 朝ごはんを 食べませんか。", "v": "Tại sao anh không ăn sáng?" }
+            ]
+        }
+    ],
+    "10": [
+        {
+            "title": "N が あります / います",
+            "mean": "Có N (Sự tồn tại)",
+            "note": "'あります' dùng cho đồ vật, cây cối. 'います' dùng cho người, động vật.",
+            "ex": [
+                { "j": "あそこに 佐藤さんが います。", "v": "Chị Sato ở đằng kia." },
+                { "j": "机の上に 写真が あります。", "v": "Trên bàn có tấm ảnh." }
+            ]
+        },
+        {
+            "title": "N1 (địa điểm) に N2 が あります / います",
+            "mean": "Ở N1 có N2",
+            "note": "Cấu trúc nhấn mạnh vào vị trí, liệt kê những gì có ở đó.",
+            "ex": [
+                { "j": "公園に 桜の木が あります。", "v": "Ở công viên có cây anh đào." }
+            ]
+        },
+        {
+            "title": "N1 は N2 (địa điểm) に あります / います",
+            "mean": "N1 thì ở N2",
+            "note": "Cấu trúc nhấn mạnh vào chủ đề (N1), chỉ rõ N1 đang ở đâu.",
+            "ex": [
+                { "j": "犬は どこに いますか。", "v": "Con chó đang ở đâu?" },
+                { "j": "犬は 車の中に います。", "v": "Con chó ở trong xe ô tô." }
+            ]
+        },
+        {
+            "title": "N1 の N2 (vị trí)",
+            "mean": "Phía ... của N1",
+            "note": "Vị trí: 上 (trên), 下 (dưới), 前 (trước), うしろ (sau), 右 (phải), 左 (trái), 中 (trong), 外 (ngoài), 隣 (cạnh), 近く (gần), 間 (giữa).",
+            "ex": [
+                { "j": "机の 上", "v": "Trên bàn" },
+                { "j": "本屋と 花屋の 間", "v": "Giữa hiệu sách và hàng hoa" }
+            ]
+        },
+        {
+            "title": "N1 や N2 [など]",
+            "mean": "N1, N2 và... (vân vân)",
+            "note": "Dùng để liệt kê tượng trưng vài vật tiêu biểu.",
+            "ex": [
+                { "j": "箱の中に 手紙や 写真が あります。", "v": "Trong hộp có thư, ảnh, v.v..." }
+            ]
+        }
     ]
 }
