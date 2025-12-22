@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentSystem = 'hiragana';
 let currentKanjiTab = 'radicals';
 
-// Hàm mở Section duy nhất (Quản lý toàn bộ Logic hiển thị)
 function openSection(id) {
     const mainMenu = document.getElementById('mainMenu');
     const heroSection = document.getElementById('heroSection');
@@ -177,7 +176,8 @@ function resetTabs(selector, index) {
 /* =========================================
    3. LOGIC KANA (BẢNG CHỮ CÁI)
    ========================================= */
-function switchTab(system, event) {
+function switchTabs(system, event) {
+    console.log("Đang chuyển sang:", system);
     currentSystem = system;
     document.querySelectorAll('#kanaSection .tab-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
@@ -355,7 +355,6 @@ window.onclick = function(e) {
     if(e.target === document.getElementById('charModal')) closeModal();
 }
 
-/* --- THAY THẾ HÀM speak CŨ BẰNG HÀM NÀY --- */
 
 let voices = [];
 // Load danh sách giọng khi trình duyệt sẵn sàng
@@ -368,36 +367,24 @@ if (window.speechSynthesis) {
 function speak(text, gender = 'female') {
     if (!('speechSynthesis' in window)) return;
 
-    // --- CẬP NHẬT MỚI: Xóa nội dung trong ngoặc đơn (...) ---
-    // /\(.*?\)/g : Tìm tất cả ký tự nằm giữa ( và )
-    // .replace(..., '') : Thay thế chúng bằng chuỗi rỗng
-    // .trim() : Xóa khoảng trắng thừa ở đầu/cuối câu sau khi cắt
     const cleanText = text.replace(/\(.*?\)/g, '').trim();
 
-    // Nếu sau khi xóa mà không còn từ nào thì dừng lại, không đọc
     if (!cleanText) return;
 
-    window.speechSynthesis.cancel(); // Dừng câu đang nói dở
-    
-    // Khởi tạo giọng nói với văn bản đã được làm sạch
+    window.speechSynthesis.cancel(); 
     const u = new SpeechSynthesisUtterance(cleanText);
     u.lang = 'ja-JP';
     
-    // Cập nhật lại danh sách giọng nếu chưa có
     if (voices.length === 0) {
         voices = window.speechSynthesis.getVoices();
     }
 
-    // Lọc ra các giọng tiếng Nhật
     const jaVoices = voices.filter(v => v.lang.includes('ja'));
 
     if (jaVoices.length > 0) {
-        // Mặc định chọn giọng đầu tiên tìm thấy
         let selectedVoice = jaVoices[0];
 
-        // LOGIC CHỌN GIỌNG (Heuristic)
         if (gender === 'male') {
-            // Cố tìm giọng có tên "Ichiro", "Kenji", "Male"...
             const maleVoice = jaVoices.find(v => 
                 v.name.includes('Ichiro') || 
                 v.name.includes('Kenji') || 
@@ -406,11 +393,9 @@ function speak(text, gender = 'female') {
             );
             if (maleVoice) selectedVoice = maleVoice;
             
-            // Tinh chỉnh âm thanh cho Nam (Trầm hơn)
             u.pitch = 0.8; 
-            u.rate = 0.9;  // Nói chậm hơn chút cho giống đàn ông
+            u.rate = 0.9; 
         } else {
-            // Cố tìm giọng có tên "Ayumi", "Haruka", "Kyoko", "Female"...
             const femaleVoice = jaVoices.find(v => 
                 v.name.includes('Ayumi') || 
                 v.name.includes('Haruka') || 
@@ -419,7 +404,6 @@ function speak(text, gender = 'female') {
             );
             if (femaleVoice) selectedVoice = femaleVoice;
 
-            // Tinh chỉnh âm thanh cho Nữ (Thanh hơn)
             u.pitch = 1.1; 
             u.rate = 1.0;
         }
@@ -433,7 +417,6 @@ function speak(text, gender = 'female') {
 /* =========================================
    7. GAME ENGINE
    ========================================= */
-/* --- Thay thế hàm getGameData cũ bằng hàm này --- */
 function getGameData(key) {
     let rawData = [];
     
