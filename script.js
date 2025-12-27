@@ -489,13 +489,13 @@ function getGameData(key) {
 
 // --- Flashcard Logic ---
 let fcList = [], fcIndex = 0, isFlipped = false;
-function switchGameTab(tab, event) {
+/*function switchGameTab(tab, event) {
     document.getElementById('gameFlashcardArea').style.display = (tab === 'flashcard') ? 'block' : 'none';
     document.getElementById('gameQuizArea').style.display = (tab === 'quiz') ? 'block' : 'none';
     document.querySelectorAll('#gameSection .tab-btn').forEach(b => b.classList.remove('active'));
     if(event) event.target.classList.add('active');
     if(tab === 'flashcard') initFlashcards();
-}
+}*/
 
 function initFlashcards() {
     const key = document.getElementById('flashcardDeck').value;
@@ -1123,11 +1123,16 @@ function switchGameTab(tab, event) {
     document.getElementById('gameFlashcardArea').style.display = 'none';
     document.getElementById('gameQuizArea').style.display = 'none';
     document.getElementById('gameReflexArea').style.display = 'none';
+    document.getElementById('gameWritingArea').style.display = 'none';
     
     // 2. Hiển thị khu vực được chọn
     if (tab === 'flashcard') document.getElementById('gameFlashcardArea').style.display = 'block';
     if (tab === 'quiz') document.getElementById('gameQuizArea').style.display = 'block';
     if (tab === 'reflex') document.getElementById('gameReflexArea').style.display = 'block';
+    if (tab === 'writing') {
+        document.getElementById('gameWritingArea').style.display = 'block';
+        initWritingGame();
+    }
 
     // 3. Đổi màu nút Tab
     document.querySelectorAll('#gameSection .tab-btn').forEach(b => b.classList.remove('active'));
@@ -1883,4 +1888,252 @@ if (inputEl) {
             loadCharToPractice();
         }
     });
+}
+
+/* =========================================
+   LOGIC GAME GÕ TỪ VỰNG (WRITING MODE) - MIXED
+   ========================================= */
+
+let wList = [];
+let wIndex = 0;
+let wScore = 0;
+
+// 1. Khởi tạo Game (Gọi khi chuyển Tab hoặc đổi Dropdown)
+function initWritingGame() {
+    const deckSelect = document.getElementById('writingDeck');
+    // Nếu chưa có html dropdown thì return để tránh lỗi
+    if (!deckSelect) return; 
+
+    const deckValue = deckSelect.value; // Ví dụ: "minna_1"
+    let selectedData = [];
+
+    // Lấy dữ liệu từ biến minnaData (hoặc minnaData tùy cách bạn đặt tên biến)
+    // Giả sử biến toàn cục chứa dữ liệu là minnaData
+    if (typeof minnaData !== 'undefined') {
+        if (deckValue.startsWith('minna_')) {
+            const lessonId = deckValue.split('_')[1];
+            if (minnaData[lessonId]) selectedData = minnaData[lessonId];
+        } 
+        else if (deckValue.startsWith('extra_') && minnaData[deckValue]) {
+             selectedData = minnaData[deckValue];
+        }
+    }
+
+    if (!selectedData || selectedData.length === 0) {
+        // Fallback nếu chưa load được data
+        const displayEl = document.getElementById('w-meaning') || document.getElementById('w-question-text');
+        if(displayEl) displayEl.innerText = "Vui lòng chọn bài khác hoặc kiểm tra dữ liệu.";
+        return;
+    }
+
+    // --- LOGIC MỚI: Random dạng câu hỏi ---
+    wList = selectedData.map(item => {
+        // Random 50/50
+        // qType 0: Nhìn Việt -> Gõ Nhật (Logic cũ)
+        // qType 1: Nhìn Nhật -> Gõ Việt (Logic mới)
+        const type = Math.random() > 0.5 ? 1 : 0;
+        return { ...item, qType: type };
+    });
+
+    // Xáo trộn danh sách
+    wList.sort(() => Math.random() - 0.5);
+    
+    // Reset chỉ số
+    wIndex = 0;
+    wScore = 0;
+
+    // Update UI điểm
+    const totalEl = document.getElementById('w-total');
+    const scoreEl = document.getElementById('w-score');
+    if(totalEl) totalEl.innerText = wList.length;
+    if(scoreEl) scoreEl.innerText = "0";
+
+    renderWritingQuestion();
+}
+
+// 2. Hiển thị câu hỏi
+function renderWritingQuestion() {
+    // Kiểm tra hoàn thành
+    if (wIndex >= wList.length) {
+        alert(`Chúc mừng! Bạn hoàn thành bài luyện tập.\nĐiểm số: ${wScore}`);
+        initWritingGame(); // Reset lại từ đầu
+        return;
+    }
+
+    const item = wList[wIndex];
+
+    // Lấy các element giao diện
+    const mainTextEl = document.getElementById('w-meaning'); // Dùng làm text chính
+    const subHintEl = document.getElementById('w-kanji');    // Dùng làm gợi ý
+    const inputEl = document.getElementById('w-input');
+    
+    // Tìm label (nếu có trong HTML) để đổi chữ "Ý NGHĨA" <-> "TỪ VỰNG"
+    const labelEl = document.querySelector('.w-label') || document.getElementById('w-label-text');
+
+    // Reset Input
+    document.getElementById('w-current').innerText = wIndex + 1;
+    inputEl.value = '';
+    inputEl.className = 'w-input'; // Hoặc class CSS input của bạn
+    inputEl.disabled = false;
+    inputEl.focus();
+
+    // Reset Nút & Feedback
+    const feedbackEl = document.getElementById('w-feedback');
+    if(feedbackEl) feedbackEl.innerHTML = '';
+    
+    document.getElementById('w-btn-check').style.display = 'inline-block';
+    document.getElementById('w-btn-next').style.display = 'none';
+
+    // --- XỬ LÝ HIỂN THỊ THEO DẠNG BÀI ---
+    if (item.qType === 0) {
+        // === DẠNG 0: VIỆT -> NHẬT (Logic cũ) ===
+        if(labelEl) labelEl.innerText = "Ý NGHĨA";
+        mainTextEl.innerText = item.m; // Hiện nghĩa Tiếng Việt
+        inputEl.placeholder = "Nhập Hiragana...";
+
+        // Hiện Kanji làm gợi ý (nếu có)
+        if (item.k && item.k !== item.r) {
+            subHintEl.innerText = item.k;
+            subHintEl.style.display = 'block';
+        } else {
+            subHintEl.style.display = 'none';
+        }
+
+    } else {
+        // === DẠNG 1: NHẬT -> VIỆT (Logic mới) ===
+        if(labelEl) labelEl.innerText = "TỪ VỰNG";
+        
+        // Ưu tiên hiện Kanji to, không có thì hiện Hiragana
+        if (item.k && item.k !== "") {
+            mainTextEl.innerText = item.k;
+            // Gợi ý cách đọc Hiragana để người dùng dễ đoán nghĩa
+            subHintEl.innerText = item.r;
+            subHintEl.style.display = 'block';
+        } else {
+            mainTextEl.innerText = item.r;
+            subHintEl.style.display = 'none';
+        }
+
+        inputEl.placeholder = "Nhập nghĩa Tiếng Việt...";
+    }
+
+    // Xử lý phím Enter
+    inputEl.onkeydown = function(e) {
+        if (e.key === 'Enter') {
+            if (document.getElementById('w-btn-check').style.display !== 'none') {
+                checkWritingAnswer();
+            } else {
+                nextWritingQuestion();
+            }
+        }
+    };
+}
+
+/* =========================================
+   HÀM XỬ LÝ SO SÁNH TIẾNG VIỆT (SIÊU CẤP)
+   ========================================= */
+
+function cleanString(str) {
+    if (!str) return "";
+    return str.toString()
+        .toLowerCase()              // 1. Chuyển thành chữ thường
+        .normalize('NFC')           // 2. Chuẩn hóa Unicode (sửa lỗi font)
+        .replace(/\(.*?\)/g, "")    // 3. Xóa nội dung trong ngoặc đơn (giải thích)
+        .replace(/\[.*?\]/g, "")    // 4. Xóa nội dung trong ngoặc vuông
+        .replace(/[.,!?:;"]/g, "")  // 5. Xóa dấu câu thừa (chấm, phẩy, chấm than...)
+        .replace(/\s+/g, " ")       // 6. Gộp nhiều dấu cách thành 1
+        .trim();                    // 7. Cắt khoảng trắng 2 đầu
+}
+
+function isVietnameseCorrect(userVal, dbVal) {
+    // Bước 1: Chuẩn hóa Input của người chơi
+    const userClean = cleanString(userVal);
+
+    // Bước 2: Tách đáp án trong Database ra thành nhiều câu (nếu có)
+    // Ví dụ data: "Bạn / Anh / Chị" -> Tách thành ["Bạn", "Anh", "Chị"]
+    // Tách dựa trên: dấu gạch chéo (/), dấu phẩy (,), dấu chấm phẩy (;)
+    const rawAnswers = dbVal.split(/[\/;,、]+/);
+    
+    // Bước 3: Chuẩn hóa từng đáp án trong Database
+    const possibleAnswers = rawAnswers.map(ans => cleanString(ans)).filter(a => a.length > 0);
+
+    // --- DEBUG: In ra Console để kiểm tra ---
+    console.log(`%c[CHECK]`, "color: blue; font-weight: bold;");
+    console.log(`- Bạn nhập (đã xử lý): "${userClean}"`);
+    console.log(`- Đáp án gốc: "${dbVal}"`);
+    console.log(`- Các đáp án chấp nhận:`, possibleAnswers);
+
+    // Bước 4: So sánh
+    // Chỉ cần input của bạn TRÙNG KHỚP với 1 trong các đáp án
+    const isMatch = possibleAnswers.includes(userClean);
+    
+    if (!isMatch) {
+        console.log(`%c=> KẾT QUẢ: SAI`, "color: red");
+    } else {
+        console.log(`%c=> KẾT QUẢ: ĐÚNG`, "color: green");
+    }
+
+    return isMatch;
+}
+
+/* =========================================
+   HÀM CHECK ANSWER CHÍNH
+   ========================================= */
+
+function checkWritingAnswer() {
+    const inputEl = document.getElementById('w-input');
+    const feedbackEl = document.getElementById('w-feedback');
+    const item = wList[wIndex];
+    const userVal = inputEl.value; // Lấy nguyên gốc
+    
+    let isCorrect = false;
+    let correctTextDisplay = "";
+
+    if (item.qType === 0) {
+        // --- DẠNG 0: VIỆT -> NHẬT (Hiragana) ---
+        // Hiragana chỉ cần trim và xóa khoảng trắng là đủ
+        if (userVal.trim().replace(/\s/g, '') === item.r.replace(/\s/g, '')) {
+            isCorrect = true;
+        }
+        correctTextDisplay = item.r; 
+    } else {
+        // --- DẠNG 1: NHẬT -> VIỆT ---
+        // Sử dụng hàm so sánh xịn ở trên
+        if (userVal.trim() !== "" && isVietnameseCorrect(userVal, item.m)) {
+            isCorrect = true;
+        }
+        
+        // Hiển thị đáp án đẹp (lấy từ đầu tiên, bỏ phần ngoặc)
+        // Ví dụ: "Vị kia (lịch sự)" -> Hiển thị "Vị kia"
+        correctTextDisplay = item.m.split(/[\/;,]/)[0].replace(/\(.*?\)/g, "").trim();
+    }
+
+    // --- HIỂN THỊ KẾT QUẢ ---
+    if (isCorrect) {
+        inputEl.classList.add('correct');
+        inputEl.classList.remove('wrong');
+        feedbackEl.innerHTML = `<span style="color:#27ae60; font-weight:bold"><i class="fas fa-check"></i> Chính xác!</span>`;
+        
+        wScore += 10;
+        document.getElementById('w-score').innerText = wScore;
+    } else {
+        inputEl.classList.add('wrong');
+        inputEl.classList.remove('correct');
+        // Khi sai hiển thị đáp án
+        feedbackEl.innerHTML = `<span style="color:#e74c3c; font-weight:bold">Sai rồi! Đáp án: ${correctTextDisplay}</span>`;
+    }
+
+    // Khóa ô nhập và hiện nút Next
+    inputEl.disabled = true;
+    document.getElementById('w-btn-check').style.display = 'none';
+    
+    const nextBtn = document.getElementById('w-btn-next');
+    nextBtn.style.display = 'inline-block';
+    nextBtn.focus(); 
+}
+
+// 4. Qua câu tiếp theo
+function nextWritingQuestion() {
+    wIndex++;
+    renderWritingQuestion();
 }

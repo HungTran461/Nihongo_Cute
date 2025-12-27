@@ -191,6 +191,47 @@
                 <button class="tab-btn active" onclick="switchGameTab('flashcard', event)">Flashcard</button>
                 <button class="tab-btn" onclick="switchGameTab('quiz', event)">Trắc nghiệm</button>
                 <button class="tab-btn" onclick="switchGameTab('reflex', event)">⚡ Phản xạ</button>
+                <button class="tab-btn" onclick="switchGameTab('writing', event)">Gõ từ</button>
+            </div>
+
+            <div id="gameWritingArea" style="display:none;">
+                <div class="practice-controls">
+                    <label>Chọn bài luyện:</label>
+                    <div class="select-wrapper">
+                        <select id="writingDeck" onchange="initWritingGame()">
+                            <optgroup label="Giáo trình Minna">
+                                <option value="minna_1">Minna Bài 1</option>
+                                <option value="minna_2">Minna Bài 2</option>
+                                <option value="minna_3">Minna Bài 3</option>
+                                <option value="minna_4">Minna Bài 4</option>
+                                <option value="minna_5">Minna Bài 5</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="writing-game-container">
+                    <div class="writing-header">
+                        <span>Câu: <b id="w-current">1</b>/<span id="w-total">0</span></span>
+                        <span class="w-score"><i class="fas fa-star" style="color:gold"></i> <b id="w-score">0</b></span>
+                    </div>
+
+                    <div class="writing-display">
+                        <div class="w-label">Ý NGHĨA</div>
+                        <h2 id="w-meaning">...</h2>
+                        <div id="w-kanji" class="w-kanji-hint">...</div>
+                    </div>
+
+                    <div class="writing-input-box">
+                        <input type="text" id="w-input" class="w-input" placeholder="Nhập Hiragana..." autocomplete="off">
+                        <div id="w-feedback"></div>
+                    </div>
+
+                    <div class="writing-actions">
+                        <button id="w-btn-check" class="btn-action check" onclick="checkWritingAnswer()">Kiểm tra</button>
+                        <button id="w-btn-next" class="btn-action next" onclick="nextWritingQuestion()" style="display:none;">Tiếp theo</button>
+                    </div>
+                </div>
             </div>
 
             <div id="gameFlashcardArea">
@@ -270,7 +311,6 @@
             </div>
 
             <div id="gameQuizArea" style="display:none;">
-
                 <div id="quizSetup" class="quiz-setup-box">
                     <h3>Cấu hình bài thi</h3>
                     <div class="quiz-config-grid">
