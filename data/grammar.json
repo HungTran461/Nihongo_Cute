@@ -134,7 +134,7 @@
         {
             "title": "Vます / Vません / Vました / Vませんでした",
             "mean": "Làm / Không làm / Đã làm / Đã không làm",
-            "note": "Các thì cơ bản của động từ dạng Masu.<br>ます (Hiện tại/Tương lai), ました (Quá khứ).",
+            "note": "Các thì cơ bản của động từ dạng Masu.<br>'ます' và 'ません' - Hiện tại/Tương lai.<br>'ました' và 'ませんでした' - Quá khứ.",
             "ex": [
                 { "j": "わたしは べんきょうします。", "v": "Tôi học bài." },
                 { "j": "きのう べんきょうしました。", "v": "Hôm qua tôi đã học bài." }
@@ -143,7 +143,7 @@
         {
             "title": "N (thời gian) に V",
             "mean": "Làm gì vào lúc N",
-            "note": "Trợ từ 'に' dùng để chỉ thời điểm xác định (có con số cụ thể).",
+            "note": "Trợ từ 'に' dùng để chỉ thời điểm xác định (có con số cụ thể, trong khoảnh khắc).",
             "ex": [
                 { "j": "６時に おきます。", "v": "Tôi dậy lúc 6 giờ." },
                 { "j": "日曜日に デパートへ 行きます。", "v": "Tôi đi bách hóa vào chủ nhật." }
@@ -151,11 +151,20 @@
         },
         {
             "title": "N1 から N2 まで",
-            "mean": "Từ N1 đến N2",
-            "note": "Chỉ khoảng thời gian hoặc khoảng cách địa lý.",
+            "mean": "Từ N1 đến N2 - N có thể là thời gian hoặc địa điểm",
+            "note": "Chỉ khoảng thời gian hoặc khoảng cách địa lý (kéo dài). Có thể tách 'から' và 'まで' ra sử dụng riêng biệt.",
             "ex": [
                 { "j": "９時から ５時まで はたらきます。", "v": "Tôi làm việc từ 9 giờ đến 5 giờ." },
                 { "j": "大阪から 東京まで ３時間かかります。", "v": "Từ Osaka đến Tokyo mất 3 tiếng." }
+            ]
+        },
+        {
+            "title": "S は [N1 から N2 まで / N に] [です / Vます]。",
+            "mean": "S [làm việc,hoạt động, diễn ra / V] [lúc N giờ / từ N1 đến N2 ]",
+            "note": "Nếu S là 1 sự kiện, hoạt động thì dùng đuôi 'です'. Nếu S từ chỉ người thì đuôi dùng là 'Vます'.",
+            "ex": [
+                { "j": "ミラーさんは ６時に おきます。", "v": "Miller thức dậy lúc 6 giờ." },
+                { "j": "私は ７じから 11じはんまで ベんきょします。", "v": "Tôi học từ 7 giờ đến 11 giờ rưỡi." }
             ]
         }
     ],
