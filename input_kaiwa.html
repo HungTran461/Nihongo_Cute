@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Tạo Dữ Liệu Kaiwa</title>
+    <style>
+        :root { --primary: #2563eb; --bg: #f8fafc; --card: #ffffff; --border: #e2e8f0; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); padding: 20px; color: #334155; }
+        
+        /* Header Style */
+        h2.main-title { text-align: center; color: #1e293b; margin-bottom: 30px; font-size: 1.8rem; letter-spacing: 1px; }
+
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
+        
+        /* Card Styles */
+        .card { background: var(--card); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; border: 1px solid var(--border); margin-bottom: 20px; }
+        h3 { margin-top: 0; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+        
+        /* Forms */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+        
+        label { display: block; font-size: 0.85em; font-weight: 600; margin-bottom: 4px; color: #64748b; }
+        input, select, textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box; font-size: 0.95em; }
+        input:focus, textarea:focus { outline: 2px solid var(--primary); border-color: transparent; }
+        textarea { height: 60px; resize: vertical; font-family: sans-serif; }
+
+        /* Dialogue Specific */
+        .dialogue-form { background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px dashed #cbd5e1; }
+        .char-info { border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 10px; }
+
+        /* Preview List */
+        .d-list { list-style: none; padding: 0; max-height: 300px; overflow-y: auto; }
+        .d-item { background: white; padding: 10px; margin-bottom: 5px; border-radius: 4px; border-left: 4px solid #ccc; display: flex; gap: 10px; font-size: 0.9em; position: relative;}
+        .d-item.left { border-left-color: #3b82f6; } /* Blue for Left */
+        .d-item.right { border-left-color: #ef4444; } /* Red for Right */
+        .d-role { font-weight: bold; min-width: 30px; }
+        .btn-del-mini { position: absolute; top: 5px; right: 5px; color: red; cursor: pointer; border: none; background: none; font-weight: bold;}
+
+        /* Buttons */
+        .btn { width: 100%; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; color: white; margin-top: 10px; }
+        .btn-add-line { background: #3b82f6; }
+        .btn-save-scene { background: #10b981; font-size: 1.1em; }
+        .btn-copy { background: #6366f1; }
+
+        /* Master List */
+        .scene-item { background: #fff; padding: 10px; border: 1px solid #ddd; margin-bottom: 5px; border-radius: 4px; display: flex; justify-content: space-between; }
+
+        /* Output */
+        textarea.code { background: #1e293b; color: #a5f3fc; font-family: monospace; height: 300px; }
+    </style>
+</head>
+<body>
+
+    <h2 class="main-title">Tool nhập liệu bài hội thoại Kaiwa</h2>
+
+<div class="container">
+    <div class="left-col">
+        
+        <div class="card">
+            <h3>1. Thông tin Bài/Cảnh (Scene Info)</h3>
+            <div class="grid-2">
+                <div>
+                    <label>Name (Mã bài)</label>
+                    <input type="text" id="sName" placeholder="VD: Kaiwa, Renshyuu C-1">
+                </div>
+                <div>
+                    <label>Title (Tiêu đề)</label>
+                    <input type="text" id="sTitle" placeholder="VD: 初めまして">
+                </div>
+            </div>
+            <div class="grid-2" style="margin-top: 10px;">
+                <div>
+                    <label>Image Path (Ảnh bài)</label>
+                    <input type="text" id="sImg" placeholder="Image/Kaiwa_B1.png">
+                </div>
+                <div>
+                    <label>Audio Path</label>
+                    <input type="text" id="sAudio" placeholder="Sound/01.mp3">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>2. Thêm Lời Thoại (Dialogue)</h3>
+            
+            <div class="dialogue-form">
+                <div class="char-info">
+                    <div class="grid-4">
+                        <div>
+                            <label>Role</label>
+                            <input type="text" id="dRole" placeholder="A, B, C">
+                        </div>
+                        <div>
+                            <label>Name (Hiển thị)</label>
+                            <input type="text" id="dName" placeholder="佐藤 (Satou)">
+                        </div>
+                        <div>
+                            <label>Side</label>
+                            <select id="dSide">
+                                <option value="left">Left (Trái)</option>
+                                <option value="right">Right (Phải)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Gender</label>
+                            <select id="dGender">
+                                <option value="female">Female (Nữ)</option>
+                                <option value="male">Male (Nam)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label>Icon Path (Avatar)</label>
+                        <input type="text" id="dIcon" placeholder="Image/Av_Girl.png">
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <label>Text (Tiếng Nhật - Enter để xuống dòng)</label>
+                    <textarea id="dText" placeholder="おはよう ございます..."></textarea>
+                </div>
+                <div style="margin-top: 10px;">
+                    <label>Mean (Nghĩa Tiếng Việt)</label>
+                    <textarea id="dMean" placeholder="Chào buổi sáng..." onkeydown="handleEnterAdd(event)"></textarea>
+                </div>
+
+                <button class="btn btn-add-line" onclick="addLine()">+ Thêm dòng thoại này (Enter)</button>
+            </div>
+
+            <h4 style="margin: 15px 0 5px 0; color: #64748b;">Xem trước hội thoại (<span id="lineCount">0</span> dòng)</h4>
+            <ul id="currentDialogueList" class="d-list"></ul>
+            
+            <button class="btn btn-save-scene" onclick="saveScene()">💾 LƯU SCENE & NHẬP BÀI MỚI</button>
+        </div>
+    </div>
+
+    <div class="right-col">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+            <h3>Danh sách Scene đã lưu</h3>
+            <div id="masterList" style="flex: 1; overflow-y: auto; max-height: 200px; border: 1px solid #eee; padding: 10px; margin-bottom: 20px;">
+                <div style="color: #999; text-align: center;">Chưa có bài nào</div>
+            </div>
+
+            <h3>JSON Output</h3>
+            <textarea id="jsonOutput" class="code" readonly></textarea>
+            <button class="btn btn-copy" onclick="copyJSON()">Copy Toàn Bộ</button>
+            <button onclick="resetAll()" style="margin-top: 10px; background: none; border: none; color: red; cursor: pointer; text-decoration: underline;">Xóa tất cả làm lại</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let masterData = []; // Chứa tất cả các Scene
+    let currentLines = []; // Chứa các dòng thoại của Scene đang nhập
+
+    // --- XỬ LÝ DIALOGUE (LỜI THOẠI) ---
+
+    function addLine() {
+        // Lấy dữ liệu
+        const role = document.getElementById('dRole').value.trim();
+        const name = document.getElementById('dName').value.trim();
+        const side = document.getElementById('dSide').value;
+        const gender = document.getElementById('dGender').value;
+        const icon = document.getElementById('dIcon').value.trim();
+        const text = document.getElementById('dText').value; // Giữ nguyên xuống dòng
+        const mean = document.getElementById('dMean').value;
+
+        if (!text) {
+            document.getElementById('dText').focus();
+            return;
+        }
+
+        // Tạo object
+        const lineObj = {
+            role: role,
+            name: name,
+            text: text, // JSON stringify sẽ tự thêm \n
+            mean: mean,
+            icon: icon,
+            side: side,
+            gender: gender
+        };
+
+        currentLines.push(lineObj);
+        
+        // Render lại list xem trước
+        renderCurrentLines();
+
+        // Xóa Text và Mean để nhập câu tiếp theo
+        // QUAN TRỌNG: KHÔNG XÓA Role, Name, Icon... để nhập hội thoại cho nhanh
+        document.getElementById('dText').value = '';
+        document.getElementById('dMean').value = '';
+        document.getElementById('dText').focus();
+    }
+
+    function renderCurrentLines() {
+        const list = document.getElementById('currentDialogueList');
+        document.getElementById('lineCount').innerText = currentLines.length;
+        list.innerHTML = '';
+
+        currentLines.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = `d-item ${item.side}`; // Thêm class left/right để đổi màu viền
+            li.innerHTML = `
+                <div class="d-role">${item.role}</div>
+                <div style="flex: 1;">
+                    <div style="font-weight:bold; font-size:0.85em; color:#555;">${item.name} (${item.side})</div>
+                    <div>${item.text.replace(/\n/g, '<br>')}</div>
+                    <div style="color:#666; font-style:italic;">${item.mean}</div>
+                </div>
+                <button class="btn-del-mini" onclick="removeLine(${index})">×</button>
+            `;
+            list.appendChild(li);
+        });
+    }
+
+    function removeLine(index) {
+        currentLines.splice(index, 1);
+        renderCurrentLines();
+    }
+
+    function handleEnterAdd(e) {
+        if(e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // Chặn xuống dòng trong ô Mean
+            addLine();
+        }
+    }
+
+    // --- XỬ LÝ SCENE (BÀI HỌC) ---
+
+    function saveScene() {
+        const name = document.getElementById('sName').value.trim();
+        const title = document.getElementById('sTitle').value.trim();
+        const img = document.getElementById('sImg').value.trim();
+        const audio = document.getElementById('sAudio').value.trim();
+
+        if (!name || currentLines.length === 0) {
+            alert("Vui lòng nhập Tên bài (Name) và ít nhất 1 dòng thoại!");
+            return;
+        }
+
+        const sceneObj = {
+            name: name,
+            title: title,
+            img: img,
+            audio: audio,
+            dialogue: [...currentLines] // Copy mảng
+        };
+
+        masterData.push(sceneObj);
+
+        // Reset form để nhập bài tiếp theo
+        document.getElementById('sName').value = '';
+        document.getElementById('sTitle').value = '';
+        document.getElementById('sImg').value = '';
+        document.getElementById('sAudio').value = '';
+        
+        // Xóa danh sách thoại tạm
+        currentLines = [];
+        renderCurrentLines();
+        
+        // Reset luôn thông tin nhân vật để tránh nhầm lẫn sang bài mới
+        document.getElementById('dRole').value = '';
+        document.getElementById('dName').value = '';
+        document.getElementById('dIcon').value = '';
+
+        renderMasterList();
+        updateJSON();
+    }
+
+    function renderMasterList() {
+        const div = document.getElementById('masterList');
+        div.innerHTML = '';
+        masterData.forEach((item, idx) => {
+            div.innerHTML += `
+                <div class="scene-item">
+                    <span><b>${idx+1}.</b> ${item.name} - ${item.title}</span>
+                    <button style="color:red; border:none; background:none; cursor:pointer;" onclick="deleteScene(${idx})">Xóa</button>
+                </div>
+            `;
+        });
+    }
+
+    function deleteScene(idx) {
+        if(confirm("Xóa bài này?")) {
+            masterData.splice(idx, 1);
+            renderMasterList();
+            updateJSON();
+        }
+    }
+
+    // --- XUẤT JSON ---
+
+    function updateJSON() {
+        const str = JSON.stringify(masterData, null, 2); // Indent 2 space cho đẹp
+        document.getElementById('jsonOutput').value = str;
+    }
+
+    function copyJSON() {
+        const el = document.getElementById('jsonOutput');
+        el.select();
+        document.execCommand('copy');
+        alert("Đã copy JSON!");
+    }
+
+    function resetAll() {
+        if(confirm("Xóa toàn bộ dữ liệu làm lại từ đầu?")) {
+            masterData = [];
+            currentLines = [];
+            renderCurrentLines();
+            renderMasterList();
+            updateJSON();
+        }
+    }
+</script>
+
+</body>
+</html>

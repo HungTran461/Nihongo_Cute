@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Tạo Trắc Nghiệm (Quiz)</title>
+    <style>
+        :root { --primary: #8b5cf6; --bg: #f3f4f6; --card: #ffffff; --text: #1f2937; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        h2 { grid-column: span 2; text-align: center; color: #4c1d95; margin-bottom: 20px; }
+
+        /* Card */
+        .card { background: var(--card); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+        .card-header { font-weight: bold; font-size: 1.1em; color: var(--primary); border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 15px; }
+
+        /* Inputs */
+        label { display: block; font-weight: 600; font-size: 0.9em; margin-bottom: 5px; color: #4b5563; }
+        textarea { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 15px; height: 80px; font-family: sans-serif; }
+        textarea:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+        /* Options Area */
+        .opt-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .opt-radio { width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary); }
+        .opt-input { flex: 1; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; }
+        .opt-input:focus { border-color: var(--primary); outline: none; }
+        
+        /* Buttons */
+        .btn { padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; color: white; transition: 0.2s; width: 100%; margin-top: 5px; }
+        .btn-add { background: var(--primary); font-size: 1.1em; }
+        .btn-add:hover { background: #7c3aed; }
+        .btn-copy { background: #10b981; margin-top: 10px; }
+        .btn-secondary { background: #9ca3af; width: auto; padding: 5px 10px; font-size: 0.8em; margin-bottom: 10px; }
+
+        /* Output List */
+        .list-area { flex: 1; overflow-y: auto; max-height: 400px; margin-bottom: 20px; padding-right: 5px; }
+        .q-item { background: #fff; border: 1px solid #e5e7eb; padding: 12px; margin-bottom: 10px; border-radius: 6px; position: relative; }
+        .q-text { font-weight: bold; color: #111827; margin-bottom: 5px; font-size: 0.95em; }
+        .q-opts { padding-left: 20px; margin: 0; font-size: 0.9em; color: #4b5563; }
+        .q-opt-item.correct { color: #16a34a; font-weight: bold; text-decoration: underline; }
+        .btn-del { position: absolute; top: 10px; right: 10px; color: #ef4444; cursor: pointer; background: none; border: none; font-weight: bold; }
+
+        /* JSON Output */
+        textarea.code { background: #1f2937; color: #a5f3fc; font-family: monospace; height: 150px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <h2>Tool Nhập Trắc Nghiệm (JSON Format)</h2>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">1. Nhập câu hỏi & Đáp án</div>
+
+            <label>Câu hỏi (Question - q)</label>
+            <div style="font-size:0.8em; color:#666; margin-bottom:5px;">Hỗ trợ thẻ &lt;br&gt; để xuống dòng</div>
+            <textarea id="inpQ" placeholder="VD: わたし(私) ＿ マイク・ミラーです。"></textarea>
+
+            <label>Các lựa chọn (Options - opts)</label>
+            <div style="font-size:0.8em; color:#666; margin-bottom:10px;">Nhập nội dung và <b>Tích tròn</b> vào đáp án đúng:</div>
+            
+            <div id="optionsContainer">
+                </div>
+            
+            <div style="text-align: right;">
+                <button class="btn btn-secondary" onclick="addOptionRow()">+ Thêm lựa chọn</button>
+            </div>
+
+            <button class="btn btn-add" onclick="addQuiz()">⬇ THÊM CÂU HỎI NÀY</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>2. Danh sách (<span id="count">0</span>)</span>
+                <button onclick="resetAll()" style="float:right; font-size:0.8em; color:red; background:none; border:none; cursor:pointer;">Xóa tất cả</button>
+            </div>
+
+            <div id="listArea" class="list-area"></div>
+
+            <label>JSON Output:</label>
+            <textarea id="jsonOutput" class="code" readonly></textarea>
+            <button class="btn btn-copy" onclick="copyJSON()">Copy JSON</button>
+        </div>
+    </div>
+
+    <script>
+        let quizList = [];
+        
+        // Khởi tạo mặc định 3 dòng option khi load trang
+        document.addEventListener('DOMContentLoaded', () => {
+            renderOptionInputs(3); 
+        });
+
+        function renderOptionInputs(num) {
+            const container = document.getElementById('optionsContainer');
+            // Nếu đã có input, giữ nguyên, chỉ thêm mới nếu cần
+            // Ở đây ta làm đơn giản là append thêm
+            for(let i=0; i<num; i++) {
+                addOptionRow();
+            }
+        }
+
+        function addOptionRow() {
+            const container = document.getElementById('optionsContainer');
+            const div = document.createElement('div');
+            div.className = 'opt-row';
+            div.innerHTML = `
+                <input type="radio" name="correctAnswer" class="opt-radio" title="Chọn làm đáp án đúng">
+                <input type="text" class="opt-input" placeholder="Nhập lựa chọn...">
+                <span style="color:red; cursor:pointer; font-weight:bold; padding:0 5px;" onclick="this.parentElement.remove()">×</span>
+            `;
+            container.appendChild(div);
+        }
+
+        function addQuiz() {
+            const qText = document.getElementById('inpQ').value.trim();
+            const inputs = document.querySelectorAll('.opt-input');
+            const radios = document.querySelectorAll('.opt-radio');
+
+            // 1. Validate Question
+            if(!qText) {
+                alert("Chưa nhập câu hỏi!");
+                document.getElementById('inpQ').focus();
+                return;
+            }
+
+            // 2. Validate Options & Find Answer
+            let opts = [];
+            let ansIndex = -1;
+            let realIndex = 0;
+
+            // Duyệt qua từng dòng input
+            for(let i=0; i<inputs.length; i++) {
+                const val = inputs[i].value.trim();
+                
+                // Chỉ lấy những ô có dữ liệu
+                if(val) {
+                    opts.push(val);
+                    // Nếu radio dòng này được check thì đây là đáp án đúng
+                    if(radios[i].checked) {
+                        ansIndex = realIndex;
+                    }
+                    realIndex++;
+                }
+            }
+
+            if(opts.length < 2) {
+                alert("Cần ít nhất 2 lựa chọn!");
+                return;
+            }
+
+            if(ansIndex === -1) {
+                alert("Bạn chưa tích chọn đáp án đúng (Radio button)!");
+                return;
+            }
+
+            // 3. Add to list
+            quizList.push({
+                q: qText,
+                opts: opts,
+                ans: ansIndex
+            });
+
+            // 4. Reset & Update
+            document.getElementById('inpQ').value = '';
+            // Reset các ô input option
+            inputs.forEach(inp => inp.value = '');
+            radios.forEach(rad => rad.checked = false);
+            // Focus lại câu hỏi
+            document.getElementById('inpQ').focus();
+            
+            renderList();
+        }
+
+        function renderList() {
+            const listArea = document.getElementById('listArea');
+            document.getElementById('count').innerText = quizList.length;
+            listArea.innerHTML = '';
+
+            quizList.forEach((item, idx) => {
+                // Tạo HTML hiển thị list options
+                let optsHtml = '';
+                item.opts.forEach((opt, optIdx) => {
+                    const isCorrect = (optIdx === item.ans) ? 'correct' : '';
+                    const mark = (optIdx === item.ans) ? '✔ ' : '- ';
+                    optsHtml += `<li class="q-opt-item ${isCorrect}">${mark}${opt}</li>`;
+                });
+
+                listArea.innerHTML += `
+                    <div class="q-item">
+                        <div class="q-text">Q${idx+1}: ${item.q.replace(/</g, '&lt;')}</div>
+                        <ul class="q-opts" style="list-style:none; padding-left:10px;">
+                            ${optsHtml}
+                        </ul>
+                        <button class="btn-del" onclick="deleteItem(${idx})">×</button>
+                    </div>
+                `;
+            });
+
+            // Update JSON
+            document.getElementById('jsonOutput').value = JSON.stringify(quizList, null, 2);
+        }
+
+        function deleteItem(idx) {
+            quizList.splice(idx, 1);
+            renderList();
+        }
+
+        function resetAll() {
+            if(confirm("Xóa toàn bộ danh sách?")) {
+                quizList = [];
+                renderList();
+            }
+        }
+
+        function copyJSON() {
+            const el = document.getElementById('jsonOutput');
+            el.select();
+            document.execCommand('copy');
+            // alert("Đã copy!");
+        }
+    </script>
+</body>
+</html>

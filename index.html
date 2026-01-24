@@ -26,6 +26,7 @@
             <ul>
                 <li><a href="#" onclick="closeSection()">🏠︎ Trang chủ</a></li>
                 <li><a href="#" onclick="openLeaderboard()">🏆 Bảng xếp hạng</a></li>
+                <li><a href="#" onclick="openTools()"><i class="fas fa-tools"></i> Admin Tools</a></li>
             </ul>
         </nav>
         <button id="themeToggle" onclick="toggleTheme()" title="Chế độ tối/sáng">
@@ -648,6 +649,66 @@
 
             <div class="ranking-list" id="rankingList">
                 </div>
+        </div>
+    </section>
+    <section id="toolsSection" class="section-content" style="display:none;">
+        <div class="section-header">
+            <h2><i class="fas fa-tools" style="color: var(--secondary);"></i> Công cụ Admin</h2>
+            <button class="btn-back" onclick="closeTools()"><i class="fas fa-arrow-left"></i> Quay lại</button>
+        </div>
+
+        <div class="tools-container">
+            <p class="tools-intro">Chọn công cụ để tạo dữ liệu JSON:</p>
+            
+            <div class="tools-grid">
+                <a href="input_vocab.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #ff9a9e;"><i class="fas fa-font"></i></div>
+                    <div class="tool-info">
+                        <h3>Từ vựng</h3>
+                        <p>Định dạng: { k, r, m }</p>
+                    </div>
+                </a>
+
+                <a href="input_grammar.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #fad0c4;"><i class="fas fa-book-open"></i></div>
+                    <div class="tool-info">
+                        <h3>Ngữ pháp</h3>
+                        <p>Cấu trúc câu & Ví dụ</p>
+                    </div>
+                </a>
+
+                <a href="input_kaiwa.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #84fab0;"><i class="fas fa-comments"></i></div>
+                    <div class="tool-info">
+                        <h3>Hội thoại (Kaiwa)</h3>
+                        <p>Nhập vai A/B, Icon</p>
+                    </div>
+                </a>
+
+                <a href="input_ex_scramble.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #fccb90;"><i class="fas fa-random"></i></div>
+                    <div class="tool-info">
+                        <h3>Bài tập SXTT câu</h3>
+                        <p>Trộn từ (Shuffle)</p>
+                    </div>
+                </a>
+
+                <a href="input_ex_listen.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #a18cd1;"><i class="fas fa-list-ol"></i></div>
+                    <div class="tool-info">
+                        <h3>Bài tập nghe</h3>
+                        <p>Có Audio & Title</p>
+                    </div>
+                </a>
+
+                 <a href="input_ex_choice.html" target="_blank" class="tool-card">
+                    <div class="tool-icon" style="background: #e0c3fc;"><i class="fas fa-check-circle"></i></div>
+                    <div class="tool-info">
+                        <h3>Bài tập TN</h3>
+                        <p>Câu hỏi & Đáp án</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
     <footer>

@@ -2137,3 +2137,32 @@ function nextWritingQuestion() {
     wIndex++;
     renderWritingQuestion();
 }
+
+// Hàm mở Section Tools
+function openTools() {
+    // Ẩn các section khác (nếu đang mở)
+    const mainMenu = document.getElementById('mainMenu');
+    const heroSection = document.getElementById('heroSection');
+    if (mainMenu) mainMenu.style.display = 'none';
+    if (heroSection) heroSection.style.display = 'none';
+    
+    document.querySelectorAll('.section-content').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+    });
+
+    // Hiện section Tools
+    document.getElementById('toolsSection').style.display = 'block';
+}
+
+// Hàm đóng Tools (quay về trang chủ hoặc ẩn đi)
+function closeTools() {
+    document.getElementById('toolsSection').style.display = 'none';
+    document.querySelectorAll('.section-content').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+    });
+    document.getElementById('mainMenu').style.display = 'grid';
+    document.getElementById('heroSection').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Tạo JSON Linh Hoạt (Nhiều đáp án)</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        
+        /* Layout */
+        .container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .editor-section { flex: 6; min-width: 450px; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .preview-section { flex: 4; min-width: 350px; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+        /* Inputs */
+        .form-group { margin-bottom: 20px; }
+        label { font-weight: 600; display: block; margin-bottom: 8px; color: #333; }
+        input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        input[type="text"]:focus { border-color: #007bff; outline: none; }
+
+        /* Dynamic Options Area */
+        .options-container { border: 1px dashed #bbb; padding: 15px; border-radius: 6px; background: #fafafa; }
+        .option-row { display: flex; align-items: center; margin-bottom: 10px; gap: 10px; animation: fadeIn 0.3s; }
+        .option-label { width: 25px; font-weight: bold; color: #555; text-align: center;}
+        .opt-text { flex: 1; }
+        .btn-remove-opt { background: #ff4d4d; color: white; border: none; width: 30px; height: 30px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;}
+        
+        /* Buttons */
+        .btn { padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .btn-add-opt { background: #6c757d; color: white; font-size: 0.9em; padding: 8px 15px; margin-top: 5px; }
+        .btn-add-q { background: #28a745; color: white; width: 100%; margin-top: 20px; font-size: 1.1em; }
+        .btn-add-q:hover { background: #218838; }
+        .btn-gen { background: #007bff; color: white; width: 100%; }
+        
+        /* Result */
+        textarea { width: 100%; height: 350px; font-family: 'Consolas', monospace; padding: 15px; background: #282c34; color: #abb2bf; border-radius: 6px; margin-top: 15px; border: none; resize: vertical; }
+
+        /* List Items */
+        .q-item { border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+        .q-content { font-size: 0.95em; }
+        .q-badge { font-size: 0.8em; background: #e9ecef; padding: 2px 6px; border-radius: 4px; color: #495057; display: block; margin-top: 4px;}
+        .btn-del-q { color: #dc3545; background: none; border: 1px solid #dc3545; padding: 4px 8px; font-size: 0.8em; border-radius: 4px; }
+        .btn-del-q:hover { background: #dc3545; color: white; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center; color: #444;">Công cụ nhập liệu Mondai (Đa năng)</h2>
+
+    <div class="container">
+        <div class="editor-section">
+            <div class="form-group">
+                <label>Tiêu đề bài tập (Title)</label>
+                <input type="text" id="mainTitle" value="Mondai 1">
+            </div>
+            <div class="form-group">
+                <label>Audio File</label>
+                <input type="text" id="mainAudio" placeholder="Sound/01.mp3">
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+            <div class="form-group">
+                <label>Câu hỏi mới</label>
+                <input type="text" id="qInput" placeholder="Nhập nội dung câu hỏi...">
+            </div>
+
+            <label>Các phương án lựa chọn:</label>
+            <div class="options-container" id="optionsWrapper">
+                </div>
+            
+            <button class="btn btn-add-opt" onclick="addNewOptionRow()">+ Thêm dòng lựa chọn</button>
+            <button class="btn btn-add-q" onclick="saveQuestionToStack()">LƯU CÂU HỎI NÀY</button>
+        </div>
+
+        <div class="preview-section">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label style="margin:0;">Danh sách câu hỏi (<span id="qCount">0</span>)</label>
+                <button onclick="clearAll()" style="font-size: 0.8em; cursor:pointer; color: red; background: none; border: none;">Xóa hết</button>
+            </div>
+            
+            <div id="previewList" style="max-height: 300px; overflow-y: auto; margin-top: 10px; margin-bottom: 20px;">
+                </div>
+
+            <button class="btn btn-gen" onclick="exportJSON()">XUẤT MÃ JSON</button>
+            <textarea id="jsonOutput" readonly onclick="this.select()"></textarea>
+        </div>
+    </div>
+
+    <script>
+        // Mảng chứa dữ liệu chính
+        let dataStore = [];
+
+        // Khởi tạo mặc định 4 dòng lựa chọn khi mở web
+        window.onload = function() {
+            renderOptionRows(4); 
+        };
+
+        // Hàm vẽ lại các ô nhập option (giữ nguyên giá trị cũ nếu có)
+        function renderOptionRows(count) {
+            const wrapper = document.getElementById('optionsWrapper');
+            // Nếu muốn giữ giá trị cũ thì phức tạp hơn, ở đây ta làm đơn giản: thêm dòng mới
+            for(let i=0; i<count; i++){
+                addNewOptionRow();
+            }
+        }
+
+        // Thêm 1 dòng option vào giao diện
+        function addNewOptionRow() {
+            const wrapper = document.getElementById('optionsWrapper');
+            const index = wrapper.children.length; // 0, 1, 2...
+            
+            const div = document.createElement('div');
+            div.className = 'option-row';
+            div.innerHTML = `
+                <span class="option-label"></span>
+                <input type="radio" name="correctAns" value="temp" title="Chọn làm đáp án đúng">
+                <input type="text" class="opt-text" placeholder="Nhập đáp án...">
+                <button class="btn-remove-opt" onclick="removeOptionRow(this)" title="Xóa dòng này">×</button>
+            `;
+            wrapper.appendChild(div);
+            updateLabels();
+        }
+
+        // Xóa 1 dòng option
+        function removeOptionRow(btn) {
+            const row = btn.parentElement;
+            row.remove();
+            updateLabels();
+        }
+
+        // Cập nhật nhãn A, B, C, D... tự động
+        function updateLabels() {
+            const rows = document.querySelectorAll('.option-row');
+            rows.forEach((row, index) => {
+                const label = row.querySelector('.option-label');
+                // Chuyển 0->A, 1->B...
+                label.innerText = String.fromCharCode(65 + index) + "."; 
+            });
+        }
+
+        // --- LOGIC CHÍNH ---
+
+        function saveQuestionToStack() {
+            const qText = document.getElementById('qInput').value.trim();
+            const rows = document.querySelectorAll('.option-row');
+            
+            if(!qText) { alert("Chưa nhập câu hỏi!"); return; }
+            if(rows.length < 2) { alert("Cần ít nhất 2 lựa chọn!"); return; }
+
+            let opts = [];
+            let ansIndex = -1;
+            let hasEmpty = false;
+
+            rows.forEach((row, index) => {
+                const val = row.querySelector('.opt-text').value.trim();
+                const isChecked = row.querySelector('input[type="radio"]').checked;
+                
+                if(!val) hasEmpty = true;
+                opts.push(val);
+                
+                if(isChecked) ansIndex = index;
+            });
+
+            if(hasEmpty) { alert("Vui lòng điền đầy đủ nội dung các lựa chọn!"); return; }
+            if(ansIndex === -1) { alert("Hãy tích chọn 1 đáp án đúng!"); return; }
+
+            // Thêm vào mảng dữ liệu
+            dataStore.push({
+                q: qText,
+                opts: opts,
+                ans: ansIndex
+            });
+
+            // Reset form
+            document.getElementById('qInput').value = '';
+            // Clear text inputs but keep rows
+            rows.forEach(r => {
+                r.querySelector('.opt-text').value = '';
+                r.querySelector('input[type="radio"]').checked = false;
+            });
+            document.getElementById('qInput').focus();
+
+            renderPreviewList();
+        }
+
+        function renderPreviewList() {
+            const container = document.getElementById('previewList');
+            document.getElementById('qCount').innerText = dataStore.length;
+            container.innerHTML = '';
+
+            dataStore.forEach((item, idx) => {
+                // Tạo text hiển thị đáp án đúng (A, B, C...)
+                const charAns = String.fromCharCode(65 + item.ans); 
+                
+                const div = document.createElement('div');
+                div.className = 'q-item';
+                div.innerHTML = `
+                    <div class="q-content">
+                        <strong>#${idx + 1}:</strong> ${item.q}
+                        <span class="q-badge">${item.opts.length} lựa chọn | Đáp án: ${charAns}</span>
+                    </div>
+                    <button class="btn btn-del-q" onclick="deleteQuestion(${idx})">Xóa</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function deleteQuestion(index) {
+            dataStore.splice(index, 1);
+            renderPreviewList();
+        }
+
+        function clearAll() {
+            if(confirm("Xóa tất cả câu hỏi?")) {
+                dataStore = [];
+                renderPreviewList();
+            }
+        }
+
+        function exportJSON() {
+            if(dataStore.length === 0) { alert("Chưa có dữ liệu!"); return; }
+
+            const title = document.getElementById('mainTitle').value;
+            const audio = document.getElementById('mainAudio').value;
+
+            const finalObj = {
+                title: title,
+                audio: audio,
+                questions: dataStore
+            };
+
+            const str = JSON.stringify(finalObj, null, 2);
+            document.getElementById('jsonOutput').value = str + ",";
+        }
+    </script>
+</body>
+</html>

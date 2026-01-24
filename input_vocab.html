@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Nhập Từ Vựng (K-R-M)</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f9; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h2 { text-align: center; color: #333; }
+        
+        /* Input Area */
+        .input-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;}
+        .form-group { flex: 1; min-width: 150px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9em; color: #555; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        input:focus { border-color: #007bff; outline: none; background: #f0f8ff; }
+
+        /* Button */
+        .btn-add { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; height: 38px;}
+        .btn-add:hover { background: #218838; }
+        
+        /* Preview Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #007bff; color: white; font-size: 0.9em; }
+        tr:hover { background-color: #f1f1f1; }
+        .btn-del { color: red; cursor: pointer; border: none; background: none; font-weight: bold; }
+
+        /* Result Area */
+        .result-area { margin-top: 20px; }
+        textarea { width: 100%; height: 200px; padding: 10px; font-family: monospace; background: #2d2d2d; color: #a9b7c6; border-radius: 4px; border: none; }
+        .action-bar { margin-top: 10px; display: flex; justify-content: space-between; }
+        .btn-copy { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Nhập Từ Vựng (K - R - M)</h2>
+
+    <div class="input-card">
+        <div class="form-group">
+            <label>Từ vựng (k)</label>
+            <input type="text" id="kInput" placeholder="Ví dụ: テニス">
+        </div>
+        <div class="form-group">
+            <label>Cách đọc (r)</label>
+            <input type="text" id="rInput" placeholder="Ví dụ: テニス">
+        </div>
+        <div class="form-group">
+            <label>Ý nghĩa (m)</label>
+            <input type="text" id="mInput" placeholder="Ví dụ: Quần vợt" onkeydown="checkEnter(event)">
+        </div>
+        <button class="btn-add" onclick="addItem()">Thêm</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50px;">#</th>
+                <th>K (Từ)</th>
+                <th>R (Đọc)</th>
+                <th>M (Nghĩa)</th>
+                <th style="width: 50px;">Xóa</th>
+            </tr>
+        </thead>
+        <tbody id="previewBody">
+            </tbody>
+    </table>
+
+    <div class="result-area">
+        <h3>Kết quả JSON:</h3>
+        <textarea id="output" readonly></textarea>
+        <div class="action-bar">
+            <span>Số lượng: <b id="count">0</b> từ</span>
+            <button class="btn-copy" onclick="copyResult()">Copy tất cả</button>
+        </div>
+    </div>
+
+    <script>
+        let vocabList = [];
+
+        function addItem() {
+            const k = document.getElementById('kInput');
+            const r = document.getElementById('rInput');
+            const m = document.getElementById('mInput');
+
+            if (!k.value.trim()) {
+                k.focus();
+                return;
+            }
+
+            // Thêm vào mảng
+            vocabList.push({
+                k: k.value.trim(),
+                r: r.value.trim(),
+                m: m.value.trim()
+            });
+
+            // Reset ô nhập
+            k.value = '';
+            r.value = '';
+            m.value = '';
+            
+            // Focus lại vào ô đầu tiên để nhập tiếp
+            k.focus();
+
+            render();
+        }
+
+        function removeItem(index) {
+            vocabList.splice(index, 1);
+            render();
+        }
+
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                addItem();
+            }
+        }
+
+        function render() {
+            // 1. Vẽ lại bảng xem trước
+            const tbody = document.getElementById('previewBody');
+            tbody.innerHTML = '';
+            
+            vocabList.forEach((item, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td style="font-weight:bold; color:#007bff;">${item.k}</td>
+                        <td>${item.r}</td>
+                        <td>${item.m}</td>
+                        <td><button class="btn-del" onclick="removeItem(${index})">×</button></td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+
+            document.getElementById('count').innerText = vocabList.length;
+
+            // 2. Xuất chuỗi JSON kết quả
+            const outputArea = document.getElementById('output');
+            
+            // Tạo chuỗi theo đúng format yêu cầu: { "k": "...", ... }, xuống dòng
+            let resultString = vocabList.map(item => {
+                return `{ "k": "${item.k}", "r": "${item.r}", "m": "${item.m}" },`;
+            }).join('\n');
+
+            outputArea.value = resultString;
+        }
+
+        function copyResult() {
+            const outputArea = document.getElementById('output');
+            if(!outputArea.value) return;
+            outputArea.select();
+            document.execCommand("copy");
+            alert("Đã copy dữ liệu!");
+        }
+    </script>
+
+</body>
+</html>

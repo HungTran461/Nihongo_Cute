@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập Liệu Ngữ Pháp (Clean Version)</title>
+    <style>
+        :root { --primary: #4f46e5; --bg: #f3f4f6; --white: #ffffff; --text: #1f2937; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.5; }
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        /* CARD STYLES */
+        .card { background: var(--white); border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 20px; border: 1px solid #e5e7eb; }
+        .card-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+        
+        /* FORM INPUTS */
+        .grid { display: grid; gap: 15px; }
+        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 5px; color: #4b5563; }
+        input, textarea { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; box-sizing: border-box; transition: border 0.2s; }
+        input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+        
+        /* EXAMPLE SECTION */
+        .ex-area { background: #f9fafb; padding: 15px; border-radius: 8px; border: 1px dashed #9ca3af; }
+        .ex-list { list-style: none; padding: 0; margin: 10px 0 0 0; }
+        .ex-item { display: flex; justify-content: space-between; align-items: center; background: white; padding: 8px 12px; margin-bottom: 5px; border-radius: 4px; border: 1px solid #e5e7eb; font-size: 0.9em; }
+        
+        /* BUTTONS */
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-primary { background: var(--primary); color: white; width: 100%; font-size: 1.1rem; margin-top: 10px; }
+        .btn-primary:hover { background: #4338ca; }
+        .btn-secondary { background: #10b981; color: white; font-size: 0.9rem; padding: 8px 16px; }
+        .btn-danger { background: #ef4444; color: white; padding: 4px 10px; font-size: 0.75rem; margin-left: 10px; }
+        
+        /* OUTPUT AREA */
+        .output-container { position: relative; }
+        textarea.code { width: 100%; height: 200px; background: #111827; color: #a5f3fc; font-family: monospace; padding: 15px; border-radius: 8px; font-size: 0.9rem; }
+        
+        /* SAVED LIST */
+        .saved-item { background: white; border-left: 5px solid var(--primary); padding: 15px; margin-bottom: 10px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .badge { background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center; color: #374151;">Tool Nhập Ngữ Pháp Pro</h2>
+
+    <div class="card">
+        <div class="card-header">1. Nhập thông tin cấu trúc</div>
+        <div class="grid">
+            <div>
+                <label>Mẫu câu (Title)</label>
+                <input type="text" id="title" placeholder="VD: ～とおります">
+            </div>
+            <div>
+                <label>Ý nghĩa (Mean)</label>
+                <input type="text" id="mean" placeholder="VD: Làm đúng theo...">
+            </div>
+            <div>
+                <label>Ghi chú (Note)</label>
+                <input type="text" id="note" placeholder="VD: Dùng cho danh từ và động từ...">
+            </div>
+
+            <div class="ex-area">
+                <label style="margin-bottom: 10px; color: #374151;">Thêm ví dụ (Examples)</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="exJ" placeholder="Câu Nhật..." style="flex: 1;">
+                    <input type="text" id="exV" placeholder="Câu Việt..." style="flex: 1;" onkeydown="handleEnterEx(event)">
+                    <button class="btn btn-secondary" onclick="addEx()">Thêm</button>
+                </div>
+                <ul id="tempExList" class="ex-list"></ul>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" onclick="saveToMaster()">LƯU CẤU TRÚC NÀY ⬇</button>
+    </div>
+
+    <div id="masterListArea">
+        </div>
+
+    <div class="card output-container">
+        <div class="card-header" style="border:none; margin-bottom:10px; display:flex; justify-content:space-between;">
+            <span>Kết quả JSON</span>
+            <button class="btn btn-secondary" style="background:#6366f1;" onclick="copyJSON()">Copy Toàn Bộ</button>
+        </div>
+        <textarea id="jsonOutput" class="code" readonly></textarea>
+    </div>
+</div>
+
+<script>
+    let masterData = []; // Danh sách tổng
+    let currentEx = [];  // Danh sách ví dụ tạm thời
+
+    // 1. Xử lý phần Ví dụ (Example)
+    function addEx() {
+        const j = document.getElementById('exJ').value.trim();
+        const v = document.getElementById('exV').value.trim();
+        
+        if(!j) { document.getElementById('exJ').focus(); return; }
+
+        currentEx.push({ j, v });
+        
+        // Reset input
+        document.getElementById('exJ').value = '';
+        document.getElementById('exV').value = '';
+        document.getElementById('exJ').focus();
+        
+        renderTempEx();
+    }
+
+    function renderTempEx() {
+        const list = document.getElementById('tempExList');
+        list.innerHTML = '';
+        currentEx.forEach((item, idx) => {
+            list.innerHTML += `
+                <li class="ex-item">
+                    <span><b>J:</b> ${item.j} <br> <span style="color:#6b7280">V: ${item.v}</span></span>
+                    <button class="btn btn-danger" onclick="removeTempEx(${idx})">Xóa</button>
+                </li>
+            `;
+        });
+    }
+
+    function removeTempEx(idx) {
+        currentEx.splice(idx, 1);
+        renderTempEx();
+    }
+
+    function handleEnterEx(e) {
+        if(e.key === "Enter") addEx();
+    }
+
+    // 2. Xử lý Lưu cấu trúc (Master)
+    function saveToMaster() {
+        const title = document.getElementById('title').value.trim();
+        const mean = document.getElementById('mean').value.trim();
+        const note = document.getElementById('note').value.trim();
+
+        if(!title) { alert("Vui lòng nhập Mẫu câu (Title)!"); return; }
+
+        const newObj = {
+            title: title,
+            mean: mean,
+            note: note,
+            ex: [...currentEx]
+        };
+
+        masterData.push(newObj);
+        
+        // Reset toàn bộ form
+        document.getElementById('title').value = '';
+        document.getElementById('mean').value = '';
+        document.getElementById('note').value = '';
+        currentEx = [];
+        renderTempEx();
+        document.getElementById('title').focus();
+
+        renderMasterList();
+        updateJSON();
+    }
+
+    // 3. Hiển thị & Xuất dữ liệu
+    function renderMasterList() {
+        const area = document.getElementById('masterListArea');
+        area.innerHTML = '';
+        
+        masterData.forEach((item, idx) => {
+            area.innerHTML += `
+                <div class="saved-item">
+                    <div style="display:flex; justify-content:space-between; align-items:start;">
+                        <div>
+                            <div style="font-weight:bold; font-size:1.1em; color:#4f46e5;">#${idx+1}. ${item.title}</div>
+                            <div style="margin: 5px 0;">${item.mean}</div>
+                            <span class="badge">${item.ex.length} ví dụ</span>
+                        </div>
+                        <button class="btn btn-danger" onclick="deleteMasterItem(${idx})">Xóa</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function deleteMasterItem(idx) {
+        if(confirm("Bạn muốn xóa mục này?")) {
+            masterData.splice(idx, 1);
+            renderMasterList();
+            updateJSON();
+        }
+    }
+
+    function updateJSON() {
+        const str = JSON.stringify(masterData, null, 4);
+        document.getElementById('jsonOutput').value = str;
+    }
+
+    function copyJSON() {
+        const el = document.getElementById('jsonOutput');
+        el.select();
+        document.execCommand("copy");
+        alert("Đã copy vào bộ nhớ tạm!");
+    }
+</script>
+
+</body>
+</html>

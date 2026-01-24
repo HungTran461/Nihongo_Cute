@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Tạo Bài Tập Sắp Xếp Câu</title>
+    <style>
+        :root { --primary: #0ea5e9; --bg: #f1f5f9; --card: #ffffff; --text: #334155; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        h2 { text-align: center; color: #1e293b; grid-column: span 2; margin-bottom: 30px; }
+
+        /* Card Styles */
+        .card { background: var(--card); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+        .card-header { font-weight: bold; font-size: 1.1em; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 15px; }
+
+        /* Inputs */
+        label { display: block; font-weight: 600; font-size: 0.9em; margin-bottom: 5px; color: #64748b; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; margin-bottom: 15px; font-size: 1em; }
+        input:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+        /* Chips Display */
+        .chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; min-height: 40px; padding: 10px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; }
+        .chip { padding: 5px 10px; border-radius: 4px; font-size: 0.9em; font-weight: bold; }
+        .chip-correct { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+        .chip-distractor { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+        /* Buttons */
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; color: white; transition: 0.2s; }
+        .btn-add { background: #22c55e; width: 100%; font-size: 1.1em; }
+        .btn-add:hover { background: #16a34a; }
+        .btn-copy { background: #6366f1; margin-top: 10px; width: 100%; }
+        
+        /* List & Output */
+        .item-list { flex: 1; overflow-y: auto; max-height: 400px; margin-bottom: 20px; }
+        .saved-item { background: #fff; border: 1px solid #e2e8f0; padding: 10px; margin-bottom: 10px; border-radius: 6px; position: relative; }
+        .btn-del { position: absolute; top: 10px; right: 10px; color: red; cursor: pointer; background: none; border: none; font-weight: bold; }
+        textarea.code { background: #1e293b; color: #a5f3fc; font-family: monospace; height: 200px; border: none; }
+
+        /* Helper Text */
+        .hint { font-size: 0.8em; color: #94a3b8; margin-top: -10px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <h2>Tool Nhập Liệu Sắp Xếp Câu</h2>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">1. Nhập thông tin câu hỏi</div>
+
+            <label>Câu hỏi / Nghĩa Tiếng Việt (Question)</label>
+            <input type="text" id="inpQuestion" placeholder="VD: Tôi là sinh viên.">
+
+            <label>Các từ ĐÚNG theo thứ tự (Correct Words)</label>
+            <div class="hint">Nhập các từ cách nhau bằng dấu cách. Ví dụ: わたし は がくせい です</div>
+            <input type="text" id="inpCorrectStr" placeholder="VD: わたし は がくせい です" oninput="previewChips()">
+
+            <label>Các từ GÂY NHIỄU (Distractors) - Nếu có</label>
+            <div class="hint">Các từ sai để làm khó người học. Cách nhau bằng dấu cách.</div>
+            <input type="text" id="inpDistractStr" placeholder="VD: あなた せんせい" oninput="previewChips()">
+
+            <label>Xem trước (Preview):</label>
+            <div id="previewArea" class="chip-container">
+                <span style="color:#999; font-style:italic;">Chưa có dữ liệu...</span>
+            </div>
+
+            <button class="btn btn-add" onclick="addItem()">⬇ THÊM CÂU NÀY</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>2. Danh sách đã tạo (<span id="count">0</span>)</span>
+                <button onclick="clearAll()" style="float:right; font-size:0.8em; color:red; background:none; border:none; cursor:pointer;">Xóa hết</button>
+            </div>
+
+            <div id="listArea" class="item-list">
+                </div>
+
+            <label>Kết quả JSON:</label>
+            <textarea id="jsonOutput" class="code" readonly></textarea>
+            <button class="btn btn-copy" onclick="copyJSON()">Copy JSON</button>
+        </div>
+    </div>
+
+    <script>
+        let masterList = [];
+
+        function previewChips() {
+            const correctStr = document.getElementById('inpCorrectStr').value.trim();
+            const distractStr = document.getElementById('inpDistractStr').value.trim();
+            const container = document.getElementById('previewArea');
+
+            if(!correctStr && !distractStr) {
+                container.innerHTML = '<span style="color:#999; font-style:italic;">Chưa có dữ liệu...</span>';
+                return;
+            }
+
+            container.innerHTML = '';
+
+            // Tách chuỗi bằng dấu cách (hỗ trợ cả dấu cách full-width tiếng Nhật)
+            const correctArr = correctStr ? correctStr.split(/\s+/) : [];
+            const distractArr = distractStr ? distractStr.split(/\s+/) : [];
+
+            correctArr.forEach(word => {
+                container.innerHTML += `<span class="chip chip-correct">${word}</span>`;
+            });
+            distractArr.forEach(word => {
+                container.innerHTML += `<span class="chip chip-distractor">${word}</span>`;
+            });
+        }
+
+        function addItem() {
+            const question = document.getElementById('inpQuestion').value.trim();
+            const correctStr = document.getElementById('inpCorrectStr').value.trim();
+            const distractStr = document.getElementById('inpDistractStr').value.trim();
+
+            if (!question || !correctStr) {
+                alert("Vui lòng nhập Câu hỏi và Đáp án đúng!");
+                return;
+            }
+
+            // Xử lý mảng
+            const correctArr = correctStr.split(/\s+/); // Mảng đáp án đúng
+            const distractArr = distractStr ? distractStr.split(/\s+/) : []; // Mảng gây nhiễu
+            
+            // Tạo mảng parts: Gộp cả 2 và trộn (shuffle)
+            let allParts = [...correctArr, ...distractArr];
+            allParts = shuffleArray(allParts);
+
+            // Tạo object kết quả
+            const item = {
+                question: question,
+                parts: allParts,
+                correct: correctArr
+            };
+
+            masterList.push(item);
+
+            // Reset form
+            document.getElementById('inpQuestion').value = '';
+            document.getElementById('inpCorrectStr').value = '';
+            document.getElementById('inpDistractStr').value = '';
+            previewChips();
+            document.getElementById('inpQuestion').focus();
+
+            renderList();
+        }
+
+        // Hàm trộn mảng (Fisher-Yates Shuffle)
+        function shuffleArray(array) {
+            let currentIndex = array.length, randomIndex;
+            // Copy mảng để không ảnh hưởng mảng gốc nếu cần
+            let newArr = [...array];
+
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [newArr[currentIndex], newArr[randomIndex]] = [newArr[randomIndex], newArr[currentIndex]];
+            }
+            return newArr;
+        }
+
+        function renderList() {
+            const listEl = document.getElementById('listArea');
+            const countEl = document.getElementById('count');
+            const jsonEl = document.getElementById('jsonOutput');
+
+            countEl.innerText = masterList.length;
+            listEl.innerHTML = '';
+
+            masterList.forEach((item, index) => {
+                listEl.innerHTML += `
+                    <div class="saved-item">
+                        <div style="font-weight:bold; color:#0ea5e9;">Q: ${item.question}</div>
+                        <div style="font-size:0.9em; margin:5px 0;">
+                            <b>Parts:</b> [${item.parts.join(', ')}]
+                        </div>
+                        <div style="font-size:0.9em; color:green;">
+                            <b>Correct:</b> ${item.correct.join(' -> ')}
+                        </div>
+                        <button class="btn-del" onclick="deleteItem(${index})">×</button>
+                    </div>
+                `;
+            });
+
+            // Xuất JSON
+            jsonEl.value = JSON.stringify(masterList, null, 2);
+        }
+
+        function deleteItem(index) {
+            masterList.splice(index, 1);
+            renderList();
+        }
+
+        function clearAll() {
+            if(confirm("Xóa toàn bộ?")) {
+                masterList = [];
+                renderList();
+            }
+        }
+
+        function copyJSON() {
+            const el = document.getElementById('jsonOutput');
+            el.select();
+            document.execCommand('copy');
+            alert("Đã copy JSON!");
+        }
+    </script>
+</body>
+</html>
