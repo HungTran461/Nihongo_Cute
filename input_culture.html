@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công cụ tạo Data Văn Hóa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #ff9a9e; --bg: #f9f9f9; --text: #333; }
+        * { box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+        
+        body { background: var(--bg); padding: 20px; color: var(--text); }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        h1 { text-align: center; color: var(--primary); margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        textarea { height: 80px; resize: vertical; }
+        
+        /* Section borders */
+        .section-box { border: 2px dashed #ffced1; padding: 15px; border-radius: 12px; margin-bottom: 20px; background: #fffbfb; }
+        .section-title { font-size: 1.1rem; color: #ff758c; margin-bottom: 10px; display: block; }
+
+        /* Dynamic Rows */
+        .dynamic-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+        .btn-remove { background: #ff4757; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+        
+        /* Buttons */
+        .btn-add { background: #2ed573; color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9rem; }
+        .btn-generate { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        .btn-generate:hover { background: #ff758c; }
+
+        /* Output */
+        #outputArea { margin-top: 30px; position: relative; }
+        #jsonOutput { width: 100%; height: 300px; background: #2d3436; color: #55efc4; padding: 15px; border-radius: 10px; font-family: monospace; }
+        .btn-copy { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 Nhập Liệu Văn Hóa</h1>
+    
+    <div class="form-group">
+        <label>ID (Ví dụ: c5, c6...):</label>
+        <input type="text" id="id" placeholder="Nhập ID duy nhất">
+    </div>
+
+    <div class="dynamic-row">
+        <div style="flex:1">
+            <label>Tiêu đề:</label>
+            <input type="text" id="title" placeholder="Tên lễ hội / món ăn">
+        </div>
+        <div style="width: 150px;">
+            <label>Thể loại:</label>
+            <select id="category">
+                <option value="festival">Lễ hội</option>
+                <option value="cuisine">Ẩm thực</option>
+                <option value="art">Nghệ thuật</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="dynamic-row">
+        <div style="flex:1">
+            <label>Tag (Thẻ):</label>
+            <input type="text" id="tag" placeholder="VD: Mùa Hè, Cá sống...">
+        </div>
+        <div style="flex:1">
+            <label>Thời gian:</label>
+            <input type="text" id="time" placeholder="VD: Tháng 8">
+        </div>
+        <div style="flex:1">
+            <label>Địa điểm:</label>
+            <input type="text" id="location" placeholder="VD: Toàn quốc">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Mô tả ngắn:</label>
+        <textarea id="short_desc" style="height: 50px"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Mô tả chi tiết:</label>
+        <textarea id="full_desc" style="height: 100px"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label>Câu chuyện / Sự tích (Story):</label>
+        <textarea id="story"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Sự thật thú vị (Fun Fact):</label>
+        <textarea id="fun_fact"></textarea>
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">🖼️ Hình ảnh (Dán link ảnh hoặc đường dẫn)</span>
+        <div id="imageContainer"></div>
+        <button type="button" class="btn-add" onclick="addImageRow()">+ Thêm ảnh</button>
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">📚 Từ vựng liên quan</span>
+        <div id="vocabContainer"></div>
+        <button type="button" class="btn-add" onclick="addVocabRow()">+ Thêm từ vựng</button>
+    </div>
+
+    <div class="form-group">
+        <label>Màu Gradient (Để mặc định nếu không rành):</label>
+        <input type="text" id="gradient" value="linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)">
+    </div>
+
+    <button class="btn-generate" onclick="generateJSON()">TẠO JSON</button>
+
+    <div id="outputArea" style="display:none;">
+        <h3>Kết quả (Copy và dán vào file culture.json):</h3>
+        <button class="btn-copy" onclick="copyToClipboard()">Copy</button>
+        <textarea id="jsonOutput" readonly></textarea>
+    </div>
+</div>
+
+<script>
+    // 1. Hàm thêm dòng nhập ảnh
+    function addImageRow() {
+        const div = document.createElement('div');
+        div.className = 'dynamic-row';
+        div.innerHTML = `
+            <input type="text" class="img-input" placeholder="Dán link ảnh hoặc Image/ten_anh.jpg">
+            <button class="btn-remove" onclick="this.parentElement.remove()">×</button>
+        `;
+        document.getElementById('imageContainer').appendChild(div);
+    }
+
+    // 2. Hàm thêm dòng nhập từ vựng
+    function addVocabRow() {
+        const div = document.createElement('div');
+        div.className = 'dynamic-row';
+        div.innerHTML = `
+            <input type="text" class="v-word" placeholder="Từ (Kanji)">
+            <input type="text" class="v-reading" placeholder="Cách đọc">
+            <input type="text" class="v-meaning" placeholder="Nghĩa">
+            <button class="btn-remove" onclick="this.parentElement.remove()">×</button>
+        `;
+        document.getElementById('vocabContainer').appendChild(div);
+    }
+
+    // Khởi tạo sẵn 1 dòng ảnh và 1 dòng từ vựng lúc mở lên
+    window.onload = function() {
+        addImageRow();
+        addVocabRow();
+    }
+
+    // 3. HÀM TẠO JSON
+    function generateJSON() {
+        // Lấy dữ liệu cơ bản
+        const data = {
+            id: document.getElementById('id').value.trim(),
+            title: document.getElementById('title').value.trim(),
+            category: document.getElementById('category').value,
+            tag: document.getElementById('tag').value.trim(),
+            short_desc: document.getElementById('short_desc').value.trim(),
+            full_desc: document.getElementById('full_desc').value.trim(),
+            time: document.getElementById('time').value.trim(),
+            location: document.getElementById('location').value.trim(),
+            story: document.getElementById('story').value.trim(),
+            fun_fact: document.getElementById('fun_fact').value.trim(),
+            vocab: [],
+            images: [],
+            gradient: document.getElementById('gradient').value.trim()
+        };
+
+        // Lấy danh sách ảnh
+        document.querySelectorAll('.img-input').forEach(input => {
+            if(input.value.trim() !== "") {
+                data.images.push(input.value.trim());
+            }
+        });
+
+        // Lấy danh sách từ vựng
+        const vocabRows = document.querySelectorAll('#vocabContainer .dynamic-row');
+        vocabRows.forEach(row => {
+            const w = row.querySelector('.v-word').value.trim();
+            const r = row.querySelector('.v-reading').value.trim();
+            const m = row.querySelector('.v-meaning').value.trim();
+            if(w && r && m) {
+                data.vocab.push({ word: w, reading: r, meaning: m });
+            }
+        });
+
+        // Hiển thị kết quả
+        const jsonStr = JSON.stringify(data, null, 2); // Format đẹp
+        const finalOutput = `,\n${jsonStr}`; // Thêm dấu phẩy đầu dòng cho dễ copy nối tiếp
+
+        document.getElementById('jsonOutput').value = finalOutput;
+        document.getElementById('outputArea').style.display = 'block';
+        
+        // Cuộn xuống kết quả
+        document.getElementById('outputArea').scrollIntoView({behavior: "smooth"});
+    }
+
+    // 4. Hàm Copy
+    function copyToClipboard() {
+        const copyText = document.getElementById("jsonOutput");
+        copyText.select();
+        document.execCommand("copy");
+        alert("Đã copy! Giờ hãy dán vào cuối file culture.json (bên trong dấu ngoặc vuông [])");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "c1",
+    "title": "Hanami (Ngắm hoa)",
+    "category": "festival",
+    "tag": "Mùa Xuân",
+    "short_desc": "Phong tục ngắm hoa anh đào truyền thống.",
+    "full_desc": "Hanami là phong tục truyền thống thưởng hoa của người Nhật. Mọi người thường tụ tập dưới gốc cây hoa anh đào để ăn uống, ca hát và trò chuyện.",
+    "time": "Cuối tháng 3 - Đầu tháng 4",
+    "location": "Công viên, Đền chùa trên toàn quốc",
+    "story": "Người Nhật quan niệm hoa anh đào (Sakura) tượng trưng cho tinh thần Samurai: Huy hoàng nhưng ngắn ngủi. Cánh hoa rơi khi còn tươi đẹp nhất, giống như người võ sĩ sẵn sàng hy sinh ở đỉnh cao phong độ.",
+    "fun_fact": "Ở Nhật có bản tin dự báo riêng cho lịch hoa nở gọi là 'Sakura Zensen'.",
+    "vocab": [
+        {"word": "桜", "reading": "Sakura", "meaning": "Hoa anh đào"},
+        {"word": "満開", "reading": "Mankai", "meaning": "Nở rộ"},
+        {"word": "宴会", "reading": "Enkai", "meaning": "Yến tiệc"}
+    ],
+    "images": [ "Image/LH_Ngam_Hoa.jpg" ],
+    "gradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+  },
+  {
+    "id": "c2",
+    "title": "Sushi & Sashimi",
+    "category": "food",
+    "tag": "Ẩm thực",
+    "short_desc": "Tinh hoa hải sản tươi sống.",
+    "full_desc": "Sushi là cơm trộn giấm kết hợp với nguyên liệu khác (neta). Sashimi là hải sản tươi sống cắt lát ăn kèm củ cải bào và tía tô.",
+    "time": "Quanh năm",
+    "location": "Nhà hàng Sushi (Sushi-ya)",
+    "story": "Ban đầu, Sushi là một cách bảo quản cá bằng cách ủ vào cơm lên men (Narezushi). Sau này vào thời Edo, người ta mới phát minh ra cách ăn Sushi tươi nhanh gọn như ngày nay (Edomae Sushi).",
+    "fun_fact": "Đầu bếp Sushi phải học 3 năm nấu cơm trước khi được phép chạm vào cá.",
+    "vocab": [
+        {"word": "寿司", "reading": "Sushi", "meaning": "Món Sushi"},
+        {"word": "刺身", "reading": "Sashimi", "meaning": "Gỏi cá sống"},
+        {"word": "醤油", "reading": "Shōyu", "meaning": "Nước tương"}
+    ],
+    "images": [ "Image/Sushi_Sashimi.jpg" ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c5",
+    "title": "Lễ hội Obon",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Lễ Vu Lan tưởng nhớ tổ tiên.",
+    "full_desc": "Obon là dịp lễ lớn để người Nhật về quê thăm mộ tổ tiên. Người ta tin rằng linh hồn người đã khuất sẽ quay về thăm nhà trong dịp này.",
+    "time": "Giữa tháng 8 (hoặc tháng 7)",
+    "location": "Toàn quốc",
+    "story": "Nguồn gốc của điệu múa Bon Odori là từ câu chuyện đệ tử của Phật Thích Ca nhảy múa vui mừng khi giải thoát được mẹ mình khỏi cảnh khổ ở địa ngục.",
+    "fun_fact": "Vào ngày cuối cùng, người ta thả đèn lồng trôi sông (Toro Nagashi) để tiễn đưa linh hồn.",
+    "vocab": [
+        {"word": "盆踊り", "reading": "Bon Odori", "meaning": "Điệu múa Obon"},
+        {"word": "先祖", "reading": "Senzo", "meaning": "Tổ tiên"},
+        {"word": "灯籠", "reading": "Tōrō", "meaning": "Đèn lồng"}
+    ],
+    "images": [ "Image/LH_Obon.webp", "Image/Sushi_Sashimi.jpg" ],
+    "gradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+  },
+  {
+    "id": "c6",
+    "title": "Gion Matsuri",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Lễ hội lớn nhất Kyoto với các xe rước khổng lồ.",
+    "full_desc": "Gion Matsuri là lễ hội nổi tiếng nhất Nhật Bản, diễn ra suốt tháng 7 tại Kyoto. Điểm nhấn là lễ rước Yamaboko Junko với những chiếc xe rước khổng lồ nặng tới 12 tấn được trang trí lộng lẫy.",
+    "time": "Suốt tháng 7 (Đỉnh điểm 17/7 và 24/7)",
+    "location": "Kyoto (Đền Yasaka)",
+    "story": "Lễ hội bắt nguồn từ năm 869 như một nghi lễ tẩy trần để cầu mong các vị thần dập tắt dịch bệnh đang hoành hành khắp kinh đô Kyoto thời bấy giờ.",
+    "fun_fact": "Các xe rước khổng lồ (Yamaboko) được lắp ráp hoàn toàn bằng dây thừng, không dùng bất kỳ một chiếc đinh nào.",
+    "vocab": [
+        {"word": "山鉾", "reading": "Yamaboko", "meaning": "Xe rước"},
+        {"word": "浴衣", "reading": "Yukata", "meaning": "Kimono mùa hè"},
+        {"word": "祭り", "reading": "Matsuri", "meaning": "Lễ hội"}
+    ],
+    "images": [
+        "Image/LH_Gion_Matsuri.jpg", "Image/LH_Gion_Matsuri2.jpg"
+    ],
+    "gradient": "linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)"
+  },
+  {
+    "id": "c7",
+    "title": "Mì Ramen",
+    "category": "cuisine",
+    "tag": "Món nước",
+    "short_desc": "Món mì quốc hồn quốc túy với nước dùng đậm đà.",
+    "full_desc": "Ramen là món mì nước phổ biến nhất Nhật Bản. Có 4 vị nước dùng chính: Shoyu (Nước tương), Miso (Tương đậu), Shio (Muối) và Tonkotsu (Xương heo hầm).",
+    "time": "Quanh năm",
+    "location": "Toàn quốc (Nổi tiếng nhất ở Fukuoka, Sapporo)",
+    "story": "Tuy có nguồn gốc từ Trung Quốc, nhưng người Nhật đã biến Ramen thành nghệ thuật riêng. Sau Thế chiến thứ 2, Ramen trở thành món ăn cứu đói và dần trở thành biểu tượng văn hóa.",
+    "fun_fact": "Ở Nhật, việc húp mì 'xì xụp' thật to được coi là lời khen dành cho đầu bếp, đồng thời giúp làm nguội sợi mì nóng.",
+    "vocab": [
+        {"word": "麺", "reading": "Men", "meaning": "Sợi mì"},
+        {"word": "豚骨", "reading": "Tonkotsu", "meaning": "Xương heo"},
+        {"word": "替え玉", "reading": "Kaedama", "meaning": "Gọi thêm mì"}
+    ],
+    "images": [
+        "Image/ramen2.webp",
+        "Image/ramen.webp"
+    ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c8",
+    "title": "Kịch Kabuki",
+    "category": "art",
+    "tag": "Sân khấu",
+    "short_desc": "Nghệ thuật kịch truyền thống với lớp trang điểm ấn tượng.",
+    "full_desc": "Kabuki là loại hình kịch truyền thống kết hợp giữa ca, múa và kỹ năng diễn xuất điêu luyện. Diễn viên thường trang điểm rất đậm (Kumadori) để thể hiện tính cách nhân vật.",
+    "time": "Quanh năm",
+    "location": "Nhà hát Kabukiza (Tokyo)",
+    "story": "Ban đầu Kabuki do một phụ nữ tên là Izumo no Okuni sáng lập. Tuy nhiên sau đó vì lý do đạo đức xã hội thời bấy giờ, phụ nữ bị cấm diễn và tất cả vai (kể cả vai nữ) đều do nam giới đảm nhận.",
+    "fun_fact": "Khi diễn viên tạo dáng 'Mắt lác' và đứng im bất động (gọi là Mie), khán giả sẽ hô to tên gia tộc của diễn viên đó để cổ vũ.",
+    "vocab": [
+        {"word": "歌舞伎", "reading": "Kabuki", "meaning": "Ca Vũ Kỹ"},
+        {"word": "女形", "reading": "Onnagata", "meaning": "Nam đóng vai nữ"},
+        {"word": "化粧", "reading": "Keshō", "meaning": "Trang điểm"}
+    ],
+    "images": [
+        "Image/Kich_Kabuki.jpg",
+        "Image/Kich_Kabuki2.webp"
+    ],
+    "gradient": "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)"
+  },
+  {
+    "id": "c9",
+    "title": "Tempura",
+    "category": "cuisine",
+    "tag": "Đồ chiên",
+    "short_desc": "Hải sản và rau củ tẩm bột chiên giòn tan.",
+    "full_desc": "Tempura là món chiên nổi tiếng, sử dụng bột mì, trứng và nước đá lạnh để tạo lớp vỏ giòn rụm nhưng bên trong vẫn giữ được độ tươi ngọt của tôm, cá, rau củ.",
+    "time": "Quanh năm",
+    "location": "Toàn quốc",
+    "story": "Tempura thực chất được các giáo sĩ Bồ Đào Nha du nhập vào Nhật Bản thế kỷ 16. Tên gọi bắt nguồn từ tiếng Latin 'Tempora' - chỉ thời gian ăn chay kiêng thịt (nên họ ăn cá chiên).",
+    "fun_fact": "Bí quyết để Tempura giòn tan là đầu bếp phải dùng nước thật lạnh (đôi khi bỏ cả đá) để pha bột, tạo cú sốc nhiệt khi thả vào dầu nóng.",
+    "vocab": [
+        {"word": "海老", "reading": "Ebi", "meaning": "Tôm"},
+        {"word": "揚げる", "reading": "Ageru", "meaning": "Chiên/Rán"},
+        {"word": "サクサク", "reading": "Saku-saku", "meaning": "Giòn tan"}
+    ],
+    "images": [
+        "Image/Tempura.jpg",
+        "Image/Tempura2.jpg"
+    ],
+    "gradient": "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
+  },
+  {
+    "id": "c10",
+    "title": "Lễ hội Tuyết Sapporo",
+    "category": "festival",
+    "tag": "Mùa Đông",
+    "short_desc": "Triển lãm điêu khắc băng tuyết khổng lồ.",
+    "full_desc": "Sapporo Yuki Matsuri là lễ hội mùa đông lớn nhất Nhật Bản, thu hút hàng triệu du khách. Điểm nhấn là các tác phẩm điêu khắc bằng băng và tuyết khổng lồ mô phỏng các công trình kiến trúc hoặc nhân vật nổi tiếng.",
+    "time": "Đầu tháng 2",
+    "location": "Sapporo (Hokkaido)",
+    "story": "Lễ hội bắt đầu từ năm 1950, khi một nhóm học sinh trung học rủ nhau đắp 6 bức tượng tuyết tại công viên Odori. Không ngờ nó được người dân yêu thích và phát triển thành sự kiện quốc tế.",
+    "fun_fact": "Lực lượng Phòng vệ Nhật Bản (Quân đội) tham gia hỗ trợ vận chuyển hàng tấn tuyết và xây dựng những công trình tuyết khổng lồ đòi hỏi kỹ thuật cao.",
+    "vocab": [
+        {"word": "雪", "reading": "Yuki", "meaning": "Tuyết"},
+        {"word": "彫刻", "reading": "Chōkoku", "meaning": "Điêu khắc"},
+        {"word": "寒い", "reading": "Samui", "meaning": "Lạnh"}
+    ],
+    "images": [
+        "Image/Sapporo2.jpg",
+        "Image/Sapporo.jpg"
+    ],
+    "gradient": "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"
+  },
+  {
+    "id": "c11",
+    "title": "Tết Nhật Bản (Shogatsu)",
+    "category": "festival",
+    "tag": "Sự kiện lớn nhất",
+    "short_desc": "Dịp lễ quan trọng nhất trong năm, đón vị thần may mắn.",
+    "full_desc": "Shogatsu (Chính Nguyệt) là dịp lễ đón năm mới theo dương lịch. Các gia đình trang hoàng nhà cửa, đi chùa đầu năm (Hatsumode) để cầu bình an và quây quần bên nhau.",
+    "time": "1/1 - 3/1 (Sanganichi)",
+    "location": "Toàn quốc / Đền chùa",
+    "story": "Người Nhật tin rằng vào ngày đầu năm, vị thần Toshigami sẽ ghé thăm từng nhà để ban phước lành. Vì thế, họ đặt Kadomatsu (cây nêu làm từ tre và thông) trước cửa để thần linh nhìn thấy và ghé vào.",
+    "fun_fact": "Vào đêm giao thừa, các ngôi chùa sẽ đánh 108 tiếng chuông (Joya no Kane) để rũ bỏ 108 phiền não của con người trong năm cũ.",
+    "vocab": [
+        {"word": "あけおめ", "reading": "Ake-ome", "meaning": "Chúc mừng năm mới (Viết tắt)"},
+        {"word": "初詣", "reading": "Hatsumode", "meaning": "Đi chùa đầu năm"},
+        {"word": "お年玉", "reading": "Otoshidama", "meaning": "Tiền lì xì"}
+    ],
+    "images": [
+        "Image/Tet.jpg", "Image/Tet4.jpeg"
+    ],
+    "gradient": "linear-gradient(135deg, #ff0844 0%, #ffb199 100%)"
+  },
+  {
+    "id": "c12",
+    "title": "Osechi Ryori",
+    "category": "food",
+    "tag": "Món Tết",
+    "short_desc": "Những hộp cơm đẹp mắt mang ý nghĩa trường thọ.",
+    "full_desc": "Osechi là bữa ăn truyền thống ngày Tết được xếp gọn gàng trong các hộp sơn mài nhiều tầng (Jubako). Mỗi món ăn bên trong đều mang một ý nghĩa cầu chúc riêng biệt.",
+    "time": "3 ngày đầu năm",
+    "location": "Tại nhà",
+    "story": "Ngày xưa, người Nhật kiêng nấu nướng vào 3 ngày Tết để thần bếp nghỉ ngơi (và cũng để người nội trợ được nghỉ). Do đó, Osechi được chế biến đậm đà, nhiều đường và giấm để có thể bảo quản được lâu mà không cần hâm nóng.",
+    "fun_fact": "Tôm trong Osechi tượng trưng cho sự trường thọ (sống lâu đến khi lưng còng như tôm). Trứng cá trích tượng trưng cho con đàn cháu đống.",
+    "vocab": [
+        {"word": "おせち", "reading": "Osechi", "meaning": "Đồ ăn ngày Tết"},
+        {"word": "重箱", "reading": "Jūbako", "meaning": "Hộp đựng nhiều tầng"},
+        {"word": "海老", "reading": "Ebi", "meaning": "Tôm (Trường thọ)"}
+    ],
+    "images": [
+        "Image/Osechi_Ryori.jpg"
+    ],
+    "gradient": "linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)"
+  }
+]

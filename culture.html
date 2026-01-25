@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Văn Hóa Nhật Bản</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="modern-culture-page">
+
+    <header class="modern-hero">
+        <div class="hero-content">
+            <a href="index.html" class="modern-back-link">
+                <i class="fas fa-chevron-left"></i> Quay lại
+            </a>
+            <h1><i class="fas fa-torii-gate"></i> Khám Phá Văn Hóa</h1>
+            <p>Lễ hội - Ẩm thực - Nghệ thuật Nhật Bản</p>
+        </div>
+    </header>
+
+    <main class="modern-container">
+        <div class="modern-filters">
+            <button class="modern-filter-btn active" data-filter="all">Tất cả</button>
+            <button class="modern-filter-btn" data-filter="festival">Lễ hội</button>
+            <button class="modern-filter-btn" data-filter="food">Ẩm thực</button>
+            <button class="modern-filter-btn" data-filter="art">Nghệ thuật</button>
+        </div>
+
+        <div class="modern-grid" id="cultureGrid">
+            <div style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 30px;">
+                <i class="fas fa-spinner fa-spin fa-2x"></i><br>Đang tải dữ liệu...
+            </div>
+        </div>
+    </main>
+
+    <div id="detailModal" class="modern-modal">
+        <div class="modern-modal-content">
+            <button class="modern-close-btn" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-hero-img" id="modalImg">
+                <i id="modalIcon" class="fas"></i>
+            </div>
+
+            <div class="modal-body-content">
+                <span class="modern-card-tag" id="modalTag">Tag</span>
+                <h2 id="modalTitle" style="margin: 5px 0; color: #334155;">Tiêu đề</h2>
+
+                <div class="meta-info-box">
+                    <div class="meta-item"><i class="far fa-clock"></i> <span id="modalTime">--</span></div>
+                    <div class="meta-item"><i class="fas fa-map-marker-alt"></i> <span id="modalLocation">--</span></div>
+                </div>
+
+                <p id="modalDesc" class="main-desc">Mô tả...</p>
+
+                <div class="story-box">
+                    <h4><i class="fas fa-book-open"></i> Câu chuyện & Sự tích</h4>
+                    <p id="modalStory">...</p>
+                </div>
+
+                <div class="vocab-section">
+                    <h4 style="font-size: 0.95rem; color: #334155; margin-bottom: 5px;"><i class="fas fa-language"></i> Từ vựng liên quan</h4>
+                    <div class="vocab-grid" id="modalVocab"></div>
+                </div>
+
+                <div class="fun-fact-box">
+                    <i class="fas fa-lightbulb" style="margin-top:2px;"></i>
+                    <span><b>Thú vị:</b> <span id="modalFunFact">...</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allData = [];
+
+        // 1. Tải dữ liệu
+        async function fetchCulture() {
+            try {
+                const response = await fetch('data/culture.json');
+                if (!response.ok) throw new Error("Lỗi tải file");
+                allData = await response.json();
+                renderData(allData);
+            } catch (err) {
+                document.getElementById('cultureGrid').innerHTML = 
+                    `<p style="text-align:center; color:red; grid-column:1/-1;">Vui lòng chạy bằng <b>Live Server</b> để xem dữ liệu.</p>`;
+            }
+        }
+
+        // 2. Render Cards
+        function renderData(data) {
+            const grid = document.getElementById('cultureGrid');
+            grid.innerHTML = ''; 
+            
+            // Kiểm tra dữ liệu rỗng
+            if(!data || data.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; grid-column:1/-1">Không có dữ liệu.</p>'; 
+                return;
+            }
+
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'modern-card';
+                card.style.animationDelay = `${index * 100}ms`;
+                card.onclick = () => showDetail(item);
+                
+                // --- LOGIC CHỌN ẢNH BÌA (THUMBNAIL) ---
+                let thumbContent = '';
+                let thumbStyle = ''; // Dùng cho trường hợp Icon cần màu nền gradient
+
+                // 1. Ưu tiên: Nếu có Album ảnh -> Lấy ảnh đầu tiên [0] làm bìa
+                if (Array.isArray(item.images) && item.images.length > 0) {
+                    thumbContent = `<img src="${item.images[0]}" class="card-real-img" alt="${item.title}" loading="lazy">`;
+                }
+                // 2. Nếu có ảnh đơn (dữ liệu cũ)
+                else if (item.image && item.image.trim() !== "") {
+                    thumbContent = `<img src="${item.image}" class="card-real-img" alt="${item.title}" loading="lazy">`;
+                }
+                // 3. Nếu không có ảnh -> Dùng Icon + Gradient (Fallback)
+                else {
+                    thumbStyle = `background: ${item.gradient || 'linear-gradient(135deg, #ccc, #999)'}`;
+                    thumbContent = `<i class="fas ${item.icon || 'fa-star'}" style="font-size:3rem; color:white;"></i>`;
+                }
+
+                // --- RENDER HTML ---
+                card.innerHTML = `
+                    <div class="modern-card-thumb" style="${thumbStyle}">
+                        ${thumbContent}
+                    </div>
+                    <div class="modern-card-content">
+                        <span class="modern-card-tag">${item.tag}</span>
+                        <h3>${item.title}</h3>
+                        <p style="margin:0;">${item.short_desc}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // 3. Filter Logic
+        document.querySelectorAll('.modern-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.modern-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const type = btn.dataset.filter;
+                renderData(type === 'all' ? allData : allData.filter(i => i.category === type));
+            });
+        });
+
+        // 4. Show Modal
+        const modal = document.getElementById('detailModal');
+        
+        // --- THAY THẾ TOÀN BỘ HÀM showDetail BẰNG CODE NÀY ---
+
+        function showDetail(item) {
+            // 1. Reset vị trí cuộn lên đầu (để tránh bị trôi xuống dưới khi mở cái mới)
+            document.querySelector('.modal-body-content').scrollTop = 0;
+
+            // 2. Điền thông tin cơ bản
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalTag').innerText = item.tag;
+            document.getElementById('modalDesc').innerText = item.full_desc;
+            document.getElementById('modalTime').innerText = item.time || "N/A";
+            document.getElementById('modalLocation').innerText = item.location || "N/A";
+
+            // --- ĐOẠN CODE XỬ LÝ ẢNH TRONG HÀM showDetail ---
+            const modalImgBox = document.getElementById('modalImg');
+            let htmlContent = '';
+
+            // 1. Kiểm tra xem có mảng 'images' và mảng đó có phần tử không
+            if (Array.isArray(item.images) && item.images.length > 0) {
+                modalImgBox.style.background = '#f1f5f9';
+                
+                // Tạo danh sách ảnh
+                let imgList = item.images.map(imgLink => 
+                    `<img src="${imgLink}" class="gallery-img-item" alt="${item.title}">`
+                ).join('');
+                let navButtons = '';
+                if (item.images.length > 1) {
+                    navButtons = `
+                        <button class="nav-btn nav-prev" onclick="scrollGallery(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn nav-next" onclick="scrollGallery(1)"><i class="fas fa-chevron-right"></i></button>
+                    `;
+                }
+                // Thêm nút Next/Prev vào HTML
+                htmlContent = `
+                    <div class="modal-gallery-container" id="galleryContainer">
+                        ${imgList}
+                    </div>
+                    
+                    ${navButtons} <div class="gallery-counter">
+                        <i class="fas fa-images"></i> 1/${item.images.length}
+                    </div>
+                `;
+            }
+            // 2. Nếu không có mảng, kiểm tra ảnh đơn 'image'
+            else if (item.image && item.image.trim() !== "") {
+                modalImgBox.style.background = '#f1f5f9';
+                htmlContent = `<img src="${item.image}" class="modal-real-img" alt="${item.title}">`;
+            } 
+            // 3. Nếu không có gì hết thì dùng icon
+            else {
+                modalImgBox.style.background = item.gradient || '#ddd';
+                htmlContent = `<i class="fas ${item.icon || 'fa-image'}" style="font-size:4rem; color:white;"></i>`;
+            }
+
+            modalImgBox.innerHTML = htmlContent;
+
+
+            // 4. Xử lý phần "Câu chuyện & Sự tích" (Ẩn/Hiện)
+            const storyBox = document.querySelector('.story-box');
+            if (item.story) {
+                document.getElementById('modalStory').innerText = item.story;
+                storyBox.style.display = 'block';
+            } else {
+                storyBox.style.display = 'none';
+            }
+
+            // 5. Xử lý phần "Fun Fact" (Ẩn/Hiện)
+            const factBox = document.querySelector('.fun-fact-box');
+            if (item.fun_fact) {
+                document.getElementById('modalFunFact').innerText = item.fun_fact;
+                factBox.style.display = 'flex';
+            } else {
+                factBox.style.display = 'none';
+            }
+
+            // 6. Xử lý phần "Từ vựng" (Vòng lặp tạo thẻ)
+            const vocabGrid = document.getElementById('modalVocab');
+            const vocabSection = document.querySelector('.vocab-section');
+            vocabGrid.innerHTML = ''; // Xóa từ vựng của bài trước
+
+            if (item.vocab && item.vocab.length > 0) {
+                vocabSection.style.display = 'block';
+                item.vocab.forEach(v => {
+                    vocabGrid.innerHTML += `
+                        <div class="vocab-card">
+                            <span class="v-word">${v.word}</span>
+                            <span class="v-reading">${v.reading}</span>
+                            <span class="v-meaning">${v.meaning}</span>
+                        </div>`;
+                });
+            } else {
+                vocabSection.style.display = 'none';
+            }
+
+            // 7. Hiển thị Modal lên
+            const modal = document.getElementById('detailModal');
+            modal.style.display = "flex";
+            
+            // Logic cập nhật số trang khi cuộn (Optional - cho Slider xịn hơn)
+            if (item.images && item.images.length > 0) {
+                const gallery = modal.querySelector('.modal-gallery-container');
+                const counter = modal.querySelector('.gallery-counter');
+                gallery.addEventListener('scroll', () => {
+                    const index = Math.round(gallery.scrollLeft / gallery.offsetWidth) + 1;
+                    counter.innerHTML = `<i class="fas fa-images"></i> ${index}/${item.images.length}`;
+                });
+            }
+        }
+
+        /* --- HÀM XỬ LÝ KHI BẤM NÚT MŨI TÊN --- */
+        function scrollGallery(direction) {
+            const gallery = document.getElementById('galleryContainer');
+            if (gallery) {
+                // Lấy chiều rộng của 1 bức ảnh
+                const scrollAmount = gallery.offsetWidth; 
+                
+                // Trượt sang trái hoặc phải (direction: 1 là tới, -1 là lùi)
+                gallery.scrollBy({
+                    left: scrollAmount * direction,
+                    behavior: 'smooth' // Hiệu ứng trượt mượt mà
+                });
+            }
+        }
+        // 5. Close Modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Đóng khi click ra ngoài
+        window.onclick = (e) => {
+            if (e.target == modal) closeModal();
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCulture);
+    </script>
+</body>
+</html>
