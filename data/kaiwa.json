@@ -122,5 +122,96 @@
         { "role": "B", "name": "マリア", "text": "じゃ、これを ください。", "mean": "Vậy thì, cho tôi chai này đi.", "icon": "Image/Av_Girl_BrownHair.png", "side": "right", "gender": "female" }
       ]
     }
+  ],
+  "4": [
+  {
+    "name": "Kaiwa",
+    "title": "そちらは 何時まででしか。",
+    "img": "Image/Kaiwa_B4_Main.png",
+    "audio": "Sound/12_Track _12.mp3",
+    "dialogue": [
+      {
+        "role": "A",
+        "name": "ミラー",
+        "text": "すみません、「あすか」のでんわばんごうはなんばんですか。",
+        "mean": "Xin cho hỏi, số điện thoại của nhà hàng Asuka là số mấy ạ?",
+        "icon": "Image/Av_Boy_YellowHair.png",
+        "side": "left",
+        "gender": "male"
+      },
+      {
+        "role": "B",
+        "name": "佐藤",
+        "text": "「あすか」ですか。５２７５の２７２５です。",
+        "mean": "Nhà hàng Asuka à. Số điện thoại là 5275-2725.",
+        "icon": "Image/Av_Girl_BlackHair.png",
+        "side": "right",
+        "gender": "female"
+      },
+      {
+        "role": "A",
+        "name": "ミラー",
+        "text": "どうもありがとうございます。",
+        "mean": "Xin cảm ơn.",
+        "icon": "Image/Av_Boy_YellowHair.png",
+        "side": "left",
+        "gender": "male"
+      },
+      {
+        "role": "C",
+        "name": "店の人",
+        "text": "はい、「あすか」です。",
+        "mean": "Vâng, nhà hàng Asuka đây ạ.",
+        "icon": "Image/Av_Girl_BrownHair.png",
+        "side": "right",
+        "gender": "female"
+      },
+      {
+        "role": "A",
+        "name": "ミラー",
+        "text": "すみません、そちらはなじまでですか。",
+        "mean": "Xin cho hỏi, nhà hàng phục vụ đến mấy giờ ạ?",
+        "icon": "Image/Av_Boy_YellowHair.png",
+        "side": "left",
+        "gender": "male"
+      },
+      {
+        "role": "C",
+        "name": "店の人",
+        "text": "10時までです。",
+        "mean": "Nhà hàng phục vụ đến 10 giờ ạ.",
+        "icon": "Image/Av_Girl_BrownHair.png",
+        "side": "right",
+        "gender": "female"
+      },
+      {
+        "role": "A",
+        "name": "ミラー",
+        "text": "やすみはなにょうぼですか。",
+        "mean": "Ngày nghỉ của nhà hàng là thứ mấy ạ?",
+        "icon": "Image/Av_Boy_YellowHair.png",
+        "side": "left",
+        "gender": "male"
+      },
+      {
+        "role": "C",
+        "name": "店の人",
+        "text": "にちようびでし。",
+        "mean": "Nhà hàng nghỉ ngày Chủ nhật ạ.",
+        "icon": "Image/Av_Girl_BrownHair.png",
+        "side": "right",
+        "gender": "female"
+      },
+      {
+        "role": "A",
+        "name": "ミラー",
+        "text": "そうですか。どうも。",
+        "mean": "Vậy à. Cảm ơn ạ.",
+        "icon": "Image/Av_Boy_YellowHair.png",
+        "side": "left",
+        "gender": "male"
+      }
+    ]
+  }
   ]
 }

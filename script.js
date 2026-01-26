@@ -873,16 +873,15 @@ function selectOption(btn, optionIndex) {
 }
 
 function switchExerciseTab(lessonId, event) {
-    const btn1 = document.getElementById('btn-bai-1');
-    const btn2 = document.getElementById('btn-bai-2');
-    
-    if(btn1) btn1.className = 'tab-btn'; 
-    if(btn2) btn2.className = 'tab-btn';
+    const allButtons = document.querySelectorAll('.tab-btn');
 
-    if (lessonId === '1' && btn1) {
-        btn1.className = 'tab-btn active';
-    } else if (lessonId === '2' && btn2) {
-        btn2.className = 'tab-btn active';
+    allButtons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const currentBtn = document.getElementById(`btn-bai-${lessonId}`);
+
+    if (currentBtn) {
+        currentBtn.classList.add('active');
     }
     renderExercises(lessonId);
 }
