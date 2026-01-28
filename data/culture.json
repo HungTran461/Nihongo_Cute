@@ -624,5 +624,119 @@
     ],
     "images": [ "Image/Shodo.jpg", "Image/Shodo2.jpg" ],
     "gradient": "linear-gradient(135deg, #30cfd0 0%, #330867 100%)"
+  },
+  {
+    "id": "c35",
+    "title": "Gà nướng Yakitori",
+    "category": "food",
+    "tag": "Đồ nướng",
+    "short_desc": "Món gà xiên nướng than hoa nức tiếng.",
+    "full_desc": "Yakitori là những xiên thịt gà được nướng trên than củi, tẩm ướp với muối hoặc sốt Tare đặc trưng. Mọi bộ phận của con gà đều được tận dụng để tạo nên hương vị riêng biệt.",
+    "time": "Quanh năm",
+    "location": "Quán Yakitori-ya, vỉa hè",
+    "story": "Yakitori bắt đầu trở nên phổ biến vào thời Meiji. Ban đầu nó là món ăn đường phố rẻ tiền, nhưng dần dần đã được nâng tầm thành một nghệ thuật ẩm thực tinh tế với những đầu bếp chuyên nghiệp.",
+    "fun_fact": "Than Binchotan từ vùng Kishu là loại than cao cấp nhất được dùng để nướng Yakitori, giúp thịt chín đều từ bên trong mà không bị ám khói hôi.",
+    "vocab": [
+        {"word": "焼き鳥", "reading": "Yakitori", "meaning": "Gà nướng xiên"},
+        {"word": "串", "reading": "Kushi", "meaning": "Cái xiên"},
+        {"word": "備長炭", "reading": "Binchōtan", "meaning": "Than trắng cao cấp"}
+    ],
+    "images": [ "Image/Yakitori.jpg", "Image/Yakitori2.jpg" ],
+    "gradient": "linear-gradient(135deg, #FF4B2B 0%, #FF416C 100%)"
+  },
+  {
+    "id": "c36",
+    "title": "Lễ hội Nebuta Matsuri",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Diễu hành đèn lồng khổng lồ rực rỡ.",
+    "full_desc": "Lễ hội nổi tiếng với những chiếc đèn lồng bằng giấy khổng lồ mô phỏng các vị thần, võ sĩ Samurai hoặc nhân vật thần thoại, được kéo đi diễu hành trong tiếng trống Taiko vang dội.",
+    "time": "Từ ngày 2 đến ngày 7 tháng 8",
+    "location": "Aomori (Vùng Tohoku)",
+    "story": "Nguồn gốc lễ hội được cho là bắt nguồn từ nghi lễ thả trôi những chiếc đèn lồng xuống sông để xua đuổi tà ma và sự buồn ngủ, cầu mong một mùa thu hoạch thuận lợi.",
+    "fun_fact": "Bất kỳ ai cũng có thể tham gia đoàn diễu hành nếu mặc bộ trang phục Haneto truyền thống của lễ hội.",
+    "vocab": [
+        {"word": "ねぶた", "reading": "Nebuta", "meaning": "Đèn lồng khổng lồ"},
+        {"word": "跳人", "reading": "Haneto", "meaning": "Vũ công nhảy múa"},
+        {"word": "太鼓", "reading": "Taiko", "meaning": "Trống lớn"}
+    ],
+    "images": [ "Image/Nebuta.jpg", "Image/Nebuta2.jpg" ],
+    "gradient": "linear-gradient(135deg, #fcead2 0%, #f8d353 100%)"
+  },
+  {
+    "id": "c37",
+    "title": "Kịch Noh (Nō)",
+    "category": "art",
+    "tag": "Sân khấu cổ",
+    "short_desc": "Nghệ thuật mặt nạ và sự tĩnh lặng tuyệt đối.",
+    "full_desc": "Noh là một trong những loại hình nhạc kịch lâu đời nhất thế giới còn tồn tại. Nó kết hợp giữa âm nhạc, múa và những chiếc mặt nạ gỗ tinh xảo để kể về các câu chuyện tâm linh, thần thoại.",
+    "time": "Quanh năm",
+    "location": "Nhà hát Noh (Nogaku-do)",
+    "story": "Noh được hoàn thiện vào thế kỷ 14 bởi cha con Kan'ami và Zeami. Khác với Kabuki náo nhiệt, Noh mang đậm tính triết lý, chậm rãi và yêu cầu sự chiêm nghiệm sâu sắc từ khán giả.",
+    "fun_fact": "Diễn viên Noh có thể thay đổi biểu cảm của chiếc mặt nạ gỗ chỉ bằng cách nghiêng đầu theo các góc độ khác nhau dưới ánh đèn.",
+    "vocab": [
+        {"word": "能", "reading": "Nō", "meaning": "Kịch Noh"},
+        {"word": "面", "reading": "Omote", "meaning": "Mặt nạ kịch"},
+        {"word": "幽玄", "reading": "Yūgen", "meaning": "Vẻ đẹp huyền bí"}
+    ],
+    "images": [ "Image/Kich_Noh.jpg", "Image/Kich_Noh2.jpg" ],
+    "gradient": "linear-gradient(135deg, #2c3e50 0%, #000000 100%)"
+  },
+  {
+    "id": "c38",
+    "title": "Bánh Mochi",
+    "category": "food",
+    "tag": "Bánh truyền thống",
+    "short_desc": "Món bánh dẻo thơm từ hạt ngọc trời.",
+    "full_desc": "Mochi được làm từ gạo nếp chín, được giã nhuyễn cho đến khi đạt độ kết dính cực cao. Bánh có thể ăn kèm nhân đậu đỏ, nướng với xì dầu hoặc nấu trong súp.",
+    "time": "Quanh năm (Đặc biệt vào dịp Tết)",
+    "location": "Toàn quốc",
+    "story": "Người Nhật tin rằng trong mỗi hạt gạo đều có linh hồn (Inadama). Việc giã Mochi (Mochitsuki) không chỉ để tạo ra món ăn mà còn là nghi lễ để nhận lấy sức mạnh từ thần lúa.",
+    "fun_fact": "Ở Nhật có truyền thuyết về những chú thỏ trên mặt trăng đang cầm chày giã bánh Mochi.",
+    "vocab": [
+        {"word": "餅", "reading": "Mochi", "meaning": "Bánh dày"},
+        {"word": "餅つき", "reading": "Mochitsuki", "meaning": "Nghi lễ giã bánh"},
+        {"word": "粘り", "reading": "Nebari", "meaning": "Độ dẻo/dính"}
+    ],
+    "images": [ "Image/Mochi.png", "Image/Mochi2.png" ],
+    "gradient": "linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)"
+  },
+  {
+    "id": "c39",
+    "title": "Lễ hội Sanja Matsuri",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Sự náo nhiệt cuồng nhiệt nhất Tokyo.",
+    "full_desc": "Lễ hội Sanja vinh danh ba người sáng lập nên ngôi đền cổ Senso-ji. Hàng trăm đền thờ di động (Mikoshi) được khiêng đi khắp các con phố Asakusa trong tiếng hò reo vang trời.",
+    "time": "Tuần thứ 3 của tháng 5",
+    "location": "Asakusa, Tokyo",
+    "story": "Đây là một trong những lễ hội hiếm hoi cho thấy một khía cạnh rất khác của người Nhật: không còn sự trầm lặng, thay vào đó là sự bùng nổ, mạnh mẽ và có phần 'hoang dại'.",
+    "fun_fact": "Người khiêng Mikoshi thường lắc mạnh chiếc kiệu (Tamafuri). Họ tin rằng hành động này sẽ đánh thức và làm gia tăng sức mạnh của vị thần bên trong.",
+    "vocab": [
+        {"word": "神輿", "reading": "Mikoshi", "meaning": "Đền thờ di động"},
+        {"word": "浅草", "reading": "Asakusa", "meaning": "Địa danh Asakusa"},
+        {"word": "法被", "reading": "Happi", "meaning": "Áo khoác lễ hội"}
+    ],
+    "images": [ "Image/Sanja_Matsuri.webp" , "Image/Sanja_Matsuri2.webp"],
+    "gradient": "linear-gradient(135deg, #f83600 0%, #f9d423 100%)"
+  },
+  {
+    "id": "c40",
+    "title": "Nghệ thuật Bonsai",
+    "category": "art",
+    "tag": "Cây cảnh",
+    "short_desc": "Thiên nhiên hùng vĩ thu nhỏ trong chậu.",
+    "full_desc": "Bonsai là nghệ thuật trồng và tạo dáng cây trong chậu sao cho chúng mang hình dáng của những cây cổ thụ ngoài thiên nhiên. Đây là sự kết hợp giữa kỹ thuật làm vườn và tư duy hội họa.",
+    "time": "Quanh năm",
+    "location": "Vườn Bonsai, bảo tàng",
+    "story": "Xuất phát từ Trung Quốc (Penjing), nhưng khi du nhập vào Nhật Bản, nó đã được tinh giản hóa theo triết lý Thiền tông, chú trọng vào sự cân bằng và vẻ đẹp thời gian (Wabi-sabi).",
+    "fun_fact": "Có những cây Bonsai đã sống sót qua hàng trăm năm, truyền qua nhiều thế hệ. Một cây thông trắng nổi tiếng đã sống sót cả sau vụ nổ bom nguyên tử tại Hiroshima.",
+    "vocab": [
+        {"word": "盆栽", "reading": "Bonsai", "meaning": "Cây cảnh trong chậu"},
+        {"word": "剪定", "reading": "Sentei", "meaning": "Cắt tỉa nhánh"},
+        {"word": "松", "reading": "Matsu", "meaning": "Cây thông"}
+    ],
+    "images": [ "Image/Bonsai.webp" , "Image/Bonsai2.webp" ],
+    "gradient": "linear-gradient(135deg, #1d976c 0%, #93f9b9 100%)"
   }
 ]
