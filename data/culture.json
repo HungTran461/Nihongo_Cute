@@ -80,7 +80,7 @@
   {
     "id": "c7",
     "title": "Mì Ramen",
-    "category": "cuisine",
+    "category": "food",
     "tag": "Món nước",
     "short_desc": "Món mì quốc hồn quốc túy với nước dùng đậm đà.",
     "full_desc": "Ramen là món mì nước phổ biến nhất Nhật Bản. Có 4 vị nước dùng chính: Shoyu (Nước tương), Miso (Tương đậu), Shio (Muối) và Tonkotsu (Xương heo hầm).",
@@ -124,7 +124,7 @@
   {
     "id": "c9",
     "title": "Tempura",
-    "category": "cuisine",
+    "category": "food",
     "tag": "Đồ chiên",
     "short_desc": "Hải sản và rau củ tẩm bột chiên giòn tan.",
     "full_desc": "Tempura là món chiên nổi tiếng, sử dụng bột mì, trứng và nước đá lạnh để tạo lớp vỏ giòn rụm nhưng bên trong vẫn giữ được độ tươi ngọt của tôm, cá, rau củ.",
@@ -206,5 +206,423 @@
         "Image/Osechi_Ryori.jpg"
     ],
     "gradient": "linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)"
+  },
+  {
+    "id": "c13",
+    "title": "Trà Đạo (Sadō)",
+    "category": "art",
+    "tag": "Nghệ thuật",
+    "short_desc": "Nghi thức thưởng trà mang đậm triết lý Thiền.",
+    "full_desc": "Trà đạo là nghệ thuật thưởng thức trà xanh (Matcha) của Nhật Bản. Không chỉ là uống trà, đây là một quá trình tâm linh nhấn mạnh vào sự tinh tế, lòng hiếu khách và sự tĩnh lặng.",
+    "time": "Quanh năm",
+    "location": "Trà thất (Chashitsu)",
+    "story": "Bậc thầy Sen no Rikyu là người đã đặt nền móng cho trà đạo hiện đại với triết lý Wabi-sabi: tìm thấy vẻ đẹp trong sự giản đơn và không hoàn hảo.",
+    "fun_fact": "Mỗi động tác của trà sư, từ việc lau chén đến pha trà, đều được thực hiện theo một trình tự cực kỳ chính xác và không có một cử động thừa.",
+    "vocab": [
+        {"word": "抹茶", "reading": "Matcha", "meaning": "Trà xanh dạng bột"},
+        {"word": "一期一会", "reading": "Ichigo Ichie", "meaning": "Đời người chỉ gặp một lần"},
+        {"word": "和敬清寂", "reading": "Wakeiseijaku", "meaning": "Hòa - Kính - Thanh - Tịch"}
+    ],
+    "images": [ "Image/Tra_Dao2.webp", "Image/Tra_Dao.webp" ],
+    "gradient": "linear-gradient(135deg, #134e5e 0%, #71b280 100%)"
+  },
+  {
+    "id": "c14",
+    "title": "Suối nước nóng Onsen",
+    "category": "art",
+    "tag": "Đời sống",
+    "short_desc": "Nghệ thuật tắm suối nước nóng thiên nhiên.",
+    "full_desc": "Onsen là những suối nước nóng tự nhiên giàu khoáng chất. Đối với người Nhật, tắm Onsen là cách tốt nhất để thư giãn cơ thể, chữa bệnh và kết nối tâm hồn với thiên nhiên.",
+    "time": "Quanh năm (Tuyệt nhất là Mùa Đông)",
+    "location": "Các vùng núi (Hakone, Beppu, Kusatsu)",
+    "story": "Nhật Bản nằm trên vành đai lửa Thái Bình Dương nên có hàng ngàn suối nước nóng. Từ xa xưa, các võ sĩ Samurai thường đến Onsen để chữa trị vết thương sau các trận chiến.",
+    "fun_fact": "Tại hầu hết các Onsen truyền thống, người có hình xăm lớn thường bị từ chối vào cửa vì hình xăm từng được coi là dấu hiệu của giới tội phạm (Yakuza).",
+    "vocab": [
+        {"word": "温泉", "reading": "Onsen", "meaning": "Suối nước nóng"},
+        {"word": "露天風呂", "reading": "Rotenburo", "meaning": "Bồn tắm ngoài trời"},
+        {"word": "ゆ", "reading": "Yu", "meaning": "Nước nóng"}
+    ],
+    "images": [ "Image/Onsen.webp", "Image/Onsen2.jpg" ],
+    "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+  },
+  {
+    "id": "c15",
+    "title": "Ngắm lá đỏ (Momijigari)",
+    "category": "festival",
+    "tag": "Mùa Thu",
+    "short_desc": "Hành trình tìm kiếm sắc thu vàng đỏ.",
+    "full_desc": "Momijigari là phong tục đi ngắm lá chuyển màu vào mùa thu. Cả rừng cây chuyển sang màu đỏ rực của lá phong (Momiji) hoặc màu vàng óng của lá ngân hạnh (Ginkgo).",
+    "time": "Tháng 10 - Tháng 11",
+    "location": "Nikko, Kyoto, Hokkaido",
+    "story": "Khác với hoa anh đào nở từ Nam ra Bắc, mùa lá đỏ bắt đầu từ vùng lạnh Hokkaido phía Bắc rồi mới dần lan xuống phía Nam ấm áp.",
+    "fun_fact": "Lá phong rụng không chỉ để ngắm, người dân vùng Osaka còn có món đặc sản 'Momiji Tempura' - lá phong tẩm bột chiên giòn.",
+    "vocab": [
+        {"word": "紅葉", "reading": "Momiji", "meaning": "Lá đỏ/Cây phong"},
+        {"word": "秋", "reading": "Aki", "meaning": "Mùa thu"},
+        {"word": "紅葉狩り", "reading": "Momijigari", "meaning": "Thú ngắm lá đỏ"}
+    ],
+    "images": [ "Image/Momijigari.webp", "Image/Momijigari2.webp" ,"Image/Momijigari3.webp", "Image/Momijigari4.webp" ],
+    "gradient": "linear-gradient(135deg, #f83600 0%, #f9d423 100%)"
+  },
+  {
+    "id": "c16",
+    "title": "Võ sĩ Sumo",
+    "category": "art",
+    "tag": "Võ thuật",
+    "short_desc": "Môn võ cổ truyền và là quốc võ của Nhật Bản.",
+    "full_desc": "Sumo là hình thức vật biểu diễn chuyên nghiệp, nơi các lực sĩ (Rikishi) cố gắng đẩy đối phương ra khỏi vòng tròn (Dohyo). Đây là môn võ mang đậm màu sắc tôn giáo Shinto.",
+    "time": "Các giải đấu diễn ra vào các tháng lẻ",
+    "location": "Nhà thi đấu Ryogoku Kokugikan (Tokyo)",
+    "story": "Sumo ban đầu là một nghi lễ nông nghiệp để cầu nguyện cho mùa màng bội thu. Các võ sĩ biểu diễn trước các vị thần để thể hiện sức mạnh và lòng thành kính.",
+    "fun_fact": "Để duy trì cân nặng, các võ sĩ Sumo không ăn sáng. Họ tập luyện khi bụng đói, sau đó ăn một bữa cực lớn với món lẩu Chanko Nabe rồi đi ngủ ngay lập tức.",
+    "vocab": [
+        {"word": "力士", "reading": "Rikishi", "meaning": "Võ sĩ Sumo"},
+        {"word": "土俵", "reading": "Dohyo", "meaning": "Vòng tròn thi đấu"},
+        {"word": "横綱", "reading": "Yokozuna", "meaning": "Cấp bậc cao nhất"}
+    ],
+    "images": [ "Image/Sumo.jpeg", "Image/Sumo2.jpg" ],
+    "gradient": "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)"
+  },
+  {
+    "id": "c17",
+    "title": "Quán nhậu Izakaya",
+    "category": "art",
+    "tag": "Đời sống",
+    "short_desc": "Quán nhậu kiểu Nhật - nơi giải tỏa áp lực.",
+    "full_desc": "Izakaya là sự kết hợp giữa quán bar và nhà hàng. Đây là nơi nhân viên văn phòng Nhật Bản tụ tập sau giờ làm để uống rượu Sake, bia và thưởng thức các món ăn nhẹ (Otumami).",
+    "time": "Buổi tối",
+    "location": "Các khu phố nhộn nhịp (Shinjuku, Shibuya)",
+    "story": "Izakaya bắt nguồn từ các cửa hàng bán rượu thời Edo, nơi khách hàng bắt đầu yêu cầu được ngồi lại và ăn một vài món nhắm ngay tại chỗ.",
+    "fun_fact": "Khi bắt đầu bữa tiệc tại Izakaya, mọi người luôn hô to 'Kanpai!' (Cạn ly) trước khi bất kỳ ai kịp chạm môi vào ly nước.",
+    "vocab": [
+        {"word": "居酒屋", "reading": "Izakaya", "meaning": "Quán nhậu"},
+        {"word": "乾杯", "reading": "Kanpai", "meaning": "Cạn ly!"},
+        {"word": "おつまみ", "reading": "Otsumami", "meaning": "Món nhắm"}
+    ],
+    "images": [ "Image/Izakaya.png" , "Image/Izakaya2.jpg" ],
+    "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+  },
+  {
+    "id": "c18",
+    "title": "Kimono & Yukata",
+    "category": "art",
+    "tag": "Trang phục",
+    "short_desc": "Biểu tượng của vẻ đẹp và lòng kiêu hãnh Nhật Bản.",
+    "full_desc": "Kimono là quốc phục với thiết kế phức tạp nhiều lớp, thường mặc trong các dịp trọng đại. Yukata là phiên bản nhẹ nhàng hơn bằng cotton, phổ biến trong các lễ hội mùa hè.",
+    "time": "Quanh năm (Yukata chủ yếu vào mùa hè)",
+    "location": "Toàn quốc (Phổ biến nhất tại Kyoto)",
+    "story": "Trải qua hàng nghìn năm, Kimono đã chuyển mình từ một loại quần áo lót thành một tác phẩm nghệ thuật thủ công. Cách mặc Kimono (Kitsuke) rất phức tạp, đến mức người ta phải đi học để biết cách mặc đúng.",
+    "fun_fact": "Mảnh vải để may một bộ Kimono tiêu chuẩn dài tới 12 mét nhưng được cắt từ một sấp vải duy nhất (Tanmono).",
+    "vocab": [
+        {"word": "着物", "reading": "Kimono", "meaning": "Quần áo để mặc"},
+        {"word": "浴衣", "reading": "Yukata", "meaning": "Áo choàng tắm/Lễ hội"},
+        {"word": "帯", "reading": "Obi", "meaning": "Thắt lưng Kimono"}
+    ],
+    "images": [ "Image/Kimono_Yukata.jpg", "Image/Kimono_Yukata2.png" , "Image/Kimono_Yukata.png" ],
+    "gradient": "linear-gradient(135deg, #f067b4 0%, #8131ff 100%)"
+  },
+  {
+    "id": "c19",
+    "title": "Takoyaki & Okonomiyaki",
+    "category": "food",
+    "tag": "Ẩm thực đường phố",
+    "short_desc": "Hương vị nồng nàn từ vùng Kansai.",
+    "full_desc": "Takoyaki là bánh bột mì viên tròn có nhân bạch tuộc. Okonomiyaki là bánh xèo Nhật Bản với công thức 'thích gì cho nấy', thường gồm bắp cải, thịt lợn và hải sản.",
+    "time": "Quanh năm",
+    "location": "Osaka (Nhà bếp của thiên hạ)",
+    "story": "Cả hai món ăn này đều bùng nổ sau Thế chiến thứ 2 tại Osaka. Khi nguồn lương thực khan hiếm, người dân đã tận dụng bột mì từ viện trợ để tạo ra những món ăn no bụng và rẻ tiền.",
+    "fun_fact": "Khi trình bày, người ta rắc cá bào (Katsuobushi) lên trên. Sức nóng từ bánh làm các lát cá mỏng co lại, tạo hiệu ứng như thể chúng đang 'nhảy múa'.",
+    "vocab": [
+        {"word": "たこ焼き", "reading": "Takoyaki", "meaning": "Bánh bạch tuộc"},
+        {"word": "お好み焼き", "reading": "Okonomiyaki", "meaning": "Bánh xèo Nhật"},
+        {"word": "美味しい", "reading": "Oishii", "meaning": "Ngon"}
+    ],
+    "images": [ "Image/Takoyaki.jpg" ,"Image/Okonomiyaki.webp"],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c20",
+    "title": "Anime & Manga",
+    "category": "art",
+    "tag": "Văn hóa đại chúng",
+    "short_desc": "Thế giới của trí tưởng tượng vô hạn.",
+    "full_desc": "Manga (truyện tranh) và Anime (hoạt hình) là ngành công nghiệp tỷ đô, không chỉ dành cho trẻ em mà còn chứa đựng những triết lý sâu sắc về cuộc sống, con người và tương lai.",
+    "time": "Quanh năm",
+    "location": "Akihabara (Tokyo) / Bảo tàng Ghibli",
+    "story": "Sau thế chiến, Tezuka Osamu (cha đẻ của Astro Boy) đã cách tân Manga bằng các kỹ thuật điện ảnh, đặt nền móng cho phong cách Anime đặc trưng với đôi mắt to tròn như ngày nay.",
+    "fun_fact": "Nhật Bản sử dụng nhiều giấy để in Manga hơn là để sản xuất giấy vệ sinh mỗi năm.",
+    "vocab": [
+        {"word": "漫画", "reading": "Manga", "meaning": "Truyện tranh"},
+        {"word": "アニメ", "reading": "Anime", "meaning": "Hoạt hình"},
+        {"word": "聖地巡礼", "reading": "Seichi Junrei", "meaning": "Hành hương về bối cảnh phim"}
+    ],
+    "images": [ "Image/Anime.jpg", "Image/Anime2.jpg" ,"Image/Manga.webp"],
+    "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+  },
+  {
+    "id": "c21",
+    "title": "Tàu cao tốc Shinkansen",
+    "category": "art",
+    "tag": "Giao thông",
+    "short_desc": "Biểu tượng của sự chính xác và tốc độ.",
+    "full_desc": "Shinkansen là hệ thống tàu cao tốc đầu tiên trên thế giới, nổi tiếng với sự an toàn tuyệt đối, tiện nghi và đúng giờ đến từng giây.",
+    "time": "Quanh năm",
+    "location": "Các tuyến đường sắt huyết mạch",
+    "story": "Ra mắt lần đầu vào năm 1964 nhân dịp Thế vận hội Tokyo, Shinkansen là lời khẳng định với thế giới về sự hồi sinh mạnh mẽ của Nhật Bản sau chiến tranh.",
+    "fun_fact": "Thời gian trễ trung bình của Shinkansen mỗi năm chỉ khoảng 36 giây, bao gồm cả các lý do bất khả kháng như thiên tai.",
+    "vocab": [
+        {"word": "新幹線", "reading": "Shinkansen", "meaning": "Tàu cao tốc"},
+        {"word": "駅弁", "reading": "Ekiben", "meaning": "Cơm hộp tại ga tàu"},
+        {"word": "切符", "reading": "Kippu", "meaning": "Vé tàu"}
+    ],
+    "images": [ "Image/Tau_Shinkansen.jpg", "Image/Tau_Shinkansen2.jpg" ],
+    "gradient": "linear-gradient(135deg, #2af598 0%, #009efd 100%)"
+  },
+  {
+    "id": "c22",
+    "title": "Xếp giấy Origami",
+    "category": "art",
+    "tag": "Thủ công",
+    "short_desc": "Phép màu từ những mảnh giấy phẳng.",
+    "full_desc": "Origami là nghệ thuật gấp giấy truyền thống, biến một tờ giấy hình vuông đơn giản thành những hình dáng phức tạp như con vật, hoa lá mà không cần cắt hay dán.",
+    "time": "Quanh năm",
+    "location": "Toàn quốc",
+    "story": "Hình ảnh quen thuộc nhất là con hạc (Orizuru). Người Nhật tin rằng nếu ai đó gấp đủ 1.000 con hạc giấy (Senbazuru), họ sẽ được một điều ước hoặc sự bình phục về sức khỏe.",
+    "fun_fact": "Kỷ lục Guinness thế giới cho con hạc giấy nhỏ nhất là con hạc được gấp từ một mảnh giấy chỉ có kích thước 0.1 x 0.1 milimét.",
+    "vocab": [
+        {"word": "折り紙", "reading": "Origami", "meaning": "Gấp giấy"},
+        {"word": "折り鶴", "reading": "Orizuru", "meaning": "Con hạc giấy"},
+        {"word": "紙", "reading": "Kami", "meaning": "Giấy"}
+    ],
+    "images": [ "Image/Origami.jpg", "Image/Origami2.jpg" ],
+    "gradient": "linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)"
+  },
+  {
+    "id": "c23",
+    "title": "Lễ hội Tanabata",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Lễ hội Thất tịch - Điều ước trên cành tre.",
+    "full_desc": "Tanabata kỷ niệm cuộc gặp gỡ của hai vị thần Orihime và Hikoboshi (đại diện cho sao Chức Nữ và sao Ngưu Lang). Người dân viết điều ước lên những mảnh giấy màu Fukinagashi và treo lên cành tre.",
+    "time": "Ngày 7 tháng 7",
+    "location": "Toàn quốc (Nổi tiếng nhất tại Sendai)",
+    "story": "Theo truyền thuyết, hai ngôi sao yêu nhau nhưng bị ngăn cách bởi dải Ngân Hà. Họ chỉ được phép gặp nhau mỗi năm một lần vào ngày này. Nếu trời mưa, nước sông dâng cao và họ không thể gặp nhau.",
+    "fun_fact": "Sau lễ hội, những cành tre treo điều ước thường được thả xuống dòng sông hoặc đốt đi để điều ước có thể chạm tới các vị thần.",
+    "vocab": [
+        {"word": "七夕", "reading": "Tanabata", "meaning": "Lễ Thất tịch"},
+        {"word": "短冊", "reading": "Tanzaku", "meaning": "Giấy viết điều ước"},
+        {"word": "天の川", "reading": "Amanogawa", "meaning": "Dải Ngân Hà"}
+    ],
+    "images": [ "Image/LH_Tanabata.jpg" ,"Image/LH_Tanabata2.jpg"],
+    "gradient": "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)"
+  },
+  {
+    "id": "c24",
+    "title": "Bánh ngọt Wagashi",
+    "category": "food",
+    "tag": "Tráng miệng",
+    "short_desc": "Đỉnh cao mỹ thuật trong ẩm thực Nhật Bản.",
+    "full_desc": "Wagashi là các loại bánh ngọt truyền thống làm từ bột nếp, đậu đỏ và trái cây. Mỗi chiếc bánh là một tác phẩm nghệ thuật mô phỏng vẻ đẹp thiên nhiên theo từng mùa.",
+    "time": "Quanh năm (Thay đổi theo mùa)",
+    "location": "Các tiệm bánh truyền thống",
+    "story": "Wagashi phát triển mạnh mẽ cùng với văn hóa trà đạo. Vị ngọt thanh của bánh được thiết kế để làm cân bằng vị đắng nồng của trà xanh Matcha.",
+    "fun_fact": "Tên gọi và hình dáng của Wagashi thường lấy cảm hứng từ thơ ca cổ điển hoặc các loài hoa đặc trưng của tháng đó.",
+    "vocab": [
+        {"word": "和菓子", "reading": "Wagashi", "meaning": "Bánh ngọt Nhật"},
+        {"word": "餡子", "reading": "Anko", "meaning": "Nhân đậu đỏ"},
+        {"word": "餅", "reading": "Mochi", "meaning": "Bánh giầy"}
+    ],
+    "images": [ "Image/Wagashi.png", "Image/Wagashi2.png", "Image/Wagashi3.png", "Image/Wagashi4.png" , "Image/Wagashi5.png" ],
+    "gradient": "linear-gradient(135deg, #feb47b 0%, #ff7e5f 100%)"
+  },
+  {
+    "id": "c25",
+    "title": "Cắm hoa Ikebana",
+    "category": "art",
+    "tag": "Cắm hoa",
+    "short_desc": "Hồn cốt của hoa cỏ trong không gian tĩnh lặng.",
+    "full_desc": "Khác với cách cắm hoa phương Tây chú trọng vào số lượng, Ikebana (Hoa đạo) tập trung vào đường nét, hình khối và sự tối giản để tạo nên một tác phẩm hài hòa giữa thiên nhiên và con người.",
+    "time": "Quanh năm",
+    "location": "Các trường phái cắm hoa (Ikenobo, Ohara)",
+    "story": "Xuất thân từ nghi lễ dâng hoa lên đức Phật, Ikebana dần trở thành một bộ môn nghệ thuật tinh thần giúp người cắm hoa rèn luyện sự kiên nhẫn và lòng tập trung.",
+    "fun_fact": "Trong một tác phẩm Ikebana, ba nhánh chính thường đại diện cho Thiên (Trời), Địa (Đất) và Nhân (Con người).",
+    "vocab": [
+        {"word": "生け花", "reading": "Ikebana", "meaning": "Nghệ thuật cắm hoa"},
+        {"word": "華道", "reading": "Kadō", "meaning": "Hoa đạo"},
+        {"word": "花瓶", "reading": "Kabin", "meaning": "Bình hoa"}
+    ],
+    "images": [ "Image/Ikebana.webp", "Image/Ikebana2.webp" , "Image/Ikebana3.webp" ],
+    "gradient": "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
+  },
+  {
+    "id": "c26",
+    "title": "Lễ hội Awa Odori",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Điệu múa của những 'kẻ ngốc' vui vẻ.",
+    "full_desc": "Awa Odori là lễ hội múa dân gian lớn nhất Nhật Bản. Hàng ngàn vũ công mặc trang phục truyền thống, đội mũ rơm bán nguyệt và nhảy múa trên đường phố trong nhịp nhạc rộn ràng.",
+    "time": "Giữa tháng 8",
+    "location": "Tỉnh Tokushima (Vùng Shikoku)",
+    "story": "Câu hát nổi tiếng của lễ hội là: 'Người múa là kẻ ngốc, người xem cũng là kẻ ngốc, nếu cả hai đều ngốc, tại sao không cùng múa?'. Câu hát này khuyến khích mọi người rũ bỏ ngại ngùng để tận hưởng niềm vui.",
+    "fun_fact": "Các vũ công nam thường múa với tư thế thấp, mạnh mẽ, trong khi các vũ công nữ múa trên đôi guốc gỗ Geta cao chênh vênh đầy duyên dáng.",
+    "vocab": [
+        {"word": "踊り", "reading": "Odori", "meaning": "Điệu múa"},
+        {"word": "下駄", "reading": "Geta", "meaning": "Guốc gỗ Nhật"},
+        {"word": "阿波踊り", "reading": "Awa Odori", "meaning": "Điệu múa Awa"}
+    ],
+    "images": [ "Image/Awa_Odori.png", "Image/Awa_Odori2.png" , "Image/Awa_Odori3.jpg" ],
+    "gradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+  },
+  {
+    "id": "c27",
+    "title": "Tranh gỗ Ukiyo-e",
+    "category": "art",
+    "tag": "Hội họa",
+    "short_desc": "Những bức họa về 'thế giới phù hoa'.",
+    "full_desc": "Ukiyo-e là loại hình tranh in khắc gỗ đặc trưng của thời kỳ Edo. Đề tài thường là những mỹ nhân, võ sĩ Samurai, phong cảnh thiên nhiên hoặc đời sống phố thị.",
+    "time": "Quanh năm",
+    "location": "Bảo tàng mỹ thuật",
+    "story": "Vào thế kỷ 19, tranh Ukiyo-e xuất khẩu sang châu Âu và đã gây ra một cơn sốt lớn, ảnh hưởng trực tiếp đến phong cách của các họa sĩ lừng danh như Vincent van Gogh.",
+    "fun_fact": "Bức tranh 'Sóng lừng ngoài khơi Kanagawa' của Hokusai là tác phẩm Ukiyo-e nổi tiếng nhất thế giới, biểu tượng cho sức mạnh thiên nhiên.",
+    "vocab": [
+        {"word": "浮世絵", "reading": "Ukiyo-e", "meaning": "Tranh phù thế"},
+        {"word": "版画", "reading": "Hanga", "meaning": "Tranh in khắc gỗ"},
+        {"word": "富士山", "reading": "Fujisan", "meaning": "Núi Phú Sĩ"}
+    ],
+    "images": [ "Image/Ukiyo_e.jpg", "Image/Ukiyo_e2.jpg" ],
+    "gradient": "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)"
+  },
+  {
+    "id": "c28",
+    "title": "Thịt heo chiên xù Tonkatsu",
+    "category": "food",
+    "tag": "Món mặn",
+    "short_desc": "Sự kết hợp hoàn hảo giữa ẩm thực Á và Âu.",
+    "full_desc": "Tonkatsu là món thịt thăn lợn được tẩm bột mì, trứng và vụn bánh mì panko rồi chiên ngập dầu cho đến khi vàng ruộm. Món này thường ăn kèm bắp cải thái sợi và sốt Tonkatsu đậm đà.",
+    "time": "Quanh năm",
+    "location": "Nhà hàng Tonkatsu chuyên biệt",
+    "story": "Xuất hiện vào cuối thế kỷ 19 như một món 'Yōshoku' (món Tây kiểu Nhật), Tonkatsu đã nhanh chóng trở thành món ăn gia đình bình dân và được yêu thích bậc nhất.",
+    "fun_fact": "Các sĩ tử Nhật Bản thường ăn Tonkatsu trước kỳ thi vì từ 'Katsu' (chiên) có phát âm giống với từ 'Katsu' (thắng/chiến thắng).",
+    "vocab": [
+        {"word": "とんかつ", "reading": "Tonkatsu", "meaning": "Thịt heo chiên xù"},
+        {"word": "キャベツ", "reading": "Kyabetsu", "meaning": "Bắp cải"},
+        {"word": "勝つ", "reading": "Katsu", "meaning": "Chiến thắng"}
+    ],
+    "images": [ "Image/Tonkatsu.jpg" ],
+    "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+  },
+  {
+    "id": "c29",
+    "title": "Mì Soba & Udon",
+    "category": "food",
+    "tag": "Mì truyền thống",
+    "short_desc": "Hai dòng mì thống trị ẩm thực Nhật Bản.",
+    "full_desc": "Soba được làm từ kiều mạch với màu nâu nhạt đặc trưng, trong khi Udon là loại mì sợi to, trắng, làm từ bột mì với độ dai mềm hấp dẫn.",
+    "time": "Quanh năm",
+    "location": "Toàn quốc",
+    "story": "Vào đêm giao thừa, người Nhật có truyền thống ăn 'Toshikoshi Soba' (Mì tất niên). Sợi mì dài và dễ cắt đứt tượng trưng cho việc cắt bỏ những điều xui xẻo của năm cũ để đón năm mới trường thọ.",
+    "fun_fact": "Vùng Kagawa nổi tiếng với mì Udon đến mức họ còn có biệt danh là 'Tỉnh Udon' và có hẳn một 'hộ chiếu Udon' dành cho du khách.",
+    "vocab": [
+        {"word": "蕎麦", "reading": "Soba", "meaning": "Mì kiều mạch"},
+        {"word": "うどん", "reading": "Udon", "meaning": "Mì sợi to"},
+        {"word": "年越し", "reading": "Toshikoshi", "meaning": "Giao thừa"}
+    ],
+    "images": [ "Image/Soba.webp", "Image/Udon.webp" ],
+    "gradient": "linear-gradient(135deg, #a8e063 0%, #56ab2f 100%)"
+  },
+  {
+    "id": "c30",
+    "title": "Lễ hội Tenjin Matsuri",
+    "category": "festival",
+    "tag": "Lễ hội nước",
+    "short_desc": "Lễ hội của nước và lửa tại Osaka.",
+    "full_desc": "Là một trong ba lễ hội lớn nhất Nhật Bản, Tenjin Matsuri vinh danh thần học vấn Sugawara no Michizane với lễ rước trên cạn và lễ rước thuyền rực rỡ trên sông.",
+    "time": "Ngày 24 và 25 tháng 7",
+    "location": "Osaka (Đền Tenmangu)",
+    "story": "Lễ hội đã có lịch sử hơn 1.000 năm. Đỉnh điểm là màn đốt pháo hoa cúng tế (Hōnō Hanabi) soi sáng cả bầu trời và dòng sông với hàng trăm con thuyền thắp đèn lồng.",
+    "fun_fact": "Các vũ công đội mũ đỏ (Moyoshi-daiko) sẽ biểu diễn màn đánh trống cực kỳ sôi động trên thuyền để khuấy động không khí lễ hội.",
+    "vocab": [
+        {"word": "天神祭", "reading": "Tenjin Matsuri", "meaning": "Lễ hội Tenjin"},
+        {"word": "船渡御", "reading": "Funatogyo", "meaning": "Lễ rước thuyền"},
+        {"word": "花火", "reading": "Hanabi", "meaning": "Pháo hoa"}
+    ],
+    "images": [ "Image/Tenjin_Matsuri3.webp", "Image/Tenjin_Matsuri.webp", "Image/Tenjin_Matsuri2.webp" ],
+    "gradient": "linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%)"
+  },
+  {
+    "id": "c31",
+    "title": "Nghệ thuật Kintsugi",
+    "category": "art",
+    "tag": "Thủ công",
+    "short_desc": "Hồi sinh đồ vỡ bằng vàng.",
+    "full_desc": "Kintsugi là nghệ thuật sửa chữa đồ gốm bị vỡ bằng cách gắn kết các mảnh vụn bằng sơn mài trộn với bột vàng, bạc hoặc bạch kim.",
+    "time": "Quanh năm",
+    "location": "Các xưởng thủ công nghệ thuật",
+    "story": "Triết lý của Kintsugi là không che giấu vết nứt mà coi đó là một phần lịch sử của món đồ. Nó dạy chúng ta trân trọng những tổn thương và biến chúng thành vẻ đẹp độc bản.",
+    "fun_fact": "Nhiều món đồ gốm sau khi được 'Kintsugi' còn có giá trị cao hơn cả lúc mới, vì mỗi vết nứt được mạ vàng là một đường nét nghệ thuật không thể lặp lại.",
+    "vocab": [
+        {"word": "金継ぎ", "reading": "Kintsugi", "meaning": "Gắn kết bằng vàng"},
+        {"word": "陶器", "reading": "Tōki", "meaning": "Đồ gốm"},
+        {"word": "金", "reading": "Kin", "meaning": "Vàng"}
+    ],
+    "images": [ "Image/Kintsugi.webp" , "Image/Kintsugi2.webp" ],
+    "gradient": "linear-gradient(135deg, #232526 0%, #414345 100%)"
+  },
+  {
+    "id": "c32",
+    "title": "Cơm lươn Unagi",
+    "category": "food",
+    "tag": "Món bổ dưỡng",
+    "short_desc": "Món ăn tăng cường sinh lực mùa hè.",
+    "full_desc": "Lươn nướng phủ sốt Tare ngọt mặn, ăn kèm với cơm nóng. Đây là món ăn xa xỉ giúp giải nhiệt và bồi bổ sức khỏe trong những ngày hè oi bức.",
+    "time": "Phổ biến nhất vào ngày Doyo no Ushi no Hi (tháng 7 hoặc 8)",
+    "location": "Toàn quốc (Nổi tiếng ở vùng Shizuoka và Nagoya)",
+    "story": "Người Nhật tin rằng ăn lươn (Unagi) vào ngày 'Ngày sửu giữa mùa hè' sẽ giúp cơ thể chống chọi lại cái nóng và sự mệt mỏi.",
+    "fun_fact": "Kỹ thuật nướng lươn rất khó, có câu nói rằng: 'Học xiên lươn mất 3 năm, học phi lê mất 8 năm, và học nướng thì mất cả đời'.",
+    "vocab": [
+        {"word": "鰻", "reading": "Unagi", "meaning": "Lươn Nhật"},
+        {"word": "蒲焼き", "reading": "Kabayaki", "meaning": "Nướng xiên que"},
+        {"word": "タレ", "reading": "Tare", "meaning": "Sốt đặc trưng"}
+    ],
+    "images": [ "Image/Unagi.jpg", "Image/Unagi.png" ],
+    "gradient": "linear-gradient(135deg, #e65c00 0%, #f9d423 100%)"
+  },
+  {
+    "id": "c33",
+    "title": "Lễ hội Búp bê Hinamatsuri",
+    "category": "festival",
+    "tag": "Mùa Xuân",
+    "short_desc": "Ngày hội cầu nguyện cho các bé gái.",
+    "full_desc": "Các gia đình có con gái sẽ trưng bày một bộ búp bê Hina được mặc trang phục hoàng gia thời Heian trên kệ nhiều tầng trải thảm đỏ để cầu mong sự bình an và hạnh phúc.",
+    "time": "Ngày 3 tháng 3",
+    "location": "Toàn quốc (Tại các gia đình)",
+    "story": "Người xưa tin rằng búp bê có thể gánh thay những điều xui xẻo hoặc bệnh tật cho các cô bé, giúp các em lớn lên khỏe mạnh và có cuộc hôn nhân tốt đẹp.",
+    "fun_fact": "Có một lời đồn dân gian rằng nếu gia đình không cất búp bê ngay sau khi lễ hội kết thúc, cô con gái trong nhà sau này sẽ lấy chồng muộn.",
+    "vocab": [
+        {"word": "雛祭り", "reading": "Hinamatsuri", "meaning": "Lễ hội búp bê"},
+        {"word": "人形", "reading": "Ningyō", "meaning": "Búp bê/Bù nhìn"},
+        {"word": "桃の節句", "reading": "Momo no Sekku", "meaning": "Lễ hội hoa đào"}
+    ],
+    "images": [ "Image/Hinamatsuri.jpg" , "Image/Hinamatsuri2.webp" ],
+    "gradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+  },
+  {
+    "id": "c34",
+    "title": "Thư pháp Shodō",
+    "category": "art",
+    "tag": "Hội họa",
+    "short_desc": "Nghệ thuật của mực tàu và bút lông.",
+    "full_desc": "Shodō là nghệ thuật viết chữ Kanji và Kana bằng bút lông và mực tàu trên giấy Washi. Nó nhấn mạnh vào dòng chảy của năng lượng (Ki) và sự tập trung tuyệt đối.",
+    "time": "Quanh năm",
+    "location": "Trường học, câu lạc bộ thư pháp",
+    "story": "Thư pháp du nhập từ Trung Quốc nhưng người Nhật đã phát triển các phong cách riêng mềm mại hơn, đặc biệt là sự ra đời của hệ chữ Hiragana thanh thoát.",
+    "fun_fact": "Trong thư pháp Nhật, không có khái niệm 'tẩy xóa' hay 'sửa sai'. Một khi mực đã chạm vào giấy, mỗi nét vẽ là duy nhất và phản ánh trạng thái tâm hồn của người viết lúc đó.",
+    "vocab": [
+        {"word": "書道", "reading": "Shodō", "meaning": "Thư pháp"},
+        {"word": "筆", "reading": "Fude", "meaning": "Bút lông"},
+        {"word": "墨", "reading": "Sumi", "meaning": "Mực tàu"}
+    ],
+    "images": [ "Image/Shodo.jpg", "Image/Shodo2.jpg" ],
+    "gradient": "linear-gradient(135deg, #30cfd0 0%, #330867 100%)"
   }
 ]
