@@ -38,6 +38,25 @@
     "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
   },
   {
+    "id": "c3",
+    "title": "Lễ hội Otsukimi",
+    "category": "festival",
+    "tag": "Văn hóa",
+    "short_desc": "Tục lệ ngắm trăng rằm mùa thu thơ mộng.",
+    "full_desc": "Otsukimi (ngắm trăng) là truyền thống thưởng ngoạn trăng rằm trung thu của người Nhật. Đây là dịp để tạ ơn thần linh vì một mùa màng bội thu và cầu mong điều tốt lành.",
+    "time": "Ngày 15 tháng 8 âm lịch (thường rơi vào tháng 9 hoặc tháng 10 dương lịch)",
+    "location": "Các đền chùa, công viên hoặc tại hiên nhà truyền thống",
+    "story": "Phong tục này bắt nguồn từ thời Heian, ban đầu chỉ dành cho giới quý tộc thưởng trà và làm thơ dưới ánh trăng. Sau này, đến thời Edo, Otsukimi trở thành lễ hội phổ biến trong dân gian để mừng vụ mùa.",
+    "fun_fact": "Thay vì thấy hình ảnh 'chú Cuội gốc đa', người Nhật nhìn lên mặt trăng và thấy hình ảnh một chú thỏ đang giã bánh giầy (Mochi).",
+    "vocab": [
+        {"word": "お月見", "reading": "Otsukimi", "meaning": "Ngắm trăng"},
+        {"word": "月見団子", "reading": "Tsukimi Dango", "meaning": "Bánh trôi ngắm trăng"},
+        {"word": "満月", "reading": "Mangetsu", "meaning": "Trăng rằm"}
+    ],
+    "images": [ "Image/Otsukimi4.jpg" , "Image/Otsukimi3.jpg" , "Image/Otsukimi2.jpg" , "Image/Otsukimi.jpg" ],
+    "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)"
+  },
+  {
     "id": "c5",
     "title": "Lễ hội Obon",
     "category": "festival",
