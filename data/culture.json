@@ -1,7 +1,7 @@
 [
   {
     "id": "c1",
-    "title": "Hanami (Ngắm hoa)",
+    "title": "Ngắm hoa (Hanami)",
     "category": "festival",
     "tag": "Mùa Xuân",
     "short_desc": "Phong tục ngắm hoa anh đào truyền thống.",
@@ -55,6 +55,27 @@
     ],
     "images": [ "Image/Otsukimi4.jpg" , "Image/Otsukimi3.jpg" , "Image/Otsukimi2.jpg" , "Image/Otsukimi.jpg" ],
     "gradient": "linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)"
+  },
+  {
+    "id": "c4",
+    "title": "Búp bê Daruma",
+    "category": "art",
+    "tag": "Thủ công",
+    "short_desc": "Biểu tượng của sự kiên trì và may mắn.",
+    "full_desc": "Daruma là loại búp bê lật đật truyền thống làm từ giấy bồi, không có tay chân và luôn trở lại tư thế đứng thẳng dù bị xô ngã. Đây là vật cầu may phổ biến nhất của người Nhật khi bắt đầu một mục tiêu mới.",
+    "time": "Quanh năm (Thường mua vào dịp Tết)",
+    "location": "Toàn quốc (Nổi tiếng nhất tại tỉnh Gunma)",
+    "story": "Búp bê mô phỏng hình dáng của vị sư Bồ Đề Đạt Ma. Hình dạng tròn không tay chân bắt nguồn từ truyền thuyết ông đã ngồi thiền suốt 9 năm đến mức tay chân bị teo đi. Màu đỏ của Daruma tượng trưng cho trang phục của các vị cao tăng và có tác dụng xua đuổi tà ma.",
+    "fun_fact": "Khi mua về, mắt của Daruma đều trắng dã. Bạn hãy vẽ mắt trái khi đặt ra mục tiêu, và chỉ khi mục tiêu đó thành công, bạn mới được phép vẽ nốt con mắt bên phải.",
+    "vocab": [
+      {"word": "達磨", "reading": "Daruma", "meaning": "Búp bê Daruma"},
+      {"word": "七転び八起き", "reading": "Nanakorobi Yaoki", "meaning": "Ngã 7 lần, đứng dậy 8 lần"},
+      {"word": "願い事", "reading": "Negaigoto", "meaning": "Điều ước/Mục tiêu"}
+    ],
+    "images": [ 
+      "Image/Daruma.jpg"
+    ],
+    "gradient": "linear-gradient(135deg, #e52d27 0%, #b31217 100%)"
   },
   {
     "id": "c5",
