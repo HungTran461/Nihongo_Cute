@@ -2300,3 +2300,51 @@ body.dark-mode .input-area input{
         grid-template-columns: 1fr;
     }
 }
+
+/* --- TỐI ƯU FONT TIẾNG NHẬT BY SENIOR DEV --- */
+
+:root {
+    /* Tăng kích thước cơ bản để dễ nhìn hơn */
+    --jp-font-size-large: 1.25rem; /* ~20px */
+    --jp-font-size-xl: 1.8rem;    /* Cho Kanji/Từ vựng chính */
+}
+
+/* Áp dụng font thanh đậm cho các thành phần chứa tiếng Nhật */
+body, 
+.v-word, 
+.v-reading, 
+.q-text, 
+.scene-item, 
+.grammar-title,
+.modern-container p {
+    /* Ưu tiên Shippori Mincho cho nét thanh đậm, Noto Serif là phương án dự phòng */
+    font-family: 'Shippori Mincho', 'Noto Serif JP', serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tăng size cho các khu vực học tập cụ thể */
+.v-word, .kanji-display {
+    font-size: var(--jp-font-size-xl) !important;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #2c3e50; /* Màu sắc sâu hơn để tăng độ tương phản */
+}
+
+.v-reading, .v-meaning, .q-text {
+    font-size: var(--jp-font-size-large) !important;
+    line-height: 1.6;
+}
+
+/* Hiệu ứng chữ mượt mà hơn trên màn hình độ phân giải cao */
+@media screen and (min-width: 768px) {
+    .modern-container {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tối ưu riêng cho input để người nhập liệu nhìn rõ chữ Nhật */
+input, textarea {
+    font-family: 'Shippori Mincho', sans-serif;
+    font-size: 1.1rem !important;
+}
