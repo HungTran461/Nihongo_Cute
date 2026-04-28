@@ -449,5 +449,353 @@
                 { "j": "箱の中に 手紙や 写真が あります。", "v": "Trong hộp có thư, ảnh, v.v..." }
             ]
         }
-    ]
+    ],
+    "11": [
+    {
+      "title": "Cách đếm số lượng vật, người",
+      "mean": "Đếm số lượng",
+      "note": "Số lượng từ đứng trước động từ (trừ các từ chỉ thời gian). ひとつ～とお (vật chung), ～にん (người), ～だい (máy móc), ～まい (vật mỏng).",
+      "ex": [
+        { "j": "りんごを ４つ 買いました。", "v": "Tôi đã mua 4 quả táo." },
+        { "j": "外国人の 学生が ２人 います。", "v": "Có 2 sinh viên nước ngoài." }
+      ]
+    },
+    {
+      "title": "Khoảng thời gian + に ～回 V",
+      "mean": "Làm việc gì đó ~ lần trong khoảng thời gian",
+      "note": "Dùng để nói về tần suất thực hiện hành động.",
+      "ex": [
+        { "j": "１か月に ２回 映画を 見ます。", "v": "Một tháng tôi xem phim 2 lần." }
+      ]
+    },
+    {
+      "title": "Lượng từ (thời gian) + ぐらい / だけ",
+      "mean": "Khoảng / Chỉ",
+      "note": "ぐらい: khoảng (ước chừng), だけ: chỉ (giới hạn).",
+      "ex": [
+        { "j": "９時間ぐらい 寝ます。", "v": "Tôi ngủ khoảng 9 tiếng." },
+        { "j": "休みは 日曜日だけです。", "v": "Nghỉ chỉ có chủ nhật thôi." }
+      ]
+    }
+  ],
+  "12": [
+    {
+      "title": "Thì quá khứ của Danh từ và Tính từ Na",
+      "mean": "N / Na-adj (đã) ...",
+      "note": "Khẳng định: でした. Phủ định: じゃありませんでした.",
+      "ex": [
+        { "j": "昨日は 雨でした。", "v": "Hôm qua trời đã mưa." },
+        { "j": "暇じゃありませんでした。", "v": "Lúc đó tôi đã không rảnh rỗi." }
+      ]
+    },
+    {
+      "title": "Thì quá khứ của Tính từ I",
+      "mean": "I-adj (đã) ...",
+      "note": "Khẳng định: Bỏ い thêm かったです. Phủ định: Bỏ い thêm くなかったです.",
+      "ex": [
+        { "j": "旅行は 楽しかったです。", "v": "Chuyến du lịch đã rất vui." },
+        { "j": "天気は よくないかったです。", "v": "Thời tiết đã không tốt." }
+      ]
+    },
+    {
+      "title": "N1 は N2 より Adj です",
+      "mean": "N1 ... hơn N2",
+      "note": "Cấu trúc so sánh hơn.",
+      "ex": [
+        { "j": "この車は あの車より 速いです。", "v": "Cái xe này nhanh hơn cái xe kia." }
+      ]
+    },
+    {
+      "title": "N1 と N2 と どちらが Adj ですか",
+      "mean": "N1 và N2 cái nào ... hơn?",
+      "note": "So sánh giữa 2 vật. Trả lời dùng 'N1/N2 の ほうが Adj です'.",
+      "ex": [
+        { "j": "サッカーと 野球と どちらが おもしろいですか。", "v": "Bóng đá và bóng chày cái nào thú vị hơn?" },
+        { "j": "サッカーの ほうが おもしろいです。", "v": "Bóng đá thú vị hơn." }
+      ]
+    }
+  ],
+  "13": [
+    {
+      "title": "N が ほしいです",
+      "mean": "Muốn có N",
+      "note": "Dùng để biểu thị ý muốn sở hữu một vật/người nào đó.",
+      "ex": [
+        { "j": "私は 友達が ほしいです。", "v": "Tôi muốn có bạn bè." }
+      ]
+    },
+    {
+      "title": "V-ます (bỏ ます) + たいです",
+      "mean": "Muốn làm V",
+      "note": "Dùng cho mong muốn của bản thân người nói (hoặc hỏi đối phương).",
+      "ex": [
+        { "j": "日本へ 行きたいです。", "v": "Tôi muốn đi Nhật." }
+      ]
+    },
+    {
+      "title": "V-ます / N (địa điểm) へ V-ます (bỏ ます) に 行きます",
+      "mean": "Đi đâu để làm gì",
+      "note": "Chỉ mục đích của việc đi/đến/về.",
+      "ex": [
+        { "j": "スーパーへ 買い物に 行きます。", "v": "Tôi đi siêu thị để mua sắm." }
+      ]
+    }
+  ],
+  "14": [
+    {
+      "title": "Nhóm động từ và Thể Te",
+      "mean": "Chia động từ thể Te",
+      "note": "Nhóm 1: い,ち,り->って; み,び,に->んで; き->いて; ぎ->いで; し->して. Nhóm 2: ます->て. Nhóm 3: します->して, 来ます->来（き）て.",
+      "ex": [
+        { "j": "書いてください。", "v": "Hãy viết đi." }
+      ]
+    },
+    {
+      "title": "V-て ください",
+      "mean": "Hãy làm V",
+      "note": "Dùng để yêu cầu, sai khiến hoặc mời mọc lịch sự.",
+      "ex": [
+        { "j": "ここに 名前を 書いてください。", "v": "Hãy viết tên vào đây." }
+      ]
+    },
+    {
+      "title": "V-て います",
+      "mean": "Đang làm V",
+      "note": "Diễn tả hành động đang xảy ra tại thời điểm nói.",
+      "ex": [
+        { "j": "ミラーさんは 今 電話を かけています。", "v": "Anh Miller hiện đang gọi điện thoại." }
+      ]
+    }
+  ],
+  "15": [
+    {
+      "title": "V-て も いいです",
+      "mean": "Làm V cũng được (Cho phép)",
+      "note": "Dùng để cho phép hoặc xin phép làm việc gì đó.",
+      "ex": [
+        { "j": "写真を 撮っても いいですか。", "v": "Tôi chụp ảnh có được không?" }
+      ]
+    },
+    {
+      "title": "V-て は いけません",
+      "mean": "Không được làm V (Cấm)",
+      "note": "Dùng để ra lệnh cấm đoán.",
+      "ex": [
+        { "j": "ここで タバコを 吸っては いけません。", "v": "Không được hút thuốc ở đây." }
+      ]
+    },
+    {
+      "title": "V-て います (Trạng thái)",
+      "mean": "Đang ... (Kết quả/Nghề nghiệp)",
+      "note": "Diễn tả một trạng thái kéo dài hoặc thói quen, nghề nghiệp (biết, sống, kết hôn).",
+      "ex": [
+        { "j": "私は 大阪に 住んでいます。", "v": "Tôi đang sống ở Osaka." },
+        { "j": "結婚しています。", "v": "Tôi đã kết hôn." }
+      ]
+    }
+  ],
+  "16": [
+    {
+      "title": "V1-て, V2-て, ... V-n",
+      "mean": "Làm V1, rồi V2... (Liệt kê hành động)",
+      "note": "Liệt kê các hành động xảy ra theo trình tự thời gian.",
+      "ex": [
+        { "j": "朝 起きて、顔を 洗って、朝ご飯を 食べます。", "v": "Sáng tôi thức dậy, rửa mặt rồi ăn sáng." }
+      ]
+    },
+    {
+      "title": "V1-て から, V2",
+      "mean": "Sau khi làm V1 thì làm V2",
+      "note": "Nhấn mạnh trình tự V2 xảy ra sau khi V1 kết thúc.",
+      "ex": [
+        { "j": "仕事が 終わってから、飲みに行きます。", "v": "Sau khi xong việc, tôi sẽ đi uống." }
+      ]
+    }
+  ],
+  "17": [
+    {
+      "title": "Thể Nai (V-nai)",
+      "mean": "Thể phủ định ngắn",
+      "note": "Nhóm 1: Chuyển đuôi hàng い sang hàng あ + ない. Nhóm 2: ます->ない. Nhóm 3: します->しない, 来ます->来（こ）ない.",
+      "ex": [
+        { "j": "書かない", "v": "Không viết" },
+        { "j": "食べない", "v": "Không ăn" }
+      ]
+    },
+    {
+      "title": "V-ないで ください",
+      "mean": "Đừng làm V",
+      "note": "Yêu cầu ai đó không làm việc gì đó.",
+      "ex": [
+        { "j": "ここで 写真を 撮らないで ください。", "v": "Đừng chụp ảnh ở đây." }
+      ]
+    },
+    {
+      "title": "V-なければ なりません",
+      "mean": "Phải làm V",
+      "note": "Biểu thị một việc bắt buộc phải làm.",
+      "ex": [
+        { "j": "薬を 飲まなければ なりません。", "v": "Phải uống thuốc." }
+      ]
+    },
+    {
+      "title": "V-なくても いいです",
+      "mean": "Không làm V cũng được",
+      "note": "Biểu thị sự không cần thiết của hành động.",
+      "ex": [
+        { "j": "明日は 来なくても いいです。", "v": "Ngày mai không đến cũng được." }
+      ]
+    }
+  ],
+  "18": [
+    {
+      "title": "Thể từ điển (V-ru)",
+      "mean": "Thể nguyên dạng",
+      "note": "Nhóm 1: Chuyển hàng い sang hàng う. Nhóm 2: ます->る. Nhóm 3: します->する, 来ます->来る.",
+      "ex": [
+        { "j": "行く", "v": "Đi" },
+        { "j": "食べる", "v": "Ăn" }
+      ]
+    },
+    {
+      "title": "N / V-る ことが できます",
+      "mean": "Có thể làm V / Có khả năng N",
+      "note": "Diễn tả năng lực hoặc khả năng thực hiện hành động.",
+      "ex": [
+        { "j": "ミラーさんは 漢字を 読むことが できます。", "v": "Anh Miller có thể đọc được chữ Hán." }
+      ]
+    },
+    {
+      "title": "趣味は N / V-る ことです",
+      "mean": "Sở thích là N / việc làm V",
+      "note": "Dùng để giới thiệu sở thích.",
+      "ex": [
+        { "j": "私の 趣味は 音楽を 聞くことです。", "v": "Sở thích của tôi là nghe nhạc." }
+      ]
+    },
+    {
+      "title": "V1-る / N-の / Thời gian + まえに、V2",
+      "mean": "Trước khi làm V1/N thì làm V2",
+      "note": "Diễn tả trình tự thời gian.",
+      "ex": [
+        { "j": "寝る 前に、日記を 書きます。", "v": "Trước khi ngủ, tôi viết nhật ký." }
+      ]
+    }
+  ],
+  "19": [
+    {
+      "title": "Thể Ta (V-ta)",
+      "mean": "Thể quá khứ ngắn",
+      "note": "Cách chia giống hệt thể て, chỉ thay て/で thành た/だ.",
+      "ex": [
+        { "j": "書いた", "v": "Đã viết" },
+        { "j": "飲んだ", "v": "Đã uống" }
+      ]
+    },
+    {
+      "title": "V-た ことが あります",
+      "mean": "Đã từng làm V",
+      "note": "Nói về kinh nghiệm trong quá khứ.",
+      "ex": [
+        { "j": "馬に 乗った ことが あります。", "v": "Tôi đã từng cưỡi ngựa." }
+      ]
+    },
+    {
+      "title": "V1-たり、V2-たり します",
+      "mean": "Lúc thì làm V1, lúc thì làm V2...",
+      "note": "Liệt kê các hành động tiêu biểu (không quan trọng trình tự).",
+      "ex": [
+        { "j": "日曜日は 買い物を したり、映画を 見たり します。", "v": "Chủ nhật tôi lúc thì mua sắm, lúc thì xem phim." }
+      ]
+    }
+  ],
+  "20": [
+    {
+      "title": "Thể thông thường (Futsuukei)",
+      "mean": "Cách nói thân mật",
+      "note": "Dùng với bạn bè, người thân. Chuyển ます->Thể từ điển/Nai/Ta. Chuyển です->だ. Chuyển Tính từ I giữ nguyên.",
+      "ex": [
+        { "j": "ご飯 食べる？", "v": "Ăn cơm không? (Thân mật)" },
+        { "j": "うん、食べる。", "v": "Ừ, ăn." }
+      ]
+    }
+  ],
+  "21": [
+    {
+      "title": "～と おもいます",
+      "mean": "Tôi nghĩ rằng...",
+      "note": "Dùng để bày tỏ ý kiến, dự đoán của bản thân.",
+      "ex": [
+        { "j": "明日は 雨が 降ると おもいます。", "v": "Tôi nghĩ ngày mai trời sẽ mưa." }
+      ]
+    },
+    {
+      "title": "「Câu trích dẫn」 / Câu (thể thông thường) と いいます",
+      "mean": "Nói rằng... / Nói là...",
+      "note": "Trích dẫn lời nói trực tiếp hoặc gián tiếp.",
+      "ex": [
+        { "j": "寝る 前に 「おやすみなさい」と言います。", "v": "Trước khi ngủ thì nói 'Chúc ngủ ngon'." }
+      ]
+    }
+  ],
+  "22": [
+    {
+      "title": "Bổ ngữ cho danh từ (Định ngữ)",
+      "mean": "N mà ...",
+      "note": "Dùng một cụm câu thể thông thường để giải thích cho một danh từ.",
+      "ex": [
+        { "j": "これは ミラーさんが 作った ケーキです。", "v": "Đây là cái bánh mà anh Miller đã làm." },
+        { "j": "私が 住んでいる 家は 古いです。", "v": "Cái nhà tôi đang ở thì cũ." }
+      ]
+    }
+  ],
+  "23": [
+    {
+      "title": "V-る / V-ない / Adj-i / Adj-na / N-の + とき",
+      "mean": "Khi, lúc...",
+      "note": "Diễn tả thời điểm xảy ra hành động hoặc trạng thái.",
+      "ex": [
+        { "j": "暇な とき、本を 読みます。", "v": "Khi rảnh, tôi đọc sách." },
+        { "j": "学生の とき、よく 勉強しました。", "v": "Hồi còn là sinh viên, tôi đã học rất nhiều." }
+      ]
+    },
+    {
+      "title": "V-る と、～",
+      "mean": "Hễ mà làm V thì...",
+      "note": "Diễn tả một kết quả tất yếu, tự nhiên hoặc hướng dẫn chỉ đường.",
+      "ex": [
+        { "j": "この ボタンを おすと、お釣りが 出ます。", "v": "Hễ ấn nút này là tiền thừa sẽ ra." }
+      ]
+    }
+  ],
+  "24": [
+    {
+      "title": "Cho và Nhận (V-て あげます / もらいます / くれます)",
+      "mean": "Làm V cho ai / Được ai làm V cho",
+      "note": "あげる (tặng/làm cho), もらう (nhận/được làm cho), くれる (ai đó tặng/làm cho TÔI).",
+      "ex": [
+        { "j": "私は 佐藤さんに 漢字を 教えて あげました。", "v": "Tôi đã dạy chữ Hán cho chị Sato." },
+        { "j": "母は 私に セーターを 送って くれました。", "v": "Mẹ đã gửi áo len cho tôi." }
+      ]
+    }
+  ],
+  "25": [
+    {
+      "title": "V-たら、～",
+      "mean": "Nếu... thì / Sau khi... thì",
+      "note": "Giả định một việc xảy ra hoặc trình tự hành động.",
+      "ex": [
+        { "j": "雨が 降ったら、出かけません。", "v": "Nếu trời mưa thì tôi sẽ không ra ngoài." },
+        { "j": "１０時に なったら、行きましょう。", "v": "Đến 10 giờ (sau khi đến 10h) thì chúng ta đi nhé." }
+      ]
+    },
+    {
+      "title": "V-て も、～",
+      "mean": "Dù... nhưng vẫn...",
+      "note": "Diễn tả sự tương phản (mặc dù).",
+      "ex": [
+        { "j": "安くても、買いません。", "v": "Dù rẻ tôi cũng không mua." }
+      ]
+    }
+  ]
 }

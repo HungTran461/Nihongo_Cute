@@ -1,0 +1,455 @@
+[
+  {
+    "root_id": "nhat",
+    "root_name": "Bộ Nhất",
+    "data": {
+      "kanji": "一",
+      "name": "NHẤT",
+      "meaning": "Số một / Ranh giới",
+      "detail": "Một nét ngang tượng trưng cho số 1 hoặc một mặt phẳng, mặt đất, bầu trời.",
+      "children": [
+        {
+          "kanji": "二",
+          "name": "NHỊ",
+          "meaning": "Số hai",
+          "detail": "Hai nét ngang chồng lên nhau.",
+          "children": [
+            {
+              "kanji": "三",
+              "name": "TAM",
+              "meaning": "Số ba",
+              "detail": "Ba nét ngang tượng trưng cho 3 cõi: Thiên (Trời) - Địa (Đất) - Nhân (Người).",
+              "children": [
+                {
+                  "kanji": "王",
+                  "name": "VƯƠNG",
+                  "meaning": "Vua",
+                  "detail": "Một nét dọc (丨) xuyên qua 3 nét ngang của chữ Tam (三). Vua là người kết nối Trời, Đất và Người.",
+                  "children": [
+                    {
+                      "kanji": "玉",
+                      "name": "NGỌC",
+                      "meaning": "Viên ngọc",
+                      "detail": "Thêm một dấu chấm (丶) cạnh chữ Vương (王), tượng trưng cho viên ngọc quý vua đeo.",
+                      "children": []
+                    },
+                    {
+                      "kanji": "主",
+                      "name": "CHỦ",
+                      "meaning": "Ông chủ",
+                      "detail": "Dấu chấm (丶) trên chữ Vương (王) tượng trưng cho ngọn lửa trên giá đỡ, chỉ người thắp sáng, người lãnh đạo.",
+                      "children": []
+                    },
+                    {
+                      "kanji": "皇",
+                      "name": "HOÀNG",
+                      "meaning": "Hoàng đế",
+                      "detail": "Bạch (白 - Trắng/Sáng) + Vương (王). Vị vua tỏa sáng rực rỡ và trong sạch là Hoàng đế.",
+                      "children": []
+                    },
+                    {
+                      "kanji": "理",
+                      "name": "LÝ",
+                      "meaning": "Lý lẽ / Chân lý",
+                      "detail": "",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kanji": "云",
+              "name": "VÂN",
+              "meaning": "Mây",
+              "detail": "HAI người (二) đang xúm lại một góc riêng TƯ (ム) để nói chuyện MÂY (云) trời.",
+              "children": [
+                {
+                    "kanji": "転",
+                    "name": "CHUYỂN",
+                    "meaning": "Chuyển động",
+                    "detail": "Chiếc xe (車) chạy nhanh đến mức bụi cuốn lên mù mịt như một đám mây (云)",
+                    "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kanji": "十",
+          "name": "THẬP",
+          "meaning": "Số mười",
+          "detail": "Nét dọc và nét ngang giao nhau (一 + 丨), chỉ sự hội tụ bốn phương tám hướng.",
+          "children": [
+            {
+              "kanji": "千",
+              "name": "THIÊN",
+              "meaning": "Một nghìn",
+              "detail": "Thêm một nét phẩy (丿) trên chữ Thập (十), chỉ số lượng cực kỳ lớn.",
+              "children": []
+            },
+            {
+              "kanji": "半",
+              "name": "BÁN",
+              "meaning": "Một nửa",
+              "detail": "Chia tách (bộ Bát 八) một chỉnh thể (Thập 十) ra làm hai phần bằng nhau.",
+              "children": []
+            },
+            {
+              "kanji": "計",
+              "name": "KẾ",
+              "meaning": "Kế hoạch",
+              "detail": "Ngôn (言) + Thập (十). Lời nói gom đủ 10 ý trọn vẹn là đã lên Kế hoạch.",
+              "children": []
+            },
+            {
+              "kanji": "協",
+              "name": "HIỆP",
+              "meaning": "Hiệp lực",
+              "detail": "Thập (十) + 3 lần Lực (力). Mười người cùng gom sức mạnh lại là Hiệp lực hợp tác.",
+              "children": []
+            },
+            {
+              "kanji": "汁",
+              "name": "TRẤP",
+              "meaning": "Nước ép / Súp",
+              "detail": "Thủy (氵) + Thập (十). Nước từ 10 (nhiều) loại nguyên liệu ép ra là nước cốt.",
+              "children": []
+            },
+            {
+              "kanji": "世",
+              "name": "THẾ",
+              "meaning": "Thế giới / Thế hệ",
+              "detail": "Ba chữ Thập (十) viết dính liền tạo thành 30. Ngày xưa 30 năm là 1 thế hệ.",
+              "children": []
+            },
+            {
+            "kanji": "木",
+            "name": "MỘC",
+            "meaning": "Cây cối",
+            "detail": "Hình dáng một cái cây có thân, cành và rễ.",
+            "children": [
+                {
+                "kanji": "本",
+                "name": "BẢN",
+                "meaning": "Gốc rễ / Sách",
+                "detail": "Thêm một nét gạch ngang ở dưới gốc cây để chỉ 'phần gốc'.",
+                "children": [
+                    {
+                    "kanji": "体",
+                    "name": "THỂ",
+                    "meaning": "Thân thể",
+                    "detail": "Người (亻) dựa vào gốc cây (本) để làm điểm tựa cho thân thể.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "未",
+                "name": "VỊ",
+                "meaning": "Chưa (vị thành niên)",
+                "detail": "Cây có cành phía trên ngắn hơn cành dưới, ý nói cây chưa lớn hết.",
+                "children": [
+                    {
+                    "kanji": "味",
+                    "name": "VỊ",
+                    "meaning": "Mùi vị",
+                    "detail": "Dùng miệng (口) nếm trái cây 'chưa' (未) chín để biết mùi vị.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "末",
+                "name": "MẠT",
+                "meaning": "Ngọn / Cuối cùng",
+                "detail": "Cây có cành phía trên dài hơn, ý chỉ phần ngọn cây (phần cuối).",
+                "children": []
+                },
+                {
+                "kanji": "林",
+                "name": "LÂM",
+                "meaning": "Rừng thưa",
+                "detail": "Hai cái cây đứng cạnh nhau tạo thành khu rừng nhỏ.",
+                "children": [
+                    {
+                    "kanji": "森",
+                    "name": "SÂM",
+                    "meaning": "Rừng rậm",
+                    "detail": "Ba cái cây kết hợp lại chỉ một khu rừng rậm rạp, um tùm.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "本",
+                "name": "BẢN",
+                "meaning": "Gốc rễ / Sách",
+                "detail": "Thêm một nét gạch ngang ở dưới gốc cây để chỉ 'phần gốc'.",
+                "children": [
+                    { "kanji": "体", "name": "THỂ", "meaning": "Thân thể", "detail": "Người (亻) dựa vào gốc cây (本) để làm điểm tựa cho thân thể.", "children": [] }
+                ]
+                },
+                {
+                "kanji": "楽",
+                "name": "LẠC / NHẠC",
+                "meaning": "Vui vẻ / Âm nhạc",
+                "detail": "Nhạc cụ ngày xưa thường làm từ gỗ (木). Âm nhạc đem lại niềm vui.",
+                "children": [
+                    {
+                    "kanji": "薬",
+                    "name": "DƯỢC",
+                    "meaning": "Thuốc",
+                    "detail": "Các loại cỏ (艹) đem lại sự vui vẻ (楽), thoải mái cho cơ thể là thuốc.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "米",
+                "name": "MỄ",
+                "meaning": "Gạo",
+                "detail": "Hình ảnh các hạt gạo tỏa ra bốn hướng (biến thể từ hình dáng cây 木).",
+                "children": [
+                    {
+                    "kanji": "料",
+                    "name": "LIỆU",
+                    "meaning": "Nguyên liệu / Chi phí",
+                    "detail": "Dùng cái đấu (斗) để đong gạo (米) nhằm tính toán nguyên liệu và tiền phí.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "采",
+                "name": "THÁI (Hái)",
+                "meaning": "Hái / Lượm",
+                "detail": "Dùng bàn tay (爪 - bộ Trảo) để hái quả trên cây (木).",
+                "children": [
+                    {
+                    "kanji": "菜",
+                    "name": "THÁI (Rau)",
+                    "meaning": "Rau / Thức ăn",
+                    "detail": "Hái (采) các loại cây cỏ (艹) về làm thức ăn chính là rau.",
+                    "children": []
+                    }
+                ]
+                },
+                {
+                "kanji": "休",
+                "name": "HƯU",
+                "meaning": "Nghỉ ngơi",
+                "detail": "Một người (亻) đang tựa lưng vào gốc cây (木) để nghỉ ngơi.",
+                "children": []
+                },
+                {
+                "kanji": "相",
+                "name": "TƯƠNG / TƯỚNG",
+                "meaning": "Lẫn nhau / Xem xét",
+                "detail": "Mắt (目) nhìn vào cái cây (木) để xem xét hoặc tương hỗ lẫn nhau.",
+                "children": []
+                },
+                {
+                "kanji": "禾",
+                "name": "HÒA",
+                "meaning": "Lúa",
+                "detail": "Cái cây (木) nhưng có thêm nét phẩy (丿) ở trên đầu tượng trưng cho bông lúa rủ xuống.",
+                "children": [
+                    {
+                    "kanji": "私",
+                    "name": "TƯ",
+                    "meaning": "Tôi / Cá nhân",
+                    "detail": "Cầm cây lúa (禾) ôm vào lòng (厶 - khư) là của riêng mình.",
+                    "children": []
+                    },
+                    {
+                    "kanji": "秋",
+                    "name": "THU",
+                    "meaning": "Mùa thu",
+                    "detail": "Sau khi thu hoạch lúa (禾), người ta đốt gốc rạ bằng lửa (火).",
+                    "children": []
+                    },
+                    {
+                    "kanji": "乗",
+                    "name": "THỪA",
+                    "meaning": "Lên xe / Cưỡi",
+                    "detail": "Người leo lên một cái giá bằng gỗ hoặc lên xe để đi.",
+                    "children": []
+                    }
+                ]
+                }
+            ]
+            }
+          ]
+        },
+        {
+          "kanji": "丁",
+          "name": "ĐINH",
+          "meaning": "Cái đinh",
+          "detail": "Hình dáng một cái đinh đóng xuống mặt phẳng (一). Về sau chỉ tráng đinh (người đàn ông).",
+          "children": [
+            {
+              "kanji": "打",
+              "name": "ĐẢ",
+              "meaning": "Đánh / Gõ",
+              "detail": "Dùng tay (扌) để đóng cái đinh (丁) xuống.",
+              "children": []
+            },
+            {
+              "kanji": "町",
+              "name": "ĐINH",
+              "meaning": "Khu phố",
+              "detail": "Khu đất, ruộng (田) được chia lô vuông vắn như những cái đinh (丁).",
+              "children": []
+            },
+            {
+              "kanji": "頂",
+              "name": "ĐỈNH (N2)",
+              "meaning": "Đỉnh núi / Nhận",
+              "detail": "Đinh (丁) + Hiệt (頁 - cái đầu). Cái đinh cắm trên đỉnh đầu, chỉ vị trí cao nhất (đỉnh núi).",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "不",
+          "name": "BẤT",
+          "meaning": "Không / Phủ định",
+          "detail": "Đường ranh giới (一) chặn lại mầm cây đang mọc, ý chỉ sự cấm đoán, không được.",
+          "children": [
+            {
+              "kanji": "否",
+              "name": "PHỦ",
+              "meaning": "Phủ nhận",
+              "detail": "Bất (不) + Khẩu (口). Miệng nói chữ KHÔNG là phủ nhận.",
+              "children": []
+            },
+            {
+              "kanji": "杯",
+              "name": "BÔI",
+              "meaning": "Cái chén / Cốc",
+              "detail": "Mộc (木) + Bất (不). Gỗ KHÔNG thể dùng làm nhà thì đem đục lỗ làm thành chén ly.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "至",
+          "name": "CHÍ",
+          "meaning": "Đến nơi",
+          "detail": "Hình ảnh mũi tên lộn ngược đâm phập xuống mặt đất (一), nghĩa là đã chạm đích.",
+          "children": [
+            {
+              "kanji": "室",
+              "name": "THẤT",
+              "meaning": "Căn phòng",
+              "detail": "Đi đến nơi (至) có mái che (宀) thì đó là căn phòng để ở.",
+              "children": []
+            },
+            {
+              "kanji": "致",
+              "name": "TRÍ (N1)",
+              "meaning": "Đạt tới / Trí mạng",
+              "detail": "Chí (至 - đến) + Phộc (夂 - hành động). Hành động để đưa đến kết quả tận cùng là Nhất trí.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "立",
+          "name": "LẬP",
+          "meaning": "Đứng",
+          "detail": "Người đứng dang tay chân trên mặt đất (一).",
+          "children": [
+            {
+              "kanji": "音",
+              "name": "ÂM",
+              "meaning": "Âm thanh",
+              "detail": "Đứng (立) phát ra lời từ miệng (日) tạo ra âm thanh.",
+              "children": []
+            },
+            {
+              "kanji": "粒",
+              "name": "LẠP",
+              "meaning": "Hạt (gạo, sỏi)",
+              "detail": "Mễ (米) + Lập (立). Hạt gạo nhỏ bé nhưng có thể tự đứng tách biệt là một Hạt.",
+              "children": []
+            },
+            {
+              "kanji": "童",
+              "name": "ĐỒNG",
+              "meaning": "Trẻ em (Nhi đồng)",
+              "detail": "Lập (立) + Lý (里 - làng). Những đứa trẻ hay tụ tập đứng chơi ở trong làng.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "正",
+          "name": "CHÍNH",
+          "meaning": "Đúng / Chính xác",
+          "detail": "Hình ảnh bàn chân đi đến vạch ranh giới (一) rồi dừng lại đúng chỗ.",
+          "children": [
+            {
+              "kanji": "政",
+              "name": "CHÍNH",
+              "meaning": "Chính trị",
+              "detail": "Chính (正) + Phộc (攵 - hành động). Đưa ra các hành động uốn nắn để xã hội trở nên đúng đắn.",
+              "children": []
+            },
+            {
+              "kanji": "証",
+              "name": "CHỨNG",
+              "meaning": "Bằng chứng",
+              "detail": "Ngôn (言) + Chính (正). Lời nói ngay thẳng, đúng sự thật là Bằng chứng.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "生",
+          "name": "SINH",
+          "meaning": "Sống / Sinh ra",
+          "detail": "Hình ảnh mầm cây đâm chồi nảy lộc từ mặt đất (一).",
+          "children": [
+            {
+              "kanji": "星",
+              "name": "TINH",
+              "meaning": "Ngôi sao",
+              "detail": "Nhật (日) + Sinh (生). Ngôi sao là ánh sáng sinh ra từ Mặt trời.",
+              "children": []
+            },
+            {
+              "kanji": "性",
+              "name": "TÍNH",
+              "meaning": "Tính cách",
+              "detail": "Tâm (忄) + Sinh (生). Bản tính là thứ sinh ra từ trong tâm trí con người.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "kanji": "万",
+          "name": "VẠN",
+          "meaning": "Mười nghìn",
+          "detail": "Nét Nhất (一) kết hợp bộ 勹 tạo thành chữ Vạn, đại diện cho số lượng vô cùng lớn.",
+          "children": []
+        },
+        {
+          "kanji": "百",
+          "name": "BÁCH",
+          "meaning": "Một trăm",
+          "detail": "Nhất (一) + Bạch (白 - trắng). Số 100 là con số hoàn hảo, tròn trĩnh và trắng bóc.",
+          "children": []
+        },
+        {
+          "kanji": "丈",
+          "name": "TRƯỢNG",
+          "meaning": "Chiều dài / Trượng phu",
+          "detail": "Nét Nhất (一) đè lên chữ Đại (大). Đơn vị đo chiều dài, hoặc chỉ người đàn ông cực kỳ to lớn vững chãi.",
+          "children": []
+        }
+      ]
+    }
+  }
+]

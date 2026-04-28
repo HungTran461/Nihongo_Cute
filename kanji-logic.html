@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển Sơ đồ Kanji - Nihongo Cute</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Shippori+Mincho:wght@400;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style-kanji.css">
+</head>
+<body class="logic-page">
+
+    <header class="logic-header">
+        <a href="index.html" class="back-btn"><i class="fas fa-chevron-left"></i> Quay lại</a>
+        <h1><i class="fas fa-project-diagram"></i> Sơ đồ Cấu tạo Kanji</h1>
+        <p>Hiểu sâu gốc rễ - Nhớ lâu trọn đời</p>
+    </header>
+
+    <nav class="root-selector" id="rootSelector">
+        </nav>
+        
+    <div class="tree-controls">
+        <button onclick="zoomTree(-0.1)" title="Thu nhỏ"><i class="fas fa-search-minus"></i></button>
+        <button onclick="resetZoom()" title="Mặc định"><i class="fas fa-expand"></i></button>
+        <button onclick="zoomTree(0.1)" title="Phóng to"><i class="fas fa-search-plus"></i></button>
+    </div>
+
+    <main class="tree-container">
+        <div id="kanjiTree" class="tree">
+            </div> 
+    </main>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2 id="modalTitle">Tiêu đề</h2>
+            <div class="modal-body">
+                <p class="modal-meaning" id="modalMeaning">Ý nghĩa</p>
+                <p class="modal-detail" id="modalDetail">Chi tiết</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-kanji.js"></script>
+</body>
+</html>

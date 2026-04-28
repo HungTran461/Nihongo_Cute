@@ -1,0 +1,473 @@
+:root {
+    --primary: #ff9a9e;
+    --primary-dark: #ff758c;
+    --secondary: #a18cd1;
+    --bg-color: #fff5f7;
+    --text-color: #4a4a4a;
+    --node-bg: #ffffff;
+    --line-color: #d1c4e9;
+}
+
+body.logic-page {
+    background-color: var(--bg-color);
+    font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    padding-bottom: 50px;
+}
+
+.logic-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 15px rgba(255, 154, 158, 0.1);
+}
+
+.logic-header h1 {
+    font-family: 'Shippori Mincho', serif;
+    color: var(--primary-dark);
+    margin: 10px 0;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* --- THANH CHỌN BỘ THỦ (TABS) --- */
+.root-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 20px 10px;
+    flex-wrap: wrap;
+}
+
+.root-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--secondary);
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--secondary);
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.root-btn:hover {
+    background: var(--bg-color);
+    transform: translateY(-2px);
+}
+
+.root-btn.active {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(161, 140, 209, 0.4);
+}
+
+/* --- NÚT ĐIỀU KHIỂN ZOOM --- */
+.tree-controls {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tree-controls button {
+    background: white;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tree-controls button:hover {
+    background: var(--secondary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* --- VẼ SƠ ĐỒ CÂY (FIX TRÀN MÀN HÌNH) --- */
+.tree-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 70vh; /* Giới hạn chiều cao tạo khung cuộn */
+    margin: 0 auto;
+    padding: 40px;
+    overflow: auto; /* Bật thanh cuộn cả ngang và dọc */
+    background: #fdfcfc;
+    border: 2px dashed #e2d9f3;
+    border-radius: 20px;
+    cursor: grab; /* Biểu tượng bàn tay mở */
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+}
+
+.tree-container:active {
+    cursor: grabbing; /* Biểu tượng bàn tay nắm lại khi kéo */
+}
+
+/* Ẩn thanh cuộn xấu xí trên Chrome/Safari */
+.tree-container::-webkit-scrollbar {
+    width: 8px; height: 8px;
+}
+.tree-container::-webkit-scrollbar-thumb {
+    background: var(--secondary); border-radius: 4px;
+}
+
+.tree {
+    min-width: max-content; /* RẤT QUAN TRỌNG: Bắt buộc mở rộng theo nội dung */
+    margin: 0 auto; /* Nằm giữa nếu nhỏ, tràn sang phải nếu to */
+    transform-origin: top center; /* Tâm zoom ở chính giữa phía trên */
+    transition: transform 0.2s ease-out; /* Hiệu ứng mượt khi zoom */
+    padding-bottom: 50px;
+}
+
+/* GIỮ NGUYÊN PHẦN ĐƯỜNG KẺ VÀ KHỐI KANJI */
+.tree ul {
+    padding-top: 20px; 
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    padding-left: 0;
+}
+
+.tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 10px 0 10px;
+    transition: all 0.5s;
+}
+
+/* Đường kẻ ngang và dọc */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid var(--line-color);
+    width: 50%; height: 20px;
+}
+.tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid var(--line-color);
+}
+.tree li:only-child::after, .tree li:only-child::before { display: none; }
+.tree li:only-child { padding-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+.tree li:last-child::before { border-right: 2px solid var(--line-color); border-radius: 0 5px 0 0; }
+.tree li:first-child::after { border-radius: 5px 0 0 0; }
+.tree ul ul::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid var(--line-color);
+    width: 0; height: 20px;
+}
+
+/* KHỐI KANJI (NODES) */
+.node {
+    background: var(--node-bg);
+    border: 2px solid var(--primary);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 90px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.node:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+    background: var(--primary);
+    color: white;
+}
+
+.node .kanji {
+    display: block;
+    font-size: 2.8rem;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.node .name {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.root-node {
+    border-color: var(--secondary);
+    border-width: 3px;
+    background: #fcfaff;
+}
+
+/* --- MODAL (POPUP) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Khoảng cách an toàn tối thiểu với mép màn hình */
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background: white;
+    margin: 15vh auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 28px; cursor: pointer; color: #aaa;
+    transition: 0.3s;
+}
+.close:hover { color: var(--primary-dark); }
+
+#modalTitle {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    border-bottom: 2px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.modal-meaning {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.modal-detail {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* =======================================================
+   RESPONSIVE TOÀN DIỆN CHO KANJI LOGIC (ALL SCREENS)
+   ======================================================= */
+
+/* 1. Màn hình Tablet & Laptop nhỏ (Dưới 1024px) */
+@media (max-width: 1024px) {
+    .tree-container {
+        height: 65vh;
+        padding: 20px;
+    }
+    .node .kanji {
+        font-size: 2.2rem; /* Nhỏ lại một chút */
+    }
+    .node {
+        min-width: 80px;
+        padding: 10px 15px;
+    }
+}
+
+/* 2. Màn hình Điện thoại (Dưới 768px) */
+@media (max-width: 768px) {
+    /* Header gọn gàng hơn */
+    .logic-header {
+        padding: 1.2rem 1rem 1rem;
+        border-radius: 0 0 20px 20px;
+    }
+    .logic-header h1 {
+        font-size: 1.5rem;
+    }
+    .logic-header p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    /* Thanh chọn bộ thủ: Biến thành thanh cuộn ngang mượt mà, không bị rớt dòng */
+    .root-selector {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start; /* Canh lề trái để cuộn */
+        padding: 5px 15px 15px;
+        margin: 10px 0;
+        -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
+        scroll-behavior: smooth;
+    }
+    /* Ẩn thanh cuộn của thanh chọn bộ thủ cho đẹp */
+    .root-selector::-webkit-scrollbar {
+        display: none;
+    }
+    .root-selector {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .root-btn {
+        flex-shrink: 0; /* Giữ nguyên kích thước nút, không cho móp méo */
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* Vùng chứa sơ đồ */
+    .tree-container {
+        height: 60vh;
+        padding: 15px;
+        border-radius: 15px;
+        width: 96%;
+    }
+    
+    /* Thu nhỏ các Node (ô chữ Kanji) để chứa được nhiều hơn trên màn hình */
+    .node {
+        padding: 8px 12px;
+        min-width: 65px;
+        border-radius: 10px;
+    }
+    .node .kanji {
+        font-size: 1.8rem; /* Giảm cỡ chữ Kanji */
+    }
+    .node .name {
+        font-size: 0.75rem; /* Giảm cỡ chữ Romaji/Nghĩa */
+    }
+    
+    /* Thu hẹp khoảng cách giữa các nhánh cây */
+    .tree ul {
+        padding-top: 15px;
+    }
+    .tree li {
+        padding: 15px 4px 0 4px; 
+    }
+
+    /* Nút điều khiển zoom nhỏ lại */
+    .tree-controls button {
+        width: 35px; 
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    /* Modal (Popup thông tin) */
+    .modal-content {
+        margin: 20vh auto;
+        width: 92%;
+        padding: 20px;
+    }
+    #modalTitle {
+        font-size: 1.6rem;
+    }
+    .modal-meaning {
+        font-size: 1.1rem;
+    }
+}
+
+/* 3. Màn hình Điện thoại siêu nhỏ (Dưới 480px - VD: iPhone SE, Galaxy Y...) */
+@media (max-width: 480px) {
+    .logic-header h1 {
+        font-size: 1.3rem;
+    }
+    .back-btn {
+        font-size: 0.85rem;
+    }
+    
+    /* Tiếp tục thu nhỏ Node */
+    .node {
+        min-width: 55px;
+        padding: 5px 8px;
+    }
+    .node .kanji {
+        font-size: 1.5rem; 
+    }
+    .node .name {
+        font-size: 0.65rem;
+    }
+
+    .tree-container {
+        height: 55vh; /* Nhường thêm chỗ cho các thành phần khác trên màn hình hẹp */
+    }
+}
+/* --- FIX LỖI DÍNH NODE TRÊN MÀN HÌNH SIÊU NHỎ --- */
+
+/* BẮT BUỘC: Ngăn các thẻ li bị bóp méo khi hết chỗ, ép container phải cuộn ngang */
+.tree li {
+    flex-shrink: 0 !important; 
+}
+
+/* Bổ sung cấu hình riêng cho màn hình dưới 380px (nhỏ hơn cả mức 480px) */
+@media (max-width: 380px) {
+    /* Đảm bảo giữa các node luôn có một khoảng hở an toàn */
+    .tree li {
+        padding: 15px 5px 0 5px !important; 
+    }
+    
+    /* Thu nhỏ node và viền để nhường chỗ */
+    .node {
+        min-width: 45px;
+        padding: 6px 4px;
+        border-width: 1.5px; 
+    }
+    
+    /* Giảm cỡ chữ để không bị rớt dòng */
+    .node .kanji {
+        font-size: 1.3rem; 
+    }
+    
+    .node .name {
+        font-size: 0.6rem;
+        letter-spacing: 0;
+        margin-top: 2px;
+    }
+}
+/* =======================================================
+   FIX LỖI BỊ CẮT MẤT BÊN TRÁI KHI CÂY QUÁ TO (SCROLL LỖI)
+   ======================================================= */
+
+.tree-container {
+    display: block !important; 
+    overflow-x: auto !important;
+    text-align: center; /* Căn giữa bằng text-align an toàn hơn Flexbox */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch; /* Vuốt mượt trên điện thoại */
+}
+
+.tree {
+    display: inline-block !important; /* Chìa khóa: Đổi sang inline-block */
+    min-width: max-content; /* Ép cái cây phải giữ đúng kích thước thật, không bị bóp méo */
+    margin: 0 auto;
+    padding: 0 20px; /* Tạo khoảng trống an toàn 2 bên để không chạm mép */
+}
+
+/* Đảm bảo khung cây bên trong vẫn xếp ngang đều đẹp */
+.tree ul {
+    display: flex;
+    justify-content: center;
+    padding-left: 0 !important;
+    margin: 0;
+}
