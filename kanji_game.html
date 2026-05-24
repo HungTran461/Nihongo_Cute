@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongo Cute - Trò Chơi Nấc Thang Kanji</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Shippori+Mincho:wght@400;700;800&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="kanji_style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="showSection('setupScreen')">
+            <i class="fas fa-torii-gate" href="i"></i> Nihongo<span style="color:var(--primary)">Cute</span> <small class="badge-app">Kanji Tower</small>
+        </div>
+        <nav class="nav-links">
+            <button class="btn-nav active" id="nav-play" onclick="showSection('setupScreen')"><i class="fas fa-gamepad"></i> Chơi Game</button>
+            <button class="btn-nav" id="nav-dash" onclick="showSection('dashboardScreen'); renderDashboard();"><i class="fas fa-trophy"></i> Tiến Trình & Chứng Nhận</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="setupScreen" class="game-section active">
+            <div class="card setup-card">
+                <div class="setup-header">
+                    <h2><i class="fas fa-mountain"></i> Thử Thách Nấc Thang Kanji</h2>
+                    <p>Chinh phục các bậc thang cổ kính, tích lũy điểm và mở khóa danh hiệu UR tối cao!</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="playerName"><i class="fas fa-user-ninja"></i> Tên người chơi:</label>
+                    <input type="text" id="playerName" placeholder="Nhập biệt danh của bạn..." value="NinjaCute">
+                </div>
+
+                <div class="range-row">
+                    <div class="form-group half">
+                        <label for="startLesson"><i class="fas fa-book-open"></i> Từ bài:</label>
+                        <select id="startLesson" onchange="validateLessons()"></select>
+                    </div>
+                    <div class="form-group half">
+                        <label for="endLesson"><i class="fas fa-bookmark"></i> Đến bài:</label>
+                        <select id="endLesson" onchange="validateLessons()"></select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-layer-group"></i> Chọn mức độ khó (Quyết định số nấc thang & thời gian):</label>
+                    <div class="difficulty-options">
+                        <label class="diff-box">
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <div class="diff-content">
+                                <span class="diff-title" style="color: #34495e;">DỄ (Hạng N / R)</span>
+                                <span class="diff-desc">20 Nấc thang • 15 giây/câu</span>
+                            </div>
+                        </label>
+                        <label class="diff-box">
+                            <input type="radio" name="difficulty" value="medium">
+                            <div class="diff-content">
+                                <span class="diff-title" style="color: #d35400;">TRUNG BÌNH (SR / SSR)</span>
+                                <span class="diff-desc">35 Nấc thang • 12 giây/câu</span>
+                            </div>
+                        </label>
+                        <label class="diff-box">
+                            <input type="radio" name="difficulty" value="hard">
+                            <div class="diff-content">
+                                <span class="diff-title" style="color: #c0392b;">SIÊU KHÓ (Hạng UR)</span>
+                                <span class="diff-desc">50 Nấc thang • 9 giây/câu</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-block btn-lg" onclick="startGame()">
+                    <i class="fas fa-play-circle"></i> Bắt Đầu Leo Tháp <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section id="gameScreen" class="game-section">
+            <div class="game-layout">
+                <div class="main-play-panel card">
+                    <div class="game-status-bar">
+                        <div class="player-tag"><i class="fas fa-user"></i> <span id="displayPlayerName"></span></div>
+                        <div class="step-counter">Nấc thang: <span id="currentStepDisplay">1</span>/<span id="totalStepsDisplay">20</span></div>
+                        <div class="score-tag">Đúng: <span id="correctCounter">0</span></div>
+                    </div>
+
+                    <div class="timer-container">
+                        <div id="timerBar" class="timer-bar"></div>
+                    </div>
+
+                    <div class="question-container">
+                        <div class="question-type-badge" id="qTypeBadge">Dạng bài</div>
+                        <h1 class="question-text" id="qText">漢字</h1>
+                        <p class="question-subtext" id="qSubtext">Hãy lựa chọn đáp án đúng nhất</p>
+                    </div>
+
+                    <div class="options-grid" id="optionsGrid"></div>
+                </div>
+
+                <div class="ladder-sidebar card">
+                    <h3><i class="fas fa-list-ol"></i> Sơ đồ Tháp</h3>
+                    <div class="ladder-wrapper" id="ladderWrapper"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultScreen" class="game-section">
+            <div class="card result-card text-center">
+                <div class="celebration-icon"><i class="fas fa-trophy"></i></div>
+                <h2 id="resultTitle">Hoàn Thành Cuộc Leo Tháp!</h2>
+                <p class="lead-text" id="resultSubtitle">Chúc mừng bạn đã kết thúc chặng đường thử thách.</p>
+                
+                <div class="stats-summary-row">
+                    <div class="stat-box">
+                        <span class="stat-val" id="resCorrect">0/20</span>
+                        <span class="stat-lbl">Số câu đúng</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val" id="resPercent">0%</span>
+                        <span class="stat-lbl">Tỷ lệ chính xác</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val" id="resRank">N</span>
+                        <span class="stat-lbl">Hạng Nhận Được</span>
+                    </div>
+                </div>
+
+                <div class="rank-badge-display animate-pulse" id="rankBadgeContainer"></div>
+
+                <div id="certificateTriggerZone" style="display:none; margin: 25px 0;">
+                    <div class="cert-alert">
+                        <i class="fas fa-award"></i> <strong>Tuyệt vời!</strong> Bạn đã xuất sắc mở khóa <strong>Chứng Nhận Tốt Nghiệp UR</strong> danh giá!
+                    </div>
+                    <button class="btn btn-secondary" onclick="viewCertificateModal()"><i class="fas fa-certificate"></i> Xem & In Chứng Nhận</button>
+                </div>
+
+                <div class="btn-group-row">
+                    <button class="btn btn-primary" onclick="showSection('setupScreen')"><i class="fas fa-redo"></i> Thử Thách Lại</button>
+                    <button class="btn btn-outline" onclick="showSection('dashboardScreen'); renderDashboard();"><i class="fas fa-chart-line"></i> Xem Tiến Trình</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboardScreen" class="game-section">
+            <div class="card">
+                <div class="dashboard-header">
+                    <h2><i class="fas fa-user-shield"></i> Nhật Ký Chinh Phục Của Học Viên</h2>
+                    <p>Theo dõi các cột mốc danh hiệu (N, R, SR, SSR, UR) lưu trữ trên trình duyệt.</p>
+                </div>
+
+                <div class="dashboard-layout">
+                    <div class="dash-column">
+                        <h3><i class="fas fa-chart-bar"></i> Thành Tích Theo Độ Khó</h3>
+                        <div id="difficultyProgressList"></div>
+                    </div>
+                    
+                    <div class="dash-column">
+                        <h3><i class="fas fa-scroll"></i> Kho Chứng Nhận Tốt Nghiệp (UR)</h3>
+                        <div id="certificatesGrid" class="cert-grid-layout"></div>
+                    </div>
+                </div>
+
+                <div class="admin-test-zone">
+                    <h3><i class="fas fa-tools"></i> Khu Vực Kỹ Thuật & Thử Nghiệm Hệ Thống</h3>
+                    <p>Dành riêng cho lập trình viên quản trị để xóa sạch dữ liệu cache bộ nhớ hoặc nạp nhanh tiến trình giả lập nhằm kiểm thử giao diện.</p>
+                    <div class="btn-group-row" style="justify-content: flex-start; margin-top: 15px;">
+                        <button class="btn" style="background: #e74c3c; color: white;" onclick="clearGameCache()">
+                            <i class="fas fa-trash-alt"></i> Xóa Sạch Dữ Liệu Cache Storage
+                        </button>
+                        <button class="btn" style="background: #34495e; color: white;" onclick="promptTestMode()">
+                            <i class="fas fa-vial"></i> Nạp Tiến Trình Giả Lập (Cần Mã)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal-overlay" id="certModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeCertificateModal()">&times;</button>
+            <div class="certificate-frame" id="certificateFrame">
+                <div class="cert-border-outer">
+                    <div class="cert-border-inner">
+                        <div class="cert-header">
+                            <i class="fas fa-torii-gate cert-logo"></i>
+                            <div class="cert-org">HỆ THỐNG GIÁO DỤC NIHONGO CUTE</div>
+                        </div>
+                        <div class="cert-title">CHỨNG NHẬN HOÀN THÀNH</div>
+                        <div class="cert-subtitle">BẬC THẦY KANJI CAO CẤP (UR RANK)</div>
+                        
+                        <p class="cert-text">Trân trọng vinh danh học viên xuất sắc:</p>
+                        <div class="cert-name" id="certPlayerName">NINJA CUTE</div>
+                        
+                        <p class="cert-body">
+                            Đã vượt qua xuất sắc thử thách <strong>Tháp Cổ Kanji Cao Cấp</strong> ở chế độ <strong>SIÊU KHÓ (HARD MODE)</strong>, minh chứng cho kỹ năng nhận diện Chữ Hán, Âm Hán Việt và cấu trúc Từ vựng ghép tiếng Nhật thượng thừa.
+                        </p>
+                        
+                        <div class="cert-footer">
+                            <div class="cert-date-box">
+                                <span class="lbl">Ngày cấp:</span>
+                                <span class="val" id="certDate">--/--/----</span>
+                            </div>
+                            <div class="cert-sign-box">
+                                <span class="lbl">Hội Đồng Khảo Thí</span>
+                                <span class="signature">Nihongo Cute Team</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center style-mt-20">
+                <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> In / Xuất File PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Nihongo Cute - Học mỗi ngày, leo tháp cực hay! 🌸</p>
+    </footer>
+
+    <script src="kanji_script.js"></script>
+</body>
+</html>

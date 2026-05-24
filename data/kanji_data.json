@@ -1,0 +1,203 @@
+{
+  "1": [
+    {
+      "kanji": "私",
+      "hanviet": "TƯ",
+      "meaning": "Tôi, riêng tư",
+      "reading": "わたし",
+      "compounds": [
+        { "word": "私立大学", "meaning": "Trường đại học tư thục" }
+      ]
+    },
+    {
+      "kanji": "人",
+      "hanviet": "NHÂN",
+      "meaning": "Người",
+      "reading": "ひと / ジン",
+      "compounds": [
+        { "word": "日本人", "meaning": "Người Nhật Bản" }
+      ]
+    },
+    {
+      "kanji": "先",
+      "hanviet": "TIÊN",
+      "meaning": "Trước, tiên tiến",
+      "reading": "さき / セン",
+      "compounds": [
+        { "word": "先生", "meaning": "Thầy giáo, cô giáo, bác sĩ" }
+      ]
+    },
+    {
+      "kanji": "生",
+      "hanviet": "SINH",
+      "meaning": "Sống, sinh ra, học sinh",
+      "reading": "うまれる / セイ",
+      "compounds": [
+        { "word": "学生", "meaning": "Học sinh, sinh viên" }
+      ]
+    },
+    {
+      "kanji": "学",
+      "hanviet": "HỌC",
+      "meaning": "Học tập, ngôi trường",
+      "reading": "まなぶ / ガク",
+      "compounds": [
+        { "word": "大学", "meaning": "Trường đại học" }
+      ]
+    },
+    {
+      "kanji": "会",
+      "hanviet": "HỘI",
+      "meaning": "Gặp gỡ, hội họp",
+      "reading": "あう / カイ",
+      "compounds": [
+        { "word": "会社", "meaning": "Công ty" }
+      ]
+    },
+    {
+      "kanji": "社",
+      "hanviet": "XÃ",
+      "meaning": "Đền thờ, công ty, xã hội",
+      "reading": "シャ",
+      "compounds": [
+        { "word": "社員", "meaning": "Nhân viên công ty" }
+      ]
+    },
+    {
+      "kanji": "員",
+      "hanviet": "VIÊN",
+      "meaning": "Thành viên, nhân viên",
+      "reading": "イン",
+      "compounds": [
+        { "word": "会社員", "meaning": "Nhân viên công ty (nói chung)" }
+      ]
+    },
+    {
+      "kanji": "銀",
+      "hanviet": "NGÂN",
+      "meaning": "Bạc, tiền bạc",
+      "reading": "ギン",
+      "compounds": [
+        { "word": "銀行", "meaning": "Ngân hàng" }
+      ]
+    },
+    {
+      "kanji": "行",
+      "hanviet": "HÀNH",
+      "meaning": "Đi, tiến hành, hàng lối",
+      "reading": "いく / コウ",
+      "compounds": [
+        { "word": "銀行員", "meaning": "Nhân viên ngân hàng" }
+      ]
+    },
+    {
+      "kanji": "医",
+      "hanviet": "Y",
+      "meaning": "Y học, thầy thuốc, chữa bệnh",
+      "reading": "イ",
+      "compounds": [
+        { "word": "医者", "meaning": "Bác sĩ" }
+      ]
+    },
+    {
+      "kanji": "者",
+      "hanviet": "GIẢ",
+      "meaning": "Người, học giả, chuyên gia",
+      "reading": "もの / シャ",
+      "compounds": [
+        { "word": "研究者", "meaning": "Nhà nghiên cứu" }
+      ]
+    },
+    {
+      "kanji": "日",
+      "hanviet": "NHẬT",
+      "meaning": "Ngày, mặt trời, Nhật Bản",
+      "reading": "ひ / ニッチ",
+      "compounds": [
+        { "word": "日本", "meaning": "Nước Nhật Bản" }
+      ]
+    },
+    {
+      "kanji": "本",
+      "hanviet": "BẢN",
+      "meaning": "Sách, gốc rễ, nguồn gốc",
+      "reading": "ほん",
+      "compounds": [
+        { "word": "日本語", "meaning": "Tiếng Nhật" }
+      ]
+    },
+    {
+      "kanji": "大",
+      "hanviet": "ĐẠI",
+      "meaning": "Lớn, to lớn",
+      "reading": "おおきい / ダイ",
+      "compounds": [
+        { "word": "大人", "meaning": "Người lớn" }
+      ]
+    }
+  ],
+  "2": [
+    {"kanji": "本", "hanviet": "BẢN", "meaning": "Sách, gốc rễ", "reading": "ほん", "compounds": [{"word": "日本語", "reading": "にほんご", "meaning": "Tiếng Nhật"}]},
+    {"kanji": "車", "hanviet": "XA", "meaning": "Xe cộ, bánh xe", "reading": "くるま", "compounds": [{"word": "自動車", "reading": "じどうしゃ", "meaning": "Xe ô tô"}]},
+    {"kanji": "何", "hanviet": "HÀ", "meaning": "Cái gì", "reading": "なに", "compounds": [{"word": "何曜日", "reading": "なんようび", "meaning": "Thứ mấy"}]},
+    {"kanji": "辞", "hanviet": "TỪ", "meaning": "Từ điển, từ bỏ", "reading": "じ", "compounds": [{"word": "辞書", "reading": "じしょ", "meaning": "Từ điển"}]},
+    {"kanji": "書", "hanviet": "THƯ", "meaning": "Viết, sách vở", "reading": "か-く", "compounds": [{"word": "教科書", "reading": "きょうかしょ", "meaning": "Sách giáo khoa"}]}
+  ],
+  "3": [
+    {"kanji": "会", "hanviet": "HỘI", "meaning": "Gặp gỡ, hội họp", "reading": "あ-う", "compounds": [{"word": "会社", "reading": "かいしゃ", "meaning": "Công ty"}]},
+    {"kanji": "社", "hanviet": "XÃ", "meaning": "Đền thờ, xã hội", "reading": "しゃ", "compounds": [{"word": "社員", "reading": "しゃいん", "meaning": "Nhân viên công ty"}]},
+    {"kanji": "駅", "hanviet": "DỊCH", "meaning": "Nhà ga", "reading": "えき", "compounds": [{"word": "駅前", "reading": "えきまえ", "meaning": "Khu vực trước ga"}]},
+    {"kanji": "院", "hanviet": "VIỆN", "meaning": "Tòa nhà, học viện", "reading": "いん", "compounds": [{"word": "病院", "reading": "びょういん", "meaning": "Bệnh viện"}]},
+    {"kanji": "国", "hanviet": "QUỐC", "meaning": "Đất nước, quốc gia", "reading": "くに", "compounds": [{"word": "外国人", "reading": "がいこくじん", "meaning": "Người nước ngoài"}]}
+  ],
+  "4": [
+    {"kanji": "時", "hanviet": "THỜI", "meaning": "Thời gian, giờ", "reading": "とき", "compounds": [{"word": "時間", "reading": "じかん", "meaning": "Thời gian / Tiếng đồng hồ"}]},
+    {"kanji": "分", "hanviet": "PHÂN", "meaning": "Phút, chia sẻ", "reading": "わ-かる", "compounds": [{"word": "半分", "reading": "はんぶん", "meaning": "Một nửa"}]},
+    {"kanji": "半", "hanviet": "BÁN", "meaning": "Nửa, bẻ đôi", "reading": "はん", "compounds": [{"word": "半年", "reading": "はんとし", "meaning": "Nửa năm"}]},
+    {"kanji": "午", "hanviet": "NGỌ", "meaning": "Buổi trưa, ngọ", "reading": "ご", "compounds": [{"word": "午前", "reading": "ごぜん", "meaning": "Buổi sáng (AM)"}]},
+    {"kanji": "前", "hanviet": "TIỀN", "meaning": "Trước, phía trước", "reading": "まえ", "compounds": [{"word": "名前", "reading": "なまえ", "meaning": "Tên gọi"}]},
+    {"kanji": "後", "hanviet": "HẬU", "meaning": "Sau, phía sau", "reading": "うしろ", "compounds": [{"word": "午後", "reading": "ごご", "meaning": "Buổi chiều (PM)"}]}
+  ],
+  "5": [
+    {"kanji": "行", "hanviet": "HÀNH", "meaning": "Đi, tiến hành", "reading": "い-く", "compounds": [{"word": "銀行", "reading": "ぎんこう", "meaning": "Ngân hàng"}]},
+    {"kanji": "来", "hanviet": "LA", "meaning": "Đến, tương lai", "reading": "く-る", "compounds": [{"word": "来週", "reading": "らいしゅう", "meaning": "Tuần sau"}]},
+    {"kanji": "校", "hanviet": "HIỆU", "meaning": "Trường học", "reading": "こう", "compounds": [{"word": "学校", "reading": "がっこう", "meaning": "Trường học"}]},
+    {"kanji": "週", "hanviet": "CHU", "meaning": "Tuần lễ", "reading": "しゅう", "compounds": [{"word": "今週", "reading": "こんしゅう", "meaning": "Tuần này"}]},
+    {"kanji": "年", "hanviet": "NIÊN", "meaning": "Năm, tuổi tác", "reading": "とし", "compounds": [{"word": "今年", "reading": "ことし", "meaning": "Năm nay"}]}
+  ],
+  "6": [
+    {"kanji": "食", "hanviet": "THỰC", "meaning": "Ăn, thực phẩm", "reading": "た-べる", "compounds": [{"word": "食堂", "reading": "しょくSurface", "meaning": "Nhà ăn, căn tin"}]},
+    {"kanji": "飲", "hanviet": "ẨM", "meaning": "Uống, đồ uống", "reading": "の-む", "compounds": [{"word": "飲み物", "reading": "のみもの", "meaning": "Thức uống"}]},
+    {"kanji": "買", "hanviet": "MÃI", "meaning": "Mua sắm", "reading": "か-う", "compounds": [{"word": "買い物", "reading": "かいもの", "meaning": "Mua sắm đồ đạc"}]},
+    {"kanji": "見", "hanviet": "KIẾN", "meaning": "Nhìn, xem, kiến thức", "reading": "み-る", "compounds": [{"word": "見学", "reading": "けんがく", "meaning": "Kiến tập, tham quan học tập"}]},
+    {"kanji": "聞", "hanviet": "VĂN", "meaning": "Nghe, hỏi, tin tức", "reading": "き-く", "compounds": [{"word": "新聞", "reading": "しんぶん", "meaning": "Báo chí"}]}
+  ],
+  "7": [
+    {"kanji": "手", "hanviet": "THỦ", "meaning": "Tay, kỹ năng", "reading": "て", "compounds": [{"word": "上手", "reading": "じょうず", "meaning": "Giỏi giang, thành thạo"}]},
+    {"kanji": "紙", "hanviet": "CHỈ", "meaning": "Giấy tờ", "reading": "かみ", "compounds": [{"word": "手紙", "reading": "てがみ", "meaning": "Bức thư"}]},
+    {"kanji": "習", "hanviet": "TẬP", "meaning": "Học tập, luyện tập", "reading": "なら-う", "compounds": [{"word": "練習", "reading": "れんしゅう", "meaning": "Luyện tập"}]},
+    {"kanji": "話", "hanviet": "THOẠI", "meaning": "Nói chuyện, hội thoại", "reading": "はな-す", "compounds": [{"word": "会話", "reading": "かいわ", "meaning": "Hội thoại, đàm thoại"}]},
+    {"kanji": "語", "hanviet": "NGỮ", "meaning": "Ngôn ngữ, từ ngữ", "reading": "ご", "compounds": [{"word": "単語", "reading": "たんご", "meaning": "Từ vựng"}]}
+  ],
+  "8": [
+    {"kanji": "大", "hanviet": "ĐẠI", "meaning": "To lớn, quan trọng", "reading": "おお-きい", "compounds": [{"word": "大きい", "reading": "おおきい", "meaning": "To lớn"}]},
+    {"kanji": "小", "hanviet": "TIỂU", "meaning": "Nhỏ bé", "reading": "ちい-さい", "compounds": [{"word": "小学校", "reading": "しょうがっこう", "meaning": "Trường tiểu học"}]},
+    {"kanji": "高", "hanviet": "CAO", "meaning": "Cao, đắt đỏ", "reading": "たか-い", "compounds": [{"word": "高校", "reading": "こうこう", "meaning": "Trường trung học phổ thông"}]},
+    {"kanji": "新", "hanviet": "TÂN", "meaning": "Mới mẻ", "reading": "あたら-しい", "compounds": [{"word": "新年", "reading": "しんねん", "meaning": "Năm mới"}]},
+    {"kanji": "古", "hanviet": "CỔ", "meaning": "Cũ kỹ, cổ xưa", "reading": "ふる-い", "compounds": [{"word": "中古車", "reading": "ちゅうこしゃ", "meaning": "Xe ô tô cũ"}]}
+  ],
+  "9": [
+    {"kanji": "友", "hanviet": "HỮU", "meaning": "Bạn bè", "reading": "とも", "compounds": [{"word": "Camp", "reading": "ともだち", "meaning": "Bạn bè"}]},
+    {"kanji": "父", "hanviet": "PHỤ", "meaning": "Bố (của mình)", "reading": "ちち", "compounds": [{"word": "父親", "reading": "ちちおy", "meaning": "Người cha"}]},
+    {"kanji": "母", "hanviet": "MẪU", "meaning": "Mẹ (của mình)", "reading": "はは", "compounds": [{"word": "母親", "reading": "ははおや", "meaning": "Người mẹ"}]},
+    {"kanji": "子", "hanviet": "TỬ", "meaning": "Con cái, tử số", "reading": "こ", "compounds": [{"word": "子ども", "reading": "こども", "meaning": "Trẻ em, con cái"}]},
+    {"kanji": "主", "hanviet": "CHỦ", "meaning": "Chủ nhân, chính yếu", "reading": "しゅ", "compounds": [{"word": "ご主人", "reading": "ごしゅじん", "meaning": "Chồng (người khác)"}]}
+  ],
+  "10": [
+    {"kanji": "上", "hanviet": "THƯỢNG", "meaning": "Phía trên, vượt trội", "reading": "うえ", "compounds": [{"word": "上着", "reading": "うわぎ", "meaning": "Áo khoác ngoài"}]},
+    {"kanji": "下", "hanviet": "HẠ", "meaning": "Phía dưới, thấp kém", "reading": "した", "compounds": [{"word": "地下鐵", "reading": "ちかてつ", "meaning": "Tàu điện ngầm"}]},
+    {"kanji": "中", "hanviet": "TRUNG", "meaning": "Bên trong, trung tâm", "reading": "なか", "compounds": [{"word": "一日中", "reading": "いちにちじゅう", "meaning": "Suốt cả ngày"}]},
+    {"kanji": "外", "hanviet": "NGOẠI", "meaning": "Bên ngoài, ngoại bang", "reading": "そto", "compounds": [{"word": "海外", "reading": "かいがい", "meaning": "Hải ngoại, nước ngoài"}]},
+    {"kanji": "右", "hanviet": "HỮU", "meaning": "Phía bên phải", "reading": "みぎ", "compounds": [{"word": "右手", "reading": "みぎて", "meaning": "Tay phải"}]}
+  ]
+}
