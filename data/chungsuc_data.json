@@ -1,0 +1,45 @@
+{
+  "1": [
+    {
+      "topic": "Các từ chỉ người, đại từ nhân xưng quen thuộc (Bài 1)",
+      "answers": [
+        {"text": "わたし (Tôi)", "match": ["watashi", "わたし", "tôi"], "points": 95},
+        {"text": "あなた (Bạn)", "match": ["anata", "あなた", "bạn", "anh", "chị"], "points": 80},
+        {"text": "せんせい (Thầy/Cô)", "match": ["sensei", "せんせい", "thầy", "cô", "giáo viên"], "points": 70},
+        {"text": "がくせい (Học sinh)", "match": ["gakusei", "がくせい", "học sinh", "sinh viên"], "points": 55},
+        {"text": "かいしゃいん (Nhân viên)", "match": ["kaishain", "かいしゃいん", "nhân viên", "nhân viên công ty"], "points": 40},
+        {"text": "エンジニア (Kỹ sư)", "match": ["enjinia", "エンジニア", "kỹ sư"], "points": 25}
+      ]
+    }
+  ],
+  "6": [
+    {
+      "topic": "Các loại đồ ăn, thức uống phổ biến hàng ngày (Bài 6)",
+      "answers": [
+        {"text": "ごはん (Cơm)", "match": ["gohan", "ごはん", "cơm"], "points": 92},
+        {"text": "みず (Nước)", "match": ["mizu", "みず", "nước"], "points": 85},
+        {"text": "おちゃ (Trà)", "match": ["ocha", "おちゃ", "trà"], "points": 75},
+        {"text": "にく (Thịt)", "match": ["niku", "にく", "thịt"], "points": 60},
+        {"text": "さかな (Cá)", "match": ["sakana", "さかな", "cá"], "points": 50},
+        {"text": "パン (Bánh mì)", "match": ["pan", "パン", "bánh mì"], "points": 35},
+        {"text": "ビール (Bia)", "match": ["biiru", "ビール", "bia"], "points": 20},
+        {"text": "やさい (Rau)", "match": ["yasai", "やさい", "rau"], "points": 15}
+      ]
+    }
+  ],
+  "13": [
+    {
+      "topic": "Các từ chỉ phương hướng và vị trí không gian (Bài 13)",
+      "answers": [
+        {"text": "うえ (Trên)", "match": ["ue", "うえ", "trên"], "points": 95},
+        {"text": "した (Dưới)", "match": ["shita", "した", "dưới"], "points": 85},
+        {"text": "まえ (Trước)", "match": ["mae", "まえ", "trước"], "points": 75},
+        {"text": "うしろ (Sau)", "match": ["ushiro", "うしろ", "sau"], "points": 65},
+        {"text": "みぎ (Phải)", "match": ["migi", "みぎ", "phải"], "points": 55},
+        {"text": "ひだり (Trái)", "match": ["hidari", "ひだり", "trái"], "points": 45},
+        {"text": "なか (Trong)", "match": ["naka", "なか", "trong"], "points": 30},
+        {"text": "そと (Ngoài)", "match": ["soto", "そと", "ngoài"], "points": 20}
+      ]
+    }
+  ]
+}

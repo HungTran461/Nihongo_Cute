@@ -1,0 +1,711 @@
+/* --- HỆ THỐNG MÀU SẮC CHUẨN PASTEL NIHONGO CUTE --- */
+:root {
+    --primary: #ff9a9e;
+    --primary-dark: #ff758c;
+    --secondary: #a18cd1;
+    --secondary-dark: #8a70be;
+    --accent: #fad0c4;
+    --bg-color: #fff0f5; /* Nền hồng phấn lavender cực nhẹ */
+    --white: #ffffff;
+    --text: #555555;
+    --text-dark: #2c2c2c;
+    --light-gray: #f8f9fa;
+    --border-color: #ebdce0;
+    --shadow: 0 8px 25px rgba(255, 154, 158, 0.2);
+    --radius: 20px; /* Bo góc tròn trịa dễ thương */
+    
+    /* Màu thẻ Chung Sức khi lật */
+    --card-front-bg: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Thẻ chưa mở - Hồng Cute */
+    --card-back-bg: linear-gradient(135deg, #a18cd1, #fbc2eb);  /* Thẻ đã mở - Tím mộng mơ */
+    --danger-red: #ff4757;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* HEADER NAVIGATION */
+.game-header {
+    background: var(--white);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(255, 154, 158, 0.1);
+}
+.header-logo { 
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    letter-spacing: 0.5px; 
+    cursor: pointer;
+    color: var(--text-dark);
+}
+.header-logo .highlight { 
+    color: var(--primary-dark); 
+}
+.header-nav { 
+    display: flex; 
+    gap: 12px; 
+}
+.nav-link {
+    background: transparent; 
+    border: none; 
+    color: var(--text); 
+    padding: 10px 20px;
+    font-family: inherit; 
+    font-weight: 700; 
+    font-size: 0.95rem; 
+    cursor: pointer; 
+    border-radius: var(--radius); 
+    transition: all 0.3s;
+}
+.nav-link:hover, .nav-link.active { 
+    background: var(--primary); 
+    color: var(--white); 
+    box-shadow: var(--shadow);
+}
+
+/* CONTAINER & GENERAL LAYOUT */
+.game-container { 
+    max-width: 950px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
+.game-section { 
+    display: none; 
+}
+.game-section.active { 
+    display: block; 
+}
+
+/* BẢNG PANEL CARD TRẮNG BO TRÒN */
+.panel-card { 
+    background: var(--white); 
+    border-radius: var(--radius); 
+    padding: 35px; 
+    border: 2px solid var(--border-color); 
+    box-shadow: var(--shadow); 
+    margin-bottom: 30px; 
+}
+.text-center { 
+    text-align: center; 
+}
+.subtitle { 
+    color: #888888; 
+    margin-bottom: 25px; 
+    font-size: 0.95rem; 
+}
+
+/* SETUP FORM CẤU HÌNH VÒNG CHƠI */
+.input-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    margin-bottom: 20px; 
+    text-align: left;
+}
+.input-group label { 
+    font-weight: 700; 
+    color: var(--secondary-dark); 
+}
+.input-group input, .input-group select {
+    padding: 14px 18px; 
+    border-radius: 15px; 
+    border: 2px solid var(--border-color); 
+    background: var(--light-gray);
+    color: var(--text-dark); 
+    font-family: inherit; 
+    font-size: 1rem; 
+    outline: none;
+    transition: all 0.3s;
+}
+.input-group input:focus, .input-group select:focus { 
+    border-color: var(--primary); 
+    background: var(--white);
+    box-shadow: 0 0 10px rgba(255, 154, 158, 0.15);
+}
+.lesson-range-row { 
+    display: flex; 
+    gap: 20px; 
+}
+.half { 
+    flex: 1; 
+}
+
+/* BUTTONS PHONG CÁCH ĐÁNG YÊU */
+.btn {
+    border: none; 
+    padding: 14px 28px; 
+    font-weight: 800; 
+    border-radius: var(--radius); 
+    cursor: pointer;
+    font-family: inherit; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    transition: all 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.btn:active { 
+    transform: scale(0.96); 
+}
+.btn-start { 
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
+    color: var(--white); 
+}
+.btn-start:hover { 
+    transform: translateY(-2px);
+    box-sizing: border-box;
+    box-shadow: var(--shadow);
+}
+.btn-submit { 
+    background: var(--secondary); 
+    color: var(--white); 
+    border-radius: 0 var(--radius) var(--radius) 0; 
+}
+.btn-submit:hover {
+    background: var(--secondary-dark);
+}
+.btn-history-view { 
+    background: #e2e8f0; 
+    color: var(--text); 
+}
+.btn-history-view:hover {
+    background: #cbd5e1;
+}
+.btn-danger { 
+    background: #fff5f5; 
+    color: var(--danger-red); 
+    border: 1px solid #fed7d7;
+    margin-top: 15px; 
+}
+.btn-danger:hover {
+    background: #fee2e2;
+}
+.btn-block { 
+    width: 100%; 
+    justify-content: center; 
+}
+
+/* GAME PLAY PANEL (Khu vực thanh trạng thái trên) */
+.game-top-bar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 25px; 
+    gap: 15px; 
+}
+.info-badge { 
+    background: var(--white); 
+    padding: 12px 22px; 
+    border-radius: 15px; 
+    font-weight: 800; 
+    border: 2px solid var(--border-color); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+.round-badge { 
+    color: var(--secondary-dark); 
+}
+.score-badge { 
+    color: var(--primary-dark); 
+}
+
+/* BẢNG ĐIỂM CHÍNH (Đã bỏ màu đen xì, thay bằng trắng hồng cực xinh) */
+.total-score-board {
+    background: var(--white); 
+    border: 4px solid var(--primary); 
+    border-radius: var(--radius);
+    padding: 10px 35px; 
+    text-align: center; 
+    min-width: 190px; 
+    box-shadow: var(--shadow);
+}
+.total-score-board .lbl { 
+    font-size: 0.75rem; 
+    font-weight: 800; 
+    color: #999; 
+    letter-spacing: 1px; 
+}
+.total-score-board .val { 
+    font-family: 'M PLUS Rounded 1c', sans-serif; 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    color: var(--primary-dark); 
+    letter-spacing: 1px; 
+}
+
+/* KHUNG HIỂN THỊ CÂU HỎI KHẢO SÁT */
+.question-panel-card { 
+    background: linear-gradient(135deg, #ffffff, #fffdfd); 
+    padding: 28px; 
+    border-radius: var(--radius); 
+    border: 2px solid var(--border-color); 
+    margin-bottom: 30px; 
+}
+.question-panel-card h2 { 
+    font-size: 1.35rem; 
+    font-weight: 800; 
+    color: var(--text-dark); 
+}
+
+/* BẢNG LẬT THẺ CHUNG SỨC: CỐ ĐỊNH 2 CỘT 1 ĐẾN 8 SONG SONG */
+.feud-board-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 18px; 
+    margin-bottom: 35px; 
+    perspective: 1000px;
+}
+@media (max-width: 600px) { 
+    .feud-board-grid { grid-template-columns: 1fr; } 
+}
+
+.feud-card { 
+    height: 65px; 
+    cursor: pointer; 
+}
+.card-inner {
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+.feud-card.revealed .card-inner { 
+    transform: rotateY(180deg); 
+}
+
+.card-front, .card-back {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden;
+    border-radius: 15px; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Mặt trước: Màu Gradient Hồng Phấn nhạt dễ thương */
+.card-front {
+    background: var(--card-front-bg); 
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+/* Huy hiệu số thứ tự 1-8 tròn xoe màu trắng nổi bật */
+.number-badge {
+    background: var(--white); 
+    color: var(--primary-dark); 
+    width: 36px; 
+    height: 36px;
+    border-radius: 50%; 
+    font-weight: 800; 
+    font-size: 1.2rem; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 3px 8px rgba(255, 117, 140, 0.3);
+}
+
+/* Mặt sau khi lật: Màu Gradient Tím mộng mơ dịu mắt */
+.card-back {
+    background: var(--card-back-bg); 
+    justify-content: space-between; 
+    transform: rotateY(180deg);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+.ans-text { 
+    font-weight: 800; 
+    font-size: 1.05rem; 
+    color: var(--white); 
+    letter-spacing: 0.5px; 
+}
+/* Điểm số đáp án */
+.ans-pts {
+    background: var(--white); 
+    color: var(--secondary-dark); 
+    padding: 4px 12px;
+    border-radius: 10px; 
+    font-weight: 800; 
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ACTIONS CONTROL PANEL (Nhập đáp án & Số mạng) */
+.action-control-panel { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+}
+.strikes-display { 
+    display: flex; 
+    gap: 18px; 
+    align-items: center; 
+    height: 40px; 
+}
+.strike-dot { 
+    color: var(--border-color); 
+    font-size: 1.4rem; 
+}
+.strike-x { 
+    color: var(--danger-red); 
+    font-size: 2.2rem; 
+    animation: pulseX 0.2s ease-in-out; 
+}
+@keyframes pulseX { 
+    0% { transform: scale(0.5); } 
+    100% { transform: scale(1); } 
+}
+
+.guess-input-wrapper { 
+    display: flex; 
+    width: 100%; 
+    max-width: 600px; 
+    box-shadow: var(--shadow); 
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.guess-input-wrapper input {
+    flex: 1; 
+    padding: 16px 20px; 
+    border: 2px solid var(--primary); 
+    border-right: none;
+    border-radius: var(--radius) 0 0 var(--radius); 
+    background: var(--white); 
+    color: var(--text-dark); 
+    font-family: inherit; 
+    font-size: 1.05rem; 
+    outline: none;
+}
+
+/* MÀN HÌNH VICTORY / THÀNH TÍCH TỔNG KẾT */
+.result-card { 
+    padding: 20px 30px 40px; 
+    border-top: 8px solid var(--primary); 
+}
+.result-card.theme-win { 
+    border-top-color: #1dd1a1; 
+    background: linear-gradient(180deg, #f0fff4, #ffffff); 
+}
+.result-card.theme-fail { 
+    border-top-color: var(--danger-red); 
+    background: linear-gradient(180deg, #fff5f5, #ffffff);
+}
+.victory-crown-zone { 
+    font-size: 5rem; 
+    margin-bottom: 15px; 
+}
+.result-msg { 
+    color: var(--text); 
+    font-size: 1.05rem; 
+    margin: 15px auto 25px; 
+    max-width: 600px; 
+    line-height: 1.6; 
+}
+
+.stats-summary-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    margin-bottom: 30px; 
+}
+.stat-box { 
+    background: var(--light-gray); 
+    border: 2px solid var(--border-color); 
+    border-radius: 15px; 
+    padding: 15px 30px; 
+    min-width: 160px; 
+}
+.stat-box .val { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: var(--secondary-dark); 
+    display: block; 
+}
+.stat-box .lbl { 
+    font-size: 0.85rem; 
+    color: #888; 
+    margin-top: 4px; 
+    display: block; 
+}
+.action-buttons-row { 
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+}
+
+/* BẢNG VÀNG THÀNH TÍCH (HISTORY TABLE) */
+.history-header {
+    margin-bottom: 20px;
+}
+.history-table-wrapper { 
+    overflow-x: auto; 
+    margin: 20px 0; 
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+}
+.history-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+    background: var(--white); 
+}
+.history-table th, .history-table td { 
+    padding: 15px 20px; 
+    border-bottom: 1px solid var(--border-color); 
+}
+.history-table th { 
+    background: var(--light-gray); 
+    color: var(--secondary-dark); 
+    font-weight: 800; 
+    font-size: 0.95rem; 
+}
+.history-table tbody tr:hover { 
+    background: #fff9fa; 
+}
+.text-gold { 
+    color: #e67e22; 
+}
+.badge-status { 
+    padding: 4px 10px; 
+    border-radius: 8px; 
+    font-weight: 800; 
+    font-size: 0.8rem; 
+}
+.badge-status.win { 
+    background: #e6fffa; 
+    color: #10ac84; 
+}
+.badge-status.fail { 
+    background: #ffe3e3; 
+    color: var(--danger-red); 
+}
+
+/* OVERLAY MÀN HÌNH CHỚP X ĐỎ KHI ĐOÁN SAI (Đã đổi nền sáng pastel trong suốt) */
+.strike-overlay-screen {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(255, 240, 245, 0.85); /* Nền hồng pastel mờ dịu mắt */
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 9999;
+}
+.strike-overlay-screen.active { 
+    display: flex; 
+}
+.big-red-x { 
+    font-size: 14rem; 
+    font-weight: 900; 
+    color: var(--danger-red); 
+    text-shadow: 0 0 40px rgba(255,71,87,0.3); 
+    animation: zoomX 0.4s ease-out; 
+}
+
+/* HIỆU ỨNG ANIMATION */
+@keyframes zoomX { 
+    0% { transform: scale(0.2); opacity: 0; } 
+    100% { transform: scale(1); opacity: 1; } 
+}
+.animate-pop { 
+    animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+}
+@keyframes pop { 
+    from { transform: scale(0.9); opacity: 0; } 
+    to { transform: scale(1); opacity: 1; } 
+}
+@keyframes bounce { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-8px); } 
+}
+
+/* --- PHONG CÁCH CHO VÒNG CHUNG KẾT (FAST MONEY) --- */
+.fast-money-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 15px;
+}
+.badge-round-fm {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    color: var(--white);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+.fm-timer-box {
+    background: var(--white);
+    border: 2px solid var(--primary);
+    padding: 6px 18px;
+    border-radius: 15px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(255, 154, 158, 0.15);
+}
+.fm-step-indicator {
+    background: var(--bg-color);
+    color: var(--primary-dark);
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+.fm-warn-text {
+    color: var(--danger-red);
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    animation: bounce 0.5s ease infinite;
+}
+
+/* BẢNG HIỂN THỊ ĐIỂM SO SÁNH HAI LƯỢT */
+.fm-board-table {
+    width: 100%;
+    margin-top: 25px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow);
+    background: var(--white);
+}
+.fm-table-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.fm-table-row:last-child {
+    border-bottom: none;
+}
+.fm-table-header {
+    background: var(--light-gray);
+    font-weight: 800;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+.fm-table-row > div {
+    padding: 14px 12px;
+}
+.cell-q {
+    flex: 1.8;
+    text-align: left;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-right: 1px solid var(--border-color);
+    padding-left: 20px !important;
+}
+.cell-p1, .cell-p2 {
+    flex: 1.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px !important;
+}
+.cell-p1 {
+    border-right: 1px solid var(--border-color);
+    background: #fffbfb; /* Màu nền phớt hồng nhẹ cho lượt 1 */
+}
+.cell-p2 {
+    background: #fbfbfe; /* Màu nền phớt tím nhẹ cho lượt 2 */
+}
+
+/* HIỆU ỨNG GIẤU ĐÁP ÁN TRƯỚC KHI LẬT MỞ TRÊN BẢNG */
+.fm-ans-text {
+    font-weight: 800;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.4s ease;
+}
+.fm-pts-num {
+    background: var(--light-gray);
+    color: var(--secondary-dark);
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 8px;
+    min-width: 40px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Kích hoạt class này bằng JS để tạo hiệu ứng lật mở từng ô */
+.slot-revealed .fm-ans-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slot-revealed .fm-pts-num {
+    opacity: 1;
+    background: var(--white);
+    color: var(--primary-dark);
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(255, 154, 158, 0.2);
+}
+.text-gradient {
+    background: linear-gradient(45deg, var(--primary-dark), var(--secondary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* ================================================================= */
+/* CẤU HÌNH LOGO XẾP CHỒNG CHUẨN PHONG CÁCH NẤC THANG KANJI */
+/* ================================================================= */
+.header-logo-stacked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Chữ lớn NIHONGO CUTE - Màu hồng gradient, bo viền trắng đổ bóng */
+.logo-main {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #ff758c, #ff9a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+    /* Đổ bóng chữ tạo viền nổi bật bồng bềnh */
+    filter: drop-shadow(2px 2px 0px #ffffff);
+}
+
+/* Chữ nhỏ Chung sức - Nằm lệch về phía dưới bên phải */
+.logo-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #8a70be; /* Màu tím đặc trưng */
+    margin-top: -2px;
+    align-self: flex-end; /* Đẩy chữ dịch hẳn sang bên phải dưới góc chữ CUTE */
+    padding-right: 5px;
+    text-transform: none; /* Giữ nguyên chữ thường như hình: Chung sức */
+    letter-spacing: 0.5px;
+    filter: drop-shadow(1px 1px 0px #ffffff);
+}

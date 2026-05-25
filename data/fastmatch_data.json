@@ -1,0 +1,56 @@
+[
+    {
+        "topic": "Kể tên một món ăn Nhật Bản mà người Việt Nam nghĩ đến đầu tiên?",
+        "answers": [
+            { "text": "SUSHI / SASHIMI", "points": 45, "match": ["sushi", "sashimi", "cá sống", "ca song"] },
+            { "text": "RAMEN / UDON", "points": 28, "match": ["ramen", "udon", "mì ramen", "mì udon", "mì", "mi ramen", "mi udon", "mi"] },
+            { "text": "TAKOMAKI / OKONOMIYAKI", "points": 15, "match": ["takoyaki", "bánh bạch tuộc", "banh bach tuoc", "okonomiyaki", "bánh xèo nhật", "banh xeo nhat"] },
+            { "text": "TEMPURA", "points": 12, "match": ["tempura", "đồ chiên", "do chien", "tôm chiên", "tom chien"] }
+        ]
+    },
+    {
+        "topic": "Một tính từ đuôi 'i' tiếng Nhật dùng để khen ngợi một ai đó hoặc cái gì đó?",
+        "answers": [
+            { "text": "KAWAII (DỄ THƯƠNG)", "points": 48, "match": ["kawaii", "dễ thương", "de thuong", "cute", "đáng yêu", "dang yeu"] },
+            { "text": "SUGOI (QUÁ ĐỈNH)", "points": 32, "match": ["sugoi", "giỏi", "gioi", "đỉnh", "dinh", "xuất sắc", "xuat sac"] },
+            { "text": "OISHII (NGON)", "points": 12, "match": ["oishii", "ngon"] },
+            { "text": "SUBARASHII (TUYỆT VỜI)", "points": 8, "match": ["subarashii", "tuyệt vời", "tuyet voi"] }
+        ]
+    },
+    {
+        "topic": "Kể tên một đồ vật luôn xuất hiện trên bàn học của một học sinh?",
+        "answers": [
+            { "text": "SÁCH / VỞ (HON)", "points": 42, "match": ["hon", "sách", "vở", "tập", "sách giáo khoa", "sach", "vo", "tap", "sach giao khoa"] },
+            { "text": "BÚT (PEN)", "points": 35, "match": ["pen", "bút", "viết", "bút bi", "bút chì", "but", "viet", "but bi", "but chi"] },
+            { "text": "MÁY TÍNH (PASOKON)", "points": 15, "match": ["pasokon", "máy tính", "laptop", "computer", "may tinh"] },
+            { "text": "TẨY (KESHIGOMU)", "points": 8, "match": ["keshigomu", "cục tẩy", "gôm", "tẩy", "cuc tay", "gom", "tay"] }
+        ]
+    },
+    {
+        "topic": "Ngoài Tokyo, thành phố nào của Nhật Bản được khách du lịch Việt Nam biết đến nhiều nhất?",
+        "answers": [
+            { "text": "OSAKA", "points": 52, "match": ["osaka", "o-sa-ka"] },
+            { "text": "KYOTO", "points": 30, "match": ["kyoto", "ki-o-to"] },
+            { "text": "HOKKAIDO", "points": 12, "match": ["hokkaido", "bắc hải đạo", "bac hai dao"] },
+            { "text": "HIROSHIMA", "points": 6, "match": ["hiroshima"] }
+        ]
+    },
+    {
+        "topic": "Một hành động bạn thường làm ngay sau khi thức dậy vào buổi sáng?",
+        "answers": [
+            { "text": "ĐÁNH RĂNG / RỬA MẶT", "points": 40, "match": ["đánh răng", "rửa mặt", "ha wo migaku", "kao wo arau", "danh rang", "rua mat"] },
+            { "text": "TẮT BÁO THỨC", "points": 25, "match": ["tắt báo thức", "tắt điện thoại", "bấm báo thức", "tat bao thuc", "tat dien thoai", "bam bao thuc"] },
+            { "text": "XEM ĐIỆN THOẠI", "points": 20, "match": ["xem điện thoại", "lướt facebook", "check tin nhắn", "xem dien thoai", "luot facebook", "check tin nhan"] },
+            { "text": "GẤP CHĂN MÀN / DỌN GIƯỜNG", "points": 15, "match": ["gấp chăn", "xếp mùng", "dọn giường", "gap chan", "xep mung", "don giuong"] }
+        ]
+    },
+    {
+        "topic": "Kể tên một biểu tượng đặc trưng khi nhắc tới đất nước Nhật Bản?",
+        "answers": [
+            { "text": "NÚI PHÚ SĨ (FUJISAN)", "points": 55, "match": ["núi phú sĩ", "nui phu si", "phú sĩ", "phu si", "fujisan", "fuji"] },
+            { "text": "HOA ANH ĐÀO (SAKURA)", "points": 30, "match": ["hoa anh đào", "hoa anh dao", "anh đào", "anh dao", "sakura"] },
+            { "text": "TRUYỆN TRANH (MANGA/ANIME)", "points": 10, "match": ["manga", "anime", "truyện tranh", "truyen tranh", "hoạt hình", "hoat hinh"] },
+            { "text": "ÁO KIMONO", "points": 5, "match": ["kimono", "áo kimono", "ao kimono"] }
+        ]
+    }
+]
