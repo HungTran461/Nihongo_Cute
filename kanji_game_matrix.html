@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongo Cute - Ma Trận Kanji</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Nunito:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="kanji_game_matrix.css">
+</head>
+<body>
+
+    <header class="nc-header">
+        <div class="logo" onclick="backToHome()" style="cursor: pointer;">
+            <i class="fas fa-torii-gate"></i> Nihongo<span>Cute</span>
+        </div>
+        <div class="header-badge">MINI GAME</div>
+    </header>
+
+    <div id="homeView" class="view-container active">
+        <div class="home-card">
+            <div class="home-header">
+                <h1 class="cute-title">Ma Trận Kanji</h1>
+                <p class="cute-subtitle">Hệ thống ghép chữ Hán thông minh</p>
+            </div>
+
+            <div class="wallet-display">
+                <i class="fas fa-coins text-yellow"></i> Ví Xu của bạn: <strong id="homeTotalCoins">0</strong> Xu
+            </div>
+
+            <main class="home-main">
+                <h3 class="section-title"><i class="fas fa-book-open text-primary"></i> CHỌN BÀI HỌC ĐỂ BẮT ĐẦU</h3>
+                <div class="lesson-grid" id="lessonGridHome"></div>
+
+                <div class="action-wrapper">
+                    <button class="btn-cute-launch" onclick="launchGame()">
+                        VÀO TRẬN ĐẤU <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="gameView" class="view-container">
+        <div class="game-container">
+            <div class="status-bar">
+                <div class="status-item brand" onclick="backToHome()">
+                    <button class="btn-back-home"><i class="fas fa-chevron-left"></i> Rời phòng</button>
+                    <span class="logo-text" id="gameLessonTitle">BÀI HỌC</span>
+                </div>
+
+                <div class="stats-display">
+                    <div class="stat-box score-box" title="Ví Xu">
+                        <i class="fas fa-coins text-yellow"></i>
+                        <span id="scoreText">0</span>
+                    </div>
+                    <div class="stat-box streak-box" title="Combo">
+                        <i class="fas fa-fire text-primary"></i>
+                        <span id="streakText">0</span>
+                    </div>
+                    <div class="stat-box lives-box" id="heartsContainer">
+                        </div>
+                </div>
+            </div>
+
+            <main class="game-main">
+                <section class="panel question-panel">
+                    <div class="panel-header">
+                        <span class="badge" id="questionIndexBadge">Câu 1</span>
+                        <h2>Điền Chữ Hán Thích Hợp</h2>
+                    </div>
+                    
+                    <div class="prompt-container">
+                        <div class="prompt-card" id="promptCard">
+                            <span id="promptText">＿ ＿</span>
+                        </div>
+                    </div>
+
+                    <div class="booster-container">
+                        <button id="btnDeleteWrong" class="btn-booster" onclick="useDeleteWrongBooster()">
+                            <i class="fas fa-magic"></i> Xóa 3 ô sai <span class="booster-cost">50 Xu</span>
+                        </button>
+                        <button id="btnShowMeaning" class="btn-booster booster-yellow" onclick="useShowMeaningBooster()">
+                            <i class="fas fa-search"></i> Gợi ý nghĩa <span class="booster-cost">80 Xu</span>
+                        </button>
+                    </div>
+
+                    <div id="boosterHintDisplay" class="booster-hint-display" style="display: none;">
+                        <i class="fas fa-lightbulb"></i> <span>Gợi ý: </span>
+                    </div>
+
+                    <div class="details-box" id="detailsBox">
+                        <div class="details-content">
+                            <div class="details-main-word">
+                                <span id="detailWord" class="jpan-text">--</span>
+                                <span id="detailHanViet" class="hanviet-text">(--)</span>
+                            </div>
+                            <div class="details-sub">
+                                <p><strong><i class="fas fa-volume-up text-primary"></i> Cách đọc:</strong> <span id="detailKana" class="jpan-text">--</span></p>
+                                <p><strong><i class="fas fa-heart text-secondary"></i> Ý nghĩa:</strong> <span id="detailMeaning">--</span></p>
+                            </div>
+                        </div>
+                        <button class="btn-nc-primary btn-full" id="btnNext" onclick="nextQuestion()">
+                            Tiếp Tục <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="panel matrix-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-th"></i> Ma Trận Chữ Hán</h3>
+                        <p class="panel-subtitle">Nhấp chọn ô đúng để hoàn thành từ vựng</p>
+                    </div>
+                    <div class="matrix-grid" id="matrixGrid"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div class="nc-modal-overlay" id="gameModal">
+        <div class="nc-modal-card">
+            <div class="modal-status-icon" id="modalIcon"></div>
+            <h2 id="modalTitle">KẾT QUẢ</h2>
+            <p id="modalMessage">...</p>
+            <div class="score-achievement-box">
+                Tổng Xu trong ví: <strong id="modalFinalScore" style="color: var(--primary-dark)">0</strong> Xu
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-nc-primary btn-revive" id="btnModalRevive" onclick="useReviveBooster()" style="display: none;">
+                    <i class="fas fa-heart"></i> Mua Mạng (200 Xu)
+                </button>
+                <button class="btn-nc-primary" onclick="restartLesson()">Chơi Lại Bài Này</button>
+                <button class="btn-nc-secondary" onclick="backToHome()">Về Trang Chủ Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="kanji_game_matrix.js"></script>
+</body>
+</html>

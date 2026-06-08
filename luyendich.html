@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongo Cute - Phòng Luyện Dịch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="luyendich.css">
+</head>
+<body>
+
+    <header class="game-header">
+        <div class="header-logo" onclick="showSection('setupScreen')">
+            <i class="fas fa-user-ninja"></i></i> Nihongo<span style="color:var(--primary)">Cute</span>
+        </div>
+        <nav class="header-nav">
+            <button class="nav-link active" id="nav-play" onclick="showSection('setupScreen')"><i class="fas fa-graduation-cap"></i> Sảnh Tập</button>
+            <button class="nav-link" id="nav-shop" onclick="showSection('shopScreen'); renderShop();"><i class="fas fa-store"></i> Chợ Ninja</button>
+            <button class="nav-link" id="nav-history" onclick="showSection('historyScreen'); renderHistoryDashboard();"><i class="fas fa-scroll"></i> Thành Tích</button>
+        </nav>
+    </header>
+
+    <div class="profile-bar">
+        <div class="profile-item"><i class="fas fa-fire text-danger"></i> Chuỗi học: <span id="uiStreak">0</span> ngày</div>
+        <div class="profile-item"><i class="fas fa-coins text-warning"></i> Ninjacoin: <span id="uiPoints">0</span></div>
+        <div class="profile-item"><i class="fas fa-medal text-primary"></i> Danh hiệu: <span id="uiBadge">Ninja Tập Sự</span></div>
+    </div>
+
+    <main class="game-container">
+        <section id="setupScreen" class="game-section active">
+            <div class="welcome-zone">
+                <h1>🌸 SẢNH LUYỆN DỊCH 🌸</h1>
+                <p>Mỗi bài dịch hoàn thành sẽ giúp bạn nhận Ninjacoin, duy trì chuỗi Streak và thăng cấp!</p>
+            </div>
+            <div class="panel-card setup-box">
+                <div class="input-group">
+                    <label><i class="fas fa-book-open"></i> Chọn Đoạn Văn Thử Sức:</label>
+                    <select id="singleLessonSelect"></select>
+                    <small style="color: #ff4757; display: block; margin-top: 8px;">* Các bài có biểu tượng 🔒 cần mua quyền mở khóa trong Chợ Ninja.</small>
+                </div>
+                <button class="btn btn-start btn-block" onclick="startTranslationGame()">
+                    <i class="fas fa-play"></i> BẮT ĐẦU DỊCH
+                </button>
+
+                <button class="btn btn-block" onclick="resetGameProgress()" style="margin-top: 30px; background-color: #ff4757; color: white; font-weight: 700; border: none; opacity: 0.8;">
+                    <i class="fas fa-trash-alt"></i> XÓA TOÀN BỘ TIẾN TRÌNH (RESET GAME)
+                </button>
+            </div>
+        </section>
+
+        <section id="gameScreen" class="game-section">
+            <div class="panel-card play-box">
+                <div class="game-top-bar">
+                    <span id="transProgressBadge" class="info-badge font-800">CÂU TRONG BÀI: <span id="sentenceCount">0</span></span>
+                    <span id="transDirectionBadge" class="info-badge dir-badge font-800"></span>
+                </div>
+
+                <div class="prompt-box">
+                    <p id="transPromptText" style="font-size: 1.2rem; font-weight: 700; line-height: 1.6; text-align: justify;"></p>
+                </div>
+
+                <div class="item-usage-bar" style="text-align: right; margin-bottom: 15px;">
+                    <button class="btn btn-sm btn-warning" id="btnUseHint" onclick="useHintScroll()">
+                        <i class="fas fa-magic"></i> Dùng Bùa Trợ Giúp (Còn: <span id="uiHintCount">0</span>)
+                    </button>
+                    <ul id="hintRevealList" class="hint-reveal" style="display:none; text-align: left; margin-top:10px; list-style-type: none; padding-left: 0;"></ul>
+                </div>
+
+                <div class="input-box">
+                    <textarea id="transPlayerInput" rows="6" placeholder="Gõ bản dịch của bạn vào đây..."></textarea>
+                </div>
+
+                <button id="btnSubmitTrans" class="btn btn-block btn-submit" style="margin-top: 15px;" onclick="submitTranslationAnswer()">
+                    <i class="fas fa-check-circle"></i> NỘP BÀI & XEM PHÂN TÍCH
+                </button>
+
+                <div id="transResultZone" class="result-zone" style="display: none;">
+                    <div class="correct-answer-box">
+                        <h4><i class="fas fa-star"></i> Dịch mẫu:</h4>
+                        <p id="transCorrectAnswerText" class="jpan-text"></p>
+                    </div>
+                    <div class="breakdown-zone" style="margin-top: 20px;">
+                        <div id="breakdownContainer"></div>
+                    </div>
+                    <div class="self-rate-box" style="margin-top: 25px;">
+                        <p class="font-800">Đánh giá để nhận Ninjacoin:</p>
+                        <div class="rate-buttons">
+                            <button class="btn btn-success" onclick="rateTransSelf(true)"><i class="fas fa-thumbs-up"></i> Tốt (x1.0 Điểm)</button>
+                            <button class="btn btn-danger" onclick="rateTransSelf(false)"><i class="fas fa-redo"></i> Cần Cải Thiện (x0.5 Điểm)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shopScreen" class="game-section">
+            <div class="welcome-zone">
+                <h1>🛒 CHỢ NINJA 🛒</h1>
+                <p>Sử dụng Ninjacoin để mua vật phẩm hỗ trợ hoặc mở khóa bài học mới.</p>
+            </div>
+            <div class="shop-grid" id="shopGrid">
+                </div>
+        </section>
+
+        <section id="historyScreen" class="game-section">
+            <div class="panel-card">
+                <h2><i class="fas fa-scroll text-purple"></i> Nhật Ký Dịch Thuật</h2>
+                <table class="history-table" style="margin-top: 15px;">
+                    <thead><tr><th>Thời Gian</th><th>Đoạn Văn</th><th>Điểm Nhận</th></tr></thead>
+                    <tbody id="historyTransTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="luyendich.js"></script>
+</body>
+</html>

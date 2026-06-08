@@ -1,0 +1,64 @@
+{
+  "lessons_config": [
+    {
+      "key": "bai_8",
+      "title": "Bài Học 8",
+      "subtitle": "Trường Học & Con Người",
+      "icon": "🏫",
+      "color_theme": "theme-pink"
+    },
+    {
+      "key": "bai_9",
+      "title": "Bài Học 9",
+      "subtitle": "Đồ Ăn & Mua Sắm",
+      "icon": "🍡",
+      "color_theme": "theme-purple"
+    }
+  ],
+  "lessons_data": {
+    "bai_8": [
+      {
+        "id": "m8_1",
+        "prompt_text": "学 ＿",
+        "accepted_answers": {
+          "生": { "full_word": "学生", "han_viet": "HỌC SINH", "kana": "がくせい", "meaning": "Học sinh, sinh viên" },
+          "校": { "full_word": "学校", "han_viet": "HỌC HIỆU", "kana": "がっこう", "meaning": "Trường học" }
+        }
+      },
+      {
+        "id": "m8_2",
+        "prompt_text": "＿ 本人",
+        "accepted_answers": {
+          "日": { "full_word": "日本人", "han_viet": "NHẬT BẢN NHÂN", "kana": "にほんじん", "meaning": "Người Nhật" }
+        }
+      }
+    ],
+    "bai_9": [
+      {
+        "id": "m9_1",
+        "prompt_text": "＿ べ物",
+        "accepted_answers": {
+          "食": { "full_word": "食べ物", "han_viet": "THỰC VẬT", "kana": "たべもの", "meaning": "Đồ ăn, thức ăn" }
+        }
+      },
+      {
+        "id": "m9_2",
+        "prompt_text": "＿ み物",
+        "accepted_answers": {
+          "飲": { "full_word": "飲み物", "han_viet": "ẨM VẬT", "kana": "のみもの", "meaning": "Đồ uống, thức uống" }
+        }
+      },
+      {
+        "id": "m9_3",
+        "prompt_text": "＿ い物",
+        "accepted_answers": {
+          "買": { "full_word": "買い物", "han_viet": "MÃI VẬT", "kana": "かいもの", "meaning": "Mua sắm" }
+        }
+      }
+    ]
+  },
+  "global_kanji_dict": {
+    "生": "Sinh", "校": "Hiệu", "大": "Đại", "日": "Nhật", "先": "Tiên", "本": "Bản", "食": "Thực", "飲": "Ẩm", "物": "Vật", "買": "Mãi"
+  },
+  "fallback_distractors": ["車", "行", "来", "休", "何", "中", "国", "見", "出", "入"]
+}

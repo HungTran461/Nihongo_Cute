@@ -98,7 +98,7 @@
   },
   {
     "id": "c6",
-    "title": "Gion Matsuri",
+    "title": "Lễ hội Gion",
     "category": "festival",
     "tag": "Mùa Hè",
     "short_desc": "Lễ hội lớn nhất Kyoto với các xe rước khổng lồ.",
@@ -572,7 +572,7 @@
   },
   {
     "id": "c30",
-    "title": "Lễ hội Tenjin Matsuri",
+    "title": "Lễ hội Tenjin",
     "category": "festival",
     "tag": "Lễ hội nước",
     "short_desc": "Lễ hội của nước và lửa tại Osaka.",
@@ -686,7 +686,7 @@
   },
   {
     "id": "c36",
-    "title": "Lễ hội Nebuta Matsuri",
+    "title": "Lễ hội Nebuta",
     "category": "festival",
     "tag": "Mùa Hè",
     "short_desc": "Diễu hành đèn lồng khổng lồ rực rỡ.",
@@ -743,7 +743,7 @@
   },
   {
     "id": "c39",
-    "title": "Lễ hội Sanja Matsuri",
+    "title": "Lễ hội Sanja",
     "category": "festival",
     "tag": "Mùa Hè",
     "short_desc": "Sự náo nhiệt cuồng nhiệt nhất Tokyo.",
@@ -778,5 +778,233 @@
     ],
     "images": [ "Image/Bonsai.webp" , "Image/Bonsai2.webp" ],
     "gradient": "linear-gradient(135deg, #1d976c 0%, #93f9b9 100%)"
+  },
+  {
+    "id": "c41",
+    "title": "Lẩu Sukiyaki",
+    "category": "food",
+    "tag": "Món lẩu",
+    "short_desc": "Món lẩu thịt bò nức tiếng xua tan giá lạnh.",
+    "full_desc": "Sukiyaki là món lẩu Nhật Bản với nguyên liệu chính là thịt bò thái mỏng, nấm, đậu phụ và các loại rau, được đun trong hỗn hợp nước tương, đường và rượu ngọt mirin. Đặc biệt, thức ăn vừa chín tới sẽ được nhúng qua một bát trứng sống trước khi thưởng thức.",
+    "time": "Mùa Đông",
+    "location": "Toàn quốc",
+    "story": "Ban đầu, Phật giáo cấm ăn thịt gia súc tại Nhật. Đến thời kỳ Minh Trị, khi lệnh cấm được gỡ bỏ và Hoàng đế bắt đầu ăn thịt bò, Sukiyaki nhanh chóng trở thành biểu tượng của sự bùng nổ văn hóa và ẩm thực phương Tây hòa quyện với phong vị bản địa.",
+    "fun_fact": "Bài hát nổi tiếng thế giới 'Ue wo Muite Arukou' của ca sĩ Kyu Sakamoto được khán giả phương Tây gọi tên là 'Sukiyaki' chỉ vì đây là một từ tiếng Nhật dễ nhớ, dù lời bài hát không hề liên quan đến món ăn này!",
+    "vocab": [
+        {"word": "すき焼き", "reading": "Sukiyaki", "meaning": "Lẩu Sukiyaki"},
+        {"word": "牛肉", "reading": "Gyūniku", "meaning": "Thịt bò"},
+        {"word": "卵", "reading": "Tamago", "meaning": "Trứng"}
+    ],
+    "images": [ "Image/Sukiyaki.jpg", "Image/Sukiyaki2.webp" ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c42",
+    "title": "Cờ cá chép Koinobori",
+    "category": "festival",
+    "tag": "Mùa Xuân",
+    "short_desc": "Biểu tượng của sức mạnh và ý chí vươn lên.",
+    "full_desc": "Vào ngày tết thiếu nhi (Kodomo no Hi), các gia đình Nhật Bản sẽ treo những dải cờ hình cá chép Koinobori rực rỡ tung bay trong gió để cầu chúc cho các bé trai lớn lên khỏe mạnh, dũng cảm và thành công.",
+    "time": "Ngày 5 tháng 5",
+    "location": "Tại các gia đình, công viên bờ sông",
+    "story": "Phong tục này bắt nguồn từ một truyền thuyết cổ về 'Cá chép hóa rồng'. Những chú cá chép kiên trì bơi ngược dòng thác để vượt vũ môn hóa thành rồng, tượng trưng cho lòng dũng cảm và sự nỗ lực vượt qua mọi khó khăn trong cuộc sống.",
+    "fun_fact": "Mỗi dải cờ thường có cấu trúc theo gia đình: cờ đen to nhất trên cùng là cha (Magoi), cờ đỏ/hồng là mẹ (Higoi), và các cờ nhỏ màu xanh/tím bên dưới đại diện cho những đứa con.",
+    "vocab": [
+        {"word": "鯉のぼり", "reading": "Koinobori", "meaning": "Cờ cá chép"},
+        {"word": "子供の日", "reading": "Kodomo no Hi", "meaning": "Tết Thiếu nhi"},
+        {"word": "滝", "reading": "Taki", "meaning": "Thác nước"}
+    ],
+    "images": [ "Image/Koinobori.webp" ],
+    "gradient": "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)"
+  },
+  {
+    "id": "c43",
+    "title": "Nghệ thuật Geisha & Maiko",
+    "category": "art",
+    "tag": "Biểu diễn",
+    "short_desc": "Những nghệ giả gìn giữ tinh hoa văn hóa truyền thống.",
+    "full_desc": "Geisha (và những người học việc Maiko) là những nữ nghệ sĩ chuyên nghiệp chuyên giải trí cho khách bằng các kỹ năng nghệ thuật truyền thống như múa, hát, chơi đàn Shamisen, và nghệ thuật giao tiếp đỉnh cao trong các buổi tiệc.",
+    "time": "Quanh năm",
+    "location": "Kyoto (khu phố Gion), Tokyo, Kanazawa",
+    "story": "Từ 'Geisha' (Nghệ Giả) mang ý nghĩa là 'người làm nghệ thuật'. Trái với nhiều hiểu lầm, họ là những nghệ sĩ thuần túy. Để trở thành một Geisha thực thụ, các cô gái phải trải qua quá trình huấn luyện vô cùng khắc nghiệt kéo dài nhiều năm.",
+    "fun_fact": "Geisha thường trang điểm mặt trắng toát. Kỹ thuật này xuất phát từ thời xưa khi chưa có điện, lớp phấn trắng giúp khuôn mặt họ nổi bật và bắt sáng dưới ánh nến lờ mờ của các phòng tiệc truyền thống.",
+    "vocab": [
+        {"word": "芸者", "reading": "Geisha", "meaning": "Nghệ giả"},
+        {"word": "舞妓", "reading": "Maiko", "meaning": "Geisha tập sự"},
+        {"word": "三味線", "reading": "Shamisen", "meaning": "Đàn 3 dây"}
+    ],
+    "images": [ "Image/Geisha.jpg", "Image/Maiko.jpg" ],
+    "gradient": "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)"
+  },
+  {
+    "id": "c44",
+    "title": "Lễ hội Setsubun",
+    "category": "festival",
+    "tag": "Lễ hội truyền thống",
+    "short_desc": "Lễ hội ném đậu xua đuổi tà ma và đón mùa xuân.",
+    "full_desc": "Setsubun được tổ chức vào ngày trước khi bắt đầu mùa xuân theo lịch cổ. Mọi người sẽ ném hạt đậu nành rang (Fukumame) ra ngoài cửa và hô to 'Oni wa soto! Fuku wa uchi!' (Quỷ dữ ra ngoài, phúc lộc vào nhà) để thanh tẩy xui xẻo.",
+    "time": "Ngày 3 hoặc 4 tháng 2",
+    "location": "Toàn quốc (Tại các gia đình, đền chùa)",
+    "story": "Phong tục này bắt nguồn từ thời Muromachi, kết hợp giữa tín ngưỡng xua đuổi ma quỷ cổ xưa và sự chuyển giao của các mùa trong năm. Người Nhật tin rằng ma quỷ thường xuất hiện vào những thời khắc giao mùa.",
+    "fun_fact": "Vào ngày này, người Nhật thường ăn số hạt đậu bằng đúng số tuổi của mình cộng thêm một hạt để cầu sức khỏe. Ngoài ra, họ còn ăn cuộn sushi khổng lồ Ehomaki trong im lặng trong khi quay mặt về hướng may mắn của năm đó.",
+    "vocab": [
+        {"word": "節分", "reading": "Setsubun", "meaning": "Tiết Phân (Giao mùa)"},
+        {"word": "豆まき", "reading": "Mamemaki", "meaning": "Ném đậu"},
+        {"word": "鬼", "reading": "Oni", "meaning": "Con quỷ"}
+    ],
+    "images": [ "Image/Setsubun.jpeg", "Image/Setsubun2.jpg", "Image/Setsubun3.webp" ],
+    "gradient": "linear-gradient(135deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%)"
+  },
+  {
+    "id": "c45",
+    "title": "Bánh Taiyaki",
+    "category": "food",
+    "tag": "Bánh nướng đường phố",
+    "short_desc": "Bánh cá nướng nhân đậu đỏ ngọt ngào thơm lừng.",
+    "full_desc": "Taiyaki là một loại bánh nướng có hình dáng con cá tráp biển. Lớp vỏ bánh làm từ bột mì giòn xốp bên ngoài, mềm mại bên trong, ôm trọn lớp nhân đậu đỏ truyền thống hoặc các vị hiện đại như kem béo, matcha, phô mai.",
+    "time": "Quanh năm (Đặc biệt được yêu thích vào mùa Đông)",
+    "location": "Các quầy hàng đường phố, lễ hội",
+    "story": "Bánh ra đời vào thời Meiji. Vì cá tráp (Tai) là một loại cá đắt tiền và mang ý nghĩa may mắn (phát âm giống chữ 'Medetai' - điềm lành), người ta đã làm bánh hình con cá này để người dân bình thường cũng có thể 'ăn sự may mắn' với giá rẻ.",
+    "fun_fact": "Ở Nhật Bản luôn tồn tại một cuộc tranh luận vui kéo dài không hồi kết: Nên ăn Taiyaki bắt đầu từ phần đầu cá trước hay từ phần đuôi cá trước!",
+    "vocab": [
+        {"word": "たい焼き", "reading": "Taiyaki", "meaning": "Bánh cá nướng"},
+        {"word": "小豆", "reading": "Azuki", "meaning": "Đậu đỏ"},
+        {"word": "屋台", "reading": "Yatai", "meaning": "Quầy hàng vỉa hè"}
+    ],
+    "images": [ "Image/Taiyaki.jpg", "Image/Taiyaki2.jpg" ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c46",
+    "title": "Vườn đá Karesansui",
+    "category": "art",
+    "tag": "Kiến trúc / Cảnh quan",
+    "short_desc": "Nghệ thuật sân vườn khô mang đậm triết lý Thiền.",
+    "full_desc": "Karesansui (Vườn khô) là loại hình vườn truyền thống không sử dụng nước. Thay vào đó, người ta dùng cát và sỏi được cào cẩn thận thành những đường vân để tượng trưng cho sóng nước, và xếp những tảng đá để đại diện cho núi non hay các hòn đảo.",
+    "time": "Quanh năm",
+    "location": "Các ngôi chùa Thiền tông (Nổi tiếng nhất là chùa Ryoan-ji, Kyoto)",
+    "story": "Karesansui phát triển mạnh mẽ vào thời Muromachi dưới sự ảnh hưởng sâu sắc của Thiền tông (Zen). Khu vườn được thiết kế không phải để đi dạo, mà là không gian tĩnh lặng để các nhà sư ngồi chiêm nghiệm và tĩnh tọa.",
+    "fun_fact": "Tại khu vườn đá nổi tiếng ở chùa Ryoan-ji có 15 tảng đá, nhưng chúng được sắp xếp tài tình sao cho dù bạn đứng hay ngồi ở bất kỳ góc độ nào trên hiên nhà, bạn cũng chỉ có thể nhìn thấy tối đa 14 tảng. Tảng thứ 15 chỉ được 'nhìn thấy' khi tâm trí đã đạt đến sự giác ngộ.",
+    "vocab": [
+        {"word": "枯山水", "reading": "Karesansui", "meaning": "Vườn khô (Vườn đá)"},
+        {"word": "庭園", "reading": "Teien", "meaning": "Khu vườn"},
+        {"word": "禅", "reading": "Zen", "meaning": "Thiền"}
+    ],
+    "images": [ "Image/Karesansui.jpg", "Image/Karesansui2.jpg" ],
+    "gradient": "linear-gradient(135deg, #8baaaa 0%, #ae8b9c 100%)"
+  },
+  {
+    "id": "c47",
+    "title": "Lễ hội Pháo hoa (Hanabi)",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Bữa tiệc ánh sáng rực rỡ trên bầu trời đêm mùa hè.",
+    "full_desc": "Vào mùa hè, hàng trăm lễ hội pháo hoa (Hanabi Taikai) được tổ chức dọc theo các bờ sông trên khắp Nhật Bản. Không giống như pháo hoa năm mới ở phương Tây, pháo hoa Nhật Bản là một sự kiện kéo dài hàng giờ với những màn trình diễn nghệ thuật kết hợp âm nhạc mãn nhãn.",
+    "time": "Tháng 7 và tháng 8",
+    "location": "Dọc các bờ sông (Nổi tiếng nhất là sông Sumida, Tokyo)",
+    "story": "Truyền thống ngắm pháo hoa bắt đầu từ thời Edo. Ban đầu, pháo hoa được bắn lên để tưởng nhớ những người đã khuất do dịch bệnh và nạn đói, đồng thời để xua đuổi tà ma quấy nhiễu dân lành.",
+    "fun_fact": "Khi xem pháo hoa, người Nhật thường mặc Yukata (Kimono mùa hè) và mang theo quạt tròn Uchiwa. Khi những bông pháo đẹp mắt nổ tung, họ thường hô to 'Tamaya!' hoặc 'Kagiya!' để tán thưởng các nghệ nhân làm pháo.",
+    "vocab": [
+        {"word": "花火", "reading": "Hanabi", "meaning": "Pháo hoa"},
+        {"word": "花火大会", "reading": "Hanabi Taikai", "meaning": "Lễ hội pháo hoa"},
+        {"word": "団扇", "reading": "Uchiwa", "meaning": "Quạt giấy tròn"}
+    ],
+    "images": [ "Image/Hanabi.jpg", "Image/Hanabi2.jpg" , "Image/Hanabi3.jpeg", "Image/Hanabi4.jpg" ],
+    "gradient": "linear-gradient(135deg, #f12711 0%, #f5af19 100%)"
+  },
+  {
+    "id": "c48",
+    "title": "Cà ri Nhật Bản (Kare)",
+    "category": "food",
+    "tag": "Món mặn",
+    "short_desc": "Món ăn quốc dân với hương vị ngọt ngào, êm dịu.",
+    "full_desc": "Cà ri Nhật Bản có hương vị sền sệt, đậm đà, hơi ngọt và ít cay hơn nhiều so với cà ri Ấn Độ hay Thái Lan. Món này thường được nấu cùng khoai tây, cà rốt, hành tây và thịt, ăn kèm với cơm nóng (Kare Raisu).",
+    "time": "Quanh năm",
+    "location": "Toàn quốc (Nhà hàng gia đình, quán ăn nhanh)",
+    "story": "Cà ri được người Anh mang đến Nhật Bản vào thời Minh Trị và ban đầu được coi là một món ăn phương Tây sang trọng. Về sau, Lực lượng Hải quân đã điều chỉnh công thức để cung cấp dinh dưỡng cho thủy binh, từ đó biến nó thành món ăn phổ biến trong mọi gia đình.",
+    "fun_fact": "Cho đến tận ngày nay, Lực lượng Phòng vệ Biển Nhật Bản vẫn giữ truyền thống ăn cơm cà ri vào mỗi bữa trưa thứ Sáu hàng tuần để các thủy thủ không bị mất cảm giác về ngày tháng khi lênh đênh trên biển dài ngày.",
+    "vocab": [
+        {"word": "カレー", "reading": "Karē", "meaning": "Món Cà ri"},
+        {"word": "甘口", "reading": "Amakuchi", "meaning": "Vị ngọt / Ít cay"},
+        {"word": "辛口", "reading": "Karakuchi", "meaning": "Vị cay"}
+    ],
+    "images": [ "Image/Curry.jpeg", "Image/Curry2.jpg" ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c49",
+    "title": "Kiếm Nhật (Katana)",
+    "category": "art",
+    "tag": "Thủ công",
+    "short_desc": "Tuyệt tác nghệ thuật rèn giũa sắc bén và kiêu hãnh.",
+    "full_desc": "Katana là loại kiếm dài truyền thống của giới võ sĩ Samurai. Nó không chỉ là một món vũ khí với độ cong hoàn hảo và lưỡi sắc bén, mà còn được coi là một tác phẩm nghệ thuật thiêng liêng đại diện cho linh hồn của người võ sĩ.",
+    "time": "Quanh năm",
+    "location": "Các bảo tàng, lò rèn truyền thống (Seki, Bizen)",
+    "story": "Quy trình rèn một thanh Katana vô cùng phức tạp, đòi hỏi người thợ rèn (Tosho) phải nung, gấp và rèn loại thép đặc biệt (Tamahagane) hàng ngàn lần. Quá trình này giúp loại bỏ tạp chất và tạo ra những lớp vân thép (Hamon) độc đáo trên lưỡi kiếm.",
+    "fun_fact": "Dù công nghệ hiện đại đã rất phát triển, nhưng những thanh kiếm Katana sắc bén, dẻo dai và có giá trị nhất thế giới hiện nay vẫn là những thanh được rèn hoàn toàn bằng phương pháp thủ công truyền thống từ hàng trăm năm trước.",
+    "vocab": [
+        {"word": "刀", "reading": "Katana", "meaning": "Kiếm Nhật"},
+        {"word": "侍", "reading": "Samurai", "meaning": "Võ sĩ đạo"},
+        {"word": "玉鋼", "reading": "Tamahagane", "meaning": "Thép rèn kiếm"}
+    ],
+    "images": [ "Image/Katana.jpg", "Image/Katana2.jpg" ],
+    "gradient": "linear-gradient(135deg, #874da2 0%, #c43a30 100%)"
+  },
+  {
+    "id": "c50",
+    "title": "Trống Taiko",
+    "category": "art",
+    "tag": "Biểu diễn",
+    "short_desc": "Âm vang hào hùng từ những chiếc trống truyền thống.",
+    "full_desc": "Taiko là nghệ thuật đánh trống truyền thống của Nhật Bản. Không chỉ là một nhạc cụ, biểu diễn Taiko đòi hỏi thể lực sung mãn, kỹ thuật điêu luyện và sự đồng điệu tuyệt đối giữa các thành viên trong đội.",
+    "time": "Quanh năm (Thường thấy ở các lễ hội)",
+    "location": "Toàn quốc",
+    "story": "Xưa kia, trống Taiko được dùng trong các trận chiến để cổ vũ tinh thần binh sĩ và đe dọa kẻ thù. Trong tôn giáo, âm thanh của Taiko được coi là tiếng nói của các vị thần, dùng để cầu mưa và tạ ơn mùa màng.",
+    "fun_fact": "Những chiếc trống Taiko lớn nhất (gọi là Odaiko) có thể nặng tới vài tấn và phần thân thường được khoét từ một cây cổ thụ nguyên khối hàng trăm năm tuổi.",
+    "vocab": [
+        {"word": "太鼓", "reading": "Taiko", "meaning": "Trống"},
+        {"word": "ばち", "reading": "Bachi", "meaning": "Dùi đánh trống"},
+        {"word": "響き", "reading": "Hibiki", "meaning": "Âm vang"}
+    ],
+    "images": [ "Image/Taiko.jpg", "Image/Taiko2.jpg" ],
+    "gradient": "linear-gradient(135deg, #f12711 0%, #f5af19 100%)"
+  },
+  {
+    "id": "c51",
+    "title": "Bánh Dorayaki",
+    "category": "food",
+    "tag": "Bánh ngọt",
+    "short_desc": "Món bánh rán tuổi thơ gắn liền với chú mèo máy Doraemon.",
+    "full_desc": "Dorayaki là một loại bánh ngọt truyền thống gồm hai lớp vỏ bánh tròn dẹt, xốp mềm giống bánh pancake, kẹp ở giữa là lớp nhân đậu đỏ (Anko) ngọt ngào và dẻo mịn.",
+    "time": "Quanh năm",
+    "location": "Các tiệm bánh Wagashi, siêu thị trên toàn quốc",
+    "story": "Tên gọi 'Dorayaki' bắt nguồn từ hình dáng của chiếc bánh giống như cái cồng (Dora). Truyền thuyết kể rằng một vị võ sĩ Samurai đã để quên chiếc cồng của mình tại nhà một người nông dân, và người này đã dùng chiếc cồng đó để làm chảo nướng bánh.",
+    "fun_fact": "Đây chính là món ăn yêu thích nhất của nhân vật Doraemon trong bộ truyện tranh nổi tiếng cùng tên, giúp món bánh này được biết đến trên toàn thế giới.",
+    "vocab": [
+        {"word": "どら焼き", "reading": "Dorayaki", "meaning": "Bánh rán Dorayaki"},
+        {"word": "甘い", "reading": "Amai", "meaning": "Ngọt ngào"},
+        {"word": "銅鑼", "reading": "Dora", "meaning": "Cái cồng/chiêng"}
+    ],
+    "images": [ "Image/Dorayaki.jpg", "Image/Dorayaki2.png" ],
+    "gradient": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+  },
+  {
+    "id": "c52",
+    "title": "Lễ hội Yosakoi",
+    "category": "festival",
+    "tag": "Mùa Hè",
+    "short_desc": "Điệu múa hiện đại tràn đầy năng lượng và nhiệt huyết.",
+    "full_desc": "Yosakoi là một phong cách múa tập thể vô cùng sôi động. Các đội múa thường mặc trang phục rực rỡ, tay cầm chũm chọe gỗ Naruko và nhảy múa trên đường phố với sự kết hợp giữa động tác truyền thống và âm nhạc hiện đại.",
+    "time": "Tháng 8",
+    "location": "Bắt nguồn từ tỉnh Kochi, nay phổ biến toàn quốc",
+    "story": "Yosakoi ra đời vào năm 1954 tại Kochi nhằm phục hồi nền kinh tế và vực dậy tinh thần người dân sau Thế chiến thứ 2. Nó được thiết kế để trở thành một điệu múa vui tươi, tự do, ai cũng có thể tham gia bất kể tuổi tác.",
+    "fun_fact": "Quy tắc cốt lõi của Yosakoi rất đơn giản: vũ công phải cầm đạo cụ Naruko trên tay, và bản nhạc biểu diễn bắt buộc phải lồng ghép giai điệu của bài dân ca 'Yosakoi Naruko Dancing'.",
+    "vocab": [
+        {"word": "よさこい", "reading": "Yosakoi", "meaning": "Điệu múa Yosakoi"},
+        {"word": "鳴子", "reading": "Naruko", "meaning": "Chũm chọe gỗ"},
+        {"word": "笑顔", "reading": "Egao", "meaning": "Nụ cười"}
+    ],
+    "images": [ "Image/Yosakoi.jpg", "Image/Yosakoi2.jpg" , "Image/Yosakoi3.jpg" , "Image/Yosakoi4.jpg" , "Image/Yosakoi5.jpg" , "Image/Yosakoi6.jpg" , "Image/Yosakoi7.jpg" ],
+    "gradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
   }
 ]

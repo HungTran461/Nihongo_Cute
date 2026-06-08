@@ -1,0 +1,108 @@
+{
+  "8_xuoi": {
+    "id": "p8_1",
+    "title": "Bài 8 (Dịch Xuôi): Cuộc sống mới ở trường đại học",
+    "type": "vi-jp",
+    "full_prompt": "Trường đại học của tôi là một ngôi trường rất lớn. Trường đại học thì mới và rất đẹp. Thầy cô giáo ở trường thì vô cùng tốt bụng. Bài tập về nhà mỗi ngày thì hơi nhiều một chút. Tiếng Nhật tuy hơi khó nhưng rất thú vị. Thư viện của trường thì rất yên tĩnh. Thư viện không cũ, rất sạch sẽ. Ký túc xá của sinh viên thì không yên tĩnh lắm. Tuy nhiên, ký túc xá rất tiện lợi. Đồ ăn ở nhà ăn sinh viên tuy không đắt nhưng không ngon lắm. Cuộc sống mới của tôi rất bận rộn. Cuộc sống này vô cùng vui vẻ.",
+    "full_answer": "わたしの だいがくは とても おおきい だいがくです。だいがくは あたらしくて、とても きれいです。がっこうの せんせいは とても しんせつです。まいにちの しゅくだいは すこし おおいです。にほんごは すこし むずかしいですが、とても おもしろいです。がっこうの としょかんは とても しずかです。としょかんは ふるくないです、とても きれいです。がくせいの りょうは あまり しずかじゃありません。でも、りょうは とても べんりです。しょくどうの たべものは たかくないですが、あまり おいしくないです。わたしの あたらしい せいかつは とても いそがしいです。この せいかつは とても たのしいです。",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "Trường đại học của tôi là một ngôi trường rất lớn.", "answer": "わたしの だいかくは とても おおきい だいがくです。", "explanation": "Tính từ đuôi -i (おおきい) bổ nghĩa trực tiếp cho danh từ (だいがく)." },
+      { "line": "Câu 2", "prompt": "Trường đại học thì mới và rất đẹp.", "answer": "だいがくは あたらしくて、とても きれいです。", "explanation": "Cách nối hai tính từ: tính từ đuôi -i (あたらしい) bỏ -i thêm -くて." },
+      { "line": "Câu 3", "prompt": "Thầy cô giáo ở trường thì vô cùng tốt bụng.", "answer": "がっこうの せんせいは とても しんせつです。", "explanation": "Tính từ đuôi -na (しんせつ) kết thúc câu khẳng định ở hiện tại bằng 'です'." },
+      { "line": "Câu 4", "prompt": "Bài tập về nhà mỗi ngày thì hơi nhiều một chút.", "answer": "まいにちの しゅくだいは すこし おおいです。", "explanation": "Sử dụng phó từ chỉ mức độ thấp 'すこし' (một chút) đi với tính từ 'おおい'." },
+      { "line": "Câu 5", "prompt": "Tiếng Nhật tuy hơi khó nhưng rất thú vị.", "answer": "にほんごは すこし むずかしいですが、てとも おもしろいです。", "explanation": "Dùng trợ từ 'が' ở giữa câu để nối hai vế mang ý nghĩa tương phản (nhưng)." },
+      { "line": "Câu 6", "prompt": "Thư viện của trường thì rất yên tĩnh.", "answer": "がっこうの としょかんは とても しずかです。", "explanation": "しずか là tính từ đuôi -na, biểu thị trạng thái nơi chốn." },
+      { "line": "Câu 7", "prompt": "Thư viện không cũ, rất sạch sẽ.", "answer": "としょかんは ふるくないです、とても きれいです。", "explanation": "Phủ định của tính từ đuôi -i: ふるい đổi thành ふるくないです." },
+      { "line": "Câu 8", "prompt": "Ký túc xá của sinh viên thì không yên tĩnh lắm.", "answer": "がくせいの りょうは あまり しずかじゃありません。", "explanation": "Phủ định của tính từ đuôi -na đi với phó từ 'biểu thị tần suất thấp': あまり ... じゃありません." },
+      { "line": "Câu 9", "prompt": "Tuy nhiên, ký túc xá rất tiện lợi.", "answer": "でも、りょうは とても べんりです。", "explanation": "Dùng từ nối đầu câu 'でも' (Tuy nhiên/Nhưng) phù hợp với ngữ pháp Bài 8." },
+      { "line": "Câu 10", "prompt": "Đồ ăn ở nhà ăn sinh viên tuy không đắt nhưng không ngon lắm.", "answer": "しょくどうの たべものは たかくないですが、あまり おいしくないです。", "explanation": "Phối hợp phủ định tính từ đuôi -i: たかい -> たかくない, おいしい -> おいしくない." },
+      { "line": "Câu 11", "prompt": "Cuộc sống mới của tôi rất bận rộn.", "answer": "わたしの あたらしい せいかつは とても いそがしいです。", "explanation": "あたらしい (Mới) và いそがしい (Bận rộn) đều là tính từ đuôi -i học trong Bài 8." },
+      { "line": "Câu 12", "prompt": "Cuộc sống này vô cùng vui vẻ.", "answer": "この せいかつは とても たのしいです。", "explanation": "たのしい (Vui vẻ) kết thúc đoạn văn miêu tả cảm xúc một cách trọn vẹn." }
+    ]
+  },
+  "8_nguoc": {
+    "id": "p8_2",
+    "title": "Bài 8 (Dịch Ngược): ミラーさんの まち (Thị trấn của anh Miller)",
+    "type": "jp-vi",
+    "full_prompt": "ミラーさんの まちは あまり おおきくないです。でも、とても にぎやかな まちです。この まちの たべものは とても おいしいです。そして、あまり たかくないです。ミラーさんの おうちは あたらしいですか。いいえ、あまり あたらしくないです。ふるい おうちですが、とても きれいです。おうちの まわりは とても しずかです。ミラーさんの せいかつは いそがしいですが、とても たのしいです。",
+    "full_answer": "Thị trấn của anh Miller không lớn lắm. Nhưng là một thị trấn rất nhộn nhịp. Đồ ăn của thị trấn này rất ngon. Và không đắt lắm. Nhà của anh Miller có mới không? Không, không mới lắm. Tuy là một ngôi nhà cũ nhưng rất đẹp. Xung quanh ngôi nhà rất yên tĩnh. Cuộc sống của anh Miller tuy bận rộn nhưng rất vui vẻ.",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "ミラーさんの まちは あまり おおきくないです。", "answer": "Thị trấn của anh Miller không lớn lắm.", "explanation": "Phủ định tính từ đuôi -i 'おおきい' chuyển thành 'おおきくないです' đi kèm phó từ 'あまり'." },
+      { "line": "Câu 2", "prompt": "Subでも、ミラーさんの まちは とても にぎやかです。", "answer": "Nhưng thị trấn của anh Miller rất nhộn nhịp.", "explanation": "'にぎやか' là tính từ đuôi -na nghĩa là nhộn nhịp, náo nhiệt." },
+      { "line": "Câu 3", "prompt": "この まちの たべものは とても おいしいです。そして、あまり たかくないです。", "answer": "Đồ ăn của thị trấn này rất ngon. Và không đắt lắm.", "explanation": "'そして' là liên từ dùng để nối 2 câu có quan hệ thuận (Và/Thêm vào đó)." },
+      { "line": "Câu 4", "prompt": "ミラーさんの おうちは あたらしいですか。いいえ、あまり あたらしくないです。", "answer": "Nhà của anh Miller có mới không? Không, không mới lắm.", "explanation": "Mẫu câu hỏi xác nhận tính chất của danh từ ở thời điểm hiện tại." },
+      { "line": "Câu 5", "prompt": "ふるい おうちですが、とても きれいです。", "answer": "Tuy là một ngôi nhà cũ nhưng rất đẹp.", "explanation": "Trợ từ 'ですが' ở đây đóng vai trò tương phản giữa hai tính chất: 'Cũ' nhưng 'Đẹp/Sạch sẽ'." },
+      { "line": "Câu 6", "prompt": "おうちの まわりは とても しずかです。", "answer": "Xung quanh ngôi nhà rất yên tĩnh.", "explanation": "Từ vựng 'まわり' nghĩa là xung quanh. 'しずか' là tính từ đuôi -na." },
+      { "line": "Câu 7", "prompt": "ミラーさんの せいかつは いそがしいですが、とても たのしいです。", "answer": "Cuộc sống của anh Miller tuy bận rộn nhưng rất vui vẻ.", "explanation": "Ôn tập hai tính từ đuôi -i mang ý nghĩa đối lập: いそがしい (Bận rộn) và たのしい (Vui vẻ)." }
+    ]
+  },
+  "9_xuoi": {
+    "id": "p9_1",
+    "title": "Bài 9 (Dịch Xuôi): Sở thích và sở trường",
+    "type": "vi-jp",
+    "full_prompt": "Tôi rất thích các món ăn Nhật Bản. Tôi thích nhất là món Sushi. Tôi cũng thích rượu sake của Nhật Bản. Nhưng tôi hoàn toàn không uống rượu Sake. Bạn tôi thì rất giỏi khiêu vũ. Cô ấy cũng hiểu tiếng Anh rất tốt. Tôi thì hoàn toàn không hiểu tiếng Anh. Vì tôi hiểu một chút tiếng Nhật nên hàng ngày tôi đọc báo tiếng Nhật. Hàng ngày tôi rất bận rộn. Tại sao ư? Vì mỗi ngày tôi đều có việc bận. Hôm nay tôi có cuộc hẹn với bạn bè. Vì không có thời gian nên tôi không xem tivi.",
+    "full_answer": "わたしは にほんりょうりが とても すきです。すしが いちばん すきです。にほんの おさけも すきです。 Sbでも、わたしは おさけを ぜんぜん のみません。わたしの とともだちは ダンスが とても じょうずです。彼女は えいごも よく わかります。わたしは えいごが ぜんぜん わかりません。わたしは にほんごが すこし わかりますから、まいにち にほんごの しんぶんを よみます。まいにち とても いそがしいです。どうしてですか。まいにち 用事 が ありますから。きょうは ともだちと やくそくが あります。じかんが ありませんから、テレビを みません。",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "Tôi rất thích các món ăn Nhật Bản. Tôi thích nhất là món Sushi.", "answer": "わたしは にほんりょうりが とても すきです。すしが いちばん すきです。", "explanation": "Cấu trúc sở thích Bài 9: N + が + すきです. Từ 'いちばん' nghĩa là nhất." },
+      { "line": "Câu 2", "prompt": "Tôi cũng thích rượu sake của Nhật Bản. Nhưng tôi hoàn toàn không uống rượu Sake.", "answer": "にほんの おさけも すきです。 \nでも、わたしは おさけを ぜんぜん のみません。", "explanation": "Phó từ 'ぜんぜん' đi với động từ phủ định ở đuôi (Hoàn toàn không làm gì)." },
+      { "line": "Câu 3", "prompt": "Bạn tôi thì rất giỏi khiêu vũ. Cô ấy cũng hiểu tiếng Anh rất tốt.", "answer": "わたしの ともだちは ダンスが とても じょうずです。彼女は えいごも よく わかります。", "explanation": "Cấu trúc chỉ năng lực sở trường: N + が + じょうずです / わかります. 'よく' nghĩa là tốt/rõ." },
+      { "line": "Câu 4", "prompt": "Tôi thì hoàn toàn không hiểu tiếng Anh.", "answer": "わたしは えいごが ぜんぜん わかりません。", "explanation": "Phủ định năng lực: が + わかりません đi kèm phó từ ぜんぜん." },
+      { "line": "Câu 5", "prompt": "Vì tôi hiểu một chút tiếng Nhật nên hàng ngày tôi đọc báo tiếng Nhật.", "answer": "わたしは にほんごが すこし わかりますから、まいにち にほんごの しんぶんを よみます。", "explanation": "Cấu trúc giải thích nguyên nhân hệ quả Bài 9: Vế 1 + から, Vế 2 (Vì... nên...)." },
+      { "line": "Câu 6", "prompt": "Hàng ngày tôi rất bận rộn. Tại sao ư? Vì mỗi ngày tôi đều có việc bận.", "answer": "まいにち とても いそがしいです。どうしてですか。まいにち 用事が ありますから。", "explanation": "Câu hỏi lý do 'どうしてですか' (Tại sao) và câu trả lời kết thúc bằng 'から'." },
+      { "line": "Câu 7", "prompt": "Hôm nay tôi có cuộc hẹn với bạn bè.", "answer": "きょうは ともだちと やくそくが あります。", "explanation": "Cấu trúc sở hữu hoặc có sự việc: N (sự kiện) + が + あります (Có cuộc hẹn)." },
+      { "line": "Câu 8", "prompt": "Vì không có thời gian nên tôi không xem tivi.", "answer": "じかんが ありませんから、テレビを みません。", "explanation": "じかんが ありません nghĩa là không có thời gian, đi với から để làm vế chỉ nguyên nhân." }
+    ]
+  },
+  "9_nguoc": {
+    "id": "p9_2",
+    "title": "Bài 9 (Dịch Ngược): カリナさんの じじょう (Hoàn cảnh của Karina)",
+    "type": "jp-vi",
+    "full_prompt": "カリナさんは インドネシアから きました。カリナさんは えが とても じょうずです。でも、にほんごは あまり わかりません。どうしてですか。まいにち にhonごの べんきょうが あまり できませんから。カリナさんは スポーツが すきですか。ええ、ダンスが とても すきです。でも、クラシックおんがくは ぜんぜん すきじゃありません。きょうは じかんが ありますから、ともだちと テニスを します。あしたは アルバイトが ありますから、とても いそがしいです。",
+    "full_answer": "Chị Karina đến từ Indonesia. Chị Karina vẽ tranh rất giỏi. Nhưng tiếng Nhật thì không hiểu lắm. Tại sao vậy? Vì hàng ngày không thể học tiếng Nhật được nhiều lắm. Chị Karina có thích thể thao không? Vâng, chị ấy rất thích khiêu vũ. Nhưng nhạc cổ điển thì hoàn toàn không thích. Hôm nay vì có thời gian nên chị ấy sẽ chơi tennis cùng bạn bè. Ngày mai vì có việc làm thêm nên sẽ rất bận rộn.",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "カリナさんは インドネシアから きました。カリナさんは えが とても じょうずです。", "answer": "Chị Karina đến từ Indonesia. Chị Karina vẽ tranh rất giỏi.", "explanation": "Danh từ 'え' (Tranh) đi với cấu trúc sở trường 'が じょうずです'." },
+      { "line": "Câu 2", "prompt": "えでも、にほんごは あまり わかりません。どうしてですか。まいにち にhonごの べんきょうが あまり できませんから。", "answer": "Nhưng tiếng Nhật thì không hiểu lắm. Tại sao vậy? Vì hàng ngày không thể học tiếng Nhật được nhiều lắm.", "explanation": "'できません' là dạng phủ định năng lực (không thể làm được) đi kèm lý do 'から'." },
+      { "line": "Câu 3", "prompt": "カリナさんは スポーツが すきですか。ええ、ダンスが とても すきです。", "answer": "Chị Karina có thích thể thao không? Vâng, chị ấy rất thích khiêu vũ.", "explanation": "Câu trả lời 'ええ' đồng nghĩa với 'はい' nhưng mang sắc thái tự nhiên, nhẹ nhàng hơn." },
+      { "line": "Câu 4", "prompt": "でも、クラシックおんがくは ぜんぜん すきじゃありません。", "answer": "Nhưng nhạc cổ điển thì hoàn toàn không thích.", "explanation": "Phủ định của cụm sở thích: Danh từ + は + ぜんぜん + すきじゃありません." },
+      { "line": "Câu 5", "prompt": "きょうは じかんが ありますから、ともだちと テニスを します。", "answer": "Hôm nay vì có thời gian nên chị ấy sẽ chơi tennis cùng bạn bè.", "explanation": "'じかんが あります' nghĩa là có thời gian, làm nguyên nhân cho hành động chơi tennis ở vế sau." },
+      { "line": "Câu 6", "prompt": "あしたは アルバイトが ありますから、とても いそがしいです。", "answer": "Ngày mai vì có việc làm thêm nên sẽ rất bận rộn.", "explanation": "'アルバイトがあります' (Có việc làm thêm) dẫn tới kết quả bận rộn." }
+    ]
+  },
+  "10_xuoi": {
+    "id": "p10_1",
+    "title": "Bài 10 (Dịch Xuôi): Văn phòng và Công viên của tôi",
+    "type": "vi-jp",
+    "full_prompt": "Văn phòng của tôi ở tầng 2. Trong văn phòng có một cái bàn lớn và một cái ghế mới. Ở trên bàn có máy tính và sách tiếng Nhật. Ở dưới bàn hoàn toàn không có cái gì cả. Ở bên cạnh cái bàn có một cái thùng rác nhỏ. Anh Miller ở đâu vậy? Anh Miller đang ở trong văn phòng. Ở dưới tầng 1 có một công viên rất đẹp. Ở trong công viên có rất nhiều cây và hoa. Ở dưới gốc cây lớn có một chú chó dễ thương. Ở gần công viên có một cửa hàng tiện lợi bận rộn. Có rất nhiều người ở trong cửa hàng tiện lợi đó.",
+    "full_answer": "わたしの じむしょは 2かいに あります。じむしょの なかに おおきい つくえと あたらしい いすが あります。つくえの うえに パソコンと にhonごの ほんが あります。つくえの したに ぜんぜん なにも ありません。つくえの となりに ちいさい ごみばこが あります。ミラーさんは どこに いますか。ミラーさんは じむしょの なかに います。1かいに とても きれいな こうえんが あります。こうえんの なかに きや はなが たくさん あります。おおきい きの したに かわいい いぬが います。こうえんの ちかくに いそがしい コンビニが あります。その コンビニの なかに ひとが たくさん います。",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "Văn phòng của tôi ở tầng 2.", "answer": "わたしの じむしょは 2かいに あります。", "explanation": "Cấu trúc định vị vị trí của vật vô tri: N (vật) + は + N (địa điểm) + に あります." },
+      { "line": "Câu 2", "prompt": "Trong văn phòng có một cái bàn lớn và một cái ghế mới.", "answer": "じむしょの なかに おおきい つくえと あたらしい いすが あります。", "explanation": "Cấu trúc tồn tại của vật: N (vị trí) + に + N (vật) + が あります. Dùng 'と' để liệt kê." },
+      { "line": "Câu 3", "prompt": "Ở trên bàn có máy tính và sách tiếng Nhật.", "answer": "つくえの うえに パソコンと にhonごの ほんが あります。", "explanation": "Ôn tập danh từ chỉ vị trí 'うえ' (trên) và sở hữu cách 'の'." },
+      { "line": "Câu 4", "prompt": "Ở dưới bàn hoàn toàn không có cái gì cả.", "answer": "つくえの したに ぜんぜん なにも ありません。", "explanation": "Phủ định hoàn toàn sự tồn tại của vật: なにも ありません (Không có gì cả) kết hợp phó từ ぜんぜん." },
+      { "line": "Câu 5", "prompt": "Ở bên cạnh cái bàn có một cái thùng rác nhỏ.", "answer": "つくえの となりに ちいさい ごみばこが あります。", "explanation": "'となり' (bên cạnh/hàng xóm) dùng cho hai vật cùng loại hoặc ở sát cạnh nhau." },
+      { "line": "Câu 6", "prompt": "Anh Miller ở đâu vậy? Anh Miller đang ở trong văn phòng.", "answer": "ミラーさんは 2どこに いますか。ミラーさんは じむしょの なかに います。", "explanation": "Hỏi vị trí của người dùng 'どこに いますか'. Vế trả lời dùng 'います' vì Miller là con người." },
+      { "line": "Câu 7", "prompt": "Ở dưới tầng 1 có một công viên rất đẹp.", "answer": "1かいに とても きれいな こうえんが あります。", "explanation": "'きれい(な)' là tính từ đuôi -na bổ nghĩa cho danh từ công viên 'こうえん'." },
+      { "line": "Câu 8", "prompt": "Ở trong công viên có rất nhiều cây và hoa.", "answer": "こうえんの なかに きや はなが たくさん あります。", "explanation": "Dùng trợ từ 'や' để liệt kê danh từ mang tính đại diện (cây, hoa và những thứ khác...)." },
+      { "line": "Câu 9", "prompt": "Ở dưới gốc cây lớn có một chú chó dễ thương.", "answer": "おおきい きの したに かわいい いぬが います。", "explanation": "Chú chó 'いぬ' là động vật (vật có sinh mệnh) nên bắt buộc phải dùng động từ tồn tại 'います'." },
+      { "line": "Câu 10", "prompt": "Ở gần công viên có một cửa hàng tiện lợi bận rộn.", "answer": "こうえんの ちかくに いそがしい コンビニが あります。", "explanation": "Từ vị trí 'ちかく' (ở gần, lân cận) đi với trợ từ に." },
+      { "line": "Câu 11", "prompt": "Có rất nhiều người ở trong cửa hàng tiện lợi đó.", "answer": "その コンビニの なかに ひとが たくさん います。", "explanation": "Cụm 'その' (đó) bổ nghĩa cho cửa hàng tiện lợi. Người 'ひと' đi với phó từ số lượng 'たくさん' đặt trước 'います'." }
+    ]
+  },
+  "10_nguoc": {
+    "id": "p10_2",
+    "title": "Bài 10 (Dịch Ngược): おうちの なか (Bên trong ngôi nhà của tôi)",
+    "type": "jp-vi",
+    "full_prompt": "わたしの おうちは あまり おおきくないですが、とても きれいです。へやの なかに なにが ありますか。つくえや ベッドなどが あります。つくえの うえに おおきい はこが あります。はこの なかに ふるい てがみと しゃしんが あります。ベッドの したに なにも ありません。へやの すみに てのひら（ちいさい）テレビが あります。テレビの ちかくに だれが いますか。わたしの おとうとが います。おとうとの となりに かわいい ねこが います。ねこは どこに いますか。いすの うえに います。",
+    "full_answer": "Ngôi nhà của tôi tuy không lớn lắm nhưng rất sạch sẽ. Trong phòng có cái gì vậy? Có bàn và giường... Ở trên bàn có một cái hộp lớn. Ở trong hộp có những bức thư cũ và ảnh. Ở dưới gầm giường không có cái gì cả. Ở góc phòng có một chiếc tivi nhỏ. Ở gần tivi có ai vậy? Có em trai của tôi. Ở bên cạnh em trai có một chú mèo dễ thương. Chú mèo đang ở đâu vậy? Nó đang ở trên ghế.",
+    "breakdown": [
+      { "line": "Câu 1", "prompt": "わたしの おうちは あまり おおきくないですが、とても きれいです。", "answer": "Ngôi nhà của tôi tuy không lớn lắm nhưng rất sạch sẽ.", "explanation": "Ôn tập tính từ bài 8: Phủ định đuôi -i (おおきくない) kết hợp trợ từ tương phản (ですが)." },
+      { "line": "Câu 2", "prompt": "へやの なかに なにが ありますか。つくえや ベッドなどが あります。", "answer": "Trong phòng có cái gì vậy? Có bàn và giường...", "explanation": "Mẫu câu liệt kê chưa đầy đủ: N1 や N2 など が あります (Có N1, N2... v.v...)." },
+      { "line": "Câu 3", "prompt": "つくえの うえに おおきい はこが あります。はこの なかに ふるい てがみと しゃしんが あります。", "answer": "Ở trên bàn có một cái hộp lớn. Ở trong hộp có những bức thư cũ và ảnh.", "explanation": "'はこ' nghĩa là cái hộp, 'てがみ' là thư. 'と' dùng để liệt kê chính xác toàn bộ vật sở hữu." },
+      { "line": "Câu 4", "prompt": "ベッドの したに なにも ありません。", "answer": "Ở dưới gầm giường không có cái gì cả.", "explanation": "Cấu trúc phủ định tuyệt đối vật thể trong không gian vị trí." },
+      { "line": "Câu 5", "prompt": "へやの すみに ちいさい テレビが あります。", "answer": "Ở góc phòng có một chiếc tivi nhỏ.", "explanation": "Từ vựng chỉ vị trí đặc biệt trong phòng: 'すみ' (góc phòng, xó phòng)." },
+      { "line": "Câu 6", "prompt": "テレビの ちかくに だれが いますか。わたしの おとうとが います。", "answer": "Ở gần tivi có ai vậy? Có em trai của tôi.", "explanation": "Hỏi sự tồn tại của người: だれ が いますか. Em trai 'おとうと' đi với động từ 'います'." },
+      { "line": "Câu 7", "prompt": "おとうとの となりに かわいい ねこが います。", "answer": "Ở bên cạnh em trai có một chú mèo dễ thương.", "explanation": "Chú mèo 'ねこ' là động vật, sử dụng động từ tồn tại 'います'." },
+      { "line": "Câu 8", "prompt": "ねこは どこに いますか。いすの うえに います。", "answer": "Chú mèo đang ở đâu vậy? Nó đang ở trên ghế.", "explanation": "Mẫu câu hỏi và trả lời về vị trí cụ thể của một đối tượng sinh vật sống." }
+    ]
+  }
+}
