@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Minna no Nihongo - Động Từ Siêu Đáng Yêu 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+JP:wght@400;700&family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f7f9fc;
+            --main-pink: #ffb7b2;
+            --main-yellow: #ffdac1;
+            --main-green: #e2f0cb;
+            --main-blue: #b5ead7;
+            --main-purple: #c7ceea;
+            --text-dark: #4a4a4a;
+            --card-bg: #ffffff;
+            --shadow: 0 8px 16px rgba(0,0,0,0.05);
+            --border-radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Be Vietnam Pro', 'Noto Sans JP', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            padding: 20px;
+            background-image: radial-gradient(#ffdfdf 1px, transparent 1px), radial-gradient(#e1f4ff 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff3f3 0%, #f0f3ff 100%);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 3px dashed var(--main-pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: #ff7b93;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #fff;
+            animation: bounce 2s infinite;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #7a7a7a;
+        }
+
+        .stats-badge {
+            display: inline-block;
+            background-color: var(--main-purple);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #5b638a;
+        }
+
+        /* Controls Section */
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            border: 2px solid #eef2f7;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--main-pink);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .search-bar:focus {
+            box-shadow: 0 0 10px rgba(255, 183, 178, 0.5);
+            transform: scale(1.01);
+        }
+
+        .filter-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #8a8a8a;
+            min-width: 80px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn.active {
+            background-color: #ff7b93;
+            color: white;
+        }
+
+        .btn-g1.active { background-color: #ffb7b2; color: #5c3a38; }
+        .btn-g2.active { background-color: #b5ead7; color: #2e4d41; }
+        .btn-g3.active { background-color: #c7ceea; color: #434961; }
+
+        .select-lesson {
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 2px solid #ddd;
+            outline: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .quiz-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .quiz-label {
+            font-weight: 600;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            color: #ff5c7c;
+        }
+
+        /* Switch checkbox */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px; width: 18px;
+            left: 4px; bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: #ff7b93; }
+        input:checked + .slider:before { transform: translateX(24px); }
+
+        /* Verbs Table Layout */
+        .verbs-board {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 2px solid #eef2f7;
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            background: linear-gradient(to right, #fff0f0, #f6f0ff);
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-bottom: 2px solid #ebdfff;
+            color: #6a637d;
+        }
+
+        .verb-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .verb-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            padding: 15px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .verb-row:hover {
+            background-color: #fff9f9;
+        }
+
+        /* Group colors accent line */
+        .g1-row { border-left: 6px solid var(--main-pink); }
+        .g2-row { border-left: 6px solid var(--main-blue); }
+        .g3-row { border-left: 6px solid var(--main-purple); }
+
+        .japanese-word {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .kana-reading {
+            font-size: 0.8rem;
+            color: #8899a6;
+            display: block;
+            margin-top: 2px;
+            font-weight: normal;
+        }
+
+        .meaning-text {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .badge-lesson {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: #edf2f7;
+            margin-top: 5px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        .te-box {
+            background: #fff5f5;
+            border: 1px dashed #ffb7b2;
+            padding: 6px 12px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: bold;
+            color: #e53e3e;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .te-box.blur-text {
+            filter: blur(5px);
+            background: #edf2f7;
+            border-color: #cbd5e0;
+            color: transparent;
+        }
+
+        .te-box.blur-text:hover {
+            filter: blur(2px);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #a0aec0;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #ffcbd1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ffb3bc; }
+
+        /* Responsive Layout */
+        @media(max-width: 600px) {
+            .table-header { display: none; }
+            .verb-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                border: 2px solid #edf2f7;
+                margin: 10px;
+                border-radius: 15px;
+                background-color: white;
+            }
+            .verb-list { max-height: none; }
+            .quiz-toggle-container { justify-content: center; }
+            .te-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🌸 Động Từ Minna Lớp Học Vui Nhộn 🌸</h1>
+        <p>Bảng tổng hợp Thể Từ Điển (Vる) và Thể Te (Vて) đầy đủ nhất từ Bài 1 đến Bài 25</p>
+        <div class="stats-badge" id="total-badge">Đang tải dữ liệu...</div>
+    </header>
+
+    <div class="controls">
+        <input type="text" class="search-bar" id="search-input" placeholder="🔍 Tìm kiếm nhanh bằng chữ Hán, Hiragana hoặc Nghĩa tiếng Việt...">
+        
+        <div class="filter-groups">
+            <span class="filter-title">Nhóm từ:</span>
+            <button class="btn active" onclick="filterGroup('all', this)">Tất cả</button>
+            <button class="btn btn-g1" onclick="filterGroup(1, this)">Nhóm 1 (っ/ん/い/し...)</button>
+            <button class="btn btn-g2" onclick="filterGroup(2, this)">Nhóm 2 (-eru/-iru)</button>
+            <button class="btn btn-g3" onclick="filterGroup(3, this)">Nhóm 3 (する/くる)</button>
+        </div>
+
+        <div class="filter-groups">
+            <span class="filter-title">Bài học:</span>
+            <select class="select-lesson" id="lesson-select" onchange="filterLesson(this.value)">
+                <option value="all">📚 Tất cả bài (Bài 1 - 25)</option>
+                </select>
+        </div>
+
+        <div class="quiz-toggle-container">
+            <span class="quiz-label">🙈 Chế độ ẩn Thể Te để tự ôn tập:</span>
+            <label class="switch">
+                <input type="checkbox" id="quiz-mode" onchange="toggleQuizMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="verbs-board">
+        <div class="table-header">
+            <div>Động từ thể Từ điển (Vる) & Nghĩa</div>
+            <div>Thể Te (Vて)</div>
+            <div>Ghi chú & Thử thách</div>
+        </div>
+        <div class="verb-list" id="verb-display-container">
+            </div>
+    </div>
+
+    <footer>
+        <p>💡 Mẹo nhỏ: Bạn có thể click trực tiếp vào ô Thể Te đang bị ẩn để mở xem nhanh từ đó!</p>
+        <p>✨ Thiết kế cho mục đích học tập dễ dàng hơn. Dễ dàng mở rộng thêm bằng cách bổ sung JSON vào mã nguồn.</p>
+    </footer>
+</div>
+
+<script>
+    /**
+     * DỮ LIỆU JSON ĐỘNG TỪ TÍCH HỢP TOÀN BỘ (BÀI 1 - BÀI 25)
+     * Rất dễ dàng mở rộng trong tương lai, chỉ cần chèn thêm Object mới vào mảng này.
+     */
+    const VERB_DATA = [
+        // NHÓM 1
+        { group: 1, lesson: 4, v_ru: "働く", v_ru_kana: "はたらく", v_te: "働いて", v_te_kana: "はたらいて", meaning: "Làm việc", note: "" },
+        { group: 1, lesson: 4, v_ru: "休む", v_ru_kana: "やすむ", v_te: "休んで", v_te_kana: "やすんで", meaning: "Nghỉ ngơi", note: "" },
+        { group: 1, lesson: 4, v_ru: "終わる", v_ru_kana: "おわる", v_te: "終わって", v_te_kana: "おわって", meaning: "Kết thúc", note: "" },
+        { group: 1, lesson: 5, v_ru: "行く", v_ru_kana: "いく", v_te: "行って", v_te_kana: "いって", meaning: "Đi", note: "⭐ Ngoại lệ Thể Te" },
+        { group: 1, lesson: 5, v_ru: "帰る", v_ru_kana: "かえる", v_te: "帰って", v_te_kana: "かえって", meaning: "Trở về", note: "" },
+        { group: 1, lesson: 6, v_ru: "飲む", v_ru_kana: "のむ", v_te: "飲んで", v_te_kana: "のんで", meaning: "Uống", note: "" },
+        { group: 1, lesson: 6, v_ru: "吸う", v_ru_kana: "すう", v_te: "吸って", v_te_kana: "すって", meaning: "Hút (thuốc)", note: "" },
+        { group: 1, lesson: 6, v_ru: "聞く", v_ru_kana: "きく", v_te: "聞いて", v_te_kana: "きいて", meaning: "Nghe, Hỏi", note: "" },
+        { group: 1, lesson: 6, v_ru: "読む", v_ru_kana: "よむ", v_te: "読んで", v_te_kana: "よんで", meaning: "Đọc", note: "" },
+        { group: 1, lesson: 6, v_ru: "書く", v_ru_kana: "かく", v_te: "書いて", v_te_kana: "かいて", meaning: "Viết, vẽ", note: "" },
+        { group: 1, lesson: 6, v_ru: "買う", v_ru_kana: "かう", v_te: "買って", v_te_kana: "かって", meaning: "Mua", note: "" },
+        { group: 1, lesson: 6, v_ru: "撮る", v_ru_kana: "とる", v_te: "撮って", v_te_kana: "とって", meaning: "Chụp (ảnh), lấy", note: "" },
+        { group: 1, lesson: 6, v_ru: "会う", v_ru_kana: "あう", v_te: "会って", v_te_kana: "あって", meaning: "Gặp gỡ (bạn bè)", note: "" },
+        { group: 1, lesson: 7, v_ru: "切る", v_ru_kana: "きる", v_te: "切って", v_te_kana: "きって", meaning: "Cắt", note: "Dễ nhầm nhóm 2" },
+        { group: 1, lesson: 7, v_ru: "送る", v_ru_kana: "おくる", v_te: "送って", v_te_kana: "おくって", meaning: "Gửi (bưu kiện)", note: "" },
+        { group: 1, lesson: 7, v_ru: "もらう", v_ru_kana: "もらう", v_te: "もらって", v_te_kana: "もらって", meaning: "Nhận", note: "" },
+        { group: 1, lesson: 7, v_ru: "貸す", v_ru_kana: "かす", v_te: "貸して", v_te_kana: "かして", meaning: "Cho mượn", note: "" },
+        { group: 1, lesson: 7, v_ru: "習う", v_ru_kana: "ならう", v_te: "習って", v_te_kana: "ならって", meaning: "Học tập (từ ai)", note: "" },
+        { group: 1, lesson: 9, v_ru: "わかる", v_ru_kana: "わかる", v_te: "わかって", v_te_kana: "わかって", meaning: "Hiểu, nắm rõ", note: "" },
+        { group: 1, lesson: 9, v_ru: "ある", v_ru_kana: "ある", v_te: "あって", v_te_kana: "あって", meaning: "Có (đồ vật)", note: "" },
+        { group: 1, lesson: 11, v_ru: "かかる", v_ru_kana: "かかる", v_te: "かかって", v_te_kana: "かかって", meaning: "Tốn (thời gian, tiền)", note: "" },
+        { group: 1, lesson: 13, v_ru: "遊ぶ", v_ru_kana: "あそぶ", v_te: "遊んで", v_te_kana: "あそんで", meaning: "Chơi, giải trí", note: "" },
+        { group: 1, lesson: 13, v_ru: "泳ぐ", v_ru_kana: "およぐ", v_te: "泳いで", v_te_kana: "およいで", meaning: "Bơi", note: "" },
+        { group: 1, lesson: 13, v_ru: "出す", v_ru_kana: "だす", v_te: "出して", v_te_kana: "だして", meaning: "Gửi thư, nộp, lấy ra", note: "" },
+        { group: 1, lesson: 13, v_ru: "入る", v_ru_kana: "はいる", v_te: "入って", v_te_kana: "はいって", meaning: "Vào (phòng)", note: "Dễ nhầm nhóm 2" },
+        { group: 1, lesson: 14, v_ru: "急ぐ", v_ru_kana: "いそぐ", v_te: "急いで", v_te_kana: "いそいで", meaning: "Vội vã, gấp rút", note: "" },
+        { group: 1, lesson: 14, v_ru: "待つ", v_ru_kana: "まつ", v_te: "待って", v_te_kana: "まって", meaning: "Chờ đợi", note: "" },
+        { group: 1, lesson: 14, v_ru: "曲がる", v_ru_kana: "まがる", v_te: "曲がって", v_te_kana: "まかって", meaning: "Rẽ, quẹo", note: "" },
+        { group: 1, lesson: 14, v_ru: "持つ", v_ru_kana: "もつ", v_te: "持って", v_te_kana: "もって", meaning: "Mang, cầm, nắm", note: "" },
+        { group: 1, lesson: 14, v_ru: "手伝う", v_ru_kana: "てつだう", v_te: "手伝って", v_te_kana: "てつだって", meaning: "Giúp đỡ", note: "" },
+        { group: 1, lesson: 14, v_ru: "呼ぶ", v_ru_kana: "よぶ", v_te: "呼んで", v_te_kana: "よんで", meaning: "Gọi tên, gọi taxi", note: "" },
+        { group: 1, lesson: 14, v_ru: "話す", v_ru_kana: "はなす", v_te: "話して", v_te_kana: "はなして", meaning: "Nói chuyện", note: "" },
+        { group: 1, lesson: 14, v_ru: "降る", v_ru_kana: "ふる", v_te: "降って", v_te_kana: "ふって", meaning: "Rơi (mưa, tuyết)", note: "" },
+        { group: 1, lesson: 15, v_ru: "座る", v_ru_kana: "すわる", v_te: "座って", v_te_kana: "すわって", meaning: "Ngồi xuống", note: "" },
+        { group: 1, lesson: 15, v_ru: "立つ", v_ru_kana: "たつ", v_te: "立って", v_te_kana: "たって", meaning: "Đứng lên", note: "" },
+        { group: 1, lesson: 15, v_ru: "使う", v_ru_kana: "つかう", v_te: "使って", v_te_kana: "つかって", meaning: "Sử dụng", note: "" },
+        { group: 1, lesson: 15, v_ru: "置く", v_ru_kana: "おく", v_te: "置いて", v_te_kana: "おいて", meaning: "Đặt, để", note: "" },
+        { group: 1, lesson: 15, v_ru: "作る", v_ru_kana: "つくる", v_te: "作って", v_te_kana: "つくって", meaning: "Làm, chế tạo", note: "" },
+        { group: 1, lesson: 15, v_ru: "売る", v_ru_kana: "うる", v_te: "売って", v_te_kana: "うって", meaning: "Bán hàng", note: "" },
+        { group: 1, lesson: 15, v_ru: "知る", v_ru_kana: "しる", v_te: "知って", v_te_kana: "しって", meaning: "Biết", note: "Dễ nhầm nhóm 2" },
+        { group: 1, lesson: 15, v_ru: "住む", v_ru_kana: "すむ", v_te: "住んで", v_te_kana: "すんで", meaning: "Sinh sống, cư trú", note: "" },
+        { group: 1, lesson: 16, v_ru: "乗る", v_ru_kana: "のる", v_te: "乗って", v_te_kana: "のって", meaning: "Lên xe/tàu", note: "" },
+        { group: 1, lesson: 16, v_ru: "押す", v_ru_kana: "おす", v_te: "押して", v_te_kana: "おして", meaning: "Ấn, đẩy, bấm nút", note: "" },
+        { group: 1, lesson: 17, v_ru: "なくす", v_ru_kana: "なくす", v_te: "なくして", v_te_kana: "なくして", meaning: "Làm mất", note: "" },
+        { group: 1, lesson: 17, v_ru: "払う", v_ru_kana: "はらう", v_te: "払って", v_te_kana: "はらって", meaning: "Trả tiền", note: "" },
+        { group: 1, lesson: 17, v_ru: "返す", v_ru_kana: "かえす", v_te: "返すて", v_te_kana: "かえして", meaning: "Trả lại đồ vật", note: "" },
+        { group: 1, lesson: 17, v_ru: "脱ぐ", v_ru_kana: "ぬぐ", v_te: "脱いで", v_te_kana: "ぬいで", meaning: "Cởi quần áo/giày", note: "" },
+        { group: 1, lesson: 17, v_ru: "持っていく", v_ru_kana: "もっていく", v_te: "持っていって", v_te_kana: "もっていって", meaning: "Mang đi", note: "" },
+        { group: 1, lesson: 18, v_ru: "洗う", v_ru_kana: "あらう", v_te: "洗って", v_te_kana: "あらって", meaning: "Rửa, giặt giũ", note: "" },
+        { group: 1, lesson: 18, v_ru: "弾く", v_ru_kana: "ひく", v_te: "弾いて", v_te_kana: "ひいて", meaning: "Chơi đàn piano/guitar", note: "" },
+        { group: 1, lesson: 18, v_ru: "歌う", v_ru_kana: "うたう", v_te: "歌って", v_te_kana: "うたって", meaning: "Hát", note: "" },
+        { group: 1, lesson: 19, v_ru: "登る", v_ru_kana: "のぼる", v_te: "登って", v_te_kana: "のぼって", meaning: "Leo (núi)", note: "" },
+        { group: 1, lesson: 19, v_ru: "泊まる", v_ru_kana: "とまる", v_te: "泊まって", v_te_kana: "とまって", meaning: "Trọ lại khách sạn", note: "" },
+        { group: 1, lesson: 19, v_ru: "なる", v_ru_kana: "なる", v_te: "なって", v_te_kana: "なって", meaning: "Trở thành, trở nên", note: "" },
+        { group: 1, lesson: 20, v_ru: "要る", v_ru_kana: "いる", v_te: "要って", v_te_kana: "いって", meaning: "Cần thiết", note: "Dễ nhầm nhóm 2" },
+        { group: 1, lesson: 20, v_ru: "直す", v_ru_kana: "なおす", v_te: "直して", v_te_kana: "なおして", meaning: "Sửa chữa, đính chính", note: "" },
+        { group: 1, lesson: 21, v_ru: "思う", v_ru_kana: "おもう", v_te: "思って", v_te_kana: "おもって", meaning: "Nghĩ rằng", note: "" },
+        { group: 1, lesson: 21, v_ru: "言う", v_ru_kana: "いう", v_te: "言って", v_te_kana: "いって", meaning: "Nói", note: "" },
+        { group: 1, lesson: 21, v_ru: "勝つ", v_ru_kana: "かつ", v_te: "勝って", v_te_kana: "かって", meaning: "Thắng lợi", note: "" },
+        { group: 1, lesson: 21, v_ru: "役に立つ", v_ru_kana: "やくにたつ", v_te: "役に立って", v_te_kana: "やくにたって", meaning: "Có ích", note: "" },
+        { group: 1, lesson: 22, v_ru: "はく", v_ru_kana: "はく", v_te: "はいて", v_te_kana: "はいて", meaning: "Mặc (quần, xỏ giày)", note: "" },
+        { group: 1, lesson: 22, v_ru: "かぶる", v_ru_kana: "かぶる", v_te: "かぶって", v_te_kana: "かぶって", meaning: "Đội (mũ)", note: "" },
+        { group: 1, lesson: 23, v_ru: "回す", v_ru_kana: "まわす", v_te: "回して", v_te_kana: "まわして", meaning: "Vặn, xoay", note: "" },
+        { group: 1, lesson: 23, v_ru: "引く", v_ru_kana: "ひく", v_te: "引いて", v_te_kana: "ひいて", meaning: "Kéo, tuốt", note: "" },
+        { group: 1, lesson: 23, v_ru: "触る", v_ru_kana: "さわる", v_te: "触って", v_te_kana: "さわって", meaning: "Sờ, chạm vào", note: "" },
+        { group: 1, lesson: 23, v_ru: "歩く", v_ru_kana: "あるく", v_te: "歩いて", v_te_kana: "あるいて", meaning: "Đi bộ", note: "" },
+        { group: 1, lesson: 23, v_ru: "渡る", v_ru_kana: "わたる", v_te: "渡って", v_te_kana: "わたって", meaning: "Qua (đường, cầu)", note: "" },
+        { group: 1, lesson: 24, v_ru: "連れて行く", v_ru_kana: "つれていく", v_te: "連れて行って", v_te_kana: "つれていって", meaning: "Dẫn đi", note: "" },
+        { group: 1, lesson: 25, v_ru: "着く", v_ru_kana: "つく", v_te: "着いて", v_te_kana: "ついて", meaning: "Đến nơi (bến tàu)", note: "" },
+        { group: 1, lesson: 25, v_ru: "年を取る", v_ru_kana: "としをとる", v_te: "年を取って", v_te_kana: "としをとって", meaning: "Lớn tuổi, già đi", note: "" },
+
+        // NHÓM 2
+        { group: 2, lesson: 4, v_ru: "起きる", v_ru_kana: "おきる", v_te: "起きて", v_te_kana: "おきて", meaning: "Thức dậy", note: "" },
+        { group: 2, lesson: 4, v_ru: "寝る", v_ru_kana: "ねる", v_te: "寝て", v_te_kana: "ねて", meaning: "Đi ngủ", note: "Đuôi -eru" },
+        { group: 2, lesson: 6, v_ru: "食べる", v_ru_kana: "たべる", v_te: "食べて", v_te_kana: "たべて", meaning: "Ăn", note: "" },
+        { group: 2, lesson: 6, v_ru: "見る", v_ru_kana: "みる", v_te: "見て", v_te_kana: "みて", meaning: "Nhìn, xem", note: "" },
+        { group: 2, lesson: 7, v_ru: "あげる", v_ru_kana: "あげる", v_te: "あげて", v_te_kana: "あげて", meaning: "Cho, tặng (ai đó)", note: "" },
+        { group: 2, lesson: 7, v_ru: "借りる", v_ru_kana: "かりる", v_te: "借りて", v_te_kana: "かりて", meaning: "Mượn", note: "" },
+        { group: 2, lesson: 7, v_ru: "教える", v_ru_kana: "おしえる", v_te: "教えて", v_te_kana: "おしえて", meaning: "Dạy học, chỉ bảo", note: "" },
+        { group: 2, lesson: 7, v_ru: "かける", v_ru_kana: "かける", v_te: "かけて", v_te_kana: "かけて", meaning: "Gọi (điện thoại)", note: "" },
+        { group: 2, lesson: 10, v_ru: "いる", v_ru_kana: "いる", v_te: "いて", v_te_kana: "いて", meaning: "Có (người, động vật)", note: "" },
+        { group: 2, lesson: 13, v_ru: "迎える", v_ru_kana: "むかえる", v_te: "迎えて", v_te_kana: "むかえて", meaning: "Đón ai đó", note: "" },
+        { group: 2, lesson: 13, v_ru: "疲れる", v_ru_kana: "つかれる", v_te: "疲れて", v_te_kana: "つかれて", meaning: "Mệt mỏi", note: "" },
+        { group: 2, lesson: 13, v_ru: "出る", v_ru_kana: "でる", v_te: "出て", v_te_kana: "เดて", meaning: "Ra ngoài, rời khỏi", note: "" },
+        { group: 2, lesson: 14, v_ru: "つける", v_ru_kana: "つける", v_te: "つけて", v_te_kana: "つけて", meaning: "Bật (đèn, điện khí)", note: "" },
+        { group: 2, lesson: 14, v_ru: "閉める", v_ru_kana: "しめる", v_te: "閉めて", v_te_kana: "しめて", meaning: "Đóng (cửa)", note: "" },
+        { group: 2, lesson: 14, v_ru: "開ける", v_ru_kana: "あける", v_te: "開けて", v_te_kana: "あけて", meaning: "Mở (cửa)", note: "" },
+        { group: 2, lesson: 14, v_ru: "止める", v_ru_kana: "とめる", v_te: "止めて", v_te_kana: "とめて", meaning: "Dừng lại, đậu xe", note: "" },
+        { group: 2, lesson: 14, v_ru: "見せる", v_ru_kana: "みせる", v_te: "見せて", v_te_kana: "みせて", meaning: "Cho xem", note: "" },
+        { group: 2, lesson: 14, v_ru: "始める", v_ru_kana: "はじめる", v_te: "始めて", v_te_kana: "はじめて", meaning: "Bắt đầu", note: "" },
+        { group: 2, lesson: 16, v_ru: "降りる", v_ru_kana: "おりる", v_te: "降りて", v_te_kana: "おりて", meaning: "Xuống xe/tàu", note: "" },
+        { group: 2, lesson: 16, v_ru: "乗り換える", v_ru_kana: "のりかえる", v_te: "乗り換えて", v_te_kana: "のりかえて", meaning: "Đổi tàu xe", note: "" },
+        { group: 2, lesson: 16, v_ru: "浴びる", v_ru_kana: "あびる", v_te: "浴びて", v_te_kana: "あびて", meaning: "Tắm vòi sen", note: "" },
+        { group: 2, lesson: 16, v_ru: "入れる", v_ru_kana: "いれる", v_te: "入れて", v_te_kana: "いれて", meaning: "Cho vào, đút vào", note: "" },
+        { group: 2, lesson: 16, v_ru: "辞める", v_ru_kana: "やめる", v_te: "辞めて", v_te_kana: "やめて", meaning: "Nghỉ việc, từ bỏ", note: "" },
+        { group: 2, lesson: 17, v_ru: "覚える", v_ru_kana: "おぼえる", v_te: "覚えて", v_te_kana: "おぼえて", meaning: "Nhớ, ghi nhớ", note: "" },
+        { group: 2, lesson: 17, v_ru: "忘れる", v_ru_kana: "わすれる", v_te: "忘れて", v_te_kana: "わすれて", meaning: "Quên mất", note: "" },
+        { group: 2, lesson: 17, v_ru: "出かける", v_ru_kana: "でかける", v_te: "出かけて", v_te_kana: "でかけて", meaning: "Đi ra ngoài đường", note: "" },
+        { group: 2, lesson: 18, v_ru: "できる", v_ru_kana: "できる", v_te: "できて", v_te_kana: "できて", meaning: "Có thể làm gì", note: "" },
+        { group: 2, lesson: 18, v_ru: "集める", v_ru_kana: "あつめる", v_te: "集めて", v_te_kana: "あつめて", meaning: "Sưu tầm, thu gom", note: "" },
+        { group: 2, lesson: 18, v_ru: "捨てる", v_ru_kana: "すてる", v_te: "捨てて", v_te_kana: "すてて", meaning: "Vứt bỏ rác", note: "" },
+        { group: 2, lesson: 18, v_ru: "換える", v_ru_kana: "かえる", v_te: "換えて", v_te_kana: "かえて", meaning: "Trao đổi, hoán đổi", note: "" },
+        { group: 2, lesson: 20, v_ru: "調べる", v_ru_kana: "しらべ", v_te: "調べて", v_te_kana: "しらべて", meaning: "Điều tra, tra cứu", note: "" },
+        { group: 2, lesson: 21, v_ru: "足りる", v_ru_kana: "たりる", v_te: "足りて", v_te_kana: "たりて", meaning: "Đầy đủ", note: "" },
+        { group: 2, lesson: 21, v_ru: "負ける", v_ru_kana: "まける", v_te: "負けて", v_te_kana: "まけて", meaning: "Thua cuộc", note: "" },
+        { group: 2, lesson: 22, v_ru: "着る", v_ru_kana: "きる", v_te: "着て", v_te_kana: "きて", meaning: "Mặc áo sơ mi/vét", note: "" },
+        { group: 2, lesson: 22, v_ru: "生まれる", v_ru_kana: "うまれる", v_te: "生まれて", v_te_kana: "うまれて", meaning: "Được sinh ra", note: "" },
+        { group: 2, lesson: 23, v_ru: "変える", v_ru_kana: "かえる", v_te: "変えて", v_te_kana: "かえて", meaning: "Thay đổi (gì đó)", note: "" },
+        { group: 2, lesson: 24, v_ru: "くれる", v_ru_kana: "くれる", v_te: "くれて", v_te_kana: "くれて", meaning: "Ai đó tặng cho mình", note: "" },
+        { group: 2, lesson: 25, v_ru: "考える", v_ru_kana: "かんがえる", v_te: "考えて", v_te_kana: "かんがえて", meaning: "Suy nghĩ, cân nhắc", note: "" },
+
+        // NHÓM 3
+        { group: 3, lesson: 4, v_ru: "勉強する", v_ru_kana: "べんきょうする", v_te: "勉強して", v_te_kana: "べんきょうして", meaning: "Học hành", note: "Danh từ + する" },
+        { group: 3, lesson: 5, v_ru: "来る", v_ru_kana: "くる", v_te: "来て", v_te_kana: "きて", meaning: "Đến", note: "⭐ Bất quy tắc đặc biệt" },
+        { group: 3, lesson: 6, v_ru: "する", v_ru_kana: "する", v_te: "して", v_te_kana: "して", meaning: "Làm, chơi thể thao", note: "⭐ Bất quy tắc gốc" },
+        { group: 3, lesson: 13, v_ru: "結婚する", v_ru_kana: "けっこんする", v_te: "結婚して", v_te_kana: "けっこんして", meaning: "Kết hôn", note: "" },
+        { group: 3, lesson: 13, v_ru: "買い物する", v_ru_kana: "かいものする", v_te: "買い物して", v_te_kana: "かいものして", meaning: "Mua sắm", note: "" },
+        { group: 3, lesson: 13, v_ru: "食事する", v_ru_kana: "しょくじする", v_te: "食事して", v_te_kana: "しょくじして", meaning: "Dùng bữa, ăn cơm", note: "" },
+        { group: 3, lesson: 13, v_ru: "散歩する", v_ru_kana: "さんぽする", v_te: "散歩して", v_te_kana: "さんぽして", meaning: "Đi dạo bộ", note: "" },
+        { group: 3, lesson: 14, v_ru: "コピーする", v_ru_kana: "こぴーする", v_te: "コピーして", v_te_kana: "こぴーして", meaning: "Photocopy, sao chụp", note: "" },
+        { group: 3, lesson: 15, v_ru: "研究する", v_ru_kana: "けんきゅうする", v_te: "研究して", v_te_kana: "けんきゅうして", meaning: "Nghiên cứu", note: "" },
+        { group: 3, lesson: 17, v_ru: "持ってくる", v_ru_kana: "もってくる", v_te: "持って来て", v_te_kana: "もってきて", meaning: "Mang đến đây", note: "" },
+        { group: 3, lesson: 17, v_ru: "心配する", v_ru_kana: "しんぱいする", v_te: "心配して", v_te_kana: "しんぱいして", meaning: "Lo lắng", note: "" },
+        { group: 3, lesson: 17, v_ru: "残業する", v_ru_kana: "ざんぎょうする", v_te: "残業して", v_te_kana: "ざんぎょうして", meaning: "Làm thêm giờ", note: "" },
+        { group: 3, lesson: 17, v_ru: "出張する", v_ru_kana: "しゅっちょうする", v_te: "出張して", v_te_kana: "しゅっちょうして", meaning: "Đi công tác", note: "" },
+        { group: 3, lesson: 18, v_ru: "運転する", v_ru_kana: "うんてんする", v_te: "運転して", v_te_kana: "うんてんして", meaning: "Lái xe hơi", note: "" },
+        { group: 3, lesson: 18, v_ru: "予約する", v_ru_kana: "よやくする", v_te: "予約して", v_te_kana: "よやくして", meaning: "Đặt trước (vé, phòng)", note: "" },
+        { group: 3, lesson: 18, v_ru: "見学する", v_ru_kana: "けんがくする", v_te: "見学して", v_te_kana: "けんがくして", meaning: "Tham quan học tập", note: "" },
+        { group: 3, lesson: 19, v_ru: "掃除する", v_ru_kana: "そうじする", v_te: "掃除して", v_te_kana: "そうじして", meaning: "Dọn dẹp nhà cửa", note: "" },
+        { group: 3, lesson: 19, v_ru: "洗濯する", v_ru_kana: "せんたくする", v_te: "洗濯して", v_te_kana: "せんたくして", meaning: "Giặt giũ quần áo", note: "" },
+        { group: 3, lesson: 19, v_ru: "練習する", v_ru_kana: "れんしゅうする", v_te: "練習して", v_te_kana: "れんしゅうして", meaning: "Luyện tập bài học", note: "" },
+        { group: 3, lesson: 20, v_ru: "修理する", v_ru_kana: "しゅうりする", v_te: "修理して", v_te_kana: "しゅうりして", meaning: "Sửa chữa đồ hư", note: "" },
+        { group: 3, lesson: 20, v_ru: "電話する", v_ru_kana: "でんわする", v_te: "電話して", v_te_kana: "でんわして", meaning: "Gọi điện thoại", note: "" },
+        { group: 3, lesson: 23, v_ru: "引っ越しする", v_ru_kana: "ひっこしする", v_te: "引っ越しして", v_te_kana: "ひっこしして", meaning: "Chuyển nhà", note: "" },
+        { group: 3, lesson: 24, v_ru: "連れて来る", v_ru_kana: "つれてくる", v_te: "連れて来て", v_te_kana: "つれてきて", meaning: "Dẫn đến đây", note: "" },
+        { group: 3, lesson: 24, v_ru: "紹介する", v_ru_kana: "しょうかいする", v_te: "紹介して", v_te_kana: "しょうかいして", meaning: "Giới thiệu ai đó", note: "" },
+        { group: 3, lesson: 24, v_ru: "案内する", v_ru_kana: "あんないする", v_te: "案内して", v_te_kana: "あんないして", meaning: "Dẫn đường, hướng dẫn", note: "" },
+        { group: 3, lesson: 24, v_ru: "説明する", v_ru_kana: "せつめいする", v_te: "説明して", v_te_kana: "せつめいして", meaning: "Giải thích", note: "" },
+        { group: 3, lesson: 25, v_ru: "留学する", v_ru_kana: "りゅうがくする", v_te: "留学して", v_te_kana: "りゅうགくして", meaning: "Du học quốc tế", note: "" }
+    ];
+
+    // Trạng thái hiện tại của bộ lọc ứng dụng
+    let currentGroupFilter = 'all';
+    let currentLessonFilter = 'all';
+    let searchQuery = '';
+    let isQuizMode = false;
+
+    // Chạy ngay khi tải xong trang web
+    window.onload = function() {
+        generateLessonDropdown();
+        renderVerbs();
+    };
+
+    // Tạo danh sách các bài học tự động dựa vào mảng dữ liệu để không bỏ sót bài nào
+    function generateLessonDropdown() {
+        const selectElement = document.getElementById('lesson-select');
+        const lessonsSet = new Set();
+        
+        VERB_DATA.forEach(item => lessonsSet.add(item.lesson));
+        const sortedLessons = Array.from(lessonsSet).sort((a, b) => a - b);
+        
+        sortedLessons.forEach(lesson => {
+            const option = document.createElement('option');
+            option.value = lesson;
+            option.textContent = `📖 Bài số ${lesson}`;
+            selectElement.appendChild(option);
+        });
+    }
+
+    // Hàm kích hoạt bật/tắt chế độ tự kiểm tra bài (Quiz)
+    function toggleQuizMode() {
+        isQuizMode = document.getElementById('quiz-mode').checked;
+        renderVerbs();
+    }
+
+    // Hàm click vào từ đang bị ẩn để hiển thị tạm thời
+    function revealTeWord(element) {
+        if(element.classList.contains('blur-text')) {
+            element.classList.remove('blur-text');
+        } else if (isQuizMode) {
+            element.classList.add('blur-text');
+        }
+    }
+
+    // Cập nhật bộ lọc Nhóm
+    function filterGroup(group, buttonElement) {
+        currentGroupFilter = group;
+        
+        // Cập nhật lại class active cho nút bấm xinh xắn hơn
+        const buttons = buttonElement.parentElement.querySelectorAll('.btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        buttonElement.classList.add('active');
+        
+        renderVerbs();
+    }
+
+    // Cập nhật bộ lọc Bài học
+    function filterLesson(lessonValue) {
+        currentLessonFilter = lessonValue;
+        renderVerbs();
+    }
+
+    // Lắng nghe sự kiện gõ ô tìm kiếm
+    document.getElementById('search-input').addEventListener('input', function(e) {
+        searchQuery = e.target.value.toLowerCase().trim();
+        renderVerbs();
+    });
+
+    // TRỌNG TÂM: Hàm xử lý lọc dữ liệu và xuất kết quả ra màn hình HTML
+    function renderVerbs() {
+        const listContainer = document.getElementById('verb-display-container');
+        listContainer.innerHTML = ''; // Làm trống danh sách cũ
+
+        // Thực hiện lọc dữ liệu đa tầng (Nhóm -> Bài -> Từ khóa tìm kiếm)
+        const filteredData = VERB_DATA.filter(item => {
+            const matchGroup = (currentGroupFilter === 'all') || (item.group == currentGroupFilter);
+            const matchLesson = (currentLessonFilter === 'all') || (item.lesson == currentLessonFilter);
+            
+            const matchSearch = searchQuery === '' || 
+                item.v_ru.toLowerCase().includes(searchQuery) ||
+                item.v_ru_kana.toLowerCase().includes(searchQuery) ||
+                item.v_te.toLowerCase().includes(searchQuery) ||
+                item.v_te_kana.toLowerCase().includes(searchQuery) ||
+                item.meaning.toLowerCase().includes(searchQuery);
+
+            return matchGroup && matchLesson && matchSearch;
+        });
+
+        // Cập nhật số lượng đếm ở badge tiêu đề
+        document.getElementById('total-badge').textContent = `Tìm thấy 🎉 ${filteredData.length} / ${VERB_DATA.length} động từ hợp lệ`;
+
+        if (filteredData.length === 0) {
+            listContainer.innerHTML = `<div class="empty-state">😭 Không có động từ nào phù hợp với bộ lọc rồi bạn ơi!</div>`;
+            return;
+        }
+
+        // Tạo giao diện các hàng cho bảng dữ liệu (Chuẩn 2 cột thông tin chính tương tác cao)
+        filteredData.forEach(item => {
+            const row = document.createElement('div');
+            row.className = `verb-row g${item.group}-row`;
+
+            // Cột 1: Thể từ điển Vる kết hợp chữ phiên âm nhỏ kèm nghĩa tiếng Việt tiện lợi
+            const col1 = document.createElement('div');
+            col1.innerHTML = `
+                <div class="japanese-word">
+                    ${item.v_ru} <span class="kana-reading">(${item.v_ru_kana})</span>
+                </div>
+                <div class="meaning-text">👉 ${item.meaning}</div>
+            `;
+
+            // Cột 2: Thể Vて đáp ứng đúng đề bài, đi kèm tính năng ẩn thông minh cho người học
+            const col2 = document.createElement('div');
+            const blurClass = isQuizMode ? 'blur-text' : '';
+            col2.innerHTML = `
+                <div class="te-box ${blurClass}" onclick="revealTeWord(this)" title="Bấm vào để mở xem lướt">
+                    ${item.v_te} <span class="kana-reading">(${item.v_te_kana})</span>
+                </div>
+            `;
+
+            // Cột phụ: Chứa nhãn phân loại bài học và mẹo nhỏ
+            const col3 = document.createElement('div');
+            col3.innerHTML = `
+                <span class="badge-lesson">Bài ${item.lesson}</span>
+                <span style="font-size: 0.8rem; color: #999; display:block; margin-top:4px;">${item.note || 'Nhóm ' + item.group}</span>
+            `;
+
+            row.appendChild(col1);
+            row.appendChild(col2);
+            row.appendChild(col3);
+            listContainer.appendChild(row);
+        });
+    }
+</script>
+
+</body>
+</html>
