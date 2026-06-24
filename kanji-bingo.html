@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachapon Wagashi Bingo Ultra - Nihongo Cute</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="bingo-style.css">
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-cookie-bite space-icon"></i> Nihongo<span style="color:var(--primary)">Cute</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Trang chủ</a></li>
+                <li><a href="#" class="active">🍡 Gacha Bingo Ultra</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="game-wrapper">
+        <div class="side-panel">
+            
+            <div class="mascot-box" id="mascotBox">
+                <div class="bubble-chat" id="mascotBubble">Nhấn tay quay Gachapon để tớ khui một viên kẹo may mắn cho cậu nhé! 🐾</div>
+                <div class="pet-svg-container">
+                    <svg viewBox="0 0 100 100" class="pet-avatar" id="petSvg">
+                        <defs>
+                            <linearGradient id="petGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#b39ddb" />
+                                <stop offset="100%" stop-color="#a18cd1" />
+                            </linearGradient>
+                        </defs>
+                        <path class="pet-tail" d="M72,70 Q88,62 82,45" fill="none" stroke="url(#petGrad)" stroke-width="6" stroke-linecap="round" />
+                        <ellipse cx="50" cy="68" rx="26" ry="22" fill="url(#petGrad)" />
+                        <circle cx="50" cy="42" r="19" fill="url(#petGrad)" />
+                        <polygon points="32,28 18,10 40,24" fill="url(#petGrad)" />
+                        <polygon points="32,28 18,10 40,24" fill="#ffb3b3" transform="scale(0.85) translate(9, 6)" />
+                        <polygon points="68,28 82,10 60,24" fill="url(#petGrad)" />
+                        <polygon points="68,28 82,10 60,24" fill="#ffb3b3" transform="scale(0.85) translate(11, 6)" />
+                        <g class="pet-eyes">
+                            <ellipse class="eye-el" cx="42" cy="39" rx="3" ry="4" fill="#443a3c" />
+                            <ellipse class="eye-el" cx="58" cy="39" rx="3" ry="4" fill="#443a3c" />
+                            <circle class="eye-pupil" cx="43" cy="38" r="1" fill="#fff" />
+                            <circle class="eye-pupil" cx="59" cy="38" r="1" fill="#fff" />
+                        </g>
+                        <circle class="blush-cheek" cx="37" cy="45" r="4" fill="#ff9a9e" opacity="0.6" />
+                        <circle class="blush-cheek" cx="63" cy="45" r="4" fill="#ff9a9e" opacity="0.6" />
+                        <path d="M47,44 Q50,46 53,44 Q50,45 47,44" fill="none" stroke="#443a3c" stroke-width="2" stroke-linecap="round"/>
+                        <ellipse cx="42" cy="85" rx="5" ry="4" fill="#fff" opacity="0.9" />
+                        <ellipse cx="58" cy="85" rx="5" ry="4" fill="#fff" opacity="0.9" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="gacha-machine" id="gachaMachine">
+                <div class="gacha-glass-sphere">
+                    <div class="glass-bg-shading"></div>
+                    
+                    <div class="gacha-impeller" id="gachaImpeller"></div>
+                    
+                    <div class="capsule-pool" id="capsulePool"></div>
+                    
+                    <div class="glass-front-reflection"></div>
+                </div>
+
+                <div class="crank-container">
+                    <div class="crank-wheel" id="gachaCrank" onclick="triggerPhysicsGachaDraw()">
+                        <div class="crank-inner-bar"></div>
+                    </div>
+                </div>
+
+                <div class="gacha-gate">
+                    <div class="egg-container" id="eggContainer">
+                        <div class="egg-half left-half" id="eggLeft"></div>
+                        <div class="egg-half right-half" id="eggRight"></div>
+                        <div class="egg-core-token" id="eggCore">?</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display-card" id="clueCard">
+                <div class="clue-header">🍡 THÀNH PHẦN TRỨNG ĐANG MỞ 🍡</div>
+                <div class="clue-body" id="clueBody">
+                    <p style="color: #bbb; font-style: italic; font-size: 0.9rem;">Đang đợi cậu xoay trục cơ khí...</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main-panel">
+            <div class="board-top-info">
+                <div class="score-badge info-clay">
+                    <i class="fas fa-box-open icon-left"></i>Đã nhả: <strong id="txtCalled">0/35</strong>
+                </div>
+                <div class="score-badge info-clay">
+                    <i class="fas fa-trophy icon-left" style="color:#f1c40f"></i>Bingo: <strong id="txtLines">0</strong>
+                </div>
+                <button class="control-action-btn button-clay" onclick="initiateNewGame()">
+                    <i class="fas fa-magic"></i> Làm khay bánh mới
+                </button>
+            </div>
+
+            <div class="wagashi-tray-container">
+                <div class="tray-header-letters">
+                    <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+                </div>
+                <div class="wagashi-grid" id="wagashiGrid">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="victory-overlay" id="victoryOverlay">
+        <div class="victory-modal-card">
+            <div class="star-burst-anim">✨🌸🍡🌸✨</div>
+            <h2>BINGO HOÀN MỸ!</h2>
+            <p>Khay bánh ngọt ngào đã được lấp đầy hoàn chỉnh dưới sự chứng kiến của bé thú cưng!</p>
+            <div class="victory-stats">
+                <div>Số lượng Gacha đã khui: <strong id="mCalled">0</strong></div>
+                <div>Đường liên kết hoàn hảo: <strong id="mLines">0</strong></div>
+            </div>
+            <button class="close-win-btn button-clay" onclick="hideVictoryScreen()">Tiếp tục tận hưởng</button>
+        </div>
+    </div>
+
+    <script src="bingo-script.js"></script>
+</body>
+</html>

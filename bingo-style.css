@@ -1,0 +1,291 @@
+:root {
+    --primary: #ff9a9e;
+    --primary-dark: #ff758c;
+    --secondary: #a18cd1;
+    --accent: #fad0c4;
+    --bg-color: #fff2f6;
+    --white: #ffffff;
+    --text: #4a3e41;
+    --red: #ff5e62;
+    
+    /* Thiết kế cũ được giữ lại cho Layout */
+    --clay-shadow: 0 15px 30px rgba(234, 201, 212, 0.7), inset 4px 4px 8px rgba(255, 255, 255, 0.9), inset -4px -4px 8px rgba(234, 201, 212, 0.4);
+    --clay-pressed: inset 6px 6px 12px rgba(214, 178, 190, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+}
+
+#particleCanvas {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none; z-index: 9999;
+}
+
+/* --- HEADER & NAVIGATION (Giữ nguyên cấu trúc) --- */
+header {
+    background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px);
+    padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 8px 32px rgba(234, 201, 212, 0.3); border-bottom: 2px solid rgba(255,255,255,0.7);
+}
+.logo { font-size: 1.7rem; font-weight: 900; color: var(--secondary); display: flex; align-items: center; }
+.space-icon { margin-right: 10px; animation: rotateCookie 6s linear infinite; }
+@keyframes rotateCookie { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+nav ul { list-style: none; display: flex; gap: 12px; }
+nav a { text-decoration: none; color: var(--text); font-weight: 700; padding: 10px 20px; border-radius: 50px; transition: all 0.3s; }
+nav a.active { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; box-shadow: 0 5px 15px rgba(255,154,158,0.4); }
+
+.game-wrapper {
+    max-width: 1240px; margin: 2.5rem auto; padding: 0 1.5rem;
+    display: grid; grid-template-columns: 380px 1fr; gap: 3rem;
+}
+
+/* --- KHỐI TRÁI: MASCOT & GACHA --- */
+.side-panel { display: flex; flex-direction: column; gap: 2rem; }
+
+.mascot-box {
+    background: var(--white); border-radius: 30px; padding: 1.5rem;
+    box-shadow: var(--clay-shadow); display: flex; flex-direction: column; align-items: center;
+}
+.bubble-chat {
+    background: #fff; border-radius: 20px; padding: 12px 18px; font-size: 0.95rem;
+    font-weight: 700; text-align: center; margin-bottom: 15px; position: relative;
+    border: 3px solid var(--accent); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.03));
+}
+.bubble-chat::after {
+    content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+    border-width: 10px 10px 0; border-style: solid; border-color: #fff transparent;
+}
+.pet-svg-container { width: 110px; height: 110px; }
+.pet-avatar { width: 100%; height: 100%; transform-origin: center bottom; animation: petBreathing 4s ease-in-out infinite; }
+@keyframes petBreathing { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.04, 0.96) translateY(2px); } }
+.mascot-box.happy .pet-avatar { animation: petDance 0.6s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate; }
+@keyframes petDance { 0% { transform: translateY(0) scale(1, 1) rotate(0deg); } 100% { transform: translateY(-20px) scale(0.9, 1.1) rotate(5deg); } }
+.pet-tail { transform-origin: 72px 70px; animation: tailWiggle 1.2s ease-in-out infinite alternate; }
+@keyframes tailWiggle { 0% { transform: rotate(-10deg); } 100% { transform: rotate(20deg); } }
+.pet-eyes { animation: eyeBlink 5s step-start infinite; }
+@keyframes eyeBlink { 0%, 96%, 100% { transform: scaleY(1); } 98% { transform: scaleY(0.1); } }
+
+/* --- LỒNG CẦU GACHA --- */
+.gacha-machine {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+    border-radius: 40px; padding: 2rem; box-shadow: var(--clay-shadow);
+    display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(255,255,255,0.8);
+}
+.gacha-glass-sphere {
+    width: 220px; height: 220px; border-radius: 50%; border: 8px solid #fecfef;
+    position: relative; overflow: hidden; background: #fff0f5;
+    box-shadow: 0 15px 35px rgba(220, 150, 170, 0.4), inset 0 0 30px rgba(240, 180, 200, 0.6); perspective: 800px;
+}
+.glass-bg-shading { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 50% 100%, rgba(247, 186, 203, 0.4) 0%, transparent 70%); pointer-events: none; z-index: 1; }
+.gacha-impeller { position: absolute; width: 40px; height: 40px; top: 45%; left: 45%; background: #e0d0d5; border-radius: 50%; z-index: 2; box-shadow: var(--clay-shadow); }
+.gacha-impeller::before, .gacha-impeller::after { content: ''; position: absolute; background: #ebdcd1; border-radius: 6px; }
+.gacha-impeller::before { width: 100px; height: 10px; top: 15px; left: -30px; }
+.gacha-impeller::after { width: 10px; height: 100px; top: -30px; left: 15px; }
+.gacha-machine.shaking .gacha-impeller { animation: spinImpeller 0.5s linear infinite; }
+@keyframes spinImpeller { 100% { transform: rotate(360deg); } }
+.glass-front-reflection { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 80%, rgba(240,180,200,0.2) 100%); pointer-events: none; z-index: 5; border-radius: 50%; }
+
+.capsule-pool { width: 100%; height: 100%; position: relative; }
+.physics-ball {
+    width: 32px; height: 32px; border-radius: 50%; position: absolute; z-index: 3;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, rgba(255,255,255,0) 40%), linear-gradient(135deg, var(--ball-color) 0%, var(--ball-dark) 100%);
+    box-shadow: inset -3px -3px 6px rgba(0,0,0,0.2), 2px 5px 8px rgba(74, 62, 65, 0.15); transition: transform 0.03s linear;
+}
+.gacha-machine.shaking { animation: heavyMachineShake 0.15s ease infinite alternate; }
+@keyframes heavyMachineShake { 0% { transform: translate(2px, 1px) rotate(0.5deg); } 100% { transform: translate(-2px, -1px) rotate(-0.5deg); } }
+
+.crank-container { margin: 20px 0; }
+.crank-wheel { width: 75px; height: 75px; background: linear-gradient(135deg, #ffffff 0%, #ebebeb 100%); border-radius: 50%; border: 6px solid #dcd1d5; cursor: pointer; box-shadow: var(--clay-shadow); position: relative; transition: transform 0.1s; }
+.crank-inner-bar { position: absolute; width: 53px; height: 14px; background: #cbbdc2; top: 25px; left: 5px; border-radius: 10px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+.crank-wheel.rotating { animation: spinWheel 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes spinWheel { 0% { transform: rotate(0deg) scale(0.95); } 100% { transform: rotate(360deg) scale(1); } }
+
+.gacha-gate { width: 130px; height: 75px; background: #edd3db; border-radius: 20px; box-shadow: inset 0 6px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; position: relative; }
+.egg-container { width: 45px; height: 45px; position: relative; display: none; }
+.egg-container.animate-drop { display: block; animation: eggBounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes eggBounceIn { 0% { transform: translateY(-40px) scale(0.2); opacity: 0; } 70% { transform: translateY(5px) scale(1.1); } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+.egg-half { position: absolute; width: 50%; height: 100%; background: #ff9a9e; box-shadow: inset -3px -3px 6px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
+.left-half { left: 0; border-radius: 25px 0 0 25px; border-right: 2px dashed rgba(255,255,255,0.4); }
+.right-half { right: 0; border-radius: 0 25px 25px 0; background: #fad0c4; }
+.egg-container.crackOpen .left-half { transform: translateX(-22px) rotate(-15deg); opacity: 0.8; }
+.egg-container.crackOpen .right-half { transform: translateX(22px) rotate(15deg); opacity: 0.8; }
+.egg-core-token { position: absolute; width: 34px; height: 34px; background: #fff; border-radius: 50%; top: 5px; left: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary-dark); font-size: 1.2rem; opacity: 0; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.4s ease; }
+.egg-container.crackOpen .egg-core-token { opacity: 1; transform: scale(1.2); }
+
+.display-card { background: var(--white); border-radius: 25px; padding: 1.5rem; box-shadow: var(--clay-shadow); border: 1px solid rgba(255,255,255,0.6); }
+.clue-header { text-align: center; font-size: 0.85rem; font-weight: 900; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; }
+.clue-body { text-align: center; }
+.clue-hv { font-size: 2.5rem; font-weight: 900; color: var(--primary-dark); text-shadow: 2px 2px 0px #fff; animation: textFloat 2s ease-in-out infinite alternate; }
+@keyframes textFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
+.clue-m { font-size: 1.3rem; font-weight: 700; margin: 6px 0; color: var(--text); }
+.clue-r { font-size: 0.9rem; color: #666; background: #fff0f4; padding: 6px 14px; border-radius: 30px; display: inline-block; font-weight: 500; }
+
+/* --- CỘT PHẢI: KHAY ĐỰNG KẸO CHUYÊN NGHIỆP --- */
+.main-panel { display: flex; flex-direction: column; gap: 2rem; }
+.board-top-info { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.score-badge.info-clay { background: var(--white); padding: 12px 24px; border-radius: 20px; font-weight: 700; box-shadow: var(--clay-shadow); font-size: 1rem; display: flex; align-items: center; }
+.icon-left { margin-right: 8px; color: var(--secondary); }
+.control-action-btn.button-clay { margin-left: auto; border: none; background: var(--white); padding: 12px 24px; border-radius: 20px; font-weight: 700; color: var(--secondary); cursor: pointer; box-shadow: var(--clay-shadow); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.control-action-btn.button-clay:hover { transform: translateY(-3px); }
+.control-action-btn.button-clay:active { box-shadow: var(--clay-pressed); transform: translateY(1px); }
+
+/* Khay nền đổi thành hộp quà pastel */
+.wagashi-tray-container {
+    background: #fdfafb; padding: 2.5rem;
+    border-radius: 40px; 
+    box-shadow: 
+        inset 0 0 20px rgba(0,0,0,0.02),
+        0 20px 40px rgba(220, 150, 170, 0.2); 
+    border: 8px solid #ffffff;
+}
+.tray-header-letters {
+    display: grid; grid-template-columns: repeat(5, 1fr); text-align: center;
+    font-size: 2.2rem; font-weight: 900; color: var(--primary-dark); opacity: 0.9; margin-bottom: 25px; 
+    text-shadow: 2px 2px 4px rgba(255, 154, 158, 0.3);
+}
+.wagashi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+
+/* ==============================================================
+   🚀 SIÊU NÂNG CẤP ĐỒ HỌA: KẸO DẺO GUMMY / MOCHI SI-RÔ BÓNG LOÁNG
+   ============================================================== */
+
+.wagashi-cell {
+    aspect-ratio: 1; 
+    border-radius: 25px; /* Bo góc kẹo thạch */
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; position: relative; user-select: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Cảm giác nảy (spring) */
+    
+    /* Thiết lập màu gốc bằng CSS Variables để dễ tùy biến từng vị */
+    background: linear-gradient(145deg, var(--c-light) 0%, var(--c-main) 100%);
+    
+    /* Bóng đổ 3D phức hợp: 
+       1. Vệt sáng đỉnh (Highlight) 
+       2. Vệt sáng góc đáy (Bounce light)
+       3. Khối mờ bên trong (Inner volume)
+       4. Đổ bóng hắt ra ngoài (Drop shadow rực rỡ) */
+    box-shadow: 
+        inset 2px 4px 10px rgba(255, 255, 255, 0.9),
+        inset -4px -6px 15px var(--c-dark),
+        0 12px 20px var(--c-shadow);
+        
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden; /* Giữ lớp bóng lóa không tràn ra ngoài */
+}
+
+/* LỚP PHỦ BÓNG KÍNH (GLOSSY HIGHLIGHT) SIÊU THỰC */
+.wagashi-cell::before {
+    content: ''; position: absolute;
+    top: 3%; left: 10%; width: 80%; height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 20px 20px 50px 50px; /* Độ cong của vệt sáng */
+    pointer-events: none; z-index: 2;
+    filter: blur(1px);
+}
+
+/* CÁC VỊ KẸO VÀ HỆ MÀU GUMMY MỌNG NƯỚC */
+.wagashi-cell[data-flavor="dâu"] { 
+    --c-light: #ffccd0; --c-main: #ff758c; 
+    --c-dark: rgba(220, 20, 60, 0.4); --c-shadow: rgba(255, 117, 140, 0.4); 
+}
+.wagashi-cell[data-flavor="matcha"] { 
+    --c-light: #d4f7e8; --c-main: #76d7c4; 
+    --c-dark: rgba(46, 134, 100, 0.3); --c-shadow: rgba(118, 215, 196, 0.4); 
+}
+.wagashi-cell[data-flavor="vani"] { 
+    --c-light: #ffffff; --c-main: #ffebb5; 
+    --c-dark: rgba(200, 160, 50, 0.3); --c-shadow: rgba(241, 196, 15, 0.25); 
+}
+.wagashi-cell[data-flavor="khoai-lang"] { 
+    --c-light: #eeddfc; --c-main: #b892ff; 
+    --c-dark: rgba(100, 50, 150, 0.4); --c-shadow: rgba(184, 146, 255, 0.4); 
+}
+.wagashi-cell[data-flavor="việt-quất"] { 
+    --c-light: #d1e3ff; --c-main: #8ab6ff; 
+    --c-dark: rgba(30, 80, 180, 0.3); --c-shadow: rgba(138, 182, 255, 0.4); 
+}
+
+/* Chữ in chìm vào kẹo */
+.cell-kj { 
+    font-family: 'Shippori Mincho', serif !important; 
+    font-size: 2.2rem; font-weight: 800; 
+    color: rgba(0,0,0,0.55); /* Chữ màu đậm trong suốt */
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Hiệu ứng in dập chìm (emboss) */
+    z-index: 3; position: relative;
+    transition: transform 0.3s; 
+}
+.cell-hv { 
+    font-size: 0.75rem; font-weight: 800; 
+    color: rgba(0,0,0,0.4); text-transform: uppercase; margin-top: 4px; 
+    letter-spacing: 0.5px; z-index: 3; position: relative;
+}
+
+/* Ô FREE GIỮA SÂN CHƠI (Phiên bản vương miện) */
+.wagashi-cell.free-cake { 
+    --c-light: #fff2f5; --c-main: #ffd1dc;
+    --c-dark: rgba(200, 100, 120, 0.3); --c-shadow: rgba(255, 154, 158, 0.5);
+    border: 3px dashed var(--primary-dark); 
+}
+.wagashi-cell.free-cake .cell-kj { color: var(--primary-dark); font-size: 1.3rem; font-weight: 900; }
+
+/* --- HIỆU ỨNG NHẤN VÀ BÓP BẸP KẸO DẺO (SQUISHY PHYSICS) --- */
+.wagashi-cell:active {
+    /* Bẹp lún: Scale Y giảm mạnh, Scale X phình to ra một chút */
+    transform: scale(1.05, 0.85) translateY(10px);
+    box-shadow: 
+        inset 2px 4px 10px rgba(255, 255, 255, 0.9),
+        inset -4px -6px 20px var(--c-dark),
+        0 4px 8px var(--c-shadow); /* Bóng đổ thu lại vì kẹo sát mặt đất */
+}
+
+/* KHI ĐÃ ĂN (Đã bấm đúng) -> Kẹo xẹp xuống vĩnh viễn */
+.wagashi-cell.marked-cake {
+    transform: scale(0.92) translateY(5px);
+    opacity: 0.6; /* Kẹo nhạt màu đi khi đã bị ăn */
+    background: linear-gradient(145deg, #e4cfc2 0%, #d4bdae 100%) !important;
+    box-shadow: 
+        inset 4px 4px 10px rgba(0,0,0,0.1),
+        inset -4px -4px 10px rgba(255,255,255,0.4),
+        0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+}
+.wagashi-cell.marked-cake::before { opacity: 0.2; /* Mất độ bóng */ }
+.wagashi-cell.marked-cake .cell-kj { color: rgba(0,0,0,0.3); transform: scale(0.85); filter: blur(0.5px); }
+.wagashi-cell.marked-cake .cell-hv { color: rgba(0,0,0,0.2); }
+
+/* ĐƯỜNG THẮNG BINGO - Ánh sáng nảy chớp */
+.wagashi-cell.line-glow {
+    animation: gummyPulseWin 0.8s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: 10; /* Nổi lên trên cùng */
+}
+@keyframes gummyPulseWin {
+    0% { transform: scale(0.95); filter: brightness(1); box-shadow: 0 0 10px var(--c-shadow); }
+    100% { transform: scale(1.1); filter: brightness(1.3); box-shadow: 0 0 35px var(--c-main); border: 2px solid #fff; }
+}
+
+/* LẮC SAI BÁNH */
+.wagashi-cell.shake-error { animation: gummyError 0.4s ease; border: 3px solid var(--red); }
+@keyframes gummyError {
+    0%, 100% { transform: translateX(0) scale(1); }
+    20%, 60% { transform: translateX(-10px) rotate(-5deg) scale(1.02, 0.98); } /* Lắc kèm bẹp nhẹ */
+    40%, 80% { transform: translateX(10px) rotate(5deg) scale(0.98, 1.02); }
+}
+
+/* --- OVERLAY CHIẾN THẮNG --- */
+.victory-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(74, 62, 65, 0.4); backdrop-filter: blur(12px); z-index: 99999; display: none; align-items: center; justify-content: center; }
+.victory-overlay.activate { display: flex; }
+.victory-modal-card { background: #fff; padding: 3rem; border-radius: 40px; text-align: center; max-width: 460px; width: 90%; box-shadow: 0 30px 70px rgba(0,0,0,0.15); border: 3px solid rgba(255,255,255,0.8); animation: clayZoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+@keyframes clayZoomIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.star-burst-anim { font-size: 3.5rem; margin-bottom: 15px; animation: gentleFloat 1.5s infinite alternate ease-in-out; }
+@keyframes gentleFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+.victory-modal-card h2 { color: var(--primary-dark); font-weight: 900; font-size: 1.8rem; margin-bottom: 12px; }
+.victory-stats { background: var(--bg-color); padding: 18px; border-radius: 25px; margin: 25px 0; font-weight: 700; line-height: 1.8; box-shadow: inset 4px 4px 10px rgba(0,0,0,0.05); }
+.close-win-btn.button-clay { border: none; background: linear-gradient(135deg, var(--secondary) 0%, #8b73be 100%); color: white; width: 100%; padding: 14px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(161,140,209,0.4); }

@@ -1,0 +1,346 @@
+{
+  "journey_stages": [
+    {
+      "stage_id": 1,
+      "title": "Trạm 1: Chào Hỏi & Giới Thiệu",
+      "desc": "Bài 1: Làm quen với danh từ, đại từ nhân xưng và các trợ từ cơ bản nhất của tiếng Nhật.",
+      "questions": [
+        { "q_id": "1", "s": "わたし {p1} ミラーです。", "o": ["は", "が", "も", "の"], "a": ["は"], "v": "Tôi là Miller.", "e": "Trợ từ <b>は</b> đi sau danh từ để biểu thị chủ đề của câu (chủ ngữ)." },
+        { "q_id": "2", "s": "サントスさん {p1} [学生|がくせい]じゃありません。", "o": ["も", "は", "が", "の"], "a": ["は"], "v": "Anh Santos không phải là học sinh.", "e": "Trợ từ <b>は</b> kết hợp với đuôi じゃありません để tạo câu phủ định." },
+        { "q_id": "3", "s": "ミラーさんは [会社員|かいしゃいん]です。サントスさん {p1} [会社員|かいしゃいん]です。", "o": ["は", "も", "が", "の"], "a": ["も"], "v": "Anh Miller là nhân viên công ty. Anh Santos cũng là nhân viên công ty.", "e": "Trợ từ <b>も</b> có nghĩa là 'cũng', dùng khi thông tin nhắc đến giống với thông tin trước đó." },
+        { "q_id": "4", "s": "ミラーさんは IMC {p1} [社員|しゃいん]です。", "o": ["の", "に", "は", "も"], "a": ["の"], "v": "Anh Miller là nhân viên của công ty IMC.", "e": "Trợ từ <b>の</b> dùng để nối hai danh từ, thể hiện sự sở hữu hoặc trực thuộc (Nhân viên CỦA công ty IMC)." },
+        { "q_id": "5", "s": "あの[方|かた] {p1} どなたですか。", "o": ["が", "は", "の", "も"], "a": ["は"], "v": "Vị kia là ai vậy?", "e": "Trợ từ <b>は</b> đánh dấu 'Vị kia' làm chủ đề cho câu hỏi." },
+        { "q_id": "6", "s": "ワンさん {p1} [医者|いしゃ]ですか。", "o": ["は", "も", "が", "の"], "a": ["は"], "v": "Ông Wang có phải là bác sĩ không?", "e": "Trợ từ <b>は</b> kết hợp với ですか ở cuối câu để tạo câu hỏi xác nhận." },
+        { "q_id": "7", "s": "カリナさんは [富士大学|ふじだいがく] {p1} [学生|がくせい]です。", "o": ["に", "は", "の", "が"], "a": ["の"], "v": "Chị Karina là sinh viên của đại học Fuji.", "e": "Trợ từ <b>の</b> thể hiện sự trực thuộc (Sinh viên CỦA trường Fuji)." }
+      ]
+    },
+    {
+      "stage_id": 2,
+      "title": "Trạm 2: Đồ Vật Quanh Ta",
+      "desc": "Bài 2: Sử dụng bộ chỉ thị từ これ / それ / あれ và đại từ sở hữu.",
+      "questions": [
+        { "q_id": "8", "s": "これ {p1} [辞書|じしょ]です。", "o": ["は", "が", "の", "も"], "a": ["は"], "v": "Đây là cuốn từ điển.", "e": "これ (Cái này) đóng vai trò làm chủ ngữ nên đi kèm trợ từ <b>は</b>." },
+        { "q_id": "9", "s": "それ {p1} わたしの [傘|かさ]です。", "o": ["が", "は", "の", "も"], "a": ["は"], "v": "Đó là ô của tôi.", "e": "それ (Cái đó) làm chủ ngữ, dùng <b>は</b> để nhấn mạnh." },
+        { "q_id": "10", "s": "この[本|ほん] {p1} わたし {p2} です。", "o": ["は", "の", "が", "も", "に"], "a": ["は", "の"], "v": "Cuốn sách này là của tôi.", "e": "<b>は</b> đánh dấu chủ ngữ 'Cuốn sách này'. <b>の</b> thay thế cho danh từ đã nhắc đến (わたしの = わたしの本 - của tôi)." },
+        { "q_id": "11", "s": "それは [何|なん] {p1} [雑誌|ざっし]ですか。", "o": ["の", "に", "は", "が"], "a": ["の"], "v": "Đó là tạp chí về cái gì vậy?", "e": "Trợ từ <b>の</b> dùng để giải thích nội dung (Tạp chí VỀ cái gì)." },
+        { "q_id": "12", "s": "あれ {p1} だれ {p2} かばんですか。", "o": ["は", "が", "の", "も", "に"], "a": ["は", "の"], "v": "Kia là cặp của ai vậy?", "e": "<b>は</b> đánh dấu chủ ngữ 'あれ'. <b>の</b> chỉ sự sở hữu (Cặp CỦA ai)." },
+        { "q_id": "13", "s": "その[鉛筆|えんぴつ] {p1} [私|わたし] {p2} じゃありません。", "o": ["が", "は", "の", "も"], "a": ["は", "の"], "v": "Cái bút chì đó không phải của tôi.", "e": "<b>は</b> đi với chủ ngữ, <b>の</b> dùng dạng rút gọn sở hữu (của tôi)." },
+        { "q_id": "14", "s": "これは [自動車|じどうしゃ] {p1} [本|ほん]です。", "o": ["に", "の", "は", "が"], "a": ["の"], "v": "Đây là sách về ô tô.", "e": "Trợ từ <b>の</b> giải thích thuộc tính, chủ đề của cuốn sách." }
+      ]
+    },
+    {
+      "stage_id": 3,
+      "title": "Trạm 3: Nơi Chốn & Địa Điểm",
+      "desc": "Bài 3: Chỉ phương hướng, địa điểm với ここ / そこ / あそこ / どこ.",
+      "questions": [
+        { "q_id": "15", "s": "ここ {p1} [食堂|しょくどう]です。", "o": ["は", "が", "に", "へ"], "a": ["は"], "v": "Chỗ này là nhà ăn.", "e": "ここ (Chỗ này) làm chủ đề của câu nên đi với <b>は</b>." },
+        { "q_id": "16", "s": "[電話|でんわ] {p1} あそこです。", "o": ["は", "が", "に", "で"], "a": ["は"], "v": "Điện thoại ở đằng kia.", "e": "<b>は</b> đánh dấu đồ vật đang được nhắc đến làm chủ đề để chỉ vị trí." },
+        { "q_id": "17", "s": "お[国|くに] {p1} どちらですか。", "o": ["は", "が", "の", "に"], "a": ["は"], "v": "Đất nước của bạn là ở đâu?", "e": "<b>は</b> kết hợp với どちら (ở đâu/hướng nào) để hỏi về xuất xứ, địa điểm." },
+        { "q_id": "18", "s": "エレベーター {p1} どこですか。", "o": ["が", "に", "は", "も"], "a": ["は"], "v": "Thang máy ở đâu vậy?", "e": "Tương tự, <b>は</b> đánh dấu chủ thể để hỏi vị trí (どこ)." },
+        { "q_id": "19", "s": "これは どこの ワインですか。イタリア {p1} ワインです。", "o": ["の", "から", "に", "は"], "a": ["の"], "v": "Đây là rượu vang của đâu vậy? Là vang của Ý.", "e": "<b>の</b> dùng để chỉ xuất xứ, nơi sản xuất của một sản phẩm." },
+        { "q_id": "20", "s": "ミラーさんの [部屋|へや] {p1} ３[階|かい]です。", "o": ["に", "は", "が", "で"], "a": ["は"], "v": "Phòng của anh Miller ở tầng 3.", "e": "<b>は</b> đánh dấu 'Phòng của anh Miller' là chủ đề." },
+        { "q_id": "21", "s": "[私|わたし] {p1} [大学|だいがく] {p2} [東京|とうきょう]です。", "o": ["の", "は", "が", "に", "で"], "a": ["の", "は"], "v": "Trường đại học của tôi ở Tokyo.", "e": "<b>の</b> (Đại học CỦA tôi). <b>は</b> đánh dấu chủ ngữ để chỉ vị trí (ở Tokyo)." }
+      ]
+    },
+    {
+      "stage_id": 4,
+      "title": "Trạm 4: Thời Gian & Hoạt Động",
+      "desc": "Bài 4: Nói về thời gian và các động từ sinh hoạt cơ bản (V-ます / V-ました).",
+      "questions": [
+        { "q_id": "22", "s": "[毎日|まいにち]、６[時半|じはん] {p1} [起|お]きます。", "o": ["に", "で", "を", "は"], "a": ["に"], "v": "Mỗi ngày, tôi thức dậy lúc 6 giờ rưỡi.", "e": "Trợ từ <b>に</b> đứng sau danh từ chỉ thời gian có con số cụ thể." },
+        { "q_id": "23", "s": "[私|わたし]は ９[時|じ] {p1} ５[時|じ] {p2} [働|はたら]きます。", "o": ["から", "まで", "に", "で", "と"], "a": ["から", "まで"], "v": "Tôi làm việc từ 9 giờ đến 5 giờ.", "e": "Cấu trúc <b>から...まで...</b> dùng để chỉ điểm bắt đầu và kết thúc của một khoảng thời gian." },
+        { "q_id": "24", "s": "[明日|あした]、[大学|だいがく] {p1} [休|やす]みです。", "o": ["は", "に", "が", "を"], "a": ["は"], "v": "Ngày mai, trường đại học được nghỉ.", "e": "<b>は</b> đánh dấu chủ ngữ. (Lưu ý: 'Ngày mai' là danh từ thời gian tương đối nên KHÔNG đi với に)." },
+        { "q_id": "25", "s": "[銀行|ぎんこう]は [何時|なんじ] {p1} [何時|なんじ] {p2} ですか。", "o": ["から", "まで", "に", "と", "は"], "a": ["から", "まで"], "v": "Ngân hàng mở cửa từ mấy giờ đến mấy giờ?", "e": "Dùng <b>から</b> (từ) và <b>まで</b> (đến) để hỏi về giờ giấc hoạt động." },
+        { "q_id": "26", "s": "[毎晩|まいばん]、[何時|なんじ] {p1} [寝|ね]ますか。", "o": ["に", "へ", "を", "で"], "a": ["に"], "v": "Mỗi tối, bạn ngủ lúc mấy giờ?", "e": "Hỏi về thời gian cụ thể (mấy giờ) bắt buộc phải có trợ từ <b>に</b>." },
+        { "q_id": "27", "s": "[土曜日|どようび] {p1} [日曜日|にちようび] {p2} [休|やす]みです。", "o": ["と", "は", "に", "や", "が"], "a": ["と", "は"], "v": "Thứ Bảy và Chủ Nhật là ngày nghỉ.", "e": "Trợ từ <b>と</b> dùng để nối 2 danh từ (Thứ 7 VÀ Chủ nhật). <b>は</b> nhấn mạnh cụm đó làm chủ ngữ." },
+        { "q_id": "28", "s": "[昨日|きのう] {p1} [晩|ばん]、[勉強|べんきょう]しました。", "o": ["の", "に", "は", "で"], "a": ["の"], "v": "Tối hôm qua, tôi đã học bài.", "e": "Sử dụng <b>の</b> để kết hợp danh từ thời gian (Tối CỦA ngày hôm qua)." },
+        { "q_id": "29", "s": "[昼休|ひるやす]みは 12[時|じ] {p1} 1[時|じ] {p2} です。", "o": ["から", "まで", "に", "と", "は"], "a": ["から", "まで"], "v": "Giờ nghỉ trưa là từ 12 giờ đến 1 giờ.", "e": "Sử dụng cặp trợ từ <b>から...まで...</b> cho khoảng thời gian." }
+      ]
+    },
+    {
+      "stage_id": 5,
+      "title": "Trạm 5: Hành Trình & Di Chuyển",
+      "desc": "Bài 5: Chỉ phương hướng di chuyển, phương tiện và người đồng hành (行きます / 来ます / 帰ります).",
+      "questions": [
+        { "q_id": "30", "s": "[私|わたし]は [京都|きょうと] {p1} [行|い]きます。", "o": ["へ", "を", "で", "が"], "a": ["へ"], "v": "Tôi đi Kyoto.", "e": "Trợ từ <b>へ</b> (đọc là 'e') dùng để chỉ phương hướng của hành động di chuyển." },
+        { "q_id": "31", "s": "[昨日|きのう]、どこ {p1} [行|い]きませんでした。", "o": ["へも", "に", "を", "が", "も"], "a": ["へも"], "v": "Hôm qua, tôi đã không đi đâu cả.", "e": "Từ nghi vấn (どこ) + <b>へも</b> + Động từ phủ định: Phủ định hoàn toàn (Không đi đến phương hướng nào cả)." },
+        { "q_id": "32", "s": "[何|なん] {p1} [東京|とうきょう] {p2} [行|い]きますか。", "o": ["で", "へ", "に", "を", "が"], "a": ["で", "へ"], "v": "Bạn đi Tokyo bằng gì?", "e": "<b>で</b> chỉ phương tiện di chuyển (Bằng gì). <b>へ</b> chỉ phương hướng (Đến Tokyo)." },
+        { "q_id": "33", "s": "[新幹線|しんかんせん] {p1} [行|い]きます。", "o": ["で", "に", "を", "は"], "a": ["で"], "v": "Tôi đi bằng tàu Shinkansen.", "e": "Trợ từ <b>で</b> đi sau danh từ chỉ phương tiện (Đi BẰNG tàu)." },
+        { "q_id": "34", "s": "だれ {p1} [日本|にほん] {p2} [来|き]ましたか。", "o": ["と", "へ", "に", "で", "が"], "a": ["と", "へ"], "v": "Bạn đã đến Nhật Bản cùng với ai?", "e": "<b>と</b> chỉ người đồng hành (Cùng với ai). <b>へ</b> chỉ phương hướng đến." },
+        { "q_id": "35", "s": "[家族|かぞく] {p1} [来|き]ました。", "o": ["と", "に", "で", "を"], "a": ["と"], "v": "Tôi đã đến cùng gia đình.", "e": "Trợ từ <b>と</b> đi sau danh từ chỉ người để biểu thị sự đồng hành." },
+        { "q_id": "36", "s": "いつ [日本|にほん] {p1} [来|き]ましたか。３[月|がつ]２５[日|にち] {p2} [来|き]ました。", "o": ["へ", "に", "で", "を", "から"], "a": ["へ", "に"], "v": "Bạn đến Nhật khi nào? Tôi đã đến vào ngày 25 tháng 3.", "e": "<b>へ</b> hướng di chuyển. <b>に</b> dùng cho mốc thời gian có con số cụ thể." },
+        { "q_id": "37", "s": "[明日|あした]、[一人|ひとり] {p1} [病院|びょういん] {p2} [行|い]きます。", "o": ["で", "へ", "に", "と", "が"], "a": ["で", "へ"], "v": "Ngày mai, tôi sẽ đi bệnh viện một mình.", "e": "Trường hợp đặc biệt: Làm gì đó một mình (一人) phải dùng trợ từ <b>で</b> (Một thân một mình)." }
+      ]
+    },
+    {
+      "stage_id": 6,
+      "title": "Trạm 6: Hành Động & Tân Ngữ",
+      "desc": "Bài 6: Sử dụng tha động từ, chỉ địa điểm thực hiện hành động và rủ rê người khác.",
+      "questions": [
+        { "q_id": "38", "s": "わたしは パン {p1} [食|た]べます。", "o": ["を", "に", "で", "が"], "a": ["を"], "v": "Tôi ăn bánh mì.", "e": "Trợ từ <b>を</b> luôn đi sau danh từ làm tân ngữ trực tiếp chịu tác động của hành động." },
+        { "q_id": "39", "s": "[毎朝|まいあさ]、[何|なに] {p1} しますか。", "o": ["を", "は", "に", "で"], "a": ["を"], "v": "Mỗi sáng bạn làm gì?", "e": "Hỏi về tân ngữ của hành động luôn dùng <b>何を</b>." },
+        { "q_id": "40", "s": "[駅|えき] {p1} [新聞|しんぶん] {p2} [買|か]います。", "o": ["で", "を", "に", "へ", "は"], "a": ["で", "を"], "v": "Tôi mua báo ở nhà ga.", "e": "<b>で</b> chỉ địa điểm NƠI diễn ra hành động. <b>を</b> đi kèm tân ngữ 'tờ báo'." },
+        { "q_id": "41", "s": "[一緒|いっしょ]に [京都|きょうと] {p1} [行|い]きませんか。", "o": ["へ", "を", "で", "が"], "a": ["へ"], "v": "Bạn có muốn cùng đi Kyoto với tôi không?", "e": "Động từ di chuyển (行きます) kết hợp với <b>へ</b> để chỉ phương hướng đến." },
+        { "q_id": "42", "s": "ロビー {p1} ちょっと [休|やす]みましょう。", "o": ["で", "に", "を", "へ"], "a": ["で"], "v": "Chúng ta hãy nghỉ ngơi một chút ở sảnh chờ nhé.", "e": "Nghỉ ngơi là một hành động, nên địa điểm thực hiện phải dùng trợ từ <b>で</b>." },
+        { "q_id": "43", "s": "[公園|こうえん] {p1} [写真|しゃしん] {p2} [撮|と]ります。", "o": ["で", "を", "に", "へ", "は"], "a": ["で", "を"], "v": "Tôi chụp ảnh ở công viên.", "e": "<b>で</b> đánh dấu địa điểm hành động (công viên). <b>を</b> đánh dấu đối tượng bị tác động (ảnh)." }
+      ]
+    },
+    {
+      "stage_id": 7,
+      "title": "Trạm 7: Phương Tiện & Cho/Nhận",
+      "desc": "Bài 7: Cách thức thực hiện hành động, trao tặng và tiếp nhận một thứ gì đó.",
+      "questions": [
+        { "q_id": "44", "s": "はし {p1} ご[飯|はん] {p2} [食|た]べます。", "o": ["で", "を", "に", "と", "が"], "a": ["で", "を"], "v": "Tôi ăn cơm bằng đũa.", "e": "Trợ từ <b>で</b> chỉ công cụ, phương tiện (Bằng đũa). <b>を</b> đứng trước động từ ăn." },
+        { "q_id": "45", "s": "[日本語|にほんご] {p1} レポート {p2} [書|か]きます。", "o": ["で", "を", "に", "の", "が"], "a": ["で", "を"], "v": "Tôi viết báo cáo bằng tiếng Nhật.", "e": "Ngôn ngữ cũng được coi là một công cụ, vì thế dùng <b>で</b> (Bằng tiếng Nhật)." },
+        { "q_id": "46", "s": "これは [英語|えいご] {p1} [何|なん]ですか。", "o": ["で", "に", "の", "は"], "a": ["で"], "v": "Cái này trong tiếng Anh là gì?", "e": "Hỏi về cách gọi trong một ngôn ngữ, ta dùng danh từ ngôn ngữ + <b>で</b>." },
+        { "q_id": "47", "s": "わたしは [木村|きむら]さん {p1} [花|はな] {p2} あげました。", "o": ["に", "を", "で", "から", "と"], "a": ["に", "を"], "v": "Tôi đã tặng hoa cho cô Kimura.", "e": "Động từ Cho/Tặng (あげます) đòi hỏi trợ từ <b>に</b> chỉ đối tượng nhận." },
+        { "q_id": "48", "s": "わたしは カリナさん {p1} チョコレート {p2} もらいました。", "o": ["から", "を", "で", "と", "は"], "a": ["から", "を"], "v": "Tôi đã nhận sô-cô-la từ chị Karina.", "e": "Động từ Nhận (もらいます) đi với <b>から</b> (hoặc <b>に</b>) để chỉ nguồn cung cấp (Từ ai)." },
+        { "q_id": "49", "s": "だれ {p1} [英語|えいご] {p2} [習|なら]いましたか。", "o": ["に", "を", "で", "は", "が"], "a": ["に", "を"], "v": "Bạn đã học tiếng Anh từ ai vậy?", "e": "Học từ ai đó dùng <b>に</b> (hoặc から). Tân ngữ môn học dùng <b>を</b>." }
+      ]
+    },
+    {
+      "stage_id": 8,
+      "title": "Trạm 8: Cảm Nhận & Tính Từ",
+      "desc": "Bài 8: Miêu tả tính chất của sự vật, sự việc bằng tính từ đuôi -i và tính từ đuôi -na.",
+      "questions": [
+        { "q_id": "50", "s": "[桜|さくら] {p1} きれいです。", "o": ["は", "が", "に", "を"], "a": ["は"], "v": "Hoa anh đào rất đẹp.", "e": "Trợ từ <b>は</b> đi sau chủ đề để chuẩn bị miêu tả tính chất của nó." },
+        { "q_id": "51", "s": "[富士山|ふじさん] {p1} [高|たか]い [山|やま]です。", "o": ["は", "が", "に", "の"], "a": ["は"], "v": "Núi Phú Sĩ là một ngọn núi cao.", "e": "<b>は</b> đánh dấu chủ ngữ 'Núi Phú Sĩ'. Tính từ bổ nghĩa trực tiếp cho danh từ đằng sau." },
+        { "q_id": "52", "s": "[日本|にほん] {p1} [生活|せいかつ] {p2} どうですか。", "o": ["の", "は", "が", "に", "で"], "a": ["の", "は"], "v": "Cuộc sống ở Nhật Bản thế nào?", "e": "<b>の</b> nối hai danh từ (Cuộc sống CỦA Nhật Bản). <b>は</b> đưa cụm đó lên làm chủ đề để hỏi (どうですか)." },
+        { "q_id": "53", "s": "この お[茶|ちゃ] {p1} あまり [熱|あつ]くないです。", "o": ["は", "が", "を", "に"], "a": ["は"], "v": "Trà này không nóng lắm.", "e": "<b>は</b> đánh dấu 'Trà này' làm chủ đề. 'あまり + phủ định' mang nghĩa 'không... lắm'." },
+        { "q_id": "54", "s": "[東京|とうきょう] {p1} にぎやかな [町|まち]です。", "o": ["は", "が", "の", "に"], "a": ["は"], "v": "Tokyo là một thành phố nhộn nhịp.", "e": "<b>は</b> dùng để miêu tả đặc điểm của một địa điểm." },
+        { "q_id": "55", "s": "[仕事|しごと] {p1} [忙|いそが]しいですが、おもしろいです。", "o": ["は", "が", "を", "に"], "a": ["は"], "v": "Công việc tuy bận rộn nhưng thú vị.", "e": "Trợ từ <b>は</b> đánh dấu chủ đề 'Công việc'. 'が' nối 2 vế câu mang nghĩa tương phản." }
+      ]
+    },
+    {
+      "stage_id": 9,
+      "title": "Trạm 9: Sở Thích & Khả Năng",
+      "desc": "Bài 9: Biểu đạt sở thích, kỹ năng, sự sở hữu và giải thích lý do (～から).",
+      "questions": [
+        { "q_id": "56", "s": "わたしは イタリア[料理|りょうり] {p1} [好|す]きです。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Tôi thích món ăn Ý.", "e": "Đối tượng của tính từ 好き (thích), 嫌い (ghét) luôn đi với trợ từ <b>が</b>." },
+        { "q_id": "57", "s": "わたしは [日本語|にほんご] {p1} わかります。", "o": ["が", "を", "は", "で"], "a": ["が"], "v": "Tôi hiểu tiếng Nhật.", "e": "Động từ chỉ trạng thái/năng lực như わかります (hiểu) phải đi với <b>が</b>." },
+        { "q_id": "58", "s": "わたしは [車|くるま] {p1} あります。", "o": ["が", "を", "に", "は"], "a": ["が"], "v": "Tôi có ô tô.", "e": "Động từ あります mang nghĩa sở hữu (có cái gì đó) dùng với trợ từ <b>が</b>." },
+        { "q_id": "59", "s": "どんな スポーツ {p1} [好|す]きですか。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Bạn thích môn thể thao nào?", "e": "Dù là câu hỏi, đối tượng của tính từ 好き vẫn bắt buộc dùng <b>が</b>." },
+        { "q_id": "60", "s": "マリアさんは ダンス {p1} [上手|じょうず]です。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Chị Maria nhảy rất giỏi.", "e": "Các tính từ chỉ năng lực như 上手 (giỏi), 下手 (kém) luôn yêu cầu <b>が</b> đứng trước." },
+        { "q_id": "61", "s": "[時間|じかん] {p1} ありませんから、[新聞|しんぶん] {p2} [読|よ]みません。", "o": ["が", "を", "は", "に", "で"], "a": ["が", "を"], "v": "Vì không có thời gian nên tôi không đọc báo.", "e": "Có/Không có cái gì dùng <b>が</b>. Đọc cái gì (tác động vật lý) dùng <b>を</b>." },
+        { "q_id": "62", "s": "[今日|きょう]は [約束|やくそく] {p1} ありますから、[早|はや]く [帰|かえ]ります。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Vì hôm nay có hẹn nên tôi sẽ về sớm.", "e": "Có việc bận, có cuộc hẹn (約束があります) luôn đi với trợ từ <b>が</b>." }
+      ]
+    },
+    {
+      "stage_id": 10,
+      "title": "Trạm 10: Tồn Tại & Vị Trí",
+      "desc": "Bài 10: Sự tồn tại của người, vật, con vật và cách xác định vị trí tương quan.",
+      "questions": [
+        { "q_id": "63", "s": "あそこ {p1} サントスさん {p2} います。", "o": ["に", "が", "で", "は", "を"], "a": ["に", "が"], "v": "Anh Santos ở đằng kia.", "e": "<b>に</b> chỉ địa điểm tồn tại. <b>が</b> đi với đối tượng tồn tại (động vật/người dùng います)." },
+        { "q_id": "64", "s": "[机|つくえ] {p1} [上|うえ] {p2} [写真|しゃしん] {p3} あります。", "o": ["の", "に", "が", "で", "を"], "a": ["の", "に", "が"], "v": "Có bức ảnh ở trên bàn.", "e": "<b>の</b> (Trên CỦA bàn). <b>に</b> (Ở TRÊN bàn). <b>が</b> (CÓ bức ảnh)." },
+        { "q_id": "65", "s": "[犬|いぬ] {p1} どこ {p2} いますか。", "o": ["は", "に", "が", "で", "を"], "a": ["は", "に"], "v": "Con chó đang ở đâu vậy?", "e": "<b>は</b> đưa 'con chó' làm chủ đề. <b>に</b> dùng để hỏi vị trí tồn tại (ở đâu)." },
+        { "q_id": "66", "s": "[銀行|ぎんこう] {p1} [隣|となり] {p2} [郵便局|ゆうびんきょく] {p3} あります。", "o": ["の", "に", "が", "で", "は"], "a": ["の", "に", "が"], "v": "Có bưu điện ở bên cạnh ngân hàng.", "e": "<b>の</b> (Bên cạnh CỦA ngân hàng). <b>に</b> (Ở bên cạnh). <b>が</b> (CÓ bưu điện)." },
+        { "q_id": "67", "s": "[本屋|ほんや] {p1} あのビル {p2} 2[階|かい] {p3} あります。", "o": ["は", "の", "に", "が", "で"], "a": ["は", "の", "に"], "v": "Hiệu sách nằm ở tầng 2 của tòa nhà kia.", "e": "<b>は</b> (Hiệu sách làm chủ đề). <b>の</b> (Tầng 2 CỦA tòa nhà). <b>に</b> (Nằm Ở tầng 2)." },
+        { "q_id": "68", "s": "[箱|はこ] {p1} [中|なか] {p2} [手紙|てがみ] {p3} [写真|しゃしん]が あります。", "o": ["の", "に", "と", "が", "や"], "a": ["の", "に", "と"], "v": "Ở trong hộp có thư và ảnh.", "e": "<b>の</b> (Trong CỦA hộp). <b>に</b> (Ở trong hộp). <b>と</b> liệt kê toàn bộ (Thư VÀ ảnh)." }
+      ]
+    },
+    {
+      "stage_id": 11,
+      "title": "Trạm 11: Số Đếm & Tần Suất",
+      "desc": "Bài 11: Cách sử dụng lượng từ (số lượng người, vật) và diễn tả tần suất của hành động.",
+      "questions": [
+        { "q_id": "69", "s": "りんご {p1} ３つ [買|か]いました。", "o": ["を", "が", "に", "は"], "a": ["を"], "v": "Tôi đã mua 3 quả táo.", "e": "Trợ từ <b>を</b> đứng sau tân ngữ (quả táo), lượng từ (3つ) đứng ngay trước động từ và không cần trợ từ." },
+        { "q_id": "70", "s": "[会議室|かいぎしつ] {p1} [男|おとこ]の[人|ひと] {p2} ４[人|にん] います。", "o": ["に", "が", "で", "を", "は"], "a": ["に", "が"], "v": "Ở phòng họp có 4 người đàn ông.", "e": "<b>に</b> chỉ địa điểm tồn tại. <b>が</b> đánh dấu đối tượng tồn tại (đàn ông)." },
+        { "q_id": "71", "s": "1か[月|げつ] {p1} 2[回|回] [映画|えいが] {p2} [見|み]ます。", "o": ["に", "を", "で", "が", "は"], "a": ["に", "を"], "v": "Một tháng tôi xem phim 2 lần.", "e": "<b>に</b> đứng sau khoảng thời gian để chỉ tần suất (1 tháng mấy lần). <b>を</b> đi với tân ngữ bộ phim." },
+        { "q_id": "72", "s": "どのくらい [日本語|にほんご] {p1} [勉強|べんきょう]しましたか。", "o": ["を", "が", "に", "で"], "a": ["を"], "v": "Bạn đã học tiếng Nhật khoảng bao lâu?", "e": "Từ để hỏi lượng thời gian (どのくらい) không cần trợ từ đi kèm, <b>を</b> dùng cho tân ngữ tiếng Nhật." },
+        { "q_id": "73", "s": "[兄弟|きょうだい] {p1} ３[人|にん] います。", "o": ["が", "は", "に", "を"], "a": ["が"], "v": "Tôi có 3 anh chị em.", "e": "Để nói có bao nhiêu anh chị em, ta dùng động từ います với trợ từ <b>が</b>." },
+        { "q_id": "74", "s": "80[円|えん] {p1} [切手|きって] {p2} 5[枚|まい] [買|か]いました。", "o": ["の", "を", "に", "で", "が"], "a": ["の", "を"], "v": "Tôi đã mua 5 con tem loại 80 yên.", "e": "<b>の</b> nối tính chất của tem (loại 80 yên). <b>を</b> đánh dấu tân ngữ để mua." }
+      ]
+    },
+    {
+      "stage_id": 12,
+      "title": "Trạm 12: Quá Khứ & So Sánh",
+      "desc": "Bài 12: Thời quá khứ của danh từ, tính từ và các cấu trúc so sánh (hơn, nhất).",
+      "questions": [
+        { "q_id": "75", "s": "[昨日|きのう] {p1} [雨|あめ]でした。", "o": ["は", "が", "に", "を"], "a": ["は"], "v": "Hôm qua trời đã mưa.", "e": "<b>は</b> đưa 'hôm qua' làm chủ đề. Quá khứ của danh từ là でした." },
+        { "q_id": "76", "s": "[東京|とうきょう] {p1} [大阪|おおさか] {p2} [大|おお]きいです。", "o": ["は", "より", "が", "に", "で"], "a": ["は", "より"], "v": "Tokyo lớn hơn Osaka.", "e": "Cấu trúc so sánh hơn: A <b>は</b> B <b>より</b> (A thì... hơn B)." },
+        { "q_id": "77", "s": "サッカー {p1} [野球|やきゅう] {p2} どちら {p3} [面白|おもしろ]いですか。", "o": ["と", "と", "が", "は", "に"], "a": ["と", "と", "が"], "v": "Bóng đá và bóng chày, môn nào thú vị hơn?", "e": "So sánh 2 thứ dùng <b>と... と...</b>. Từ để hỏi どちら luôn đi với <b>が</b>." },
+        { "q_id": "78", "s": "スポーツ {p1} サッカー {p2} 一番 [面白|おもしろ]いです。", "o": ["で", "が", "に", "は", "を"], "a": ["で", "が"], "v": "Trong các môn thể thao, bóng đá là thú vị nhất.", "e": "<b>で</b> xác định phạm vi (Trong số các thể thao). <b>が</b> đánh dấu chủ thể (bóng đá)." },
+        { "q_id": "79", "s": "1[年|ねん] {p1} いつ {p2} 一番 [暑|あつ]いですか。", "o": ["で", "が", "に", "は", "を"], "a": ["で", "が"], "v": "Trong một năm, khi nào là nóng nhất?", "e": "Tương tự, <b>で</b> giới hạn phạm vi 1 năm, <b>が</b> đi sau từ để hỏi いつ." },
+        { "q_id": "80", "s": "[昨日|きのう]の パーティー {p1} とても にぎやかでした。", "o": ["は", "が", "に", "を"], "a": ["は"], "v": "Bữa tiệc hôm qua đã rất nhộn nhịp.", "e": "<b>は</b> đánh dấu chủ đề 'Bữa tiệc hôm qua'." }
+      ]
+    },
+    {
+      "stage_id": 13,
+      "title": "Trạm 13: Mong Muốn & Mục Đích",
+      "desc": "Bài 13: Bày tỏ mong muốn (欲しい, V-たい) và mục đích của sự di chuyển (V-に行きます).",
+      "questions": [
+        { "q_id": "81", "s": "わたしは パソコン {p1} [欲|ほ]しいです。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Tôi muốn có một chiếc máy tính cá nhân.", "e": "Tính từ 欲しい (muốn có đồ vật) luôn đi kèm với trợ từ <b>が</b>." },
+        { "q_id": "82", "s": "わたしは てんぷら {p1} [食|た]べたいです。", "o": ["が", "に", "で", "へ"], "a": ["が"], "v": "Tôi muốn ăn Tempura.", "e": "Với V-たい (muốn làm gì), tân ngữ có thể dùng を, nhưng <b>が</b> thường được ưu tiên để nhấn mạnh khát khao." },
+        { "q_id": "83", "s": "[神戸|こうべ] {p1} [牛肉|ぎゅうにく] {p2} [買|か]い {p3} [行|い]きます。", "o": ["へ", "を", "に", "で", "が"], "a": ["へ", "を", "に"], "v": "Tôi đi Kobe để mua thịt bò.", "e": "<b>へ</b> (hướng đi). <b>を</b> (tân ngữ thịt bò). <b>に</b> (mục đích đi: để mua)." },
+        { "q_id": "84", "s": "[日本|にほん] {p1} [美術|びじゅつ]の [勉強|べんきょう] {p2} [来|き]ました。", "o": ["へ", "に", "を", "で", "が"], "a": ["へ", "に"], "v": "Tôi đã đến Nhật để học mỹ thuật.", "e": "<b>へ</b> (hướng đến). Nếu mục đích là một Danh từ động tác (勉強), ta nối thẳng với <b>に</b>." },
+        { "q_id": "85", "s": "[週末|しゅうまつ] {p1} [何|なに] {p2} したいですか。", "o": ["は", "を", "に", "が", "で"], "a": ["は", "を"], "v": "Cuối tuần bạn muốn làm gì?", "e": "<b>は</b> đưa cuối tuần lên làm chủ đề. Làm cái gì dùng <b>何を</b>." },
+        { "q_id": "86", "s": "[疲|つか]れましたから、[何|なに] {p1} したくないです。", "o": ["も", "を", "が", "に"], "a": ["も"], "v": "Vì mệt quá nên tôi không muốn làm gì cả.", "e": "Từ nghi vấn (何) + <b>も</b> + Phủ định: Hoàn toàn không (Không muốn làm gì cả)." }
+      ]
+    },
+    {
+      "stage_id": 14,
+      "title": "Trạm 14: Thể Te & Yêu Cầu",
+      "desc": "Bài 14: Nhập môn Thể Te (て形) - Đưa ra lời yêu cầu, sai khiến và đề nghị giúp đỡ.",
+      "questions": [
+        { "q_id": "87", "s": "[辞書|じしょ] {p1} [貸|か]して ください。", "o": ["を", "が", "に", "は"], "a": ["を"], "v": "Hãy cho tôi mượn cuốn từ điển.", "e": "<b>を</b> đi sau tân ngữ (từ điển) chịu tác động của hành động mượn/cho mượn." },
+        { "q_id": "88", "s": "ボールペン {p1} [名前|なまえ] {p2} [書|か]いて ください。", "o": ["で", "を", "に", "は", "が"], "a": ["で", "を"], "v": "Hãy viết tên bằng bút bi.", "e": "<b>で</b> chỉ công cụ (bằng bút bi). <b>を</b> đánh dấu đối tượng cần viết (tên)." },
+        { "q_id": "89", "s": "[今|いま]、[雨|あめ] {p1} [降|ふ]って います。", "o": ["が", "を", "は", "に"], "a": ["が"], "v": "Bây giờ trời đang mưa.", "e": "Hiện tượng tự nhiên đang xảy ra (mưa, tuyết rơi) luôn dùng chủ ngữ với trợ từ <b>が</b>." },
+        { "q_id": "90", "s": "タクシー {p1} [呼|よ]びましょうか。", "o": ["を", "が", "に", "は"], "a": ["を"], "v": "Để tôi gọi taxi cho bạn nhé?", "e": "<b>を</b> đi kèm tân ngữ chịu tác động. ~ましょうか dùng khi người nói muốn đề nghị giúp đỡ." },
+        { "q_id": "91", "s": "[荷物|にもつ] {p1} [持|も]ちましょうか。", "o": ["を", "が", "に", "で"], "a": ["を"], "v": "Để tôi xách hành lý giúp bạn nhé?", "e": "Tương tự, <b>を</b> xác định đối tượng cần xách (hành lý)." },
+        { "q_id": "92", "s": "[駅|えき] {p1} [迎|むか]え {p2} [行|い]きましょうか。", "o": ["まで", "に", "を", "で", "へ"], "a": ["まで", "に"], "v": "Để tôi đi đến ga đón bạn nhé?", "e": "<b>まで</b> (Đến tận ga). <b>に</b> (Đi với mục đích để đón)." }
+      ]
+    },
+    {
+      "stage_id": 15,
+      "title": "Trạm 15: Cho Phép & Cấm Đoán",
+      "desc": "Bài 15: Dùng Thể Te để xin phép, cấm đoán và diễn tả trạng thái, thói quen.",
+      "questions": [
+        { "q_id": "93", "s": "ここで [写真|しゃしん] {p1} [撮|と]っても いいですか。", "o": ["を", "が", "に", "は"], "a": ["を"], "v": "Tôi chụp ảnh ở đây có được không?", "e": "Cấu trúc V-ても いいです dùng để xin phép/cho phép. <b>を</b> đánh dấu tân ngữ ảnh." },
+        { "q_id": "94", "s": "ここ {p1} タバコ {p2} [吸|す]ってはいけません。", "o": ["で", "を", "に", "は", "が"], "a": ["で", "を"], "v": "Không được hút thuốc ở đây.", "e": "<b>で</b> chỉ địa điểm thực hiện hành động. <b>を</b> đi với tân ngữ thuốc lá. Cấu trúc V-てはいけません: Cấm đoán." },
+        { "q_id": "95", "s": "わたし {p1} [結婚|けっこん]して います。", "o": ["は", "が", "に", "を"], "a": ["は"], "v": "Tôi đã kết hôn (đang có gia đình).", "e": "<b>は</b> đánh dấu chủ đề (Tôi). Thể ています ở đây diễn tả một trạng thái kéo dài từ quá khứ đến hiện tại." },
+        { "q_id": "96", "s": "わたしは [大阪|おおさか] {p1} [住|す]んで います。", "o": ["に", "で", "を", "へ"], "a": ["に"], "v": "Tôi đang sống ở Osaka.", "e": "Đặc biệt: Động từ 住みます (sinh sống) luôn dùng với trợ từ <b>に</b> để chỉ nơi định cư." },
+        { "q_id": "97", "s": "IMC {p1} コンピューター {p2} ソフト {p3} [作|つく]って います。", "o": ["は", "の", "を", "に", "が"], "a": ["は", "の", "を"], "v": "Công ty IMC đang sản xuất phần mềm máy tính.", "e": "<b>は</b> (Chủ đề công ty). <b>の</b> (Phần mềm CỦA máy tính). <b>を</b> (Tân ngữ cho động từ sản xuất)." },
+        { "q_id": "98", "s": "ここ {p1} [車|くるま] {p2} [止|と]めても いいですか。", "o": ["に", "を", "で", "が", "は"], "a": ["に", "を"], "v": "Tôi đỗ xe ở đây có được không?", "e": "<b>に</b> dùng cho động từ 止めます (đỗ, dừng lại tại đâu đó). <b>を</b> đi với tân ngữ xe hơi." },
+        {"q_id": "98a","s": "ミラーさんの [電話番号|でんわばんごう] {p1} [知|し]って いますか。","o": ["が", "を", "に", "は", "で"],"a": ["を"],"v": "Bạn có biết số điện thoại của anh Miller không?","e": "Động từ 知っています (Biết) luôn đi với trợ từ <b>を</b> để chỉ đối tượng được biết đến."},
+        {"q_id": "98b","s": "[家族|かぞく]は ニューヨーク {p1} [住|す]んで います。","o": ["に", "で", "を", "へ", "が"],"a": ["に"], "v": "Gia đình tôi đang sống ở New York.", "e": "Động từ 住みます (sinh sống) luôn đi với trợ từ <b>に</b> để chỉ không gian tồn tại, dù nó mang nghĩa cư trú." },
+        { "q_id": "98c", "s": "ここ {p1} [写真|しゃしん] {p2} [撮|と]っては いけません。", "o": ["で", "に", "を", "が", "は"], "a": ["で", "を"], "v": "Không được phép chụp ảnh ở đây.", "e": "<b>で</b> chỉ nơi chốn diễn ra hành động. <b>を</b> là tân ngữ. Cấu trúc <b>V-てはいけません</b> mang ý nghĩa cấm đoán, không được phép làm gì." },
+        { "q_id": "98d", "s": "わたしは IMC {p1} [働|はたら]いて います。", "o": ["で", "に", "を", "が", "へ"], "a": ["で"], "v": "Tôi đang làm việc tại công ty IMC.", "e": "<b>で</b> chỉ địa điểm thực hiện hành động làm việc. <b>V-ています</b> ở đây diễn tả một nghề nghiệp, một trạng thái làm việc kéo dài." },
+        { "q_id": "98e", "s": "カタログ {p1} もらっても いいですか。", "o": ["を", "が", "に", "で", "は"], "a": ["を"], "v": "Tôi nhận cuốn catalogue này có được không?", "e": "<b>を</b> đi với tân ngữ catalogue. Cấu trúc <b>V-てもいいですか</b> dùng để xin phép người khác cho mình thực hiện hành động." },
+        { "q_id": "98f", "s": "[窓|まど] {p1} [開|あ]けても いいですか。", "o": ["を", "が", "に", "で", "は"], "a": ["を"], "v": "Tôi mở cửa sổ có được không?", "e": "Động từ 開けます (mở) là tha động từ, tác động trực tiếp lên cửa sổ nên dùng trợ từ <b>を</b>." },
+        { "q_id": "98g", "s": "ミラーさん {p1} [結婚|けっこん]して います。", "o": ["は", "が", "を", "に", "で"], "a": ["は"], "v": "Anh Miller đã kết hôn rồi.", "e": "<b>は</b> đánh dấu chủ đề là Anh Miller. Việc kết hôn không phải là hành động nhất thời mà là một tình trạng kéo dài, nên bắt buộc dùng <b>V-ています</b>." },
+        { "q_id": "98h", "s": "すみません、この [辞書|じしょ] {p1} [借|か]りても いいですか。", "o": ["を", "が", "に", "で", "は"], "a": ["を"], "v": "Xin lỗi, tôi mượn cuốn từ điển này có được không?", "e": "Mượn cái gì thì dùng <b>を</b> với cái đó. Cấu trúc xin phép lịch sự mượn đồ của người khác." },
+        { "q_id": "98i", "s": "[自転車|じてんしゃ]は どこ {p1} [置|お]いて いますか。", "o": ["に", "で", "を", "へ", "が"], "a": ["に"], "v": "Xe đạp thì bạn đang để ở đâu vậy?", "e": "Động từ 置きます (đặt, để) chỉ vị trí tồn tại của đồ vật sau khi đặt xuống nên phải dùng trợ từ <b>に</b>, không dùng で." }
+      ]
+    },
+    {
+      "stage_id": 16,
+      "title": "Trạm 16: Trình Tự & Nối Câu",
+      "desc": "Bài 16: Nối nhiều hành động liên tiếp bằng Thể Te, chỉ trình tự (V-てから) và miêu tả đặc điểm.",
+      "questions": [
+        { "q_id": "99", "s": "[朝|あさ] ジョギング {p1} して、シャワー {p2} [浴|あ]びて、[会社|かいしゃ] {p3} [行|い]きます。", "o": ["を", "に", "へ", "が", "で"], "a": ["を", "を", "へ"], "v": "Buổi sáng tôi chạy bộ, tắm vòi sen rồi đi đến công ty.", "e": "Nối các hành động theo trình tự thời gian bằng Thể Te. <b>を</b> cho tân ngữ (chạy bộ, tắm), <b>へ</b> cho hướng đi (công ty)." },
+        { "q_id": "100", "s": "お[金|かね] {p1} [入|い]れてから、ボタン {p2} [押|お]して ください。", "o": ["を", "に", "が", "は", "で"], "a": ["を", "を"], "v": "Sau khi cho tiền vào, hãy bấm nút.", "e": "Cấu trúc <b>V-てから</b> (Sau khi...). <b>を</b> đánh dấu tân ngữ tiền và nút bấm." },
+        { "q_id": "101", "s": "[大学|だいがく] {p1} どうやって [行|い]きますか。", "o": ["まで", "を", "が", "は", "で"], "a": ["まで"], "v": "Đến trường đại học thì đi bằng cách nào vậy?", "e": "<b>まで</b> chỉ điểm đến cuối cùng của một hành trình (Đến tận trường đại học)." },
+        { "q_id": "102", "s": "マリアさん {p1} [髪|かみ] {p2} [長|なが]いです。", "o": ["は", "が", "を", "に", "で"], "a": ["は", "が"], "v": "Chị Maria có mái tóc dài.", "e": "Cấu trúc miêu tả: <b>N1 は N2 が Tính_từ</b>. N1 là chủ đề (Maria), N2 là bộ phận cơ thể (tóc)." },
+        { "q_id": "103", "s": "ミラーさん {p1} [若|わか]くて、[元気|げんき]です。", "o": ["は", "が", "を", "に"], "a": ["は"], "v": "Anh Miller trẻ và khỏe mạnh.", "e": "<b>は</b> đánh dấu chủ đề. Tính từ đuôi -i (若い) đổi thành -くて để nối câu (Trẻ VÀ...)." },
+        { "q_id": "104", "s": "カリナさん {p1} [学生|がくせい]で、マリアさん {p1} [主婦|しゅふ]です。", "o": ["は", "が", "を", "に"], "a": ["は", "は"], "v": "Chị Karina là sinh viên, còn chị Maria là nội trợ.", "e": "<b>は</b> đánh dấu chủ đề ở hai vế. Danh từ (学生) thêm <b>で</b> để nối câu." }
+      ]
+    },
+    {
+      "stage_id": 17,
+      "title": "Trạm 17: Phủ Định & Nghĩa Vụ",
+      "desc": "Bài 17: Sử dụng Thể Nai (V-ない) để yêu cầu đừng làm gì, diễn tả sự bắt buộc hoặc không cần thiết.",
+      "questions": [
+        { "q_id": "105", "s": "ここ {p1} [写真|しゃしん] {p2} [撮|と]らないで ください。", "o": ["で", "を", "に", "は", "が"], "a": ["で", "を"], "v": "Xin đừng chụp ảnh ở đây.", "e": "<b>で</b> chỉ địa điểm thực hiện. <b>を</b> tân ngữ ảnh. V-ないで ください: Yêu cầu ĐỪNG làm gì." },
+        { "q_id": "106", "s": "パスポート {p1} [見|み]せなければなりません。", "o": ["を", "が", "に", "は", "で"], "a": ["を"], "v": "Phải cho xem hộ chiếu.", "e": "<b>を</b> đi sau tân ngữ (hộ chiếu). V-なければなりません: Phải làm gì đó (Nghĩa vụ)." },
+        { "q_id": "107", "s": "[明日|あした] {p1} [学校|がっこう] {p2} [来|こ]なくても いいです。", "o": ["は", "へ", "を", "が", "に"], "a": ["は", "へ"], "v": "Ngày mai bạn không đến trường cũng được.", "e": "<b>は</b> đưa 'ngày mai' làm chủ đề. <b>へ</b> hướng di chuyển. V-なくてもいいです: Không làm cũng được." },
+        { "q_id": "108", "s": "[荷物|にもつ] {p1} ここ {p2} [置|お]かないで ください。", "o": ["は", "に", "を", "で", "が"], "a": ["は", "に"], "v": "Hành lý thì xin đừng đặt ở đây.", "e": "<b>は</b> đưa tân ngữ lên làm chủ đề nhấn mạnh. <b>に</b> dùng cho nơi chốn tồn tại sau khi đặt xuống." },
+        { "q_id": "109", "s": "[毎日|まいにち]、[薬|くすり] {p1} [飲|の]まなければなりません。", "o": ["を", "が", "に", "で", "は"], "a": ["を"], "v": "Mỗi ngày đều phải uống thuốc.", "e": "<b>を</b> đứng trước động từ uống (飲まなければなりません)." },
+        { "q_id": "110", "s": "[残業|ざんぎょう] {p1} しなくても いいです。", "o": ["は", "を", "が", "に", "で"], "a": ["を"], "v": "Không cần làm thêm giờ cũng được.", "e": "Động từ gốc là 残業します, tách ra thành Danh_từ + <b>を</b> + します." }
+      ]
+    },
+    {
+      "stage_id": 18,
+      "title": "Trạm 18: Khả Năng & Sở Thích",
+      "desc": "Bài 18: Thể Từ Điển (V-る). Cách nói về khả năng có thể làm gì, sở thích và hành động xảy ra trước.",
+      "questions": [
+        { "q_id": "111", "s": "ミラーさん {p1} [漢字|かんじ] {p2} [読|よ]む こと {p3} できます。", "o": ["は", "を", "が", "に", "で"], "a": ["は", "を", "が"], "v": "Anh Miller có thể đọc được chữ Hán.", "e": "<b>は</b> (Chủ đề). <b>を</b> (Tân ngữ). Cấu trúc <b>V-る ことが できます</b>: Có thể làm gì đó." },
+        { "q_id": "112", "s": "わたし {p1} [趣味|しゅみ] {p2} [映画|えいが] {p3} [見|み]る ことです。", "o": ["の", "は", "を", "が", "に"], "a": ["の", "は", "を"], "v": "Sở thích của tôi là xem phim.", "e": "<b>の</b> (Sở thích CỦA tôi). <b>は</b> (Là). Biến động từ thành danh từ bằng cách thêm <b>こと</b>." },
+        { "q_id": "113", "s": "[寝|ね]る [前|まえ] {p1} 、[本|ほん] {p2} [読|よ]みます。", "o": ["に", "を", "で", "は", "が"], "a": ["に", "を"], "v": "Trước khi ngủ, tôi đọc sách.", "e": "<b>に</b> xác định mốc thời gian (Trước KHI). <b>を</b> đi với tân ngữ sách." },
+        { "q_id": "114", "s": "[食事|しょくじ] {p1} [前|まえ] {p2} 、[手|て] {p3} [洗|あら]います。", "o": ["の", "に", "を", "が", "は"], "a": ["の", "に", "を"], "v": "Trước bữa ăn, tôi rửa tay.", "e": "Nếu là Danh từ + 前, phải có <b>の</b> ở giữa (食事の前に)." },
+        { "q_id": "115", "s": "ピアノ {p1} [弾|ひ]く こと {p2} できます。", "o": ["を", "が", "に", "は", "で"], "a": ["を", "が"], "v": "Tôi có thể chơi đàn piano.", "e": "<b>を</b> chơi nhạc cụ. Cấu trúc <b>ことができる</b> luôn đi cùng trợ từ <b>が</b>." },
+        { "q_id": "116", "s": "５[年|ねん] [前|まえ] {p1} 、[日本|にほん] {p2} [来|き]ました。", "o": ["に", "へ", "を", "で", "が"], "a": ["に", "へ"], "v": "Tôi đã đến Nhật Bản vào 5 năm trước.", "e": "Với lượng từ (5 năm) + 前, nối thẳng với <b>に</b> không cần の. <b>へ</b> chỉ phương hướng." }
+      ]
+    },
+    {
+      "stage_id": 19,
+      "title": "Trạm 19: Kinh Nghiệm & Liệt Kê",
+      "desc": "Bài 19: Thể quá khứ Ta (V-た). Kể về kinh nghiệm trong quá khứ, liệt kê hành động tiêu biểu và sự biến đổi.",
+      "questions": [
+        { "q_id": "117", "s": "[馬|うま] {p1} [乗|の]った こと {p2} あります。", "o": ["に", "が", "を", "は", "で"], "a": ["に", "が"], "v": "Tôi đã từng cưỡi ngựa.", "e": "Động từ 乗ります (lên/cưỡi) luôn dùng <b>に</b>. Cấu trúc <b>V-た ことが あります</b>: Đã từng làm gì." },
+        { "q_id": "118", "s": "[日曜日|にちようび] {p1} テニス {p2} したり、[映画|えいが] {p3} [見|み]たり します。", "o": ["は", "を", "が", "に", "で"], "a": ["は", "を", "を"], "v": "Chủ nhật, tôi nào là chơi tennis, nào là xem phim.", "e": "Cấu trúc <b>V-たり、V-たり します</b> dùng để liệt kê hành động tiêu biểu không theo thứ tự thời gian." },
+        { "q_id": "119", "s": "[天気|てんき] {p1} [寒|さむ]く なりました。", "o": ["が", "は", "を", "に", "で"], "a": ["が"], "v": "Thời tiết đã trở nên lạnh rồi.", "e": "Chủ thể của sự thay đổi tự nhiên thường đi với <b>が</b>. Tính từ -i (寒い) bỏ 'i' thêm く + なります." },
+        { "q_id": "120", "s": "テレサちゃん {p1} [背|せ] {p2} [高|たか]く なりました。", "o": ["は", "が", "を", "に", "で"], "a": ["は", "が"], "v": "Bé Teresa đã cao lên rồi.", "e": "<b>は</b> (Chủ đề Teresa). <b>が</b> (Bộ phận 'lưng/chiều cao'). Tính từ 高い -> 高くなります." },
+        { "q_id": "121", "s": "[富士山|ふじさん] {p1} [登|のぼ]った こと {p2} ありますか。", "o": ["に", "が", "を", "は", "で"], "a": ["に", "が"], "v": "Bạn đã từng leo núi Phú Sĩ bao giờ chưa?", "e": "Động từ leo (登ります) luôn dùng trợ từ <b>に</b> (Điểm tựa/Đích đến)." },
+        { "q_id": "122", "s": "ミラーさん {p1} [医者|いしゃ] {p2} なりました。", "o": ["は", "に", "が", "を", "で"], "a": ["は", "に"], "v": "Anh Miller đã trở thành bác sĩ.", "e": "<b>は</b> (Chủ đề). Danh từ (医者) kết hợp với なります phải dùng trợ từ <b>に</b>." }
+      ]
+    },
+    {
+      "stage_id": 20,
+      "title": "Trạm 20: Hội Thoại Thường Ngày",
+      "desc": "Bài 20: Luyện tập Thể Thông Thường (Văn nói ngắn gọn) áp dụng cho gia đình, bạn bè thân thiết.",
+      "questions": [
+        { "q_id": "123", "s": "ご[飯|はん] {p1} [食|た]べる？", "o": ["を", "が", "に", "は", "で"], "a": ["を"], "v": "Ăn cơm không?", "e": "Câu hỏi trong Thể thông thường: Lên giọng ở cuối câu thay vì dùng 'ですか'. <b>を</b> dùng bình thường." },
+        { "q_id": "124", "s": "[明日|あした]、[東京|とうきょう] {p1} [行|い]く？", "o": ["へ", "に", "を", "が", "は"], "a": ["へ"], "v": "Ngày mai có đi Tokyo không?", "e": "V-ます chuyển thành V-る (Thể từ điển). <b>へ</b> chỉ phương hướng vẫn giữ nguyên." },
+        { "q_id": "125", "s": "ビザ {p1} いる？", "o": ["が", "を", "に", "は", "で"], "a": ["が"], "v": "Có cần visa không?", "e": "Động từ 要ります (cần thiết) đi với <b>が</b>. Chuyển sang thể thông thường là いる." },
+        { "q_id": "126", "s": "[今朝|けさ]、[新聞|しんぶん] {p1} [読|よ]んだ？", "o": ["を", "が", "に", "は", "で"], "a": ["を"], "v": "Sáng nay đã đọc báo chưa?", "e": "Quá khứ V-ました chuyển thành Thể Ta (V-た). Tân ngữ báo vẫn dùng <b>を</b>." },
+        { "q_id": "127", "s": "[日曜日|にちようび] {p1} どこ {p2} [行|い]かなかった。", "o": ["は", "も", "へ", "を", "に"], "a": ["は", "も"], "v": "Chủ nhật tớ đã chẳng đi đâu cả.", "e": "<b>は</b> nhấn mạnh chủ nhật. Từ nghi vấn (どこ) + <b>も</b> + Phủ định (行かない -> 行かなかった)." },
+        { "q_id": "128", "s": "[日本語|にほんご] {p1} [辞書|じしょ] {p2} [持|も]っている？", "o": ["の", "を", "が", "に", "は"], "a": ["の", "を"], "v": "Cậu có đang giữ từ điển tiếng Nhật không?", "e": "<b>の</b> (Từ điển CỦA tiếng Nhật). <b>を</b> (Tân ngữ). Đang giữ/sở hữu dùng ている." }
+      ]
+    },
+    {
+      "stage_id": 21,
+      "title": "Trạm 21: Suy Nghĩ & Tường Thuật",
+      "desc": "Bài 21: Bày tỏ ý kiến cá nhân (と思います) và trích dẫn lại lời nói của người khác (と言いました).",
+      "questions": [
+        { "q_id": "129", "s": "[明日|あした] [雨|あめ] {p1} [降|ふ]る {p2} [思|おも]います。", "o": ["が", "と", "を", "に", "は"], "a": ["が", "と"], "v": "Tôi nghĩ là ngày mai trời sẽ mưa.", "e": "<b>が</b> đi với hiện tượng tự nhiên (雨が降る). <b>と</b> dùng để trích dẫn nội dung suy nghĩ trước động từ 思います." },
+        { "q_id": "130", "s": "[首相|しゅしょう] {p1} [来月|らいげつ] アメリカ {p2} [行|い]く {p3} [言|い]いました。", "o": ["は", "へ", "と", "を", "に"], "a": ["は", "へ", "と"], "v": "Thủ tướng đã nói là tháng sau sẽ đi Mỹ.", "e": "<b>は</b> đánh dấu chủ ngữ Thủ tướng. <b>へ</b> chỉ hướng đi. <b>と</b> trích dẫn nội dung lời nói (と言いました)." },
+        { "q_id": "131", "s": "[日本|にほん] {p1} [物価|ぶっか] {p2} [高|たか]い {p3} [思|おも]います。", "o": ["の", "は", "と", "が", "に"], "a": ["の", "は", "と"], "v": "Tôi nghĩ vật giá của Nhật Bản cao.", "e": "<b>の</b> (Vật giá CỦA Nhật). Nội dung suy nghĩ: '日本の物価は高い' kết hợp với <b>と</b> + 思います." },
+        { "q_id": "132", "s": "[東京|とうきょう]は [交通|こうつう] {p1} [便利|べんり]だ {p2} [思|おも]いますか。", "o": ["が", "と", "を", "は", "に"], "a": ["が", "と"], "v": "Bạn có nghĩ Tokyo giao thông thuận tiện không?", "e": "Cấu trúc N1 は N2 が Tính_từ (Giao thông thì thuận tiện). Tính từ đuôi -na phải thêm <b>だ</b> trước <b>と</b>." },
+        { "q_id": "133", "s": "ミラーさん {p1} どこ {p2} いる {p3} [思|おも]いますか。", "o": ["は", "に", "と", "が", "を"], "a": ["は", "に", "と"], "v": "Bạn nghĩ anh Miller đang ở đâu?", "e": "<b>は</b> (Chủ đề Miller). <b>に</b> (Ở đâu). <b>と</b> (Trích dẫn nội dung: Anh ấy đang ở đâu)." },
+        { "q_id": "134", "s": "[試合|しあい] {p1} どうだった？", "o": ["は", "が", "を", "に", "で"], "a": ["は"], "v": "Trận đấu thế nào rồi?", "e": "Thể thông thường của 'どうでしたか'. <b>は</b> đánh dấu 'Trận đấu' làm chủ đề câu hỏi." }
+      ]
+    },
+    {
+      "stage_id": 22,
+      "title": "Trạm 22: Bổ Nghĩa Danh Từ",
+      "desc": "Bài 22: Sử dụng Thể thông thường để bổ nghĩa cho danh từ, tạo thành các câu phức tinh tế hơn.",
+      "questions": [
+        { "q_id": "135", "s": "これは ミラーさん {p1} [作|つく]った ケーキです。", "o": ["が", "は", "を", "に", "で"], "a": ["が"], "v": "Đây là chiếc bánh ngọt mà anh Miller đã làm.", "e": "Trong mệnh đề bổ nghĩa cho danh từ, chủ ngữ (Miller) luôn đi với trợ từ <b>が</b>, tuyệt đối không dùng は." },
+        { "q_id": "136", "s": "わたし {p1} [生|う]まれた [所|ところ] {p2} [北海道|ほっかいどう]です。", "o": ["が", "は", "を", "に", "で"], "a": ["が", "は"], "v": "Nơi mà tôi sinh ra là Hokkaido.", "e": "<b>が</b> đánh dấu chủ ngữ trong mệnh đề bổ nghĩa (tôi sinh ra). <b>は</b> đánh dấu cụm danh từ lớn làm chủ đề chính của câu." },
+        { "q_id": "137", "s": "[図書館|としょかん] {p1} [借|か]りた [本|ほん] {p2} [読|よ]みます。", "o": ["で", "を", "に", "は", "が"], "a": ["で", "を"], "v": "Tôi đọc cuốn sách đã mượn ở thư viện.", "e": "<b>で</b> (Ở thư viện). <b>を</b> đứng trước động từ chính 読みます (Đọc CUỐN SÁCH đã mượn)." },
+        { "q_id": "138", "s": "[昨日|きのう] [買|か]った [傘|かさ] {p1} なくしました。", "o": ["を", "が", "に", "は", "で"], "a": ["を"], "v": "Tôi đã làm mất chiếc ô mua ngày hôm qua.", "e": "Cụm danh từ 'Chiếc ô đã mua hôm qua' đóng vai trò làm tân ngữ chịu tác động của động từ làm mất, nên dùng <b>を</b>." },
+        { "q_id": "139", "s": "[朝|あさ]ご[飯|はん] {p1} [食|た]べる [時間|じかん] {p2} ありません。", "o": ["を", "が", "に", "は", "で"], "a": ["を", "が"], "v": "Tôi không có thời gian ăn sáng.", "e": "<b>を</b> (Ăn bữa sáng). <b>が</b> dùng cho sự sở hữu/tồn tại với động từ ありません (Không CÓ thời gian)." },
+        { "q_id": "140", "s": "わたしは [友達|ともだち] {p1} [映画|えいが] {p2} [見|み]る [約束|やくそく] {p3} あります。", "o": ["と", "を", "が", "に", "は"], "a": ["と", "を", "が"], "v": "Tôi có hẹn xem phim cùng với bạn.", "e": "<b>と</b> (Cùng bạn). <b>を</b> (Xem phim). <b>が</b> (CÓ cuộc hẹn - 約束があります)." }
+      ]
+    },
+    {
+      "stage_id": 23,
+      "title": "Trạm 23: Thời Điểm & Điều Kiện",
+      "desc": "Bài 23: Diễn đạt thời điểm hành động xảy ra (～とき) và điều kiện tất yếu (V-ると).",
+      "questions": [
+        { "q_id": "141", "s": "[図書館|としょかん] {p1} [本|ほん] {p2} [借|か]りる とき、カード {p3} [要|い]ります。", "o": ["で", "を", "が", "に", "は"], "a": ["で", "を", "が"], "v": "Khi mượn sách ở thư viện thì cần có thẻ.", "e": "<b>で</b> (Ở thư viện). <b>を</b> (Mượn sách). <b>が</b> đi kèm động từ 要ります (Cần có thẻ)." },
+        { "q_id": "142", "s": "[道|みち] {p1} わからない とき、[警察|けいさつ] {p2} [聞|き]きます。", "o": ["が", "に", "を", "で", "は"], "a": ["が", "に"], "v": "Khi không biết đường, tôi sẽ hỏi cảnh sát.", "e": "<b>が</b> (Hiểu/Biết đường). <b>に</b> (Hỏi AI đó thì dùng に)." },
+        { "q_id": "143", "s": "[妻|つま] {p1} [病気|びょうき] {p2} とき、[会社|かいしゃ] {p3} [休|やす]みます。", "o": ["が", "の", "を", "に", "で"], "a": ["が", "の", "を"], "v": "Khi vợ ốm, tôi sẽ nghỉ làm.", "e": "<b>が</b> (Chủ thể vế phụ). Danh từ (病気) + とき phải có <b>の</b>. <b>を</b> (Nghỉ việc/Rời khỏi nơi chốn)." },
+        { "q_id": "144", "s": "この ボタン {p1} [押|お]す と、お[釣|つ]り {p2} [出|で]ます。", "o": ["を", "が", "に", "は", "で"], "a": ["を", "が"], "v": "Hễ bấm nút này là tiền thừa sẽ chạy ra.", "e": "<b>を</b> (Bấm nút). <b>が</b> đi với tự động từ 出ます (Tiền tự động chui ra). Cấu trúc <b>V-る と</b>: Hễ... là (Tất yếu)." },
+        { "q_id": "145", "s": "これ {p1} [回|まわ]す と、[音|おと] {p2} [大|おお]きく なります。", "o": ["を", "が", "に", "は", "で"], "a": ["を", "が"], "v": "Hễ vặn cái này thì âm thanh sẽ to lên.", "e": "<b>を</b> (Tác động vặn đồ vật). <b>が</b> (Âm thanh trở nên...). Sử dụng と cho máy móc." },
+        { "q_id": "146", "s": "[交差点|こうさてん] {p1} [右|みぎ] {p2} [曲|ま]がる と、[銀行|ぎんこう] {p3} あります。", "o": ["を", "へ", "が", "に", "で"], "a": ["を", "へ", "が"], "v": "Hễ rẽ phải ở ngã tư là sẽ thấy ngân hàng.", "e": "<b>を</b> (Rẽ KHỎI ngã tư). <b>へ</b> (Hướng rẽ sang phải). <b>が</b> (Tồn tại ngân hàng)." }
+      ]
+    },
+    {
+      "stage_id": 24,
+      "title": "Trạm 24: Cho Nhận & Giúp Đỡ",
+      "desc": "Bài 24: Diễn tả hành động cho, nhận và giúp đỡ lẫn nhau bằng Thể Te (～てくれます / もらいます / あげます).",
+      "questions": [
+        { "q_id": "147", "s": "佐藤さん {p1} わたし {p2} チョコレート {p3} くれました。", "o": ["は", "に", "を", "が", "で"], "a": ["は", "に", "を"], "v": "Chị Sato đã cho tôi sô-cô-la.", "e": "Động từ くれます (Ai đó cho MÌNH). <b>は</b> (Chủ thể Sato). <b>に</b> (Cho TÔI). <b>を</b> (Sô-cô-la)." },
+        { "q_id": "148", "s": "わたしは カリナさん {p1} [本|ほん] {p2} [貸|か]して あげました。", "o": ["に", "を", "は", "で", "が"], "a": ["に", "を"], "v": "Tôi đã cho chị Karina mượn sách.", "e": "Cấu trúc <b>V-て あげます</b> (Làm gì giúp ai). <b>に</b> chỉ đối tượng nhận hành động giúp đỡ. <b>を</b> (Tân ngữ sách)." },
+        { "q_id": "149", "s": "わたしは 山田さん {p1} [地図|ちず] {p2} [書|か]いて もらいました。", "o": ["に", "を", "は", "で", "が"], "a": ["に", "を"], "v": "Tôi được anh Yamada vẽ bản đồ cho.", "e": "Cấu trúc <b>V-て もらいます</b> (Được ai đó làm giúp). <b>に</b> chỉ người đã giúp mình. <b>を</b> (Bản đồ)." },
+        { "q_id": "150", "s": "[母|はは] {p1} わたし {p2} セーター {p3} [送|おく]って くれました。", "o": ["は", "に", "を", "が", "で"], "a": ["は", "に", "を"], "v": "Mẹ đã gửi áo len cho tôi.", "e": "<b>V-て くれます</b>: Ai đó làm gì CHO TÔI. Chủ ngữ là người thực hiện (Mẹ - は), hướng đến người nhận (Tôi - に)." },
+        { "q_id": "151", "s": "わたしは [木村|きむら]さん {p1} [駅|えき] {p2} [送|おく]って あげました。", "o": ["を", "まで", "に", "は", "で"], "a": ["を", "まで"], "v": "Tôi đã tiễn chị Kimura đến tận ga.", "e": "Động từ 送ります (Tiễn ai) dùng <b>を</b> cho người bị tác động (Kimura). <b>まで</b> chỉ đích đến (Tới ga)." },
+        { "q_id": "152", "s": "だれ {p1} この [写真|しゃしん] {p2} [撮|と]って くれましたか。", "o": ["が", "を", "に", "は", "で"], "a": ["が", "を"], "v": "Ai đã chụp bức ảnh này cho bạn vậy?", "e": "Khi từ để hỏi (だれ) làm chủ ngữ của hành động, bắt buộc phải dùng <b>が</b>. <b>を</b> (Chụp ảnh)." }
+      ]
+    },
+    {
+      "stage_id": 25,
+      "title": "Trạm 25: Giả Định & Nhượng Bộ",
+      "desc": "Bài 25: Cấu trúc giả định 'Nếu... thì' (～たら) và nhượng bộ 'Dù... nhưng' (～ても).",
+      "questions": [
+        { "q_id": "153", "s": "[雨|あめ] {p1} [降|ふ]ったら、[出|で]かけません。", "o": ["が", "を", "に", "は", "で"], "a": ["が"], "v": "Nếu trời mưa thì tôi sẽ không ra ngoài.", "e": "<b>が</b> (Trời mưa). V-た thêm 'ら' tạo thành điều kiện giả định (Nếu...)." },
+        { "q_id": "154", "s": "[時間|じかん] {p1} なかったら、[映画|えいが] {p2} [見|み]ません。", "o": ["が", "を", "に", "は", "で"], "a": ["が", "を"], "v": "Nếu không có thời gian thì tôi sẽ không xem phim.", "e": "Phủ định của あります là ない -> なかったら (Nếu không có). <b>が</b> (Tồn tại thời gian). <b>を</b> (Xem phim)." },
+        { "q_id": "155", "s": "お[金|かね] {p1} あっても、[車|くるま] {p2} [買|か]いません。", "o": ["が", "を", "に", "は", "で"], "a": ["が", "を"], "v": "Dù có tiền thì tôi cũng không mua ô tô.", "e": "Cấu trúc <b>V-ても</b> (Cho dù...). <b>が</b> (Sở hữu tiền). <b>を</b> (Mua xe)." },
+        { "q_id": "156", "s": "[安|やす]くても、わたしは ワープロ {p1} [買|か]いません。", "o": ["を", "が", "に", "は", "で"], "a": ["を"], "v": "Dù có rẻ đi nữa thì tôi cũng không mua máy đánh chữ.", "e": "Tính từ đuôi -i (安い) chuyển thành 安くても (Dù có rẻ). <b>を</b> (Tân ngữ máy đánh chữ)." },
+        { "q_id": "157", "s": "[日曜日|にちようび] {p1} いい [天気|てんき]だったら、[海|うみ] {p2} [行|い]きたいです。", "o": ["が", "へ", "に", "を", "は"], "a": ["が", "へ"], "v": "Chủ nhật nếu thời tiết đẹp thì tôi muốn đi biển.", "e": "Danh từ (天気) chuyển sang giả định là だったら. <b>が</b> (Trạng thái thời tiết). <b>へ</b> (Hướng đi biển)." },
+        { "q_id": "158", "s": "いくら [考|かんが]えても、[答|こた]え {p1} わかりません。", "o": ["が", "を", "に", "は", "で"], "a": ["が"], "v": "Dù có suy nghĩ bao nhiêu đi nữa thì tôi cũng không hiểu đáp án.", "e": "Từ khóa いくら (Bao nhiêu đi nữa) luôn đi cặp với Thể ても. Động từ わかる (Hiểu) luôn dùng trợ từ <b>が</b>." }
+      ]
+    }
+  ]
+}
