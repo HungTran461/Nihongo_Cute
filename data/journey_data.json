@@ -222,7 +222,7 @@
         { "q_id": "101", "s": "[大学|だいがく] {p1} どうやって [行|い]きますか。", "o": ["まで", "を", "が", "は", "で"], "a": ["まで"], "v": "Đến trường đại học thì đi bằng cách nào vậy?", "e": "<b>まで</b> chỉ điểm đến cuối cùng của một hành trình (Đến tận trường đại học)." },
         { "q_id": "102", "s": "マリアさん {p1} [髪|かみ] {p2} [長|なが]いです。", "o": ["は", "が", "を", "に", "で"], "a": ["は", "が"], "v": "Chị Maria có mái tóc dài.", "e": "Cấu trúc miêu tả: <b>N1 は N2 が Tính_từ</b>. N1 là chủ đề (Maria), N2 là bộ phận cơ thể (tóc)." },
         { "q_id": "103", "s": "ミラーさん {p1} [若|わか]くて、[元気|げんき]です。", "o": ["は", "が", "を", "に"], "a": ["は"], "v": "Anh Miller trẻ và khỏe mạnh.", "e": "<b>は</b> đánh dấu chủ đề. Tính từ đuôi -i (若い) đổi thành -くて để nối câu (Trẻ VÀ...)." },
-        { "q_id": "104", "s": "カリナさん {p1} [学生|がくせい]で、マリアさん {p1} [主婦|しゅふ]です。", "o": ["は", "が", "を", "に"], "a": ["は", "は"], "v": "Chị Karina là sinh viên, còn chị Maria là nội trợ.", "e": "<b>は</b> đánh dấu chủ đề ở hai vế. Danh từ (学生) thêm <b>で</b> để nối câu." }
+        { "q_id": "104", "s": "カリナさん {p1} [学生|がくせい]で、マリアさん {p2} [主婦|しゅふ]です。", "o": ["は", "が", "を", "に"], "a": ["は", "は"], "v": "Chị Karina là sinh viên, còn chị Maria là nội trợ.", "e": "<b>は</b> đánh dấu chủ đề ở hai vế. Danh từ (学生) thêm <b>で</b> để nối câu." }
       ]
     },
     {
